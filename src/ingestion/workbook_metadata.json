@@ -1,0 +1,149 @@
+[
+    {
+        "sheet_name": "Cover - Notice",
+        "rows": 26,
+        "columns": 3,
+        "non_null_cells": 12,
+        "density": 0.15
+    },
+    {
+        "sheet_name": "Cover - Index",
+        "rows": 28,
+        "columns": 4,
+        "non_null_cells": 45,
+        "density": 0.4
+    },
+    {
+        "sheet_name": "Group income statement",
+        "rows": 89,
+        "columns": 9,
+        "non_null_cells": 472,
+        "density": 0.59
+    },
+    {
+        "sheet_name": "Group balance sheet",
+        "rows": 111,
+        "columns": 6,
+        "non_null_cells": 471,
+        "density": 0.71
+    },
+    {
+        "sheet_name": "Group MVOI",
+        "rows": 94,
+        "columns": 9,
+        "non_null_cells": 577,
+        "density": 0.68
+    },
+    {
+        "sheet_name": "Group NIM",
+        "rows": 38,
+        "columns": 9,
+        "non_null_cells": 223,
+        "density": 0.65
+    },
+    {
+        "sheet_name": "Hong Kong business",
+        "rows": 81,
+        "columns": 9,
+        "non_null_cells": 464,
+        "density": 0.64
+    },
+    {
+        "sheet_name": "UK business",
+        "rows": 81,
+        "columns": 9,
+        "non_null_cells": 475,
+        "density": 0.65
+    },
+    {
+        "sheet_name": "CIB business",
+        "rows": 81,
+        "columns": 9,
+        "non_null_cells": 427,
+        "density": 0.59
+    },
+    {
+        "sheet_name": "IWPB business",
+        "rows": 81,
+        "columns": 9,
+        "non_null_cells": 396,
+        "density": 0.54
+    },
+    {
+        "sheet_name": "Corporate Centre",
+        "rows": 78,
+        "columns": 9,
+        "non_null_cells": 339,
+        "density": 0.48
+    },
+    {
+        "sheet_name": "HBUK",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 1066,
+        "density": 0.49
+    },
+    {
+        "sheet_name": "HCIB",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 722,
+        "density": 0.33
+    },
+    {
+        "sheet_name": "HBAP (consol)",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 1067,
+        "density": 0.49
+    },
+    {
+        "sheet_name": "HBAP (HK)",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 1067,
+        "density": 0.49
+    },
+    {
+        "sheet_name": "Hang Seng (consol)",
+        "rows": 46,
+        "columns": 9,
+        "non_null_cells": 233,
+        "density": 0.56
+    },
+    {
+        "sheet_name": "HNAH",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 722,
+        "density": 0.33
+    },
+    {
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 722,
+        "density": 0.33
+    },
+    {
+        "sheet_name": "HBME",
+        "rows": 244,
+        "columns": 9,
+        "non_null_cells": 722,
+        "density": 0.33
+    },
+    {
+        "sheet_name": "Other trading entities",
+        "rows": 48,
+        "columns": 9,
+        "non_null_cells": 234,
+        "density": 0.54
+    },
+    {
+        "sheet_name": "Credit risk",
+        "rows": 124,
+        "columns": 16,
+        "non_null_cells": 1060,
+        "density": 0.53
+    }
+]
