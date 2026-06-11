@@ -7,7 +7,8 @@ import os
 import sys 
 
 path = r"C:\Users\talma\Desktop\chart and diag\quantumlens-HSBC\data\raw\260505-1q-2026-data-pack-excel.xlsx"
-
+scan_output_dir = os.path.dirname(r"C:\Users\talma\Desktop\chart and diag\quantumlens-HSBC\src\ingestion\sheet_scanner.py")
+scan_output_path = os.path.join(scan_output_dir, 'scan_sheet_metadata.json')
 
 def scan_sheets(path):
     sheet_scan_json=[]
@@ -46,4 +47,7 @@ def scan_sheets(path):
     return sheet_scan_json
 
 scan_sheets (path)
+with open(scan_output_path, 'w') as f:
+    json.dump(scan_sheets(path), f, indent=4)
 
+print(f"Metadata saved to: {scan_output_path}")
