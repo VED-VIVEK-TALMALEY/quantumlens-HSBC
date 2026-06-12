@@ -41,13 +41,8 @@ def scan_sheets(path):
                     "row_values": cleaned_row_values,
                     "non_null_count": int(row.notna().sum())
                     })
-    #print (json.dumps(sheet_scan_json, indent=4))
-    
-    print(len(sheet_scan_json))
     return sheet_scan_json
 
 scan_sheets (path)
-with open(scan_output_path, 'w') as f:
-    json.dump(scan_sheets(path), f, indent=4)
 
-print(f"Metadata saved to: {scan_output_path}")
+
