@@ -38,11 +38,11 @@ def load_metrics(input_file):
                     record.get("row_number")
             }
 
-            supabase.table(
-                "metrics"
-            ).insert(
-                payload
-            ).execute()
+            supabase.table( 
+             "metrics"
+              ).upsert(
+                  payload
+              ).execute()
 
             success_count += 1
 
