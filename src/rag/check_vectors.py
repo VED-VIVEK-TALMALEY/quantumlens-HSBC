@@ -11,4 +11,4 @@ collection = client.get_collection(
 print(
     "Vector Count:",
     collection.count()
-)
+)   

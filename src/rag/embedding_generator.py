@@ -4,10 +4,6 @@ from supabase import create_client
 import os
 import json
 
-# -----------------------------
-# Load Environment Variables
-# -----------------------------
-
 load_dotenv()
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -18,30 +14,50 @@ supabase = create_client(
     SUPABASE_KEY
 )
 
-# -----------------------------
-# Load Embedding Model
-# -----------------------------
-
 model = SentenceTransformer(
     "all-MiniLM-L6-v2"
 )
 
-# -----------------------------
-# Build Text for Embedding
-# -----------------------------
 
 def build_embedding_text(record):
 
-    return f"""
-Metric Name: {record.get('metric_name')}
-Abbreviation: {record.get('abbreviation')}
-Workbook: {record.get('source_workbook')}
-Sheet: {record.get('sheet_name')}
-"""
+    period_values = record.get(
+        "period_values",
+        []
+    )
 
-# -----------------------------
-# Generate Embeddings
-# -----------------------------
+    values_text = ""
+
+    for item in period_values:
+
+        values_text += (
+            f"Period {item['period_index']}: "
+            f"{item['value']}\n"
+        )
+
+    if values_text == "":
+        values_text = "Not Available"
+
+    return f"""
+Metric Name:
+{record.get("metric_name")}
+
+Abbreviation:
+{record.get("abbreviation")}
+
+Workbook:
+{record.get("source_workbook")}
+
+Sheet:
+{record.get("sheet_name")}
+
+Row Number:
+{record.get("row_number")}
+
+Values
+
+{values_text}
+"""
 
 def generate_embeddings():
 
@@ -53,8 +69,6 @@ def generate_embeddings():
         .data
     )
 
-    print(f"Fetched {len(rows)} KPI records")
-
     embeddings = []
 
     for row in rows:
@@ -65,42 +79,84 @@ def generate_embeddings():
             text
         ).tolist()
 
-        embeddings.append({
-            "metric_id": row.get("metric_id"),
-            "metric_name": row.get("metric_name"),
-            "abbreviation": row.get("abbreviation"),
-            "sheet_name": row.get("sheet_name"),
-            "source_workbook": row.get("source_workbook"),
-            "text": text,
-            "embedding": vector
-        })
+        embeddings.append(
 
-    return embeddings
+            {
 
-# -----------------------------
-# Main
-# -----------------------------
+                "metric_id":
+                    row["metric_id"],
 
-if __name__ == "__main__":
+                "metric_name":
+                    row["metric_name"],
 
-    vectors = generate_embeddings()
+                "abbreviation":
+                    row["abbreviation"],
+
+                "sheet_name":
+                    row.get(
+                        "sheet_name",
+                        ""
+                    ),
+
+                "source_workbook":
+                    row.get(
+                        "source_workbook",
+                        ""
+                    ),
+
+                "row_number":
+                    row.get(
+                        "row_number",
+                        ""
+                    ),
+
+                "period_values":
+row.get(
+    "period_values",
+    []
+),
+
+                "text":
+                    text,
+
+                "embedding":
+                    vector
+
+            }
+
+        )
 
     with open(
+
         "embeddings.json",
+
         "w",
+
         encoding="utf-8"
+
     ) as f:
 
         json.dump(
-            vectors,
+
+            embeddings,
+
             f,
+
             indent=2
+
         )
 
     print(
-        f"Generated {len(vectors)} embeddings"
+        f"Generated {len(embeddings)} embeddings"
     )
 
     print(
         "Saved embeddings.json"
     )
+
+    return embeddings
+
+
+if __name__ == "__main__":
+
+    generate_embeddings()

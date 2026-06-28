@@ -61,29 +61,28 @@ def load_vectors():
                 ],
 
                 metadatas=[
-                    {
-                        "metric_id":
-                            record["metric_id"],
+    {
 
-                        "metric_name":
-                            record["metric_name"],
+        "metric_id":
+            record["metric_id"],
 
-                        "abbreviation":
-                            record["abbreviation"],
+        "metric_name":
+            record["metric_name"],
 
-                        "sheet_name":
-                            record.get(
-                                "sheet_name",
-                                ""
-                            ),
+        "abbreviation":
+            record["abbreviation"],
 
-                        "source_workbook":
-                            record.get(
-                                "source_workbook",
-                                ""
-                            )
-                    }
-                ]
+        "sheet_name":
+            record["sheet_name"],
+
+        "source_workbook":
+            record["source_workbook"],
+
+        "row_number":
+            record["row_number"]
+
+    }
+]
             )
 
             loaded += 1
