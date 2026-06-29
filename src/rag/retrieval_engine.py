@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 
@@ -6,8 +8,12 @@ class RetrievalEngine:
 
     def __init__(self):
 
+        BASE_DIR = Path(__file__).resolve().parent
+
+        DB_PATH = BASE_DIR / "vector_db"
+
         self.client = chromadb.PersistentClient(
-            path="./vector_db"
+            path=str(DB_PATH)
         )
 
         self.collection = self.client.get_collection(
@@ -47,9 +53,7 @@ if __name__ == "__main__":
 
     while True:
 
-        question = input(
-            "\nAsk > "
-        )
+        question = input("\nAsk > ")
 
         if question.lower() == "exit":
             break
@@ -64,16 +68,11 @@ if __name__ == "__main__":
 
             print("-" * 60)
 
-            print(
-                result["documents"][0][i]
-            )
+            print(result["documents"][0][i])
 
-            print(
-                result["metadatas"][0][i]
-            )
+            print(result["metadatas"][0][i])
 
             print(
                 "Distance:",
                 result["distances"][0][i]
             )
-

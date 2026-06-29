@@ -1,8 +1,7 @@
-from retrieval_engine import RetrievalEngine
-from prompt_builder import build_prompt
-from llm_service import ask_llm
-from response_parser import parse_response
-
+from src.rag.retrieval_engine import RetrievalEngine
+from src.rag.prompt_builder import build_prompt
+from src.rag.llm_service import ask_llm
+from src.rag.response_parser import parse_response
 
 engine = RetrievalEngine()
 

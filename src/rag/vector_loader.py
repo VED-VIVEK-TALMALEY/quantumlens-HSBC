@@ -1,6 +1,6 @@
 import json
 import chromadb
-
+from pathlib import Path
 
 # ----------------------------------------
 # Load Embeddings
@@ -15,12 +15,11 @@ def load_embeddings(path="embeddings.json"):
 # ----------------------------------------
 # Connect to ChromaDB
 # ----------------------------------------
-
+BASE_DIR = Path(__file__).resolve().parent
 def get_collection():
-
     client = chromadb.PersistentClient(
-        path="./vector_db"
-    )
+    path=str(BASE_DIR / "vector_db")
+)
 
     collection = client.get_or_create_collection(
         name="hsbc_kpis"
