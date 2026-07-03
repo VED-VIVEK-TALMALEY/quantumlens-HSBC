@@ -3,19 +3,20 @@ from dotenv import load_dotenv
 from supabase import create_client
 import os
 import json
-
+from src.config.settings import settings
+from src.utils.logger import logger
+import time
+logger.info(
+    "Generating embeddings..."
+)
 load_dotenv()
-
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
 supabase = create_client(
-    SUPABASE_URL,
-    SUPABASE_KEY
+    settings.SUPABASE_URL,
+    settings.SUPABASE_KEY
 )
 
 model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
+    settings.EMBEDDING_MODEL
 )
 
 
@@ -128,13 +129,13 @@ row.get(
 
     with open(
 
-        "embeddings.json",
+    settings.EMBEDDINGS_PATH,
 
-        "w",
+    "w",
 
-        encoding="utf-8"
+    encoding="utf-8"
 
-    ) as f:
+) as f:
 
         json.dump(
 
@@ -153,8 +154,12 @@ row.get(
     print(
         "Saved embeddings.json"
     )
+    logger.info(
+        f"{len(embeddings)} embeddings generated."
+)
 
     return embeddings
+
 
 
 if __name__ == "__main__":

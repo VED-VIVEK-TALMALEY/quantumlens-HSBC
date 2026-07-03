@@ -1,3 +1,5 @@
+from src.utils.logger import logger
+
 from supabase import create_client
 from dotenv import load_dotenv
 import os
@@ -17,10 +19,18 @@ engine = RetrievalEngine()
 
 def ask_question(question: str):
 
+    logger.info(
+        f"/ask : {question}"
+    )
+
     return ask(question)
 
 
 def search_metrics(query: str, top_k: int = 5):
+
+    logger.info(
+        f"/search : {query}"
+    )
 
     return engine.search(
         query=query,
@@ -29,6 +39,10 @@ def search_metrics(query: str, top_k: int = 5):
 
 
 def get_all_metrics():
+
+    logger.info(
+        "/metrics requested"
+    )
 
     result = (
         supabase
@@ -41,7 +55,13 @@ def get_all_metrics():
     )
 
     return result.data
+
+
 def get_metric_by_id(metric_id: int):
+
+    logger.info(
+        f"/metric/{metric_id}"
+    )
 
     result = (
         supabase

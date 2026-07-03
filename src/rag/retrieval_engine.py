@@ -2,32 +2,31 @@ from pathlib import Path
 
 import chromadb
 from sentence_transformers import SentenceTransformer
+from src.config.settings import settings
 
 
 class RetrievalEngine:
 
     def __init__(self):
 
-        BASE_DIR = Path(__file__).resolve().parent
-
-        DB_PATH = BASE_DIR / "vector_db"
-
-        self.client = chromadb.PersistentClient(
+      DB_PATH = settings.VECTOR_DB_PATH
+      
+      self.client = chromadb.PersistentClient(
             path=str(DB_PATH)
         )
 
-        self.collection = self.client.get_collection(
+      self.collection = self.client.get_collection(
             "hsbc_kpis"
         )
 
-        self.model = SentenceTransformer(
-            "all-MiniLM-L6-v2"
+      self.model = SentenceTransformer(
+            settings.EMBEDDING_MODEL
         )
 
     def search(
         self,
         query,
-        top_k=5
+        top_k=settings.TOP_K
     ):
 
         query_embedding = self.model.encode(

@@ -1,25 +1,36 @@
 import json
+
 import chromadb
-from pathlib import Path
+
+from src.utils.logger import logger
+from src.config.settings import settings
+# ----------------------------------------
+# Paths
+# ----------------------------------------
 
 # ----------------------------------------
 # Load Embeddings
 # ----------------------------------------
+def load_embeddings():
 
-def load_embeddings(path="embeddings.json"):
+    with open(
+        settings.EMBEDDINGS_PATH,
+        "r",
+        encoding="utf-8"
+    ) as f:
 
-    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 # ----------------------------------------
 # Connect to ChromaDB
 # ----------------------------------------
-BASE_DIR = Path(__file__).resolve().parent
+
 def get_collection():
+
     client = chromadb.PersistentClient(
-    path=str(BASE_DIR / "vector_db")
-)
+        path=str(settings.VECTOR_DB_PATH)
+    )
 
     collection = client.get_or_create_collection(
         name="hsbc_kpis"
@@ -33,6 +44,8 @@ def get_collection():
 # ----------------------------------------
 
 def load_vectors():
+
+    logger.info("Loading vectors...")
 
     embeddings = load_embeddings()
 
@@ -60,28 +73,15 @@ def load_vectors():
                 ],
 
                 metadatas=[
-    {
-
-        "metric_id":
-            record["metric_id"],
-
-        "metric_name":
-            record["metric_name"],
-
-        "abbreviation":
-            record["abbreviation"],
-
-        "sheet_name":
-            record["sheet_name"],
-
-        "source_workbook":
-            record["source_workbook"],
-
-        "row_number":
-            record["row_number"]
-
-    }
-]
+                    {
+                        "metric_id": record["metric_id"],
+                        "metric_name": record["metric_name"],
+                        "abbreviation": record["abbreviation"],
+                        "sheet_name": record["sheet_name"],
+                        "source_workbook": record["source_workbook"],
+                        "row_number": record["row_number"]
+                    }
+                ]
             )
 
             loaded += 1
@@ -101,6 +101,10 @@ def load_vectors():
     print(f"Loaded : {loaded}")
     print(f"Failed : {failed}")
     print(f"Collection Count : {collection.count()}")
+
+    logger.info(
+        f"{collection.count()} vectors in ChromaDB"
+    )
 
 
 # ----------------------------------------

@@ -1,11 +1,8 @@
 from groq import Groq
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
+from src.config.settings import settings
 
 client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
+    api_key=settings.GROQ_API_KEY
 )
 
 
@@ -13,7 +10,7 @@ def ask_llm(prompt):
 
     response = client.chat.completions.create(
 
-        model="llama-3.3-70b-versatile",
+        model=settings.LLM_MODEL,
 
         messages=[
             {
@@ -22,8 +19,8 @@ def ask_llm(prompt):
             }
         ],
 
-        temperature=0.2,
-        max_tokens=512
+        temperature=settings.TEMPERATURE,
+        max_tokens=settings.MAX_TOKENS
 
     )
 
