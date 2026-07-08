@@ -1,13 +1,9 @@
 from src.utils.logger import logger
-
 from supabase import create_client
-from dotenv import load_dotenv
 import os
 
 from src.rag.rag_pipeline import ask
 from src.rag.retrieval_engine import RetrievalEngine
-
-load_dotenv()
 
 supabase = create_client(
     os.getenv("SUPABASE_URL"),
@@ -46,7 +42,7 @@ def get_all_metrics():
 
     result = (
         supabase
-        .table("metric_definitions")
+        .table("metrics")
         .select(
             "metric_id,metric_name,abbreviation"
         )
@@ -54,7 +50,15 @@ def get_all_metrics():
         .execute()
     )
 
-    return result.data
+    unique_metrics = {}
+
+    for row in result.data:
+
+        if row["metric_id"] not in unique_metrics:
+
+            unique_metrics[row["metric_id"]] = row
+
+    return list(unique_metrics.values())
 
 
 def get_metric_by_id(metric_id: int):
