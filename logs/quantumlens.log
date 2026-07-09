@@ -7352,3 +7352,1369 @@
 2026-07-06 13:30:43,112 | INFO | 9 changes detected
 2026-07-06 19:29:20,211 | INFO | 9 changes detected
 2026-07-06 19:29:30,103 | INFO | 9 changes detected
+2026-07-09 00:29:47,676 | INFO | No device provided, using cpu
+2026-07-09 00:29:48,119 | INFO | HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-07-09 00:29:48,351 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:48,352 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 00:29:48,365 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:48,606 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:48,621 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:48,639 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:29:48,864 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:48,875 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:49,103 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:49,117 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:29:49,357 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:49,368 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:49,598 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:49,609 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:49,853 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:50,094 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:50,105 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:50,508 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:50,743 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:50,980 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:51,211 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:51,442 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:51,455 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:51,699 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:51,715 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:51,947 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:51,960 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:52,192 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:52,206 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:52,453 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:52,695 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:29:52,989 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:53,055 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:53,309 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:29:53,488 | INFO | No device provided, using cpu
+2026-07-09 00:29:53,714 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:53,724 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:53,998 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:54,014 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:54,018 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:29:54,252 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:54,266 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:54,495 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:54,516 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:29:54,748 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:54,760 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:54,992 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:55,006 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:55,235 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:55,464 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:55,479 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:55,741 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:55,984 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:56,214 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:56,448 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:56,692 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:56,705 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:56,938 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:56,950 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:57,182 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:57,197 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:57,426 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:57,437 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:57,667 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:29:57,908 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:29:58,172 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:29:58,185 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:29:58,419 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:30:09,860 | INFO | No device provided, using cpu
+2026-07-09 00:30:09,944 | INFO | 3 changes detected
+2026-07-09 00:30:10,354 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:10,356 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 00:30:10,368 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:10,606 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:10,619 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:10,622 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:30:11,105 | INFO | 1 change detected
+2026-07-09 00:30:11,122 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:11,135 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:11,360 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:11,373 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:30:11,609 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:11,620 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:11,848 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:11,861 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:12,089 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:12,331 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:12,345 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:12,679 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:12,910 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:13,146 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:13,439 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:13,670 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:13,681 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:13,911 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:13,925 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:14,160 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:14,176 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:14,411 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:14,424 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:14,662 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:14,900 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:30:15,170 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:15,183 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:15,418 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:30:15,604 | INFO | No device provided, using cpu
+2026-07-09 00:30:15,830 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:15,843 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:16,070 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:16,083 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:16,086 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:30:16,309 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:16,324 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:16,548 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:16,559 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:30:16,784 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:16,797 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:17,027 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:17,040 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:17,278 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:17,501 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:17,511 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:17,771 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:18,007 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:18,231 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:18,459 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:18,687 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:18,700 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:18,972 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:18,988 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:19,230 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:19,245 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:19,478 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:19,497 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:19,732 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:30:19,966 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:30:20,243 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:30:20,255 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:30:20,491 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:30:45,672 | INFO | /record/12
+2026-07-09 00:30:47,171 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.12 "HTTP/2 200 OK"
+2026-07-09 00:31:04,931 | INFO | /record/1
+2026-07-09 00:31:05,551 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 00:35:34,790 | INFO | 1 change detected
+2026-07-09 00:35:35,545 | INFO | 7 changes detected
+2026-07-09 00:36:40,587 | INFO | 1 change detected
+2026-07-09 00:36:42,055 | INFO | 1 change detected
+2026-07-09 00:36:42,418 | INFO | 5 changes detected
+2026-07-09 00:36:49,890 | INFO | No device provided, using cpu
+2026-07-09 00:36:49,949 | INFO | 3 changes detected
+2026-07-09 00:36:50,317 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:50,331 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:50,561 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:50,563 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 00:36:50,575 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:50,579 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:36:50,765 | INFO | 1 change detected
+2026-07-09 00:36:50,802 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:50,812 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:51,039 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:51,054 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:36:51,275 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:51,288 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:51,511 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:51,525 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:51,726 | INFO | 1 change detected
+2026-07-09 00:36:51,754 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:51,978 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:51,991 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:52,321 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:52,548 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:52,781 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:53,017 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:53,243 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:53,253 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:53,555 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:53,567 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:53,802 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:53,814 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:54,055 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:54,068 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:54,315 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:54,547 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:36:54,857 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:54,871 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:55,112 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:36:55,606 | INFO | No device provided, using cpu
+2026-07-09 00:36:55,831 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:55,845 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:56,070 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:56,082 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:56,089 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:36:56,320 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:56,331 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:56,561 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:56,575 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:36:56,803 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:56,815 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:57,112 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:57,125 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:57,377 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:57,610 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:57,626 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:57,976 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:58,211 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:58,446 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:58,671 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:36:58,896 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:58,909 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:59,136 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:59,146 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:59,377 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:59,389 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:59,617 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:36:59,629 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:36:59,860 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:00,100 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:37:00,360 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:00,377 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:00,609 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:37:01,884 | INFO | 1 change detected
+2026-07-09 00:37:02,248 | INFO | 5 changes detected
+2026-07-09 00:37:13,369 | INFO | No device provided, using cpu
+2026-07-09 00:37:13,459 | INFO | 3 changes detected
+2026-07-09 00:37:14,147 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:14,150 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 00:37:14,165 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:14,400 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:14,413 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:14,422 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:37:14,647 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:14,660 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:15,018 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:15,032 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:37:15,269 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:15,285 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:15,522 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:15,536 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:15,773 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:16,003 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:16,016 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:16,487 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:16,723 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:16,952 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:17,189 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:17,420 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:17,431 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:17,659 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:17,669 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:17,723 | INFO | 1 change detected
+2026-07-09 00:37:17,894 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:17,905 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:18,202 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:18,213 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:18,461 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:18,697 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:37:19,012 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:19,023 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:19,265 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:37:19,836 | INFO | No device provided, using cpu
+2026-07-09 00:37:20,063 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:20,075 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:20,305 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:20,315 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:20,322 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 00:37:20,550 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:20,562 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:20,795 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:20,811 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 00:37:21,044 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:21,060 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:21,295 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:21,308 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:21,541 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:21,772 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:21,787 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:22,134 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:22,368 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:22,597 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:22,832 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:23,063 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:23,075 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:23,307 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:23,317 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:23,544 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:23,557 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:23,792 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:23,808 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:24,051 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 00:37:24,282 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 00:37:24,601 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 00:37:24,615 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 00:37:24,858 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 00:37:26,865 | INFO | /metric/31
+2026-07-09 00:37:28,085 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 00:39:49,374 | INFO | 1 change detected
+2026-07-09 00:39:50,245 | INFO | 7 changes detected
+2026-07-09 00:44:56,644 | INFO | 1 change detected
+2026-07-09 00:44:57,361 | INFO | 7 changes detected
+2026-07-09 00:46:42,862 | INFO | 1 change detected
+2026-07-09 00:46:45,834 | INFO | 1 change detected
+2026-07-09 00:46:55,469 | INFO | 1 change detected
+2026-07-09 00:47:33,049 | INFO | 1 change detected
+2026-07-09 00:47:57,484 | INFO | 1 change detected
+2026-07-09 00:47:58,289 | INFO | 7 changes detected
+2026-07-09 00:48:01,280 | INFO | 1 change detected
+2026-07-09 00:48:04,420 | INFO | 1 change detected
+2026-07-09 00:48:07,913 | INFO | 1 change detected
+2026-07-09 00:49:15,267 | INFO | 1 change detected
+2026-07-09 00:49:28,719 | INFO | 1 change detected
+2026-07-09 02:02:58,571 | INFO | 1 change detected
+2026-07-09 02:02:59,426 | INFO | 7 changes detected
+2026-07-09 02:03:03,620 | INFO | 1 change detected
+2026-07-09 02:03:08,528 | INFO | 1 change detected
+2026-07-09 02:03:10,606 | INFO | 1 change detected
+2026-07-09 02:03:49,088 | INFO | 1 change detected
+2026-07-09 02:03:53,686 | INFO | 1 change detected
+2026-07-09 02:03:54,848 | INFO | 1 change detected
+2026-07-09 02:04:02,941 | INFO | 1 change detected
+2026-07-09 02:04:07,910 | INFO | 1 change detected
+2026-07-09 02:05:02,200 | INFO | 1 change detected
+2026-07-09 02:05:02,553 | INFO | 3 changes detected
+2026-07-09 02:05:02,906 | INFO | 67 changes detected
+2026-07-09 02:05:03,269 | INFO | 1 change detected
+2026-07-09 02:05:03,685 | INFO | 8 changes detected
+2026-07-09 02:05:05,704 | INFO | 9 changes detected
+2026-07-09 02:05:09,563 | INFO | 34 changes detected
+2026-07-09 02:05:10,520 | INFO | /metrics requested
+2026-07-09 02:05:10,629 | INFO | 1 change detected
+2026-07-09 02:05:11,780 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:05:12,003 | INFO | 1 change detected
+2026-07-09 02:05:12,623 | INFO | 9 changes detected
+2026-07-09 02:05:14,206 | INFO | /metric/1
+2026-07-09 02:05:14,358 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:05:14,396 | INFO | 1 change detected
+2026-07-09 02:05:14,760 | INFO | 1 change detected
+2026-07-09 02:05:15,743 | INFO | /metric/1
+2026-07-09 02:05:15,886 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:05:15,935 | INFO | 1 change detected
+2026-07-09 02:05:16,293 | INFO | 1 change detected
+2026-07-09 02:05:31,071 | INFO | 4 changes detected
+2026-07-09 02:05:31,433 | INFO | 5 changes detected
+2026-07-09 02:05:32,402 | INFO | 1 change detected
+2026-07-09 02:05:33,112 | INFO | 4 changes detected
+2026-07-09 02:05:33,475 | INFO | 9 changes detected
+2026-07-09 02:05:34,396 | INFO | 1 change detected
+2026-07-09 02:05:35,260 | INFO | 9 changes detected
+2026-07-09 02:05:46,390 | INFO | 12 changes detected
+2026-07-09 02:05:46,742 | INFO | 1 change detected
+2026-07-09 02:05:47,404 | INFO | 1 change detected
+2026-07-09 02:05:48,424 | INFO | 9 changes detected
+2026-07-09 02:05:52,906 | INFO | /metrics requested
+2026-07-09 02:05:53,101 | INFO | 1 change detected
+2026-07-09 02:05:53,328 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:05:53,517 | INFO | 1 change detected
+2026-07-09 02:05:55,005 | INFO | 9 changes detected
+2026-07-09 02:05:59,553 | INFO | 1 change detected
+2026-07-09 02:06:00,311 | INFO | 7 changes detected
+2026-07-09 02:06:04,004 | INFO | 8 changes detected
+2026-07-09 02:06:04,364 | INFO | 1 change detected
+2026-07-09 02:06:05,133 | INFO | 8 changes detected
+2026-07-09 02:06:05,493 | INFO | 1 change detected
+2026-07-09 02:06:06,402 | INFO | 1 change detected
+2026-07-09 02:06:06,808 | INFO | 9 changes detected
+2026-07-09 02:06:07,163 | INFO | 1 change detected
+2026-07-09 02:06:08,406 | INFO | /metric/1
+2026-07-09 02:06:08,695 | INFO | 10 changes detected
+2026-07-09 02:06:08,820 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:06:09,055 | INFO | 1 change detected
+2026-07-09 02:06:13,044 | INFO | 8 changes detected
+2026-07-09 02:06:13,397 | INFO | 1 change detected
+2026-07-09 02:06:14,712 | INFO | 4 changes detected
+2026-07-09 02:06:15,066 | INFO | 5 changes detected
+2026-07-09 02:06:15,433 | INFO | 1 change detected
+2026-07-09 02:06:16,815 | INFO | 9 changes detected
+2026-07-09 02:06:22,929 | INFO | 8 changes detected
+2026-07-09 02:06:23,289 | INFO | 1 change detected
+2026-07-09 02:06:24,978 | INFO | 9 changes detected
+2026-07-09 02:06:35,911 | INFO | 4 changes detected
+2026-07-09 02:06:36,263 | INFO | 5 changes detected
+2026-07-09 02:06:36,628 | INFO | 1 change detected
+2026-07-09 02:06:38,064 | INFO | 9 changes detected
+2026-07-09 02:06:41,244 | INFO | 8 changes detected
+2026-07-09 02:06:41,595 | INFO | 1 change detected
+2026-07-09 02:06:42,410 | INFO | 1 change detected
+2026-07-09 02:06:43,327 | INFO | 9 changes detected
+2026-07-09 02:07:14,970 | INFO | 4 changes detected
+2026-07-09 02:07:15,154 | INFO | /metrics requested
+2026-07-09 02:07:15,334 | INFO | 8 changes detected
+2026-07-09 02:07:15,567 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:07:15,695 | INFO | 1 change detected
+2026-07-09 02:07:16,211 | INFO | 1 change detected
+2026-07-09 02:07:17,287 | INFO | 9 changes detected
+2026-07-09 02:07:27,121 | INFO | /metrics requested
+2026-07-09 02:07:27,283 | INFO | 1 change detected
+2026-07-09 02:07:27,306 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:07:27,639 | INFO | 1 change detected
+2026-07-09 02:07:29,231 | INFO | 9 changes detected
+2026-07-09 02:07:36,366 | INFO | /metric/31
+2026-07-09 02:07:36,538 | INFO | 1 change detected
+2026-07-09 02:07:36,584 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 02:07:36,893 | INFO | 1 change detected
+2026-07-09 02:07:45,806 | INFO | /metric/31
+2026-07-09 02:07:45,987 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 02:07:45,989 | INFO | 1 change detected
+2026-07-09 02:07:46,348 | INFO | 1 change detected
+2026-07-09 02:07:46,710 | INFO | /metric/35
+2026-07-09 02:07:46,846 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.35 "HTTP/2 200 OK"
+2026-07-09 02:07:46,909 | INFO | 1 change detected
+2026-07-09 02:07:47,275 | INFO | 1 change detected
+2026-07-09 02:09:06,592 | INFO | /metric/1
+2026-07-09 02:09:06,785 | INFO | 1 change detected
+2026-07-09 02:09:06,820 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:09:07,141 | INFO | 1 change detected
+2026-07-09 02:09:20,682 | INFO | 1 change detected
+2026-07-09 02:09:21,389 | INFO | 7 changes detected
+2026-07-09 02:09:26,529 | INFO | /metrics requested
+2026-07-09 02:09:26,557 | INFO | 8 changes detected
+2026-07-09 02:09:26,715 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:09:26,909 | INFO | 1 change detected
+2026-07-09 02:09:27,418 | INFO | 1 change detected
+2026-07-09 02:09:28,685 | INFO | 9 changes detected
+2026-07-09 02:09:53,183 | INFO | 8 changes detected
+2026-07-09 02:09:53,544 | INFO | 1 change detected
+2026-07-09 02:09:54,364 | INFO | 1 change detected
+2026-07-09 02:09:55,235 | INFO | 9 changes detected
+2026-07-09 02:10:41,360 | INFO | /metrics requested
+2026-07-09 02:10:41,514 | INFO | 1 change detected
+2026-07-09 02:10:41,551 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:10:41,866 | INFO | 1 change detected
+2026-07-09 02:10:43,441 | INFO | 9 changes detected
+2026-07-09 02:11:05,706 | INFO | /metric/35
+2026-07-09 02:11:05,896 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.35 "HTTP/2 200 OK"
+2026-07-09 02:11:05,927 | INFO | 1 change detected
+2026-07-09 02:11:06,281 | INFO | 1 change detected
+2026-07-09 02:11:12,607 | INFO | /metric/1
+2026-07-09 02:11:12,781 | INFO | 1 change detected
+2026-07-09 02:11:12,797 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:11:13,145 | INFO | 1 change detected
+2026-07-09 02:11:42,994 | INFO | 4 changes detected
+2026-07-09 02:11:43,052 | INFO | /metrics requested
+2026-07-09 02:11:43,257 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:11:43,346 | INFO | 9 changes detected
+2026-07-09 02:11:44,416 | INFO | 1 change detected
+2026-07-09 02:11:45,178 | INFO | 9 changes detected
+2026-07-09 02:11:46,410 | INFO | /metric/31
+2026-07-09 02:11:46,546 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 02:11:46,594 | INFO | 1 change detected
+2026-07-09 02:11:46,949 | INFO | 1 change detected
+2026-07-09 02:11:49,921 | INFO | /record/5
+2026-07-09 02:11:50,057 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.5 "HTTP/2 200 OK"
+2026-07-09 02:11:50,256 | INFO | 1 change detected
+2026-07-09 02:11:51,550 | INFO | /record/5
+2026-07-09 02:11:51,681 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.5 "HTTP/2 200 OK"
+2026-07-09 02:11:51,884 | INFO | 1 change detected
+2026-07-09 02:11:53,294 | INFO | /metric/1
+2026-07-09 02:11:53,425 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:11:53,457 | INFO | 1 change detected
+2026-07-09 02:11:53,816 | INFO | 1 change detected
+2026-07-09 02:11:55,294 | INFO | /record/1
+2026-07-09 02:11:55,429 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:11:55,640 | INFO | 1 change detected
+2026-07-09 02:11:55,868 | INFO | /record/23
+2026-07-09 02:11:56,000 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 02:11:56,247 | INFO | 1 change detected
+2026-07-09 02:11:56,408 | INFO | /record/25
+2026-07-09 02:11:56,539 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:11:56,761 | INFO | 1 change detected
+2026-07-09 02:11:57,033 | INFO | /record/25
+2026-07-09 02:11:57,163 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:11:57,378 | INFO | 1 change detected
+2026-07-09 02:13:15,136 | INFO | 1 change detected
+2026-07-09 02:13:15,843 | INFO | 7 changes detected
+2026-07-09 02:13:23,684 | INFO | 4 changes detected
+2026-07-09 02:13:23,839 | INFO | /metrics requested
+2026-07-09 02:13:24,042 | INFO | 8 changes detected
+2026-07-09 02:13:24,399 | INFO | 1 change detected
+2026-07-09 02:13:24,561 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:13:24,752 | INFO | 1 change detected
+2026-07-09 02:13:25,926 | INFO | 9 changes detected
+2026-07-09 02:13:27,323 | INFO | /metric/1
+2026-07-09 02:13:27,459 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:13:27,542 | INFO | 1 change detected
+2026-07-09 02:13:27,911 | INFO | 1 change detected
+2026-07-09 02:13:28,881 | INFO | /record/1
+2026-07-09 02:13:29,014 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:13:29,236 | INFO | 1 change detected
+2026-07-09 02:13:31,028 | INFO | /record/23
+2026-07-09 02:13:31,164 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 02:13:31,371 | INFO | 1 change detected
+2026-07-09 02:13:32,638 | INFO | /record/25
+2026-07-09 02:13:32,771 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:13:32,995 | INFO | 1 change detected
+2026-07-09 02:13:34,190 | INFO | /record/1
+2026-07-09 02:13:34,332 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:13:34,523 | INFO | 1 change detected
+2026-07-09 02:13:35,468 | INFO | /record/25
+2026-07-09 02:13:35,597 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:13:35,792 | INFO | 1 change detected
+2026-07-09 02:14:33,723 | INFO | 6 changes detected
+2026-07-09 02:14:34,529 | INFO | 1 change detected
+2026-07-09 02:14:34,994 | INFO | 1 change detected
+2026-07-09 02:14:37,575 | INFO | 2 changes detected
+2026-07-09 02:18:25,473 | INFO | 1 change detected
+2026-07-09 02:18:26,331 | INFO | 7 changes detected
+2026-07-09 02:19:43,150 | INFO | 1 change detected
+2026-07-09 02:19:43,656 | INFO | 1 change detected
+2026-07-09 02:19:51,990 | INFO | 1 change detected
+2026-07-09 02:19:52,350 | INFO | 1 change detected
+2026-07-09 02:20:06,578 | INFO | 3 changes detected
+2026-07-09 02:21:27,630 | INFO | 1 change detected
+2026-07-09 02:21:28,653 | INFO | 7 changes detected
+2026-07-09 02:21:43,957 | INFO | 1 change detected
+2026-07-09 02:21:44,482 | INFO | 1 change detected
+2026-07-09 02:22:17,453 | INFO | 1 change detected
+2026-07-09 02:22:17,968 | INFO | 1 change detected
+2026-07-09 02:22:27,293 | INFO | 1 change detected
+2026-07-09 02:22:27,758 | INFO | 1 change detected
+2026-07-09 02:22:35,708 | INFO | 1 change detected
+2026-07-09 02:22:36,167 | INFO | 1 change detected
+2026-07-09 02:22:55,268 | INFO | 1 change detected
+2026-07-09 02:22:55,722 | INFO | 1 change detected
+2026-07-09 02:22:59,825 | INFO | 3 changes detected
+2026-07-09 02:23:00,290 | INFO | 1 change detected
+2026-07-09 02:23:06,024 | INFO | 3 changes detected
+2026-07-09 02:24:04,105 | INFO | 1 change detected
+2026-07-09 02:24:28,854 | INFO | 1 change detected
+2026-07-09 02:24:29,614 | INFO | 5 changes detected
+2026-07-09 02:24:29,970 | INFO | 2 changes detected
+2026-07-09 02:27:00,256 | INFO | 1 change detected
+2026-07-09 02:27:00,672 | INFO | 66 changes detected
+2026-07-09 02:27:01,034 | INFO | 3 changes detected
+2026-07-09 02:27:01,390 | INFO | 5 changes detected
+2026-07-09 02:27:03,364 | INFO | 11 changes detected
+2026-07-09 02:28:25,453 | INFO | 34 changes detected
+2026-07-09 02:28:26,270 | INFO | /metrics requested
+2026-07-09 02:28:26,418 | INFO | 1 change detected
+2026-07-09 02:28:27,149 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:28:27,379 | INFO | 1 change detected
+2026-07-09 02:28:28,389 | INFO | 9 changes detected
+2026-07-09 02:28:29,978 | INFO | /metric/28
+2026-07-09 02:28:30,137 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.28 "HTTP/2 200 OK"
+2026-07-09 02:28:30,158 | INFO | 1 change detected
+2026-07-09 02:28:30,519 | INFO | 1 change detected
+2026-07-09 02:28:31,119 | INFO | /record/24
+2026-07-09 02:28:31,267 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.24 "HTTP/2 200 OK"
+2026-07-09 02:28:31,476 | INFO | 1 change detected
+2026-07-09 02:28:35,170 | INFO | 1 change detected
+2026-07-09 02:28:36,086 | INFO | 5 changes detected
+2026-07-09 02:28:36,446 | INFO | 2 changes detected
+2026-07-09 02:28:50,087 | INFO | 4 changes detected
+2026-07-09 02:28:51,164 | INFO | 4 changes detected
+2026-07-09 02:28:51,576 | INFO | 5 changes detected
+2026-07-09 02:28:52,386 | INFO | 1 change detected
+2026-07-09 02:28:53,397 | INFO | 9 changes detected
+2026-07-09 02:29:22,160 | INFO | 4 changes detected
+2026-07-09 02:29:22,915 | INFO | 18 changes detected
+2026-07-09 02:29:23,275 | INFO | 1 change detected
+2026-07-09 02:29:23,641 | INFO | 1 change detected
+2026-07-09 02:29:25,164 | INFO | 3 changes detected
+2026-07-09 02:29:25,519 | INFO | 11 changes detected
+2026-07-09 02:29:26,398 | INFO | /record/26
+2026-07-09 02:29:26,604 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.26 "HTTP/2 200 OK"
+2026-07-09 02:29:26,789 | INFO | 1 change detected
+2026-07-09 02:29:44,808 | INFO | /metric/1
+2026-07-09 02:29:45,006 | INFO | 1 change detected
+2026-07-09 02:29:45,013 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:29:45,359 | INFO | 1 change detected
+2026-07-09 02:29:46,811 | INFO | /record/1
+2026-07-09 02:29:46,960 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:29:47,189 | INFO | 1 change detected
+2026-07-09 02:33:04,201 | INFO | /record/25
+2026-07-09 02:33:04,923 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:33:05,150 | INFO | 1 change detected
+2026-07-09 02:33:05,241 | INFO | /record/25
+2026-07-09 02:33:05,380 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:33:05,561 | INFO | 1 change detected
+2026-07-09 02:33:06,401 | INFO | /record/25
+2026-07-09 02:33:06,560 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:33:06,737 | INFO | 1 change detected
+2026-07-09 02:33:42,067 | INFO | 1 change detected
+2026-07-09 02:33:42,926 | INFO | 7 changes detected
+2026-07-09 02:33:53,587 | INFO | 4 changes detected
+2026-07-09 02:33:53,941 | INFO | 5 changes detected
+2026-07-09 02:33:54,405 | INFO | 1 change detected
+2026-07-09 02:33:55,790 | INFO | /record/25
+2026-07-09 02:33:55,832 | INFO | 9 changes detected
+2026-07-09 02:33:56,275 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:33:56,448 | INFO | 1 change detected
+2026-07-09 02:33:58,014 | INFO | /record/25
+2026-07-09 02:33:58,202 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:33:58,421 | INFO | 1 change detected
+2026-07-09 02:34:12,553 | INFO | /metrics requested
+2026-07-09 02:34:12,687 | INFO | 1 change detected
+2026-07-09 02:34:12,752 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:34:13,049 | INFO | 1 change detected
+2026-07-09 02:34:14,673 | INFO | 9 changes detected
+2026-07-09 02:34:15,251 | INFO | /metric/1
+2026-07-09 02:34:15,404 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:34:15,435 | INFO | 1 change detected
+2026-07-09 02:34:15,795 | INFO | 1 change detected
+2026-07-09 02:34:16,981 | INFO | /record/1
+2026-07-09 02:34:17,117 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:34:17,373 | INFO | 1 change detected
+2026-07-09 02:35:22,457 | INFO | 4 changes detected
+2026-07-09 02:35:22,818 | INFO | 5 changes detected
+2026-07-09 02:35:23,377 | INFO | 1 change detected
+2026-07-09 02:35:24,692 | INFO | 9 changes detected
+2026-07-09 02:35:27,410 | INFO | /metrics requested
+2026-07-09 02:35:27,528 | INFO | 1 change detected
+2026-07-09 02:35:27,813 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:35:28,046 | INFO | 1 change detected
+2026-07-09 02:35:29,465 | INFO | 9 changes detected
+2026-07-09 02:35:31,891 | INFO | /metric/1
+2026-07-09 02:35:32,050 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:35:32,092 | INFO | 1 change detected
+2026-07-09 02:35:32,450 | INFO | 1 change detected
+2026-07-09 02:35:34,259 | INFO | /record/23
+2026-07-09 02:35:34,400 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 02:35:34,637 | INFO | 1 change detected
+2026-07-09 02:35:34,802 | INFO | /record/1
+2026-07-09 02:35:34,951 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:35:35,148 | INFO | 1 change detected
+2026-07-09 02:36:11,940 | INFO | /metrics requested
+2026-07-09 02:36:12,118 | INFO | 1 change detected
+2026-07-09 02:36:12,144 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:36:12,479 | INFO | 1 change detected
+2026-07-09 02:36:13,314 | INFO | /metric/1
+2026-07-09 02:36:13,472 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:36:13,488 | INFO | 1 change detected
+2026-07-09 02:36:13,848 | INFO | 1 change detected
+2026-07-09 02:36:14,211 | INFO | 9 changes detected
+2026-07-09 02:36:16,166 | INFO | /metrics requested
+2026-07-09 02:36:16,305 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:36:16,348 | INFO | 1 change detected
+2026-07-09 02:36:16,714 | INFO | 1 change detected
+2026-07-09 02:36:18,280 | INFO | 9 changes detected
+2026-07-09 02:36:19,946 | INFO | /metric/31
+2026-07-09 02:36:20,099 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 02:36:20,155 | INFO | 1 change detected
+2026-07-09 02:36:20,508 | INFO | 1 change detected
+2026-07-09 02:36:21,283 | INFO | /record/5
+2026-07-09 02:36:21,426 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.5 "HTTP/2 200 OK"
+2026-07-09 02:36:21,673 | INFO | 1 change detected
+2026-07-09 02:36:48,910 | INFO | 1 change detected
+2026-07-09 02:36:49,773 | INFO | 7 changes detected
+2026-07-09 02:36:52,450 | INFO | 4 changes detected
+2026-07-09 02:36:52,857 | INFO | 5 changes detected
+2026-07-09 02:36:53,411 | INFO | 1 change detected
+2026-07-09 02:36:54,822 | INFO | 1 change detected
+2026-07-09 02:37:01,496 | INFO | 4 changes detected
+2026-07-09 02:37:01,610 | INFO | /metrics requested
+2026-07-09 02:37:01,803 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:37:01,850 | INFO | 5 changes detected
+2026-07-09 02:37:02,206 | INFO | 1 change detected
+2026-07-09 02:37:02,766 | INFO | /metrics requested
+2026-07-09 02:37:02,862 | INFO | 1 change detected
+2026-07-09 02:37:02,899 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:37:03,223 | INFO | 1 change detected
+2026-07-09 02:37:04,839 | INFO | 2 changes detected
+2026-07-09 02:37:05,210 | INFO | 13 changes detected
+2026-07-09 02:37:05,575 | INFO | 2 changes detected
+2026-07-09 02:37:05,942 | INFO | 2 changes detected
+2026-07-09 02:37:06,344 | INFO | 5 changes detected
+2026-07-09 02:37:06,699 | INFO | 123 changes detected
+2026-07-09 02:37:15,817 | INFO | 5 changes detected
+2026-07-09 02:37:16,174 | INFO | 1 change detected
+2026-07-09 02:37:16,528 | INFO | 1 change detected
+2026-07-09 02:37:17,896 | INFO | 9 changes detected
+2026-07-09 02:37:19,335 | INFO | /metrics requested
+2026-07-09 02:37:19,476 | INFO | 1 change detected
+2026-07-09 02:37:19,512 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:37:19,831 | INFO | 1 change detected
+2026-07-09 02:37:21,414 | INFO | 9 changes detected
+2026-07-09 02:37:22,413 | INFO | /metric/31
+2026-07-09 02:37:22,565 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 02:37:22,628 | INFO | 1 change detected
+2026-07-09 02:37:22,983 | INFO | 1 change detected
+2026-07-09 02:37:24,371 | INFO | /record/5
+2026-07-09 02:37:24,505 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.5 "HTTP/2 200 OK"
+2026-07-09 02:37:24,753 | INFO | 1 change detected
+2026-07-09 02:38:55,801 | INFO | 1 change detected
+2026-07-09 02:38:56,169 | INFO | 39 changes detected
+2026-07-09 02:38:56,525 | INFO | 1 change detected
+2026-07-09 02:38:56,929 | INFO | 1 change detected
+2026-07-09 02:38:57,392 | INFO | 1 change detected
+2026-07-09 02:38:58,162 | INFO | 1 change detected
+2026-07-09 02:38:59,030 | INFO | 4 changes detected
+2026-07-09 02:38:59,578 | INFO | /metrics requested
+2026-07-09 02:38:59,642 | INFO | 1 change detected
+2026-07-09 02:38:59,775 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:39:00,406 | INFO | 1 change detected
+2026-07-09 02:39:01,680 | INFO | 11 changes detected
+2026-07-09 02:39:03,312 | INFO | 5 changes detected
+2026-07-09 02:39:03,689 | INFO | 1 change detected
+2026-07-09 02:39:04,050 | INFO | 1 change detected
+2026-07-09 02:39:04,417 | INFO | 1 change detected
+2026-07-09 02:39:05,781 | INFO | 11 changes detected
+2026-07-09 02:39:06,696 | INFO | 1 change detected
+2026-07-09 02:39:07,616 | INFO | 4 changes detected
+2026-07-09 02:39:07,978 | INFO | 4 changes detected
+2026-07-09 02:39:08,162 | INFO | /metrics requested
+2026-07-09 02:39:08,336 | INFO | 1 change detected
+2026-07-09 02:39:08,573 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:39:09,401 | INFO | 1 change detected
+2026-07-09 02:39:10,263 | INFO | 11 changes detected
+2026-07-09 02:39:16,455 | INFO | 1 change detected
+2026-07-09 02:39:16,819 | INFO | 5 changes detected
+2026-07-09 02:39:17,381 | INFO | 1 change detected
+2026-07-09 02:39:18,604 | INFO | 9 changes detected
+2026-07-09 02:39:22,708 | INFO | /metric/35
+2026-07-09 02:39:22,888 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.35 "HTTP/2 200 OK"
+2026-07-09 02:39:22,902 | INFO | 1 change detected
+2026-07-09 02:39:23,254 | INFO | 1 change detected
+2026-07-09 02:39:27,324 | INFO | /metric/1
+2026-07-09 02:39:27,482 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:39:27,497 | INFO | 1 change detected
+2026-07-09 02:39:27,856 | INFO | 1 change detected
+2026-07-09 02:39:28,727 | INFO | /record/1
+2026-07-09 02:39:28,885 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:39:29,126 | INFO | 1 change detected
+2026-07-09 02:39:49,958 | INFO | 1 change detected
+2026-07-09 02:39:50,822 | INFO | 7 changes detected
+2026-07-09 02:39:59,335 | INFO | 5 changes detected
+2026-07-09 02:39:59,699 | INFO | 1 change detected
+2026-07-09 02:40:00,410 | INFO | 1 change detected
+2026-07-09 02:40:01,427 | INFO | 9 changes detected
+2026-07-09 02:41:28,258 | INFO | 1 change detected
+2026-07-09 02:41:28,266 | INFO | /metrics requested
+2026-07-09 02:41:28,671 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:41:29,416 | INFO | 1 change detected
+2026-07-09 02:41:30,174 | INFO | 9 changes detected
+2026-07-09 02:41:34,077 | INFO | /metric/1
+2026-07-09 02:41:34,265 | INFO | 1 change detected
+2026-07-09 02:41:34,278 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:41:34,620 | INFO | 1 change detected
+2026-07-09 02:41:37,079 | INFO | /record/23
+2026-07-09 02:41:37,211 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 02:41:37,423 | INFO | 1 change detected
+2026-07-09 02:41:41,487 | INFO | /record/1
+2026-07-09 02:41:41,676 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:41:41,880 | INFO | 1 change detected
+2026-07-09 02:41:43,292 | INFO | /record/25
+2026-07-09 02:41:43,419 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:41:43,614 | INFO | 1 change detected
+2026-07-09 02:41:45,049 | INFO | /record/1
+2026-07-09 02:41:45,200 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:41:45,416 | INFO | 1 change detected
+2026-07-09 02:43:40,471 | INFO | 1 change detected
+2026-07-09 02:43:41,294 | INFO | 7 changes detected
+2026-07-09 02:43:48,973 | INFO | 1 change detected
+2026-07-09 02:43:49,335 | INFO | 5 changes detected
+2026-07-09 02:43:50,403 | INFO | 1 change detected
+2026-07-09 02:43:51,114 | INFO | 9 changes detected
+2026-07-09 02:43:53,677 | INFO | /metrics requested
+2026-07-09 02:43:53,764 | INFO | 1 change detected
+2026-07-09 02:43:54,069 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:43:54,274 | INFO | 1 change detected
+2026-07-09 02:43:55,743 | INFO | 9 changes detected
+2026-07-09 02:43:56,627 | INFO | /metric/1
+2026-07-09 02:43:56,760 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:43:56,811 | INFO | 1 change detected
+2026-07-09 02:43:57,173 | INFO | 1 change detected
+2026-07-09 02:43:59,139 | INFO | /record/1
+2026-07-09 02:43:59,273 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:43:59,506 | INFO | 1 change detected
+2026-07-09 02:44:44,040 | INFO | 1 change detected
+2026-07-09 02:44:44,400 | INFO | 5 changes detected
+2026-07-09 02:44:46,175 | INFO | 9 changes detected
+2026-07-09 02:45:06,792 | INFO | 9 changes detected
+2026-07-09 02:45:07,144 | INFO | 1 change detected
+2026-07-09 02:45:07,499 | INFO | 1 change detected
+2026-07-09 02:45:08,868 | INFO | 9 changes detected
+2026-07-09 02:48:24,351 | INFO | 1 change detected
+2026-07-09 02:48:25,162 | INFO | 5 changes detected
+2026-07-09 02:48:25,525 | INFO | 2 changes detected
+2026-07-09 02:48:40,436 | INFO | 8 changes detected
+2026-07-09 02:48:40,790 | INFO | 2 changes detected
+2026-07-09 02:48:41,503 | INFO | 1 change detected
+2026-07-09 02:48:41,965 | INFO | 1 change detected
+2026-07-09 02:51:21,966 | INFO | No device provided, using cpu
+2026-07-09 02:51:22,558 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:22,560 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 02:51:22,571 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:22,801 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:22,814 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:22,818 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 02:51:23,043 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:23,054 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:23,281 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:23,293 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 02:51:23,569 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:23,582 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:23,808 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:23,822 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:24,054 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:24,286 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:24,299 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:24,695 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:25,040 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:25,356 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:25,592 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:25,822 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:25,834 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:26,064 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:26,075 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:26,303 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:26,315 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:26,545 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:26,557 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:26,801 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:27,032 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 02:51:27,327 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:27,338 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:27,583 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 02:51:27,901 | INFO | No device provided, using cpu
+2026-07-09 02:51:28,239 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:28,252 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:28,480 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:28,493 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:28,497 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 02:51:28,721 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:28,733 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:28,974 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:28,986 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 02:51:29,215 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:29,227 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:29,461 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:29,473 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:29,705 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:29,930 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:29,943 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:30,227 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:30,457 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:30,690 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:30,920 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:31,153 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:31,169 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:31,420 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:31,432 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:31,709 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:31,723 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:31,957 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:31,971 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:32,213 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:32,448 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 02:51:32,844 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:32,858 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:33,094 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 02:51:44,510 | INFO | No device provided, using cpu
+2026-07-09 02:51:44,565 | INFO | 3 changes detected
+2026-07-09 02:51:45,117 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:45,131 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:45,363 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:45,365 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 02:51:45,377 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:45,381 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 02:51:45,608 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:45,620 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:45,789 | INFO | 1 change detected
+2026-07-09 02:51:45,855 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:45,869 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 02:51:46,098 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:46,111 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:46,407 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:46,420 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:46,649 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:46,972 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:46,985 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:47,485 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:47,711 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:47,944 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:48,175 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:48,403 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:48,417 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:48,649 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:48,662 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:49,013 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:49,026 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:49,262 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:49,272 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:49,505 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:49,734 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 02:51:50,140 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:50,152 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:50,383 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 02:51:50,687 | INFO | No device provided, using cpu
+2026-07-09 02:51:50,912 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:50,925 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:51,159 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:51,174 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:51,178 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-09 02:51:51,480 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:51,494 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:51,723 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:51,735 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-09 02:51:51,963 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:51,977 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:52,208 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:52,222 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:52,453 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:52,682 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:52,696 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:52,980 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:53,213 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:53,442 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:53,678 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:53,934 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:53,946 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:54,178 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:54,191 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:54,431 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:54,444 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:54,676 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:54,688 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:54,924 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 02:51:55,266 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 02:51:55,544 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 02:51:55,557 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-09 02:51:55,799 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-09 02:52:08,210 | INFO | 34 changes detected
+2026-07-09 02:52:10,236 | INFO | 9 changes detected
+2026-07-09 02:54:18,898 | INFO | /metrics requested
+2026-07-09 02:54:19,052 | INFO | 1 change detected
+2026-07-09 02:54:20,337 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:54:20,568 | INFO | 1 change detected
+2026-07-09 02:54:21,029 | INFO | 9 changes detected
+2026-07-09 02:54:30,084 | INFO | 1 change detected
+2026-07-09 02:54:30,940 | INFO | 7 changes detected
+2026-07-09 02:54:34,590 | INFO | 4 changes detected
+2026-07-09 02:54:34,956 | INFO | 8 changes detected
+2026-07-09 02:54:35,317 | INFO | 1 change detected
+2026-07-09 02:54:35,674 | INFO | 1 change detected
+2026-07-09 02:54:36,949 | INFO | 9 changes detected
+2026-07-09 02:54:41,148 | INFO | /metric/6
+2026-07-09 02:54:41,338 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.6 "HTTP/2 200 OK"
+2026-07-09 02:54:41,365 | INFO | 1 change detected
+2026-07-09 02:54:41,722 | INFO | 1 change detected
+2026-07-09 02:54:45,352 | INFO | /metric/1
+2026-07-09 02:54:45,483 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:54:45,520 | INFO | 1 change detected
+2026-07-09 02:54:45,875 | INFO | 1 change detected
+2026-07-09 02:54:47,430 | INFO | /record/1
+2026-07-09 02:54:47,589 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:54:47,858 | INFO | 1 change detected
+2026-07-09 02:54:59,943 | INFO | 4 changes detected
+2026-07-09 02:55:00,349 | INFO | 5 changes detected
+2026-07-09 02:55:01,376 | INFO | 1 change detected
+2026-07-09 02:55:02,241 | INFO | 19 changes detected
+2026-07-09 02:55:02,598 | INFO | 35 changes detected
+2026-07-09 02:55:02,961 | INFO | 1 change detected
+2026-07-09 02:55:03,325 | INFO | 1 change detected
+2026-07-09 02:55:03,781 | INFO | 4 changes detected
+2026-07-09 02:55:04,392 | INFO | 1 change detected
+2026-07-09 02:55:04,744 | INFO | 6 changes detected
+2026-07-09 02:55:05,098 | INFO | 1 change detected
+2026-07-09 02:55:05,986 | INFO | /metrics requested
+2026-07-09 02:55:06,008 | INFO | 1 change detected
+2026-07-09 02:55:06,176 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:55:06,362 | INFO | 4 changes detected
+2026-07-09 02:55:06,713 | INFO | 5 changes detected
+2026-07-09 02:55:07,279 | INFO | 1 change detected
+2026-07-09 02:55:08,649 | INFO | 11 changes detected
+2026-07-09 02:55:34,554 | INFO | 4 changes detected
+2026-07-09 02:55:34,906 | INFO | 8 changes detected
+2026-07-09 02:55:35,270 | INFO | 1 change detected
+2026-07-09 02:55:35,626 | INFO | 1 change detected
+2026-07-09 02:55:36,842 | INFO | 9 changes detected
+2026-07-09 02:55:37,982 | INFO | 10 changes detected
+2026-07-09 02:55:38,335 | INFO | 1 change detected
+2026-07-09 02:55:38,690 | INFO | 1 change detected
+2026-07-09 02:55:39,400 | INFO | 1 change detected
+2026-07-09 02:55:40,569 | INFO | 11 changes detected
+2026-07-09 02:55:45,632 | INFO | 4 changes detected
+2026-07-09 02:55:46,599 | INFO | 6 changes detected
+2026-07-09 02:55:47,116 | INFO | 1 change detected
+2026-07-09 02:55:47,338 | INFO | /metrics requested
+2026-07-09 02:55:47,469 | INFO | 1 change detected
+2026-07-09 02:55:47,790 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 02:55:48,023 | INFO | 1 change detected
+2026-07-09 02:55:49,438 | INFO | 11 changes detected
+2026-07-09 02:55:51,011 | INFO | /metric/1
+2026-07-09 02:55:51,140 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:55:51,217 | INFO | 1 change detected
+2026-07-09 02:55:51,570 | INFO | 1 change detected
+2026-07-09 02:55:52,497 | INFO | /record/1
+2026-07-09 02:55:52,729 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:55:52,941 | INFO | 1 change detected
+2026-07-09 02:56:33,416 | INFO | 4 changes detected
+2026-07-09 02:56:34,180 | INFO | 8 changes detected
+2026-07-09 02:56:34,539 | INFO | 1 change detected
+2026-07-09 02:56:35,155 | INFO | 1 change detected
+2026-07-09 02:56:36,267 | INFO | 9 changes detected
+2026-07-09 02:57:33,159 | INFO | 1 change detected
+2026-07-09 02:57:34,118 | INFO | 7 changes detected
+2026-07-09 02:57:47,341 | INFO | 4 changes detected
+2026-07-09 02:57:47,853 | INFO | 4 changes detected
+2026-07-09 02:57:48,210 | INFO | 1 change detected
+2026-07-09 02:57:48,620 | INFO | 1 change detected
+2026-07-09 02:57:49,945 | INFO | 9 changes detected
+2026-07-09 02:57:52,325 | INFO | /metric/1
+2026-07-09 02:57:52,715 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:57:52,937 | INFO | 1 change detected
+2026-07-09 02:57:56,666 | INFO | /metric/1
+2026-07-09 02:57:56,811 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:57:57,027 | INFO | 1 change detected
+2026-07-09 02:58:20,755 | INFO | 4 changes detected
+2026-07-09 02:58:21,114 | INFO | 4 changes detected
+2026-07-09 02:58:21,479 | INFO | 1 change detected
+2026-07-09 02:58:23,057 | INFO | 9 changes detected
+2026-07-09 02:58:24,907 | INFO | /record/1
+2026-07-09 02:58:25,108 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:58:25,292 | INFO | 1 change detected
+2026-07-09 02:58:26,290 | INFO | /metric/1
+2026-07-09 02:58:26,421 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:58:26,458 | INFO | 1 change detected
+2026-07-09 02:58:26,822 | INFO | 1 change detected
+2026-07-09 02:58:27,076 | INFO | /record/1
+2026-07-09 02:58:27,212 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:58:27,383 | INFO | 1 change detected
+2026-07-09 02:58:30,018 | INFO | /metric/2
+2026-07-09 02:58:30,165 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.2 "HTTP/2 200 OK"
+2026-07-09 02:58:30,215 | INFO | 1 change detected
+2026-07-09 02:58:30,578 | INFO | 1 change detected
+2026-07-09 02:58:31,892 | INFO | /record/2
+2026-07-09 02:58:32,042 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.2 "HTTP/2 200 OK"
+2026-07-09 02:58:32,254 | INFO | 1 change detected
+2026-07-09 02:58:57,750 | INFO | 4 changes detected
+2026-07-09 02:58:58,115 | INFO | 5 changes detected
+2026-07-09 02:58:58,469 | INFO | 1 change detected
+2026-07-09 02:58:59,954 | INFO | 9 changes detected
+2026-07-09 02:59:00,662 | INFO | 4 changes detected
+2026-07-09 02:59:01,024 | INFO | 4 changes detected
+2026-07-09 02:59:01,376 | INFO | 1 change detected
+2026-07-09 02:59:03,104 | INFO | 11 changes detected
+2026-07-09 02:59:09,345 | INFO | /record/2
+2026-07-09 02:59:09,549 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.2 "HTTP/2 200 OK"
+2026-07-09 02:59:09,746 | INFO | 1 change detected
+2026-07-09 02:59:10,372 | INFO | /metric/1
+2026-07-09 02:59:10,522 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 02:59:10,567 | INFO | 1 change detected
+2026-07-09 02:59:10,918 | INFO | 1 change detected
+2026-07-09 02:59:11,421 | INFO | /record/23
+2026-07-09 02:59:11,554 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 02:59:11,735 | INFO | 1 change detected
+2026-07-09 02:59:12,317 | INFO | /record/25
+2026-07-09 02:59:12,471 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 02:59:12,696 | INFO | 1 change detected
+2026-07-09 02:59:40,313 | INFO | 4 changes detected
+2026-07-09 02:59:40,668 | INFO | 7 changes detected
+2026-07-09 02:59:41,486 | INFO | 1 change detected
+2026-07-09 02:59:42,393 | INFO | 1 change detected
+2026-07-09 02:59:43,477 | INFO | 11 changes detected
+2026-07-09 02:59:44,366 | INFO | 1 change detected
+2026-07-09 03:01:53,136 | INFO | 1 change detected
+2026-07-09 03:01:53,992 | INFO | 7 changes detected
+2026-07-09 03:02:02,479 | INFO | 11 changes detected
+2026-07-09 03:02:02,843 | INFO | 1 change detected
+2026-07-09 03:02:03,200 | INFO | 1 change detected
+2026-07-09 03:02:03,559 | INFO | 1 change detected
+2026-07-09 03:02:05,051 | INFO | 11 changes detected
+2026-07-09 03:02:11,234 | INFO | 1 change detected
+2026-07-09 05:28:22,416 | INFO | 1 change detected
+2026-07-09 13:07:14,951 | INFO | 1 change detected
+2026-07-09 13:07:15,409 | INFO | 1 change detected
+2026-07-09 13:08:54,601 | INFO | 9 changes detected
+2026-07-09 13:08:55,419 | INFO | 1 change detected
+2026-07-09 13:17:13,481 | INFO | 1 change detected
+2026-07-09 13:17:15,451 | INFO | 7 changes detected
+2026-07-09 13:19:37,270 | INFO | 4 changes detected
+2026-07-09 13:19:37,934 | INFO | 10 changes detected
+2026-07-09 13:19:38,884 | INFO | /metrics requested
+2026-07-09 13:19:38,953 | INFO | 1 change detected
+2026-07-09 13:19:40,183 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 13:19:40,979 | INFO | 11 changes detected
+2026-07-09 13:19:43,240 | INFO | /metric/1
+2026-07-09 13:19:43,614 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 13:19:44,642 | INFO | /record/1
+2026-07-09 13:19:44,798 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 13:20:24,583 | INFO | /metric/2
+2026-07-09 13:20:25,051 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.2 "HTTP/2 200 OK"
+2026-07-09 13:20:25,815 | INFO | /record/2
+2026-07-09 13:20:25,953 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.2 "HTTP/2 200 OK"
+2026-07-09 13:20:30,451 | INFO | /metric/3
+2026-07-09 13:20:30,765 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.3 "HTTP/2 200 OK"
+2026-07-09 13:20:31,535 | INFO | /record/3
+2026-07-09 13:20:31,675 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.3 "HTTP/2 200 OK"
+2026-07-09 13:20:33,130 | INFO | /metric/1
+2026-07-09 13:20:33,528 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 13:20:34,785 | INFO | /record/25
+2026-07-09 13:20:35,051 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 13:20:35,760 | INFO | /record/23
+2026-07-09 13:20:35,908 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 13:20:36,895 | INFO | /record/1
+2026-07-09 13:20:37,048 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 13:21:56,091 | INFO | /record/23
+2026-07-09 13:21:56,667 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 13:21:58,173 | INFO | /record/25
+2026-07-09 13:21:58,315 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 13:22:02,899 | INFO | /metric/31
+2026-07-09 13:22:03,047 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.31 "HTTP/2 200 OK"
+2026-07-09 13:22:03,908 | INFO | /record/5
+2026-07-09 13:22:04,051 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.5 "HTTP/2 200 OK"
+2026-07-09 13:22:06,125 | INFO | /record/7
+2026-07-09 13:22:06,271 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.7 "HTTP/2 200 OK"
+2026-07-09 13:22:08,345 | INFO | /record/9
+2026-07-09 13:22:08,483 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.9 "HTTP/2 200 OK"
+2026-07-09 13:22:09,475 | INFO | /record/21
+2026-07-09 13:22:09,615 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.21 "HTTP/2 200 OK"
+2026-07-09 13:22:11,026 | INFO | /record/5
+2026-07-09 13:22:11,169 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.5 "HTTP/2 200 OK"
+2026-07-09 13:25:28,486 | INFO | 1 change detected
+2026-07-09 13:25:29,748 | INFO | 7 changes detected
+2026-07-09 13:25:54,124 | INFO | 2 changes detected
+2026-07-09 13:25:56,150 | INFO | 11 changes detected
+2026-07-09 13:26:01,157 | INFO | 2 changes detected
+2026-07-09 13:26:03,176 | INFO | 11 changes detected
+2026-07-09 13:26:09,451 | INFO | 2 changes detected
+2026-07-09 13:26:11,478 | INFO | 9 changes detected
+2026-07-09 13:26:15,118 | INFO | 2 changes detected
+2026-07-09 13:26:17,193 | INFO | 11 changes detected
+2026-07-09 13:26:21,683 | INFO | 5 changes detected
+2026-07-09 13:26:22,040 | INFO | 1 change detected
+2026-07-09 13:26:22,954 | INFO | 1 change detected
+2026-07-09 13:26:25,070 | INFO | 9 changes detected
+2026-07-09 13:26:34,366 | INFO | 4 changes detected
+2026-07-09 13:26:34,730 | INFO | 4 changes detected
+2026-07-09 13:26:36,515 | INFO | 9 changes detected
+2026-07-09 13:27:10,884 | INFO | 4 changes detected
+2026-07-09 13:27:11,300 | INFO | 13 changes detected
+2026-07-09 13:27:13,336 | INFO | 3 changes detected
+2026-07-09 13:27:13,693 | INFO | 11 changes detected
+2026-07-09 13:27:48,808 | INFO | 4 changes detected
+2026-07-09 13:27:49,164 | INFO | 4 changes detected
+2026-07-09 13:27:49,529 | INFO | 1 change detected
+2026-07-09 13:27:51,046 | INFO | 9 changes detected
+2026-07-09 13:27:52,340 | INFO | /metrics requested
+2026-07-09 13:27:52,514 | INFO | 1 change detected
+2026-07-09 13:27:52,984 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 13:27:54,431 | INFO | 9 changes detected
+2026-07-09 13:28:05,647 | INFO | 4 changes detected
+2026-07-09 13:28:06,008 | INFO | 9 changes detected
+2026-07-09 13:28:07,823 | INFO | 9 changes detected
+2026-07-09 13:28:13,034 | INFO | 4 changes detected
+2026-07-09 13:28:13,387 | INFO | 5 changes detected
+2026-07-09 13:28:15,211 | INFO | 9 changes detected
+2026-07-09 13:28:16,270 | INFO | 4 changes detected
+2026-07-09 13:28:18,287 | INFO | 9 changes detected
+2026-07-09 13:28:18,696 | INFO | 4 changes detected
+2026-07-09 13:28:19,049 | INFO | 8 changes detected
+2026-07-09 13:28:19,416 | INFO | 1 change detected
+2026-07-09 13:28:21,029 | INFO | 9 changes detected
+2026-07-09 13:28:29,162 | INFO | 4 changes detected
+2026-07-09 13:28:29,516 | INFO | 8 changes detected
+2026-07-09 13:28:29,883 | INFO | 1 change detected
+2026-07-09 13:28:30,747 | INFO | 1 change detected
+2026-07-09 13:28:31,458 | INFO | 9 changes detected
+2026-07-09 13:28:32,075 | INFO | 7 changes detected
+2026-07-09 13:28:38,236 | INFO | 8 changes detected
+2026-07-09 13:28:38,597 | INFO | 1 change detected
+2026-07-09 13:28:40,271 | INFO | 9 changes detected
+2026-07-09 13:28:41,332 | INFO | 4 changes detected
+2026-07-09 13:28:41,684 | INFO | 5 changes detected
+2026-07-09 13:28:43,448 | INFO | 9 changes detected
+2026-07-09 13:28:45,625 | INFO | 4 changes detected
+2026-07-09 13:28:45,977 | INFO | 5 changes detected
+2026-07-09 13:28:46,897 | INFO | 8 changes detected
+2026-07-09 13:28:47,256 | INFO | 1 change detected
+2026-07-09 13:28:48,977 | INFO | 9 changes detected
+2026-07-09 13:28:54,833 | INFO | 4 changes detected
+2026-07-09 13:28:55,190 | INFO | 5 changes detected
+2026-07-09 13:28:56,969 | INFO | 9 changes detected
+2026-07-09 13:28:59,860 | INFO | /metric/23
+2026-07-09 13:29:00,309 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.23 "HTTP/2 200 OK"
+2026-07-09 13:29:01,475 | INFO | /record/18
+2026-07-09 13:29:01,626 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.18 "HTTP/2 200 OK"
+2026-07-09 13:29:07,623 | INFO | 4 changes detected
+2026-07-09 13:29:07,974 | INFO | 8 changes detected
+2026-07-09 13:29:08,326 | INFO | 1 change detected
+2026-07-09 13:29:10,004 | INFO | 9 changes detected
+2026-07-09 13:29:21,988 | INFO | 4 changes detected
+2026-07-09 13:29:22,390 | INFO | 5 changes detected
+2026-07-09 13:29:24,211 | INFO | 9 changes detected
+2026-07-09 13:29:30,570 | INFO | 4 changes detected
+2026-07-09 13:29:30,923 | INFO | 4 changes detected
+2026-07-09 13:29:31,288 | INFO | 1 change detected
+2026-07-09 13:29:32,851 | INFO | 9 changes detected
+2026-07-09 13:29:38,722 | INFO | 4 changes detected
+2026-07-09 13:29:39,075 | INFO | 4 changes detected
+2026-07-09 13:29:39,434 | INFO | 1 change detected
+2026-07-09 13:29:41,009 | INFO | 9 changes detected
+2026-07-09 13:29:44,098 | INFO | 4 changes detected
+2026-07-09 13:29:44,464 | INFO | 8 changes detected
+2026-07-09 13:29:44,830 | INFO | 1 change detected
+2026-07-09 13:29:46,407 | INFO | 9 changes detected
+2026-07-09 13:31:32,174 | INFO | 1 change detected
+2026-07-09 13:31:32,983 | INFO | 7 changes detected
+2026-07-09 13:31:56,861 | INFO | 4 changes detected
+2026-07-09 13:31:57,224 | INFO | 4 changes detected
+2026-07-09 13:31:57,576 | INFO | 1 change detected
+2026-07-09 13:31:59,148 | INFO | 9 changes detected
+2026-07-09 13:32:02,183 | INFO | 4 changes detected
+2026-07-09 13:32:02,536 | INFO | 5 changes detected
+2026-07-09 13:32:04,364 | INFO | 9 changes detected
+2026-07-09 13:33:22,804 | INFO | 2 changes detected
+2026-07-09 13:33:24,332 | INFO | 1 change detected
+2026-07-09 13:33:26,451 | INFO | 11 changes detected
+2026-07-09 15:17:45,180 | INFO | 1 change detected
+2026-07-09 15:17:46,698 | INFO | 1 change detected
+2026-07-09 15:17:47,157 | INFO | 7 changes detected
+2026-07-09 15:17:48,885 | INFO | 10 changes detected
+2026-07-09 15:17:51,008 | INFO | 9 changes detected
+2026-07-09 15:17:51,864 | INFO | 1 change detected
+2026-07-09 15:17:52,227 | INFO | 5 changes detected
+2026-07-09 15:17:53,995 | INFO | 9 changes detected
+2026-07-09 15:17:55,916 | INFO | 1 change detected
+2026-07-09 15:17:58,046 | INFO | 9 changes detected
+2026-07-09 15:18:06,444 | INFO | 4 changes detected
+2026-07-09 15:18:06,825 | INFO | 6 changes detected
+2026-07-09 15:18:07,177 | INFO | 1 change detected
+2026-07-09 15:18:07,686 | INFO | 1 change detected
+2026-07-09 15:18:08,393 | INFO | 1 change detected
+2026-07-09 15:18:09,609 | INFO | 11 changes detected
+2026-07-09 15:18:28,608 | INFO | 4 changes detected
+2026-07-09 15:18:29,421 | INFO | 1 change detected
+2026-07-09 15:18:30,279 | INFO | 1 change detected
+2026-07-09 15:18:30,738 | INFO | 9 changes detected
+2026-07-09 15:18:47,726 | INFO | 4 changes detected
+2026-07-09 15:18:49,948 | INFO | 6 changes detected
+2026-07-09 15:18:50,300 | INFO | 1 change detected
+2026-07-09 15:18:50,656 | INFO | 8 changes detected
+2026-07-09 15:18:51,117 | INFO | 3 changes detected
+2026-07-09 15:18:51,772 | INFO | 2 changes detected
+2026-07-09 15:18:51,953 | INFO | /metrics requested
+2026-07-09 15:18:52,124 | INFO | 1 change detected
+2026-07-09 15:18:54,058 | INFO | 3 changes detected
+2026-07-09 15:18:54,338 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 15:18:54,419 | INFO | 11 changes detected
+2026-07-09 15:19:00,214 | INFO | /metric/3
+2026-07-09 15:19:00,653 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.3 "HTTP/2 200 OK"
+2026-07-09 15:19:01,678 | INFO | /metric/1
+2026-07-09 15:19:01,827 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.1 "HTTP/2 200 OK"
+2026-07-09 15:19:02,341 | INFO | /record/1
+2026-07-09 15:19:02,736 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-07-09 15:19:47,818 | INFO | /ask : What is revenue?
+2026-07-09 15:19:47,822 | INFO | Question : What is revenue?
+2026-07-09 15:19:48,977 | INFO | Retrieval took 1.155s
+2026-07-09 15:19:51,074 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 15:19:51,258 | INFO | LLM took 2.282s
+2026-07-09 15:19:51,259 | INFO | Total 3.437s
+2026-07-09 15:26:18,975 | INFO | /record/23
+2026-07-09 15:26:19,834 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.23 "HTTP/2 200 OK"
+2026-07-09 15:26:21,105 | INFO | /record/25
+2026-07-09 15:26:21,303 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.25 "HTTP/2 200 OK"
+2026-07-09 15:26:41,439 | INFO | /ask : what was revenue trend like 
+2026-07-09 15:26:41,440 | INFO | Question : what was revenue trend like 
+2026-07-09 15:26:41,498 | INFO | Retrieval took 0.058s
+2026-07-09 15:26:43,008 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 15:26:43,021 | INFO | LLM took 1.523s
+2026-07-09 15:26:43,022 | INFO | Total 1.582s
+2026-07-09 15:27:21,400 | INFO | 1 change detected
+2026-07-09 15:27:22,155 | INFO | 5 changes detected
+2026-07-09 15:27:22,512 | INFO | 2 changes detected
+2026-07-09 15:27:32,181 | INFO | 4 changes detected
+2026-07-09 15:27:32,746 | INFO | 8 changes detected
+2026-07-09 15:27:33,163 | INFO | 1 change detected
+2026-07-09 15:27:34,895 | INFO | 11 changes detected
+2026-07-09 15:27:45,830 | INFO | 4 changes detected
+2026-07-09 15:27:46,239 | INFO | 5 changes detected
+2026-07-09 15:27:47,764 | INFO | 4 changes detected
+2026-07-09 15:27:48,321 | INFO | 4 changes detected
+2026-07-09 15:27:48,681 | INFO | 1 change detected
+2026-07-09 15:27:50,448 | INFO | 9 changes detected
+2026-07-09 15:28:30,145 | INFO | 4 changes detected
+2026-07-09 15:28:30,499 | INFO | 5 changes detected
+2026-07-09 15:28:32,425 | INFO | 9 changes detected
+2026-07-09 15:28:39,233 | INFO | 4 changes detected
+2026-07-09 15:28:39,586 | INFO | 5 changes detected
+2026-07-09 15:28:40,354 | INFO | 4 changes detected
+2026-07-09 15:28:40,763 | INFO | 5 changes detected
+2026-07-09 15:28:42,589 | INFO | 9 changes detected
+2026-07-09 15:28:50,392 | INFO | 4 changes detected
+2026-07-09 15:28:50,794 | INFO | 4 changes detected
+2026-07-09 15:28:51,159 | INFO | 1 change detected
+2026-07-09 15:28:52,826 | INFO | 9 changes detected
+2026-07-09 15:28:58,601 | INFO | 4 changes detected
+2026-07-09 15:28:58,966 | INFO | 4 changes detected
+2026-07-09 15:28:59,333 | INFO | 1 change detected
+2026-07-09 15:28:59,684 | INFO | 4 changes detected
+2026-07-09 15:29:00,048 | INFO | 5 changes detected
+2026-07-09 15:29:01,827 | INFO | 9 changes detected
+2026-07-09 15:29:04,126 | INFO | 4 changes detected
+2026-07-09 15:29:04,496 | INFO | 4 changes detected
+2026-07-09 15:29:04,859 | INFO | 1 change detected
+2026-07-09 15:29:06,376 | INFO | 9 changes detected
+2026-07-09 15:29:12,144 | INFO | 4 changes detected
+2026-07-09 15:29:12,497 | INFO | 4 changes detected
+2026-07-09 15:29:12,863 | INFO | 1 change detected
+2026-07-09 15:29:14,542 | INFO | 9 changes detected
+2026-07-09 15:29:17,818 | INFO | 4 changes detected
+2026-07-09 15:29:18,221 | INFO | 5 changes detected
+2026-07-09 15:29:19,713 | INFO | 4 changes detected
+2026-07-09 15:29:21,741 | INFO | 9 changes detected
+2026-07-09 15:29:25,896 | INFO | 4 changes detected
+2026-07-09 15:29:26,295 | INFO | 5 changes detected
+2026-07-09 15:29:28,167 | INFO | 9 changes detected
+2026-07-09 15:29:29,334 | INFO | 4 changes detected
+2026-07-09 15:29:29,691 | INFO | 8 changes detected
+2026-07-09 15:29:30,055 | INFO | 1 change detected
+2026-07-09 15:29:31,723 | INFO | 9 changes detected
+2026-07-09 15:29:42,085 | INFO | 4 changes detected
+2026-07-09 15:29:42,438 | INFO | 4 changes detected
+2026-07-09 15:29:42,803 | INFO | 1 change detected
+2026-07-09 15:29:44,433 | INFO | 9 changes detected
+2026-07-09 15:29:54,138 | INFO | 4 changes detected
+2026-07-09 15:29:54,499 | INFO | 5 changes detected
+2026-07-09 15:29:55,939 | INFO | 4 changes detected
+2026-07-09 15:29:56,302 | INFO | 8 changes detected
+2026-07-09 15:29:56,658 | INFO | 1 change detected
+2026-07-09 15:29:58,332 | INFO | 9 changes detected
+2026-07-09 15:43:55,277 | INFO | 1 change detected
+2026-07-09 15:43:56,084 | INFO | 7 changes detected
+2026-07-09 15:44:24,734 | INFO | 5 changes detected
+2026-07-09 15:44:25,099 | INFO | 1 change detected
+2026-07-09 15:44:26,813 | INFO | 11 changes detected
+2026-07-09 15:44:27,226 | INFO | 6 changes detected
+2026-07-09 15:44:29,075 | INFO | 9 changes detected
+2026-07-09 15:44:32,171 | INFO | /metrics requested
+2026-07-09 15:44:32,324 | INFO | 1 change detected
+2026-07-09 15:44:34,241 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-07-09 15:44:34,257 | INFO | 9 changes detected
+2026-07-09 15:44:36,129 | INFO | /metric/6
+2026-07-09 15:44:36,270 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.6 "HTTP/2 200 OK"
+2026-07-09 15:44:36,956 | INFO | /record/73
+2026-07-09 15:44:37,096 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.73 "HTTP/2 200 OK"
+2026-07-09 15:44:46,071 | INFO | /ask : total assets count 
+2026-07-09 15:44:46,072 | INFO | Question : total assets count 
+2026-07-09 15:44:46,115 | INFO | Retrieval took 0.043s
+2026-07-09 15:44:46,948 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 15:44:46,950 | INFO | LLM took 0.835s
+2026-07-09 15:44:46,950 | INFO | Total 0.878s
+2026-07-09 15:45:29,265 | INFO | /record/71
+2026-07-09 15:45:29,730 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.71 "HTTP/2 200 OK"
+2026-07-09 15:45:34,778 | INFO | /metric/3
+2026-07-09 15:45:34,952 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.3 "HTTP/2 200 OK"
+2026-07-09 15:45:36,560 | INFO | /record/3
+2026-07-09 15:45:36,701 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.3 "HTTP/2 200 OK"
+2026-07-09 15:45:38,049 | INFO | /metric/2
+2026-07-09 15:45:38,186 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.2 "HTTP/2 200 OK"
+2026-07-09 15:45:38,780 | INFO | /record/2
+2026-07-09 15:45:39,138 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.2 "HTTP/2 200 OK"
+2026-07-09 15:45:43,299 | INFO | /ask : total assets count 
+2026-07-09 15:45:43,300 | INFO | Question : total assets count 
+2026-07-09 15:45:43,342 | INFO | Retrieval took 0.042s
+2026-07-09 15:45:44,954 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 15:45:44,957 | INFO | LLM took 1.616s
+2026-07-09 15:45:44,959 | INFO | Total 1.658s
+2026-07-09 15:47:45,271 | INFO | 1 change detected
+2026-07-09 15:47:46,033 | INFO | 7 changes detected
+2026-07-09 15:47:47,233 | INFO | /record/2
+2026-07-09 15:47:47,863 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.2 "HTTP/2 200 OK"
+2026-07-09 15:48:34,206 | INFO | 12 changes detected
+2026-07-09 15:48:35,322 | INFO | 1 change detected
+2026-07-09 15:48:35,835 | INFO | 1 change detected

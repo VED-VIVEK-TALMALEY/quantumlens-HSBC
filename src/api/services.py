@@ -70,8 +70,26 @@ def get_metric_by_id(metric_id: int):
     result = (
         supabase
         .table("metrics")
-        .select("*")
+        .select(
+            "id,metric_id,metric_name,abbreviation,sheet_name,row_number"
+        )
         .eq("metric_id", metric_id)
+        .execute()
+    )
+
+    return result.data
+
+def get_metric_record(record_id: int):
+
+    logger.info(
+        f"/record/{record_id}"
+    )
+
+    result = (
+        supabase
+        .table("metrics")
+        .select("*")
+        .eq("id", record_id)
         .execute()
     )
 

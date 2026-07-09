@@ -5,6 +5,7 @@ from src.api.services import (
     search_metrics,
     get_all_metrics,
     get_metric_by_id,
+    get_metric_record
 )
 
 from src.api.schemas import (
@@ -50,3 +51,6 @@ def search(request: SearchRequest):
         request.query,
         request.top_k
     )
+@router.get("/record/{record_id}")
+def record(record_id: int):
+    return get_metric_record(record_id)
