@@ -1,0 +1,6132 @@
+[
+    {
+        "metric_id": 1,
+        "normalized_metric_name": "net_interest_income",
+        "abbreviation": "nii",
+        "numeric_values": [
+            8945,
+            9196,
+            8777,
+            8519,
+            8302,
+            8945,
+            8302
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 6
+    },
+    {
+        "metric_id": 2,
+        "normalized_metric_name": "net_fee_income",
+        "abbreviation": "nfi",
+        "numeric_values": [
+            3719,
+            3194,
+            3506,
+            3319,
+            3324,
+            3719,
+            3324
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 7
+    },
+    {
+        "metric_id": 3,
+        "normalized_metric_name": "other_operating_income",
+        "abbreviation": "ooi",
+        "numeric_values": [
+            5960,
+            3974,
+            5505,
+            4635,
+            6023,
+            5960,
+            6023
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 8
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -8721,
+            -9330,
+            -10076,
+            -8920,
+            -8102,
+            -8721,
+            -8102
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 11
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            18624,
+            16464,
+            17843,
+            16577,
+            18319,
+            18624,
+            18319
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 25
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -8721,
+            -9389,
+            -10102,
+            -9030,
+            -8453,
+            -8721,
+            -8453
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 27
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -501,
+            -1359,
+            -112,
+            -1184,
+            -91,
+            -501,
+            -91
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 36
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -178,
+            -425,
+            -1696,
+            -652,
+            -191,
+            -178,
+            -191
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 40
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -501,
+            -1367,
+            -113,
+            -1228,
+            -92,
+            -501,
+            -92
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 45
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -178,
+            -417,
+            -1697,
+            -667,
+            -198,
+            -178,
+            -198
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 49
+    },
+    {
+        "metric_id": 14,
+        "normalized_metric_name": "total_assets",
+        "abbreviation": "ta",
+        "numeric_values": [
+            3306011,
+            3233034,
+            3234223,
+            3214371,
+            3054361
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 20
+    },
+    {
+        "metric_id": 18,
+        "normalized_metric_name": "customer_accounts",
+        "abbreviation": "ca",
+        "numeric_values": [
+            1781761,
+            1786828,
+            1737247,
+            1718604,
+            1666485
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 25
+    },
+    {
+        "metric_id": 15,
+        "normalized_metric_name": "total_liabilities",
+        "abbreviation": "tl",
+        "numeric_values": [
+            3108741,
+            3027368,
+            3035535,
+            3014502,
+            2856244
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 37
+    },
+    {
+        "metric_id": 18,
+        "normalized_metric_name": "customer_accounts",
+        "abbreviation": "ca",
+        "numeric_values": [
+            1781761,
+            1772579,
+            1723537,
+            1698181,
+            1696120
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 69
+    },
+    {
+        "metric_id": 20,
+        "normalized_metric_name": "common_equity_tier_1_capital",
+        "abbreviation": "cet1",
+        "numeric_values": [
+            123996,
+            132593,
+            127765,
+            129819,
+            125477
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 73
+    },
+    {
+        "metric_id": 21,
+        "normalized_metric_name": "common_equity_tier_1_ratio",
+        "abbreviation": "cet1r",
+        "numeric_values": [
+            0.14,
+            0.149,
+            0.145,
+            0.146,
+            0.147
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 79
+    },
+    {
+        "metric_id": 22,
+        "normalized_metric_name": "tier_1_ratio",
+        "abbreviation": "t1r",
+        "numeric_values": [
+            0.165,
+            0.17300000000000001,
+            0.16899999999999998,
+            0.17,
+            0.16899999999999998
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 80
+    },
+    {
+        "metric_id": 23,
+        "normalized_metric_name": "total_capital_ratio",
+        "abbreviation": "tcr",
+        "numeric_values": [
+            0.197,
+            0.20500000000000002,
+            0.20199999999999999,
+            0.201,
+            0.19899999999999998
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 81
+    },
+    {
+        "metric_id": 24,
+        "normalized_metric_name": "leverage_ratio",
+        "abbreviation": "lr",
+        "numeric_values": [
+            0.05,
+            0.053,
+            0.052000000000000005,
+            0.054000000000000006,
+            0.054000000000000006
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 83
+    },
+    {
+        "metric_id": 18,
+        "normalized_metric_name": "customer_accounts",
+        "abbreviation": "ca",
+        "numeric_values": [
+            0,
+            -14249,
+            -13710,
+            -20423,
+            29635
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group balance sheet",
+        "row_number": 105
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            18624,
+            16364,
+            17788,
+            16473,
+            17649,
+            18624,
+            17649
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group MVOI",
+        "row_number": 24
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            18624,
+            16464,
+            17843,
+            16577,
+            18319,
+            18624,
+            18319
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group MVOI",
+        "row_number": 53
+    },
+    {
+        "metric_id": 1,
+        "normalized_metric_name": "net_interest_income",
+        "abbreviation": "nii",
+        "numeric_values": [
+            8945,
+            9196,
+            8777,
+            8519,
+            8302,
+            8945,
+            8302
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group MVOI",
+        "row_number": 64
+    },
+    {
+        "metric_id": 28,
+        "normalized_metric_name": "banking_net_interest_income",
+        "abbreviation": "bnii",
+        "numeric_values": [
+            11253,
+            11722,
+            11049,
+            10714,
+            10599,
+            11253,
+            10599
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group MVOI",
+        "row_number": 67
+    },
+    {
+        "metric_id": 1,
+        "normalized_metric_name": "net_interest_income",
+        "abbreviation": "nii",
+        "numeric_values": [
+            8945,
+            9264,
+            8820,
+            8637,
+            8640,
+            8945,
+            8640
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group MVOI",
+        "row_number": 70
+    },
+    {
+        "metric_id": 28,
+        "normalized_metric_name": "banking_net_interest_income",
+        "abbreviation": "bnii",
+        "numeric_values": [
+            11253,
+            11806,
+            11099,
+            10852,
+            11007,
+            11253,
+            11007
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group MVOI",
+        "row_number": 73
+    },
+    {
+        "metric_id": 25,
+        "normalized_metric_name": "net_interest_margin",
+        "abbreviation": "nim",
+        "numeric_values": [],
+        "numeric_count": 0,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group NIM",
+        "row_number": 2
+    },
+    {
+        "metric_id": 18,
+        "normalized_metric_name": "customer_accounts",
+        "abbreviation": "ca",
+        "numeric_values": [
+            1556552,
+            1515315,
+            1503972,
+            1490291,
+            1437508,
+            1556552,
+            1437508
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group NIM",
+        "row_number": 23
+    },
+    {
+        "metric_id": 18,
+        "normalized_metric_name": "customer_accounts",
+        "abbreviation": "ca",
+        "numeric_values": [
+            7474,
+            7864,
+            8124,
+            8567,
+            8734,
+            7474,
+            8734
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group NIM",
+        "row_number": 32
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            4024,
+            3970,
+            3879,
+            3761,
+            3927,
+            4024,
+            3927
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1227,
+            -1304,
+            -1201,
+            -1163,
+            -1138,
+            -1227,
+            -1138
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            4024,
+            3954,
+            3885,
+            3761,
+            3915,
+            4024,
+            3915
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1227,
+            -1299,
+            -1203,
+            -1164,
+            -1136,
+            -1227,
+            -1136
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -4,
+            -6,
+            -4,
+            -2,
+            -7,
+            -4,
+            -7
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -4,
+            -6,
+            -4,
+            -2,
+            -7,
+            -4,
+            -7
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            4024,
+            3970,
+            3879,
+            3761,
+            3927,
+            4024,
+            3927
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 61
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            4024,
+            3954,
+            3885,
+            3761,
+            3915,
+            4024,
+            3915
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 78
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3250,
+            3247,
+            3227,
+            3116,
+            2898,
+            3250,
+            2898
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1402,
+            -1456,
+            -1405,
+            -1316,
+            -1260,
+            -1402,
+            -1260
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3250,
+            3293,
+            3224,
+            3146,
+            3107,
+            3250,
+            3107
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1402,
+            -1478,
+            -1403,
+            -1328,
+            -1348,
+            -1402,
+            -1348
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -8,
+            -7,
+            -15,
+            -43,
+            -4,
+            -8,
+            -4
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -8,
+            -7,
+            -15,
+            -43,
+            -5,
+            -8,
+            -5
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3250,
+            3247,
+            3227,
+            3116,
+            2898,
+            3250,
+            2898
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 61
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3250,
+            3293,
+            3224,
+            3146,
+            3107,
+            3250,
+            3107
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 78
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            7788,
+            7009,
+            6928,
+            7120,
+            7371,
+            7788,
+            7371
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -3772,
+            -4114,
+            -4049,
+            -3987,
+            -3526,
+            -3772,
+            -3526
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            7788,
+            7054,
+            6946,
+            7203,
+            7651,
+            7788,
+            7651
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -3772,
+            -4143,
+            -4060,
+            -4041,
+            -3674,
+            -3772,
+            -3674
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            6,
+            -3,
+            -6,
+            0,
+            0,
+            6,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -31,
+            -151,
+            -410,
+            -324,
+            -72,
+            -31,
+            -72
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            6,
+            -2,
+            -7,
+            0,
+            0,
+            6,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -31,
+            -153,
+            -410,
+            -329,
+            -79,
+            -31,
+            -79
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            7788,
+            7009,
+            6928,
+            7120,
+            7371,
+            7788,
+            7371
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 61
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            7788,
+            7054,
+            6946,
+            7203,
+            7651,
+            7788,
+            7651
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 78
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3749,
+            3686,
+            3823,
+            3500,
+            3511,
+            3749,
+            3511
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -2333,
+            -2466,
+            -2351,
+            -2362,
+            -2106,
+            -2333,
+            -2106
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3749,
+            3732,
+            3875,
+            3594,
+            3693,
+            3749,
+            3693
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -2333,
+            -2500,
+            -2380,
+            -2429,
+            -2221,
+            -2333,
+            -2221
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -167,
+            94,
+            -110,
+            -43,
+            -14,
+            -167,
+            -14
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -27,
+            -82,
+            -78,
+            -57,
+            -27,
+            -27,
+            -27
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -167,
+            95,
+            -111,
+            -43,
+            -16,
+            -167,
+            -16
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -27,
+            -84,
+            -79,
+            -59,
+            -28,
+            -27,
+            -28
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3749,
+            3686,
+            3823,
+            3500,
+            3511,
+            3749,
+            3511
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 61
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3749,
+            3732,
+            3875,
+            3594,
+            3693,
+            3749,
+            3693
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 78
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -187,
+            -1548,
+            -69,
+            -1024,
+            -58,
+            -187,
+            -58
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            13,
+            10,
+            -1070,
+            -92,
+            -72,
+            13,
+            -72
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -187,
+            -1569,
+            -87,
+            -1127,
+            -47,
+            -187,
+            -47
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            13,
+            31,
+            -1056,
+            -68,
+            -74,
+            13,
+            -74
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -340,
+            -1450,
+            4,
+            -1141,
+            -77,
+            -340,
+            -77
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -108,
+            -179,
+            -1189,
+            -226,
+            -81,
+            -108,
+            -81
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -340,
+            -1460,
+            5,
+            -1185,
+            -76,
+            -340,
+            -76
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -108,
+            -167,
+            -1189,
+            -234,
+            -79,
+            -108,
+            -79
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -187,
+            -1548,
+            -69,
+            -1024,
+            -58,
+            -187,
+            -58
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 61
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -187,
+            -1569,
+            -87,
+            -1127,
+            -47,
+            -187,
+            -47
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 78
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3622,
+            3600,
+            3559,
+            3432,
+            3211,
+            3622,
+            3211
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1452,
+            -1538,
+            -1461,
+            -1372,
+            -1313,
+            -1452,
+            -1313
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3622,
+            3650,
+            3557,
+            3464,
+            3436,
+            3622,
+            3436
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1452,
+            -1558,
+            -1458,
+            -1386,
+            -1404,
+            -1452,
+            -1404
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -22,
+            -56,
+            -25,
+            -72,
+            -9,
+            -22,
+            -9
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -22,
+            -55,
+            -25,
+            -73,
+            -10,
+            -22,
+            -10
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3346,
+            3331,
+            3307,
+            3196,
+            2975
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 48
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1395,
+            -1458,
+            -1405,
+            -1302,
+            -1254
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 50
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 55
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 57
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 63
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -9,
+            -15,
+            -14,
+            -43,
+            -4
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 65
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 70
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 72
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1700,
+            1628,
+            1623,
+            1565,
+            1436
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 86
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -920,
+            -872,
+            -908,
+            -820,
+            -780
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 88
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 96
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 98
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1646,
+            1703,
+            1684,
+            1631,
+            1539
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 107
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -475,
+            -586,
+            -497,
+            -482,
+            -474
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 109
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 118
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 120
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            184,
+            182,
+            165,
+            161,
+            156
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -35,
+            -35,
+            -40,
+            -41,
+            -36
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -3,
+            -7,
+            -1,
+            -3,
+            -1
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            94,
+            101,
+            86,
+            89,
+            85
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -56,
+            -48,
+            -54,
+            -57,
+            -53
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            3,
+            -4,
+            -3,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -2,
+            -14,
+            1,
+            -14,
+            -5
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            34,
+            3,
+            38,
+            28,
+            30
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -10,
+            -37,
+            -6,
+            -23,
+            -4
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 230
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2536,
+            1239,
+            2441,
+            2638,
+            2720,
+            2536,
+            2720
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1809,
+            -2108,
+            -3227,
+            -2141,
+            -1665,
+            -1809,
+            -1665
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2536,
+            1251,
+            2447,
+            2665,
+            2957,
+            2536,
+            2957
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1809,
+            -2117,
+            -3231,
+            -2192,
+            -1809,
+            -1809,
+            -1809
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -295,
+            -1386,
+            -104,
+            -42,
+            -14,
+            -295,
+            -14
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -37,
+            -16,
+            -1544,
+            -355,
+            -20,
+            -37,
+            -20
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -295,
+            -1391,
+            -104,
+            -44,
+            -16,
+            -295,
+            -16
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -37,
+            -3,
+            -1545,
+            -365,
+            -22,
+            -37,
+            -22
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2405,
+            2118,
+            1973,
+            2179,
+            2173
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1432,
+            -1778,
+            -1690,
+            -1647,
+            -1309
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            5,
+            -3,
+            -6,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -5,
+            -128,
+            -365,
+            -260,
+            -17
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            433,
+            569,
+            472,
+            464,
+            443
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -294,
+            -380,
+            -339,
+            -364,
+            -271
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            10,
+            71,
+            -96,
+            -42,
+            -14
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -23,
+            -49,
+            -10,
+            -3
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -302,
+            -1448,
+            -4,
+            -5,
+            104
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -83,
+            50,
+            -1198,
+            -130,
+            -85
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -310,
+            -1454,
+            -2,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -30,
+            135,
+            -1130,
+            -85,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 230
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 232
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            10127,
+            8775,
+            9140,
+            7957,
+            9382,
+            10127,
+            9382
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -3822,
+            -4081,
+            -3797,
+            -3765,
+            -3538,
+            -3822,
+            -3538
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            10127,
+            8785,
+            9163,
+            7942,
+            9451,
+            10127,
+            9451
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -3822,
+            -4091,
+            -3811,
+            -3786,
+            -3576,
+            -3822,
+            -3576
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            -2,
+            -1136,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -40,
+            -125,
+            -73,
+            -121,
+            -27,
+            -40,
+            -27
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            -1,
+            -1178,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -40,
+            -127,
+            -74,
+            -122,
+            -28,
+            -40,
+            -28
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            4115,
+            4047,
+            3958,
+            3837,
+            4000
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 48
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1219,
+            -1297,
+            -1197,
+            -1160,
+            -1126
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 50
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 55
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 57
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 63
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -6,
+            -12,
+            -4,
+            -2,
+            -7
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 65
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 70
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 72
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2777,
+            2618,
+            2570,
+            2443,
+            2551
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 86
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -845,
+            -880,
+            -823,
+            -797,
+            -767
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 88
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 96
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 98
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1338,
+            1429,
+            1388,
+            1394,
+            1449
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 107
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -360,
+            -400,
+            -374,
+            -363,
+            -359
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 109
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 118
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 120
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            3608,
+            3171,
+            3285,
+            3369,
+            3550
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1402,
+            -1461,
+            -1410,
+            -1383,
+            -1328
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -7,
+            -24,
+            -20,
+            -38,
+            -17
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            -4,
+            4
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2130,
+            1759,
+            2035,
+            1764,
+            1847
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1077,
+            -1101,
+            -1068,
+            -990,
+            -960
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -9,
+            -29,
+            -20,
+            -20,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            274,
+            -202,
+            -138,
+            -1013,
+            -15
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -124,
+            -222,
+            -122,
+            -232,
+            -124
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            -1,
+            0,
+            -2,
+            -1136,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -18,
+            -60,
+            -29,
+            -61,
+            -3
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 230
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 232
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            6402,
+            5533,
+            5670,
+            5775,
+            6068,
+            6402,
+            6068
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -2272,
+            -2345,
+            -2215,
+            -2147,
+            -2105,
+            -2272,
+            -2105
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            6402,
+            5509,
+            5675,
+            5769,
+            6042,
+            6402,
+            6042
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -2272,
+            -2332,
+            -2218,
+            -2145,
+            -2096,
+            -2272,
+            -2096
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2,
+            0,
+            -1,
+            0,
+            0,
+            2,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -21,
+            -63,
+            -33,
+            -59,
+            -23,
+            -21,
+            -23
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2,
+            0,
+            -1,
+            0,
+            0,
+            2,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -21,
+            -62,
+            -34,
+            -59,
+            -23,
+            -21,
+            -23
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            4034,
+            3964,
+            3874,
+            3750,
+            3907
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 48
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -1171,
+            -1236,
+            -1143,
+            -1102,
+            -1069
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 50
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 55
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 57
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 63
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -5,
+            -7,
+            -1,
+            1,
+            -7
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 65
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 70
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 72
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            2756,
+            2597,
+            2550,
+            2426,
+            2531
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 86
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -826,
+            -856,
+            -802,
+            -778,
+            -745
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 88
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 96
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 98
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1278,
+            1367,
+            1324,
+            1324,
+            1376
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 107
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -331,
+            -363,
+            -341,
+            -324,
+            -324
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 109
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 118
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 120
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1311,
+            1026,
+            1126,
+            1203,
+            1346
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -645,
+            -646,
+            -651,
+            -592,
+            -627
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -3,
+            -14,
+            -11,
+            -10,
+            -14
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            934,
+            760,
+            846,
+            757,
+            839
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -341,
+            -319,
+            -336,
+            -283,
+            -301
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -4,
+            -2,
+            -4,
+            -7,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            123,
+            -217,
+            -176,
+            65,
+            -24
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -115,
+            -144,
+            -85,
+            -170,
+            -108
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1,
+            0,
+            -1,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -9,
+            -40,
+            -17,
+            -43,
+            -2
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 230
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 232
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1303,
+            1356,
+            1334,
+            1298,
+            1349,
+            1303,
+            1349
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -468,
+            -510,
+            -476,
+            -467,
+            -457,
+            -468,
+            -457
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1303,
+            1351,
+            1337,
+            1299,
+            1347,
+            1303,
+            1347
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -468,
+            -509,
+            -478,
+            -469,
+            -458,
+            -468,
+            -458
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -10,
+            -5,
+            -14,
+            -1,
+            -2,
+            -1
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -10,
+            -5,
+            -13,
+            -1,
+            -2,
+            -1
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1249,
+            1203,
+            1208,
+            1148,
+            1171,
+            1249,
+            1171
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -804,
+            -829,
+            -823,
+            -860,
+            -819,
+            -804,
+            -819
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            1249,
+            1202,
+            1209,
+            1148,
+            1171,
+            1249,
+            1171
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -804,
+            -829,
+            -823,
+            -860,
+            -820,
+            -804,
+            -820
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            -1,
+            1,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -10,
+            -10,
+            -17,
+            -41,
+            -16,
+            -10,
+            -16
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -10,
+            -12,
+            -17,
+            -41,
+            -16,
+            -10,
+            -16
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            972,
+            933,
+            920,
+            864,
+            900
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -554,
+            -556,
+            -562,
+            -578,
+            -563
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -5,
+            -2,
+            -13,
+            -19,
+            -12
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            255,
+            247,
+            253,
+            247,
+            238
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -195,
+            -212,
+            -212,
+            -210,
+            -192
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -1,
+            -1,
+            -1,
+            -4,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            22,
+            23,
+            35,
+            37,
+            33
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -55,
+            -61,
+            -49,
+            -72,
+            -64
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            -1,
+            1,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -4,
+            -7,
+            -3,
+            -18,
+            -4
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 230
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 232
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            973,
+            905,
+            903,
+            842,
+            823,
+            973,
+            823
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -542,
+            -579,
+            -511,
+            -499,
+            -459,
+            -542,
+            -459
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            973,
+            943,
+            957,
+            936,
+            957,
+            973,
+            957
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -542,
+            -603,
+            -542,
+            -555,
+            -533,
+            -542,
+            -533
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -14,
+            -36,
+            -14,
+            -14,
+            -1,
+            -14,
+            -1
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -14,
+            -36,
+            -17,
+            -15,
+            -1,
+            -14,
+            -1
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            281,
+            275,
+            275,
+            252,
+            250
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -127,
+            -135,
+            -117,
+            -110,
+            -105
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            -3,
+            -1,
+            -2,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            681,
+            619,
+            618,
+            584,
+            564
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -412,
+            -438,
+            -367,
+            -371,
+            -327
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -12,
+            -23,
+            -10,
+            -4,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            11,
+            11,
+            10,
+            6,
+            9
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -3,
+            -6,
+            -27,
+            -18,
+            -27
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -10,
+            -3,
+            -8,
+            -1
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 230
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 232
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            637,
+            711,
+            645,
+            635,
+            619,
+            637,
+            619
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -325,
+            -369,
+            -327,
+            -328,
+            -310,
+            -325,
+            -310
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            637,
+            712,
+            644,
+            636,
+            619,
+            637,
+            619
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -325,
+            -370,
+            -326,
+            -329,
+            -310,
+            -325,
+            -310
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            72,
+            -1,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -9,
+            -15,
+            -12,
+            -7,
+            -2,
+            -7
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -9,
+            -15,
+            -12,
+            -7,
+            -2,
+            -7
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 30
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            421,
+            409,
+            424,
+            400,
+            398
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 130
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -173,
+            -206,
+            -170,
+            -181,
+            -165
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 132
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 137
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 139
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 145
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -1,
+            -2,
+            -4,
+            -5,
+            -1
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 147
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 152
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 154
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            204,
+            293,
+            213,
+            223,
+            215
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 169
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -126,
+            -142,
+            -122,
+            -124,
+            -120
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 171
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 176
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 178
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            72,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 184
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            -3,
+            -1,
+            -1,
+            -2
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 186
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 191
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 193
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            12,
+            9,
+            8,
+            12,
+            6
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 208
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -26,
+            -21,
+            -35,
+            -23,
+            -25
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 210
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 215
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 217
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            -1,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 223
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -1,
+            -4,
+            -10,
+            -6,
+            -4
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 225
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 230
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 5,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 232
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            678,
+            862,
+            666,
+            574,
+            593,
+            678,
+            593
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 6
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -376,
+            -500,
+            -358,
+            -369,
+            -317,
+            -376,
+            -317
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 8
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            678,
+            857,
+            659,
+            570,
+            593,
+            678,
+            593
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 13
+    },
+    {
+        "metric_id": 6,
+        "normalized_metric_name": "total_operating_expenses",
+        "abbreviation": "toe",
+        "numeric_values": [
+            -376,
+            -500,
+            -354,
+            -366,
+            -318,
+            -376,
+            -318
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 15
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 21
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -6,
+            1,
+            -8,
+            -20,
+            -2,
+            -20
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 23
+    },
+    {
+        "metric_id": 31,
+        "normalized_metric_name": "revenue",
+        "abbreviation": "rev",
+        "numeric_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 28
+    },
+    {
+        "metric_id": 35,
+        "normalized_metric_name": "operating_expenses",
+        "abbreviation": "opex",
+        "numeric_values": [
+            -2,
+            -5,
+            0,
+            -8,
+            -20,
+            -2,
+            -20
+        ],
+        "numeric_count": 7,
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 30
+    }
+]
