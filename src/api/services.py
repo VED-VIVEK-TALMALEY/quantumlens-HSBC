@@ -2,15 +2,24 @@ from src.utils.logger import logger
 from supabase import create_client
 import os
 
-from src.rag.rag_pipeline import ask
-from src.rag.retrieval_engine import RetrievalEngine
+#from src.rag.rag_pipeline import ask
+#from src.rag.retrieval_engine import RetrievalEngine
 
 supabase = create_client(
     os.getenv("SUPABASE_URL"),
     os.getenv("SUPABASE_KEY")
 )
 
-engine = RetrievalEngine()
+engine =None
+def get_engine():
+
+    global engine
+
+    if engine is None:
+
+        engine = RetrievalEngine()
+
+    return engine
 
 
 def ask_question(question: str):
@@ -24,9 +33,15 @@ def ask_question(question: str):
 
 def search_metrics(query: str, top_k: int = 5):
 
+    global engine
+
     logger.info(
         f"/search : {query}"
     )
+
+    if engine is None:
+
+        engine = RetrievalEngine()
 
     return engine.search(
         query=query,

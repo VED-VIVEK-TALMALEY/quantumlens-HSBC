@@ -36,21 +36,21 @@ def metric(metric_id: int):
     return get_metric_by_id(metric_id)
 
 
-@router.post("/ask")
-def ask_ai(request: QuestionRequest):
+#@router.post("/ask")
+#def ask_ai(request: QuestionRequest):
 
-    return ask_question(
-        request.question
-    )
+    #return ask_question(
+     #   request.question
+    #)
 
 
-@router.post("/search")
-def search(request: SearchRequest):
+#@router.post("/search")
+#def search(request: SearchRequest):
 
-    return search_metrics(
-        request.query,
-        request.top_k
-    )
+    #return search_metrics(
+   #     request.query,
+  #      request.top_k
+    #)
 @router.get("/record/{record_id}")
 def record(record_id: int):
     return get_metric_record(record_id)
