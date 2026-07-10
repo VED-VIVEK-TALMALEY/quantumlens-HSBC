@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖥️ QuantumLens Next.js Analytics Portal
 
-## Getting Started
+This is the frontend dashboard user interface for the **QuantumLens** platform. It provides interactive visualizations, historical KPI trend tracking, cohort comparisons, and an AI chat assistant interface for query reasoning.
 
-First, run the development server:
+For backend architecture, database tables, or API references, see the root [README.md](../README.md). For detailed modular diagrams, see [architecture.md](../docs/architecture.md).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🛠️ Technology Stack
+
+- **Framework**: Next.js 15+ (App Router)
+- **Library**: React 19+
+- **Styling**: TailwindCSS
+- **Visualizations**: Recharts / Chart.js
+- **API Request Client**: Axios / Fetch API
+
+---
+
+## 📂 Project Structure
+
+```text
+quantumlens-dashboard/
+├── app/                           # Next.js App Router folders
+│   ├── page.tsx                   # Main login & system overview page
+│   ├── dashboard/                 # Financial metrics trend analytics workspace
+│   │   └── page.tsx
+│   ├── chat/                      # Copilot AI chat assistant chat pane
+│   │   └── page.tsx
+│   ├── layout.tsx                 # Core HTML wrappers, navigations & footers
+│   └── globals.css                # Global CSS variables & Tailwind imports
+├── components/                    # Reusable visual components
+│   ├── ui/                        # Low-level primitive inputs, buttons, tables
+│   ├── MetricCard.tsx             # Stat tiles showing trends & current indicators
+│   ├── TimeSeriesChart.tsx        # Line/Bar Recharts diagrams
+│   └── ChatWindow.tsx             # Interactive messaging conversation panel
+├── services/                      # API integration endpoints wrappers
+│   └── api.ts                     # Axios hooks linking to backend routes
+├── public/                        # Static brand logo images and icons
+├── package.json                   # Client node scripts & dependency lock
+├── tailwind.config.ts             # Tailwind layouts & layout settings
+└── tsconfig.json                  # Strict TypeScript configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚡ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+Ensure Node.js 18.x or later is installed.
 
-## Learn More
+### Local Development Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Configure environment variables**:
+   Create a `.env.local` file in the `quantumlens-dashboard/` root folder:
+   ```bash
+   NEXT_PUBLIC_API_URL=http://localhost:8000
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-## Deploy on Vercel
+4. **Verify the installation**:
+   Open [http://localhost:3000](http://localhost:3000) in your web browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔑 Environment Variables Configuration
+
+| Variable | Description | Default Local | Deployed Production |
+| :--- | :--- | :--- | :--- |
+| `NEXT_PUBLIC_API_URL` | Complete URL endpoint pointing to the FastAPI backend service. | `http://localhost:8000` | `https://quantumlens-api.render.com` |
+
+---
+
+## 🚀 Production Deployment (Vercel)
+
+The easiest way to deploy the Next.js app is to link the repository to **Vercel**:
+1. Connect Vercel to your GitHub repository.
+2. In the dashboard settings, set the **Root Directory** to `quantumlens-dashboard`.
+3. Add the environment variable `NEXT_PUBLIC_API_URL` pointing to your live backend Render URL.
+4. Click **Deploy**. Vercel will automatically build the static assets, optimize dependencies, and host the dashboard.
+
+---
+
+## 🔗 Related Documentation
+- [Root Readme](../README.md): Backend API endpoints and installation.
+- [System Architecture Spec](../docs/architecture.md): Systems layers overview.
+- [Database Schema](../docs/data_dictionary.md): Table mappings details.
