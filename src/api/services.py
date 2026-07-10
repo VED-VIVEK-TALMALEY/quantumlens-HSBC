@@ -2,8 +2,8 @@ from src.utils.logger import logger
 from supabase import create_client
 import os
 
-#from src.rag.rag_pipeline import ask
-#from src.rag.retrieval_engine import RetrievalEngine
+from src.rag.rag_pipeline import ask
+from src.rag.retrieval_engine import RetrievalEngine
 
 supabase = create_client(
     os.getenv("SUPABASE_URL"),
