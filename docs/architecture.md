@@ -1,4 +1,4 @@
-# 🏛️ System Architecture Spec
+# System Architecture Spec
 
 This document details the architectural layout, modules, and component interactions of **QuantumLens**. 
 
@@ -6,7 +6,7 @@ For a high-level overview, deployment metrics, or setup instructions, see the pr
 
 ---
 
-## 🏗️ Layered Architecture Overview
+## Layered Architecture Overview
 
 QuantumLens is structured using a decoupled, layered design that separates data ingestion, metric transformation, warehouse persistence, semantic indexing, and API routing. This isolation ensures that ingestion formats (like Excel sheets or PDF documents) can change without impacting database logic, and RAG pipelines can adapt to different LLM providers without disrupting core analytics APIs.
 
@@ -33,7 +33,7 @@ QuantumLens is structured using a decoupled, layered design that separates data 
 
 ---
 
-## 📂 Modular System Breakdown
+## Modular System Breakdown
 
 ### 1. Ingestion Layer
 The Ingestion Layer is responsible for discovering workbook sheets and converting raw cell layouts into structured coordinates.
@@ -76,7 +76,7 @@ The AI Layer manages vector space generation, similarity indexing, and context-b
 
 ---
 
-## 🔄 Component Interactions
+## Component Interactions
 
 ### 1. Ingestion and ETL Data Flow
 This diagram illustrates the sequence of processing raw spreadsheets into database tables:
@@ -122,7 +122,7 @@ sequenceDiagram
 
 ---
 
-## 🔗 Related Documentation
+## Related Documentation
 - [Primary Readme](../README.md): Project overview, installation scripts, API reference.
 - [Database Schema (Data Dictionary)](data_dictionary.md): Detailed columns description, indices, and constraints.
 - [KPI catalog mapping](kpi_catalog.md): Synonym dictionaries and lookup rules.

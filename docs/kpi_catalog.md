@@ -1,4 +1,4 @@
-# 📋 KPI Catalog & Normalization Logic
+# KPI Catalog & Normalization Logic
 
 This document details the metric normalization engine, lookup dictionary catalog entries, and target mapping strategies utilized by **QuantumLens**.
 
@@ -6,7 +6,7 @@ For system architecture layouts, see [architecture.md](architecture.md). For tab
 
 ---
 
-## ⚙️ The Normalization Engine
+## The Normalization Engine
 
 In financial analytics, different business sheets and reporting periods frequently reference the same underlying metric using distinct labels. For example, "Net Interest Income", "Net Interest", and "NII" refer to the same metric.
 
@@ -22,7 +22,7 @@ To handle this variation:
 
 ---
 
-## 📊 Catalog Lookup Dictionary
+## Catalog Lookup Dictionary
 
 The system loads mapping configurations from [metric_dictionary.json](../src/config/metric_dictionary.json). Below is a structured snapshot of key catalog entries:
 
@@ -41,7 +41,7 @@ The system loads mapping configurations from [metric_dictionary.json](../src/con
 
 ---
 
-## 🔄 Mapping Strategy
+## Mapping Strategy
 
 ### Ingestion Matching Workflow
 
@@ -56,7 +56,7 @@ The loader executes the following matching flow for every row parsed in a workbo
 
 ---
 
-## 💡 Key Benefits of Centralized Normalization
+## Key Benefits of Centralized Normalization
 
 | Benefit | Description |
 | :--- | :--- |
@@ -67,7 +67,7 @@ The loader executes the following matching flow for every row parsed in a workbo
 
 ---
 
-## 🔗 Related Documentation
+## Related Documentation
 - [Primary Readme](../README.md): Project overview, installation scripts, API reference.
 - [System Architecture Spec](architecture.md): Systems layers overview and Mermaid diagrams.
 - [Database Schema (Data Dictionary)](data_dictionary.md): Detailed columns description, indices, and constraints.

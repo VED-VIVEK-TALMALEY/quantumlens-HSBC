@@ -1,4 +1,4 @@
-# 🗄️ Database Design & Data Dictionary
+# Database Design & Data Dictionary
 
 This document details the relational data warehouse design, table schemas, indices, and database constraints of **QuantumLens**. 
 
@@ -6,7 +6,7 @@ For deployment steps or API integration hooks, see the primary [README.md](../RE
 
 ---
 
-## 🏛️ Database Design Rationale
+## Database Design Rationale
 
 QuantumLens uses **Supabase (PostgreSQL 15)** as its core relational warehouse. The schema is designed around the following engineering choices:
 - **Normalized Ingestion Boundaries**: The warehouse maps raw workbook rows to structured records.
@@ -15,7 +15,7 @@ QuantumLens uses **Supabase (PostgreSQL 15)** as its core relational warehouse. 
 
 ---
 
-## 📊 Table Schemas
+## Table Schemas
 
 ### 1. `metrics` Table (Operational KPI Warehouse)
 The `metrics` table stores normalized KPI records parsed by the ETL loader.
@@ -65,7 +65,7 @@ CREATE TABLE metrics (
 
 ---
 
-## ⚡ Query Optimization & Indexes
+## Query Optimization & Indexes
 
 To keep dashboard queries fast under heavy reading loads, the database is optimized using B-Tree index structures:
 
@@ -77,7 +77,7 @@ To keep dashboard queries fast under heavy reading loads, the database is optimi
 
 ---
 
-## 🔮 Future Schema Extensions
+## Future Schema Extensions
 
 To transition QuantumLens into a multi-tenant enterprise portal, the database will be extended with the following tables:
 
@@ -136,7 +136,7 @@ CREATE INDEX idx_chat_session ON chat_history(session_id);
 
 ---
 
-## 🔗 Related Documentation
+## Related Documentation
 - [Primary Readme](../README.md): Project overview, installation scripts, API reference.
 - [System Architecture Spec](architecture.md): Systems layers overview and Mermaid diagrams.
 - [KPI Catalog & Normalization Rules](kpi_catalog.md): Dictionary lookup catalog.

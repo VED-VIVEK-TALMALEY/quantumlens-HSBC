@@ -1,4 +1,4 @@
-# 🖥️ QuantumLens Next.js Analytics Portal
+# QuantumLens Next.js Analytics Portal
 
 This is the frontend dashboard user interface for the **QuantumLens** platform. It provides interactive visualizations, historical KPI trend tracking, cohort comparisons, and an AI chat assistant interface for query reasoning.
 
@@ -6,7 +6,7 @@ For backend architecture, database tables, or API references, see the root [READ
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Framework**: Next.js 15+ (App Router)
 - **Library**: React 19+
@@ -16,7 +16,7 @@ For backend architecture, database tables, or API references, see the root [READ
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 quantumlens-dashboard/
@@ -43,7 +43,7 @@ quantumlens-dashboard/
 
 ---
 
-## ⚡ Getting Started
+## Getting Started
 
 ### Prerequisites
 Ensure Node.js 18.x or later is installed.
@@ -79,7 +79,7 @@ Ensure Node.js 18.x or later is installed.
 
 ---
 
-## 🔑 Environment Variables Configuration
+## Environment Variables Configuration
 
 | Variable | Description | Default Local | Deployed Production |
 | :--- | :--- | :--- | :--- |
@@ -87,7 +87,7 @@ Ensure Node.js 18.x or later is installed.
 
 ---
 
-## 🚀 Production Deployment (Vercel)
+## Production Deployment (Vercel)
 
 The easiest way to deploy the Next.js app is to link the repository to **Vercel**:
 1. Connect Vercel to your GitHub repository.
@@ -97,7 +97,7 @@ The easiest way to deploy the Next.js app is to link the repository to **Vercel*
 
 ---
 
-## 🔗 Related Documentation
+## Related Documentation
 - [Root Readme](../README.md): Backend API endpoints and installation.
 - [System Architecture Spec](../docs/architecture.md): Systems layers overview.
 - [Database Schema](../docs/data_dictionary.md): Table mappings details.
