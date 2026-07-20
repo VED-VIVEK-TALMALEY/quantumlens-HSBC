@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+
+  quantumlens-api:
+
+    build: .
+
+    container_name: quantumlens-api
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./data/vectordb:/app/data/vectordb
+
+    restart: unless-stopped

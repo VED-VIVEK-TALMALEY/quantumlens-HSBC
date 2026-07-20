@@ -13,7 +13,7 @@
 **QuantumLens** is a production-grade financial data ingestion, processing, and retrieval-augmented generation (RAG) analytics engine. Built specifically for high-integrity corporate financial reporting, the platform parses complex multi-sheet Excel financial files (such as HSBC quarterly report packs), normalizes name variants to a unified KPI schema, maintains historical trends in a PostgreSQL/Supabase relational data warehouse, and enables interactive, context-grounded AI query reasoning using high-throughput Groq LLM inference.
 
 ---
-
+![QuantumLens-architecture](docs/architecture.svg)
 ## Project Snapshot
 
 | Attribute | Details |

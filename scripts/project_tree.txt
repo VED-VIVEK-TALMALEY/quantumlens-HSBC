@@ -1,0 +1,150 @@
+./
+├── docker-compose.yml
+├── Dockerfile
+├── genrate_tree.py
+├── LICENSE
+├── project xx.jpg
+├── project_tree.txt
+├── README.md
+├── requirements.txt
+├── data/
+│   ├── processed/
+│   ├── raw/
+│   │   ├── 260505-1q-2026-data-pack-excel.xlsx
+│   │   ├── 260505-1q-2026-earnings-release.pdf
+│   ├── vectordb/
+│   │   ├── chroma.sqlite3
+│   ├── vector_db/
+│   │   ├── chroma.sqlite3
+│   │   ├── 0aaad6e1-ea62-4d49-a9ad-bba0a091a783/
+│   │   │   ├── data_level0.bin
+│   │   │   ├── header.bin
+│   │   │   ├── index_metadata.pickle
+│   │   │   ├── length.bin
+│   │   │   ├── link_lists.bin
+├── docs/
+│   ├── architecture.md
+│   ├── architecture.svg
+│   ├── data_dictionary.md
+│   ├── issues.md
+│   ├── kpi_catalog.md
+│   ├── troubleshooting.md
+├── logs/
+│   ├── quantumlens.log
+├── notebooks/
+├── quantumlens-dashboard/
+│   ├── AGENTS.md
+│   ├── CLAUDE.md
+│   ├── eslint.config.mjs
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   ├── README.md
+│   ├── tsconfig.json
+│   ├── public/
+│   │   ├── file.svg
+│   │   ├── globe.svg
+│   │   ├── next.svg
+│   │   ├── vercel.svg
+│   │   ├── window.svg
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── favicon.ico
+│   │   │   ├── globals.css
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   ├── components/
+│   │   │   ├── ai/
+│   │   │   │   ├── AIChat.tsx
+│   │   │   ├── charts/
+│   │   │   │   ├── LineChart.tsx
+│   │   │   ├── dashboard/
+│   │   │   │   ├── SummaryCard.tsx
+│   │   │   ├── layout/
+│   │   │   ├── metrics/
+│   │   │   ├── records/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   │   ├── api.ts
+│   │   │   ├── metricService.ts
+│   │   ├── types/
+│   │   │   ├── metric.ts
+├── quantumlens-embedder/
+│   ├── app.py
+│   ├── config.py
+│   ├── embedding_service.py
+│   ├── models.py
+│   ├── README copy.md
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── runtime.txt
+├── src/
+│   ├── config.py
+│   ├── __init__.py
+│   ├── agents/
+│   │   ├── chart_agent.py
+│   │   ├── orchestrator.py
+│   │   ├── planner.py
+│   │   ├── rag_agent.py
+│   │   ├── sql_agent.py
+│   ├── analytics/
+│   ├── api/
+│   │   ├── main.py
+│   │   ├── routes.py
+│   │   ├── schemas.py
+│   │   ├── services.py
+│   │   ├── __init__.py
+│   │   ├── config/
+│   │   │   ├── __init__.py
+│   ├── config/
+│   │   ├── settings.py
+│   │   ├── __init__.py
+│   ├── evaluation/
+│   │   ├── benchmark.py
+│   │   ├── rag_metrics.py
+│   │   ├── retrieval_metrics.py
+│   │   ├── __init__.py
+│   ├── ingestion/
+│   │   ├── extracted_metrics.json
+│   │   ├── mapped_metrics.json
+│   │   ├── metric_dictionary.json
+│   │   ├── metric_extractor.py
+│   │   ├── scan_sheet_metadata.json
+│   │   ├── sheet_scanner.py
+│   │   ├── valued_metrics.json
+│   │   ├── value_extractor.py
+│   │   ├── workbook_metadata.json
+│   │   ├── workbook_reader.py
+│   ├── models/
+│   ├── rag/
+│   │   ├── check_vectors.py
+│   │   ├── embeddings.json
+│   │   ├── embedding_generator.py
+│   │   ├── llm_service.py
+│   │   ├── prompt_builder.py
+│   │   ├── rag_pipeline.py
+│   │   ├── response_parser.py
+│   │   ├── retrieval_engine.py
+│   │   ├── vector_loader.py
+│   │   ├── __init__.py
+│   ├── transformation/
+│   │   ├── kpi_builder.py
+│   │   ├── kpi_records.json
+│   │   ├── mapped_metrics.json
+│   │   ├── metric_mapper.py
+│   │   ├── period_mapper.py
+│   │   ├── unit_normalizer.py
+│   ├── utils/
+│   │   ├── constants.py
+│   │   ├── helpers.py
+│   │   ├── logger.py
+│   │   ├── __init__.py
+│   ├── warehouse/
+│   │   ├── data_loader.py
+│   │   ├── query_service.py
+│   │   ├── supabase_client.py
+├── tests/
+├── vector_db/
+│   ├── chroma.sqlite3

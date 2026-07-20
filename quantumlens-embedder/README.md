@@ -1,45 +1,14 @@
-# QuantumLens Embedder
+---
+title: Quantumlens Embedder
+emoji: 🏃
+colorFrom: indigo
+colorTo: yellow
+sdk: gradio
+sdk_version: 6.20.0
+python_version: '3.12'
+app_file: app.py
+pinned: false
+license: mit
+---
 
-Embedding microservice for QuantumLens.
-
-## Model
-
-BAAI/bge-small-en-v1.5
-
-## Run
-
-```bash
-pip install -r requirements.txt
-
-uvicorn app:app --reload
-```
-
-## Endpoints
-
-GET /
-
-GET /health
-
-POST /embed
-
-Example request
-
-```json
-{
-    "texts":[
-        "Revenue",
-        "Net Interest Income"
-    ]
-}
-```
-
-Example response
-
-```json
-{
-    "embeddings":[
-        [...],
-        [...]
-    ]
-}
-```
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
