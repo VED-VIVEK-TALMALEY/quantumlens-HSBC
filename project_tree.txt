@@ -1,0 +1,172 @@
+./
+├── CHANGELOG.md
+├── generate_tree.py
+├── LICENSE
+├── project_tree.txt
+├── README.md
+├── backend/
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── data/
+│   │   ├── generated/
+│   │   │   ├── embeddings.json
+│   │   │   ├── kpi_records.json
+│   │   │   ├── mapped_metrics.json
+│   │   ├── processed/
+│   │   ├── raw/
+│   │   │   ├── 260505-1q-2026-data-pack-excel.xlsx
+│   │   │   ├── 260505-1q-2026-earnings-release.pdf
+│   │   ├── vectordb/
+│   │   │   ├── chroma.sqlite3
+│   │   │   ├── 0958b681-19d7-4971-953b-a20d707c0d75/
+│   │   │   │   ├── data_level0.bin
+│   │   │   │   ├── header.bin
+│   │   │   │   ├── length.bin
+│   │   │   │   ├── link_lists.bin
+│   ├── logs/
+│   │   ├── quantumlens.log
+│   ├── src/
+│   │   ├── __init__.py
+│   │   ├── agents/
+│   │   │   ├── chart_agent.py
+│   │   │   ├── orchestrator.py
+│   │   │   ├── planner.py
+│   │   │   ├── rag_agent.py
+│   │   │   ├── sql_agent.py
+│   │   ├── analytics/
+│   │   ├── api/
+│   │   │   ├── dependencies.py
+│   │   │   ├── exceptions.py
+│   │   │   ├── main.py
+│   │   │   ├── middleware.py
+│   │   │   ├── responses.py
+│   │   │   ├── routes.py
+│   │   │   ├── schemas.py
+│   │   │   ├── services.py
+│   │   │   ├── __init__.py
+│   │   │   ├── routers/
+│   │   │   │   ├── health.py
+│   │   │   │   ├── metrics.py
+│   │   │   │   ├── rag.py
+│   │   │   │   ├── records.py
+│   │   │   ├── schemas/
+│   │   │   │   ├── common.py
+│   │   │   │   ├── metric.py
+│   │   │   │   ├── rag.py
+│   │   │   ├── services/
+│   │   │   │   ├── metric_service.py
+│   │   │   │   ├── rag_service.py
+│   │   │   │   ├── record_service.py
+│   │   ├── config/
+│   │   │   ├── settings.py
+│   │   │   ├── __init__.py
+│   │   ├── evaluation/
+│   │   │   ├── benchmark.py
+│   │   │   ├── rag_metrics.py
+│   │   │   ├── retrieval_metrics.py
+│   │   │   ├── __init__.py
+│   │   ├── ingestion/
+│   │   │   ├── extracted_metrics.json
+│   │   │   ├── mapped_metrics.json
+│   │   │   ├── metric_dictionary.json
+│   │   │   ├── metric_extractor.py
+│   │   │   ├── scan_sheet_metadata.json
+│   │   │   ├── sheet_scanner.py
+│   │   │   ├── valued_metrics.json
+│   │   │   ├── value_extractor.py
+│   │   │   ├── workbook_metadata.json
+│   │   │   ├── workbook_reader.py
+│   │   ├── models/
+│   │   ├── rag/
+│   │   │   ├── build_vectordb.py
+│   │   │   ├── check_vectors.py
+│   │   │   ├── embedding_generator.py
+│   │   │   ├── llm_service.py
+│   │   │   ├── prompt_builder.py
+│   │   │   ├── rag_pipeline.py
+│   │   │   ├── response_parser.py
+│   │   │   ├── retrieval_engine.py
+│   │   │   ├── vector_loader.py
+│   │   │   ├── __init__.py
+│   │   ├── transformation/
+│   │   │   ├── kpi_builder.py
+│   │   │   ├── metric_mapper.py
+│   │   │   ├── period_mapper.py
+│   │   │   ├── unit_normalizer.py
+│   │   ├── utils/
+│   │   │   ├── constants.py
+│   │   │   ├── helpers.py
+│   │   │   ├── logger.py
+│   │   │   ├── __init__.py
+│   │   ├── warehouse/
+│   │   │   ├── data_loader.py
+│   │   │   ├── query_service.py
+│   │   │   ├── supabase_client.py
+│   ├── tests/
+├── docs/
+│   ├── architecture/
+│   │   ├── architecture.md
+│   │   ├── architecture.svg
+│   ├── assets/
+│   ├── deployment/
+│   ├── features/
+│   │   ├── ingestion/
+│   │   │   ├── data_dictionary.md
+│   │   ├── rag/
+│   │   │   ├── kpi_catalog.md
+│   ├── refactoring/
+│   │   ├── issues.md
+│   │   ├── troubleshooting.md
+├── frontend/
+│   ├── AGENTS.md
+│   ├── CLAUDE.md
+│   ├── eslint.config.mjs
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   ├── README.md
+│   ├── tsconfig.json
+│   ├── public/
+│   │   ├── file.svg
+│   │   ├── globe.svg
+│   │   ├── next.svg
+│   │   ├── vercel.svg
+│   │   ├── window.svg
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── favicon.ico
+│   │   │   ├── globals.css
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   ├── components/
+│   │   │   ├── ai/
+│   │   │   │   ├── AIChat.tsx
+│   │   │   ├── charts/
+│   │   │   │   ├── LineChart.tsx
+│   │   │   ├── dashboard/
+│   │   │   │   ├── SummaryCard.tsx
+│   │   │   ├── layout/
+│   │   │   ├── metrics/
+│   │   │   ├── records/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   │   ├── api.ts
+│   │   │   ├── metricService.ts
+│   │   ├── types/
+│   │   │   ├── metric.ts
+├── notebooks/
+├── scripts/
+│   ├── project_tree.txt
+├── services/
+│   ├── app.py
+│   ├── config.py
+│   ├── embedding_service.py
+│   ├── models.py
+│   ├── README copy.md
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── runtime.txt
+│   ├── embedding-service/
