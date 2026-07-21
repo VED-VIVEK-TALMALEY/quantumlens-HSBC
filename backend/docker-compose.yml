@@ -1,10 +1,13 @@
-version: "3.9"
+
+
 
 services:
 
   quantumlens-api:
 
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
 
     container_name: quantumlens-api
 

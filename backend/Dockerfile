@@ -1,33 +1,65 @@
-# ---------- Base Image ----------
+
+# ==========================================================
+# QuantumLens Backend
+# ==========================================================
+
 FROM python:3.12-slim
 
-# ---------- Environment ----------
+# ----------------------------------------------------------
+# Environment
+# ----------------------------------------------------------
+
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# ---------- Working Directory ----------
+# ----------------------------------------------------------
+# Working Directory
+# ----------------------------------------------------------
+
 WORKDIR /app
 
-# ---------- System Dependencies ----------
+# ----------------------------------------------------------
+# System Dependencies
+# ----------------------------------------------------------
+
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# ---------- Install Python Dependencies ----------
+# ----------------------------------------------------------
+# Python Dependencies
+# ----------------------------------------------------------
+
 COPY requirements.txt .
 
 RUN pip install --upgrade pip
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# ---------- Copy Project ----------
+# ----------------------------------------------------------
+# Copy Backend
+# ----------------------------------------------------------
+
 COPY . .
 
-# ---------- Create Persistent Vector DB Directory ----------
-RUN mkdir -p /app/data/vectordb
+# ----------------------------------------------------------
+# Create Runtime Directories
+# ----------------------------------------------------------
 
-# ---------- Expose Port ----------
+RUN mkdir -p /app/data/generated
+RUN mkdir -p /app/data/vectordb
+RUN mkdir -p /app/logs
+
+# ----------------------------------------------------------
+# Expose API
+# ----------------------------------------------------------
+
 EXPOSE 8000
 
-# ---------- Start FastAPI ----------
-CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# ----------------------------------------------------------
+# Start FastAPI
+# ----------------------------------------------------------
+
+    CMD ["uvicorn","src.api.main:app","--host","0.0.0.0","--port","8000"]
+

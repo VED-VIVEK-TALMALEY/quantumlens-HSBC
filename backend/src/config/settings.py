@@ -94,7 +94,27 @@ class Settings:
     # ------------------------------------------------------
 
     TOP_K = 5
+    # ==========================================================
+# Create Required Directories
+# ==========================================================
+
+for directory in [
+    DATA_DIR,
+    RAW_DATA_DIR,
+    PROCESSED_DATA_DIR,
+    GENERATED_DATA_DIR,
+    VECTOR_DB_DIR,
+    LOG_DIR,
+]:
+    directory.mkdir(parents=True, exist_ok=True)
 
 
 settings = Settings()
+if __name__ == "__main__":
 
+    print(f"BASE_DIR       : {BASE_DIR}")
+    print(f"DATA_DIR       : {DATA_DIR}")
+    print(f"RAW_DATA_DIR   : {RAW_DATA_DIR}")
+    print(f"GENERATED_DIR  : {GENERATED_DATA_DIR}")
+    print(f"VECTOR_DB      : {Settings.VECTOR_DB_PATH}")
+    print(f"EMBEDDINGS     : {Settings.EMBEDDINGS_PATH}")
