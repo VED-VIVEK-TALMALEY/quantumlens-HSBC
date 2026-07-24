@@ -6,7 +6,7 @@ client = Groq(
 )
 
 
-def ask_llm(prompt):
+def generate_answer(prompt):
 
     response = client.chat.completions.create(
 

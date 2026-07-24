@@ -1,16 +1,11 @@
 import json
 
+
 import chromadb
 
 from src.utils.logger import logger
 from src.config.settings import settings
-# ----------------------------------------
-# Paths
-# ----------------------------------------
 
-# ----------------------------------------
-# Load Embeddings
-# ----------------------------------------
 def load_embeddings():
 
     with open(
@@ -26,30 +21,24 @@ def load_embeddings():
 # Connect to ChromaDB
 # ----------------------------------------
 
-def get_collection():
-
-    client = chromadb.PersistentClient(
-        path=str(settings.VECTOR_DB_PATH)
-    )
-
-    collection = client.get_or_create_collection(
-        name="hsbc_kpis"
-    )
-
-    return collection
-
-
-# ----------------------------------------
-# Load Embeddings into ChromaDB
-# ----------------------------------------
-
 def load_vectors():
 
     logger.info("Loading vectors...")
 
     embeddings = load_embeddings()
 
-    collection = get_collection()
+    client = chromadb.PersistentClient(
+        path=str(settings.VECTOR_DB_PATH)
+    )
+
+    try:
+        client.delete_collection("hsbc_kpis")
+    except Exception:
+        pass
+
+    collection = client.get_or_create_collection(
+        name="hsbc_kpis"
+    )
 
     loaded = 0
     failed = 0
@@ -105,11 +94,6 @@ def load_vectors():
     logger.info(
         f"{collection.count()} vectors in ChromaDB"
     )
-
-
-# ----------------------------------------
-# Main
-# ----------------------------------------
 
 if __name__ == "__main__":
 

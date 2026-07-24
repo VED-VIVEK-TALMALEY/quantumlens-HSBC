@@ -1,12 +1,11 @@
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
+from src.utils.logger import logger
 from src.config.settings import settings
 
 
 class RetrievalEngine:
-
     def __init__(self):
 
       DB_PATH = settings.VECTOR_DB_PATH
@@ -14,26 +13,45 @@ class RetrievalEngine:
       self.client = chromadb.PersistentClient(
             path=str(DB_PATH)
         )
+      self.collection = None
+      self.model = None
+def get_collection(self):
 
-      self.collection = self.client.get_collection(
+    if self.collection is None:
+
+        logger.info("Connecting to ChromaDB...")
+
+        self.collection = self.client.get_collection(
             "hsbc_kpis"
         )
 
-      self.model = SentenceTransformer(
+    return self.collection
+def get_model(self):
+
+    if self.model is None:
+
+        logger.info("Loading embedding model...")
+
+        from sentence_transformers import SentenceTransformer
+
+        self.model = SentenceTransformer(
             settings.EMBEDDING_MODEL
         )
 
-    def search(
+    return self.model
+
+def search(
         self,
         query,
         top_k=settings.TOP_K
     ):
 
-        query_embedding = self.model.encode(
-            query
-        ).tolist()
-
-        results = self.collection.query(
+        query_embedding = (
+    self.get_model()
+    .encode(query)
+    .tolist()
+)
+        results = self.get_collection().query(
 
             query_embeddings=[
                 query_embedding
@@ -43,7 +61,21 @@ class RetrievalEngine:
 
         )
 
-        return results
+        matches = []
+        for i in range(len(results["documents"][0])):
+
+         matches.append({
+
+        "text": results["documents"][0][i],
+
+        "metadata": results["metadatas"][0][i],
+
+        "distance": results["distances"][0][i]
+
+    })
+
+        logger.info("%d documents retrieved", len(matches))
+        return matches
 
 
 if __name__ == "__main__":

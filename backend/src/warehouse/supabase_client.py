@@ -1,20 +1,16 @@
-import os
+from supabase import Client, create_client
 
-from dotenv import load_dotenv
-from supabase import create_client
+from src.config.settings import settings
 
+# --------------------------------------------------
+# Shared Supabase Client
+# --------------------------------------------------
 
-load_dotenv()
-
-SUPABASE_URL = os.getenv(
-    "SUPABASE_URL"
+supabase: Client = create_client(
+    settings.SUPABASE_URL,
+    settings.SUPABASE_KEY
 )
 
-SUPABASE_KEY = os.getenv(
-    "SUPABASE_KEY"
-)
 
-supabase = create_client(
-    SUPABASE_URL,
-    SUPABASE_KEY
-)
+def get_supabase() -> Client:
+    return supabase

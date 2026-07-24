@@ -1,15 +1,34 @@
-
-
-
 services:
+
+  oracle-db:
+
+    image: gvenzl/oracle-xe:21-slim
+
+    container_name: quantumlens-oracle
+
+    ports:
+      - "1521:1521"
+
+    environment:
+      ORACLE_PASSWORD: Quantum123
+      APP_USER: quantumlens
+      APP_USER_PASSWORD: Quantum123
+
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+    restart: unless-stopped
+
+
 
   quantumlens-api:
 
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
 
     container_name: quantumlens-api
+
+    depends_on:
+      - oracle-db
 
     ports:
       - "8000:8000"
@@ -21,3 +40,9 @@ services:
       - ./data/vectordb:/app/data/vectordb
 
     restart: unless-stopped
+
+
+
+volumes:
+
+  oracle-data:

@@ -1,9 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
-from src.core.exceptions import register_exception_handlers
-from src.api.routes import router
+
 from src.api.middleware import RequestLoggingMiddleware
+from src.api.exceptions import register_exception_handlers
+
+from src.api.routers.health import router as health_router
+from src.api.routers.metrics import router as metrics_router
+from src.api.routers.rag import router as rag_router
+from src.api.routers.records import router as records_router
 
 app = FastAPI(
     title="QuantumLens API",
@@ -28,8 +33,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router)
 register_exception_handlers(app)
+
+app.include_router(health_router)
+app.include_router(metrics_router)
+app.include_router(rag_router)
+app.include_router(records_router)
+
 
 @app.get("/")
 def root():
