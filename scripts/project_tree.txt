@@ -1,3 +1,0 @@
-./
-├── generate_tree.py
-├── project_tree.txt

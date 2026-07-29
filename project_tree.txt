@@ -100,6 +100,7 @@
 │   │   │   ├── rag_pipeline.py
 │   │   │   ├── response_parser.py
 │   │   │   ├── retrieval_engine.py
+│   │   │   ├── sql_retriever.py
 │   │   │   ├── vector_loader.py
 │   │   │   ├── __init__.py
 │   │   │   ├── vector_db/
@@ -114,10 +115,6 @@
 │   │   │   ├── helpers.py
 │   │   │   ├── logger.py
 │   │   │   ├── __init__.py
-│   │   ├── warehouse/
-│   │   │   ├── data_loader.py
-│   │   │   ├── query_service.py
-│   │   │   ├── supabase_client.py
 │   ├── tests/
 │   │   ├── api/
 │   │   ├── integration/
@@ -127,6 +124,7 @@
 │   │   ├── create_schema.py
 │   │   ├── crud.py
 │   │   ├── database.py
+│   │   ├── data_loader.py
 │   │   ├── loader.py
 │   │   ├── load_to_oracle.py
 │   │   ├── models.py
@@ -135,6 +133,7 @@
 │   │   ├── repository.py
 │   │   ├── schema.sql
 │   │   ├── schemas.py
+│   │   ├── supabase_client.py
 │   │   ├── __init__.py
 │   │   ├── migrations/
 ├── docs/
