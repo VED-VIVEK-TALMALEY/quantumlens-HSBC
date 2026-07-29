@@ -94,6 +94,11 @@ def load_vectors():
     logger.info(
         f"{collection.count()} vectors in ChromaDB"
     )
+    return collection
+
+def load_vector_db():
+    return load_vectors()
+
 
 if __name__ == "__main__":
 

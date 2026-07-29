@@ -273,3 +273,7 @@
 2026-07-24 04:18:28,500 | INFO | 366 vectors in ChromaDB
 2026-07-24 04:18:28,509 | INFO | Vector Database Build Completed
 2026-07-28 15:48:46,475 | INFO | Oracle schema created
+2026-07-29 14:42:32,344 | INFO | Loading vectors...
+2026-07-29 14:42:38,515 | INFO | 366 vectors in ChromaDB
+2026-07-29 15:04:30,035 | INFO | Loading vectors...
+2026-07-29 15:04:37,554 | INFO | 366 vectors in ChromaDB

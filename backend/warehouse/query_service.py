@@ -2,11 +2,10 @@ from warehouse.oracle_client import get_connection
 
 
 def get_all_metrics():
-
     conn = get_connection()
-    cursor = conn.cursor()
+    cur = conn.cursor()
 
-    cursor.execute("""
+    cur.execute("""
         SELECT
             metric_id,
             metric_name,
@@ -19,9 +18,69 @@ def get_all_metrics():
         ORDER BY metric_id
     """)
 
-    rows = cursor.fetchall()
+    rows = cur.fetchall()
 
-    cursor.close()
+    cur.close()
+    conn.close()
+
+    return rows
+
+
+def get_metric_by_id(metric_id):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT *
+        FROM metrics
+        WHERE metric_id = :1
+        ORDER BY period
+    """, [metric_id])
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return rows
+
+
+def get_metric_by_name(metric_name):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT *
+        FROM metrics
+        WHERE LOWER(metric_name)=LOWER(:1)
+        ORDER BY period
+    """, [metric_name])
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return rows
+
+
+def search_metrics(keyword):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT DISTINCT
+            metric_id,
+            metric_name,
+            abbreviation
+        FROM metrics
+        WHERE LOWER(metric_name) LIKE '%' || LOWER(:1) || '%'
+        ORDER BY metric_name
+    """, [keyword])
+
+    rows = cur.fetchall()
+
+    cur.close()
     conn.close()
 
     return rows
@@ -29,5 +88,15 @@ def get_all_metrics():
 
 if __name__ == "__main__":
 
+    print("First 10 metrics")
     for row in get_all_metrics()[:10]:
         print(row)
+
+    print("\nSearch: capital")
+    print(search_metrics("capital"))
+
+    print("\nMetric ID = 20")
+    print(get_metric_by_id(20)[:3])
+
+    print("\nMetric Name = net_interest_income")
+    print(get_metric_by_name("net_interest_income")[:3])

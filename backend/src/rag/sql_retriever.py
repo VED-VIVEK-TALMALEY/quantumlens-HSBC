@@ -7,25 +7,33 @@ class SQLRetriever:
 
         conn = get_connection()
 
-        cur = conn.cursor()
+        try:
+            cur = conn.cursor()
 
-        cur.execute(
-            """
-            SELECT
-                metric_name,
-                abbreviation,
-                period,
-                value
-            FROM metrics
-            WHERE LOWER(metric_name)=LOWER(:1)
-            ORDER BY period
-            """,
-            [metric_name]
-        )
+            cur.execute(
+                """
+                SELECT
+                    metric_name,
+                    abbreviation,
+                    period,
+                    value
+                FROM metrics
+                WHERE LOWER(metric_name)=LOWER(:1)
+                ORDER BY period
+                """,
+                [metric_name],
+            )
 
-        rows = cur.fetchall()
+            columns = [col[0].lower() for col in cur.description]
 
-        cur.close()
-        conn.close()
+            rows = [
+                dict(zip(columns, row))
+                for row in cur.fetchall()
+            ]
 
-        return rows
+            cur.close()
+
+            return rows
+
+        finally:
+            conn.close()

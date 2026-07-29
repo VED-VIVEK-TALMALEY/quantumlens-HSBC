@@ -1,7 +1,7 @@
 from functools import lru_cache
 
 from src.rag.rag_pipeline import ask
-from src.warehouse.query_service import QueryService
+from warehouse.query_service import QueryService
 
 
 @lru_cache

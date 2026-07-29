@@ -1,5 +1,5 @@
 from src.utils.logger import logger
-from src.warehouse.supabase_client import get_supabase
+from warehouse.supabase_client import get_supabase
 
 supabase = get_supabase()
 
