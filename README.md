@@ -92,7 +92,7 @@ graph TD
     classDef etl fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
     classDef ai fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
     classDef forecast fill:#e377c2,stroke:#333,stroke-width:2px,color:#fff;
-    classDef graph fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
+    classDef kg fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
     
     class UI client;
     class FastAPI api;
@@ -100,7 +100,7 @@ graph TD
     class Supabase,Oracle storage;
     class Chroma,FinBERT,Groq ai;
     class Forecast forecast;
-    class Neo4j graph;
+    class Neo4j kg;
 ```
 
 ### Layer Matrix
@@ -319,7 +319,7 @@ graph TD
     classDef etl fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
     classDef ai fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
     classDef forecast fill:#e377c2,stroke:#333,stroke-width:2px,color:#fff;
-    classDef graph fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
+    classDef kg fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
     
     class UI client;
     class FastAPI api;
@@ -327,7 +327,7 @@ graph TD
     class Supabase,Oracle storage;
     class Chroma,FinBERT,Groq ai;
     class Forecast forecast;
-    class Neo4j graph;
+    class Neo4j kg;
 ```
 
 ---
