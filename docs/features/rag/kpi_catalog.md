@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # KPI Catalog & Normalization Logic
 
 This document details the metric normalization engine, lookup dictionary catalog entries, and target mapping strategies utilized by **QuantumLens**.

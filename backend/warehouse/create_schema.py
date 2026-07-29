@@ -1,6 +1,16 @@
+# -------------------------------------------------------------------
+# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+# This project and its source code are strictly proprietary.
+# Unauthorized copying, distribution, or use is strictly prohibited.
+# -------------------------------------------------------------------
+import sys
 from pathlib import Path
 
 import oracledb
+
+# Add backend directory to sys.path to resolve imports correctly
+backend_dir = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(backend_dir))
 
 from src.utils.logger import logger
 from warehouse.oracle_client import get_connection
@@ -30,7 +40,7 @@ def create_schema():
 
             cursor.execute(statement)
 
-            print("✓ Executed")
+            print("[OK] Executed")
 
         except oracledb.DatabaseError as e:
 
@@ -40,7 +50,7 @@ def create_schema():
 
             if error.code == 955:
 
-                print("✓ Already Exists")
+                print("[OK] Already Exists")
 
             else:
 

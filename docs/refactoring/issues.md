@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # Engineering History: Issues, Investigations, and Resolutions
 
 This document records the comprehensive engineering history of QuantumLens. It documents the critical issues encountered during development, the root causes identified, the investigation workflows, the specific code corrections, and the long-term architectural prevention strategies.

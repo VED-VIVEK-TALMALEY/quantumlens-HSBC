@@ -1,3 +1,9 @@
+# -------------------------------------------------------------------
+# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+# This project and its source code are strictly proprietary.
+# Unauthorized copying, distribution, or use is strictly prohibited.
+# -------------------------------------------------------------------
+
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 from supabase import create_client

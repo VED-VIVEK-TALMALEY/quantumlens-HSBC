@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # Next.js Analytics Portal (frontend/)
 
 This is the interactive client dashboard for the **QuantumLens** financial intelligence platform. It provides a visual interface for executive strategy, risk observation, and natural language reasoning (AI financial assistant).

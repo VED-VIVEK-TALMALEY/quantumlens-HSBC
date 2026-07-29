@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # Changelog
 
 All notable changes to the **QuantumLens** platform are documented in this file.

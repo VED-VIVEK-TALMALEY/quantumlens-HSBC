@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # System Architecture Specification
 
 This document details the architectural layout, system layers, and component interactions of **QuantumLens** (also known as *HSBC Atlas* or *Project Basilisk*), an institutional-grade banking intelligence platform.

@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 <svg width="680" height="1040" viewBox="0 0 680 1040" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
 <title>QuantumLens V5 system architecture</title>
 <desc>Diagram showing the QuantumLens V5 stack from Next.js frontend through the FastAPI gateway, agent layer, orchestrator, AI and data services, down to storage and secrets infrastructure.</desc>

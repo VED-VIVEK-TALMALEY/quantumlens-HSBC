@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # HSBC QuantumLens (also known as *HSBC Atlas* or *Project Basilisk*)
 
 ### *AI-Powered Global Banking Intelligence & Risk Observatory*

@@ -1,3 +1,9 @@
+<!-- -------------------------------------------------------------------
+Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+This project and its source code are strictly proprietary.
+Unauthorized copying, distribution, or use is strictly prohibited.
+------------------------------------------------------------------- -->
+
 # FastAPI Backend Server (backend/)
 
 This is the backend REST API engine for the **QuantumLens** platform. It handles Excel data ingestion pipelines, manages the dual-database warehouses, generates semantic vector embeddings, and hosts the multi-agent AI copilot.
