@@ -2,7 +2,7 @@
 
 This document details the metric normalization engine, lookup dictionary catalog entries, and target mapping strategies utilized by **QuantumLens**.
 
-For system architecture layouts, see [architecture.md](../../docs/architecture/architecture.md). For table details, see [data_dictionary.md](../../docs/features/ingestion/data_dictionary.md).
+For system architecture layouts, see [architecture.md](../../architecture/architecture.md). For table details, see [data_dictionary.md](../ingestion/data_dictionary.md).
 
 ---
 
@@ -29,7 +29,7 @@ To handle this variation, the pipeline runs a string-standardization flow:
 
 ## Complete Catalog Lookup Dictionary
 
-The system loads mapping configurations from [metric_dictionary.json](../../backend/src/ingestion/metric_dictionary.json). Below is the complete catalog:
+The system loads mapping configurations from [metric_dictionary.json](../../../backend/src/ingestion/metric_dictionary.json). Below is the complete catalog:
 
 | Metric ID | Normalized Canonical Name | Abbreviation Code | Target Worksheet Context / Description |
 | :--- | :--- | :--- | :--- |
@@ -84,6 +84,6 @@ The system loads mapping configurations from [metric_dictionary.json](../../back
 ---
 
 ## Related Documentation
-* [Primary Readme](../../README.md): Project overview, installation scripts, API reference.
-* [System Architecture Spec](../../docs/architecture/architecture.md): Systems layers overview.
-* [Database Schema (Data Dictionary)](../../docs/features/ingestion/data_dictionary.md): Detailed columns description, indices, and constraints.
+* [Primary Readme](../../../README.md): Project overview, installation scripts, API reference.
+* [System Architecture Spec](../../architecture/architecture.md): Systems layers overview.
+* [Database Schema (Data Dictionary)](../ingestion/data_dictionary.md): Detailed columns description, indices, and constraints.

@@ -2,7 +2,7 @@
 
 This document details the relational data warehouse design, table schemas, indices, and database constraints of **QuantumLens**.
 
-For deployment steps or API integration hooks, see the primary [README.md](../../README.md). For system architecture diagrams, see [architecture.md](../../docs/architecture/architecture.md).
+For deployment steps or API integration hooks, see the primary [README.md](../../../README.md). For system architecture diagrams, see [architecture.md](../../architecture/architecture.md).
 
 ---
 
@@ -130,6 +130,6 @@ To transition QuantumLens into a multi-tenant enterprise portal, the database wi
 ---
 
 ## Related Documentation
-* [Primary Readme](../../README.md): Project overview, installation scripts, API reference.
-* [System Architecture Spec](../../docs/architecture/architecture.md): System layers overview and Mermaid diagrams.
+* [Primary Readme](../../../README.md): Project overview, installation scripts, API reference.
+* [System Architecture Spec](../../architecture/architecture.md): System layers overview and Mermaid diagrams.
 * [KPI Catalog & Normalization Rules](../rag/kpi_catalog.md): Dictionary lookup configurations.

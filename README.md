@@ -237,7 +237,7 @@ Expand the sections below to view the full contents of all other documentation f
 
 This document details the architectural layout, system layers, and component interactions of **QuantumLens** (also known as *HSBC Atlas* or *Project Basilisk*), an institutional-grade banking intelligence platform.
 
-For a high-level overview, deployment metrics, or setup instructions, see the primary [README.md](../../README.md).
+For a high-level overview, deployment metrics, or setup instructions, see the primary [README.md](README.md).
 
 ---
 
@@ -351,19 +351,19 @@ The system modules are partitioned as follows:
 
 | Script / Module | Architecture Layer | Core Function | Primary Python Packages | File Path |
 | :--- | :--- | :--- | :--- | :--- |
-| **workbook_reader.py** | Layer 1: Data Pipeline | Reads binary workbooks in read-only mode to prevent memory leak issues. | `pandas`, `openpyxl` | [workbook_reader.py](../../backend/src/ingestion/workbook_reader.py) |
-| **sheet_scanner.py** | Layer 1: Data Pipeline | Parses worksheets cell-by-cell and fills merged header regions programmatically. | `pandas`, `numpy` | [sheet_scanner.py](../../backend/src/ingestion/sheet_scanner.py) |
-| **metric_extractor.py**| Layer 1: Data Pipeline | Normalizes names to a centralized config map in constant O(1) time. | `re`, `json` | [metric_extractor.py](../../backend/src/ingestion/metric_extractor.py) |
-| **value_extractor.py** | Layer 1: Data Pipeline | Isolates floats, filtering out string footnotes or empty indicators. | `pandas`, `numpy` | [value_extractor.py](../../backend/src/ingestion/value_extractor.py) |
-| **period_mapper.py** | Layer 1: Data Pipeline | Maps spreadsheet columns to sequential chronological period indexes. | `json` | [period_mapper.py](../../backend/src/transformation/period_mapper.py) |
-| **kpi_builder.py** | Layer 1: Data Pipeline | Compiles metrics trend flags (`up`, `down`, `flat`) and timestamps records. | `datetime` | [kpi_builder.py](../../backend/src/transformation/kpi_builder.py) |
-| **data_loader.py** | Layer 1: Data Pipeline | Batches records to Supabase tables using natural key upsert operations. | `supabase` | [data_loader.py](../../backend/warehouse/data_loader.py) |
-| **load_to_oracle.py** | Layer 1: Data Pipeline | Flattens observations and uploads data rows to Oracle Database. | `oracledb` | [load_to_oracle.py](../../backend/warehouse/load_to_oracle.py) |
-| **query_service.py** | Layer 6: AI Copilot | Wraps database queries, providing metrics arrays to FastAPI routers. | `oracledb` | [query_service.py](../../backend/warehouse/query_service.py) |
-| **embedding_generator.py**| Layer 3: AI Intelligence | Creates vector embeddings from metrics metadata using local BAAI models. | `sentence-transformers` | [embedding_generator.py](../../backend/src/rag/embedding_generator.py) |
-| **vector_loader.py** | Layer 3: AI Intelligence | Registers vector collections in ChromaDB and handles index persistence. | `chromadb` | [vector_loader.py](../../backend/src/rag/vector_loader.py) |
-| **retrieval_engine.py**| Layer 3: AI Intelligence | Performs cosine searches on vectorized metrics with distance filters. | `chromadb` | [retrieval_engine.py](../../backend/src/rag/retrieval_engine.py) |
-| **rag_pipeline.py** | Layer 6: AI Copilot | Orchestrates system prompts, injecting contexts for LLM execution. | `groq` | [rag_pipeline.py](../../backend/src/rag/rag_pipeline.py) |
+| **workbook_reader.py** | Layer 1: Data Pipeline | Reads binary workbooks in read-only mode to prevent memory leak issues. | `pandas`, `openpyxl` | [workbook_reader.py](backend/src/ingestion/workbook_reader.py) |
+| **sheet_scanner.py** | Layer 1: Data Pipeline | Parses worksheets cell-by-cell and fills merged header regions programmatically. | `pandas`, `numpy` | [sheet_scanner.py](backend/src/ingestion/sheet_scanner.py) |
+| **metric_extractor.py**| Layer 1: Data Pipeline | Normalizes names to a centralized config map in constant O(1) time. | `re`, `json` | [metric_extractor.py](backend/src/ingestion/metric_extractor.py) |
+| **value_extractor.py** | Layer 1: Data Pipeline | Isolates floats, filtering out string footnotes or empty indicators. | `pandas`, `numpy` | [value_extractor.py](backend/src/ingestion/value_extractor.py) |
+| **period_mapper.py** | Layer 1: Data Pipeline | Maps spreadsheet columns to sequential chronological period indexes. | `json` | [period_mapper.py](backend/src/transformation/period_mapper.py) |
+| **kpi_builder.py** | Layer 1: Data Pipeline | Compiles metrics trend flags (`up`, `down`, `flat`) and timestamps records. | `datetime` | [kpi_builder.py](backend/src/transformation/kpi_builder.py) |
+| **data_loader.py** | Layer 1: Data Pipeline | Batches records to Supabase tables using natural key upsert operations. | `supabase` | [data_loader.py](backend/warehouse/data_loader.py) |
+| **load_to_oracle.py** | Layer 1: Data Pipeline | Flattens observations and uploads data rows to Oracle Database. | `oracledb` | [load_to_oracle.py](backend/warehouse/load_to_oracle.py) |
+| **query_service.py** | Layer 6: AI Copilot | Wraps database queries, providing metrics arrays to FastAPI routers. | `oracledb` | [query_service.py](backend/warehouse/query_service.py) |
+| **embedding_generator.py**| Layer 3: AI Intelligence | Creates vector embeddings from metrics metadata using local BAAI models. | `sentence-transformers` | [embedding_generator.py](backend/src/rag/embedding_generator.py) |
+| **vector_loader.py** | Layer 3: AI Intelligence | Registers vector collections in ChromaDB and handles index persistence. | `chromadb` | [vector_loader.py](backend/src/rag/vector_loader.py) |
+| **retrieval_engine.py**| Layer 3: AI Intelligence | Performs cosine searches on vectorized metrics with distance filters. | `chromadb` | [retrieval_engine.py](backend/src/rag/retrieval_engine.py) |
+| **rag_pipeline.py** | Layer 6: AI Copilot | Orchestrates system prompts, injecting contexts for LLM execution. | `groq` | [rag_pipeline.py](backend/src/rag/rag_pipeline.py) |
 
 ---
 
@@ -453,9 +453,9 @@ sequenceDiagram
 ---
 
 ## Related Documentation
-* [Primary Readme](../../README.md): Project overview, installation scripts, API reference.
-* [Database Schema (Data Dictionary)](../features/ingestion/data_dictionary.md): Detailed columns description, indices, and constraints.
-* [KPI Catalog Mapping](../features/rag/kpi_catalog.md): Synonym dictionaries and lookup rules.
+* [Primary Readme](README.md): Project overview, installation scripts, API reference.
+* [Database Schema (Data Dictionary)](docs/features/ingestion/data_dictionary.md): Detailed columns description, indices, and constraints.
+* [KPI Catalog Mapping](docs/features/rag/kpi_catalog.md): Synonym dictionaries and lookup rules.
 
 
 </details>
@@ -467,7 +467,7 @@ sequenceDiagram
 
 This document details the relational data warehouse design, table schemas, indices, and database constraints of **QuantumLens**.
 
-For deployment steps or API integration hooks, see the primary [README.md](../../README.md). For system architecture diagrams, see [architecture.md](../../docs/architecture/architecture.md).
+For deployment steps or API integration hooks, see the primary [README.md](README.md). For system architecture diagrams, see [architecture.md](docs/architecture/architecture.md).
 
 ---
 
@@ -595,9 +595,9 @@ To transition QuantumLens into a multi-tenant enterprise portal, the database wi
 ---
 
 ## Related Documentation
-* [Primary Readme](../../README.md): Project overview, installation scripts, API reference.
-* [System Architecture Spec](../../docs/architecture/architecture.md): System layers overview and Mermaid diagrams.
-* [KPI Catalog & Normalization Rules](../rag/kpi_catalog.md): Dictionary lookup configurations.
+* [Primary Readme](README.md): Project overview, installation scripts, API reference.
+* [System Architecture Spec](docs/architecture/architecture.md): System layers overview and Mermaid diagrams.
+* [KPI Catalog & Normalization Rules](docs/features/rag/kpi_catalog.md): Dictionary lookup configurations.
 
 
 </details>
@@ -609,7 +609,7 @@ To transition QuantumLens into a multi-tenant enterprise portal, the database wi
 
 This document details the metric normalization engine, lookup dictionary catalog entries, and target mapping strategies utilized by **QuantumLens**.
 
-For system architecture layouts, see [architecture.md](../../docs/architecture/architecture.md). For table details, see [data_dictionary.md](../../docs/features/ingestion/data_dictionary.md).
+For system architecture layouts, see [architecture.md](docs/architecture/architecture.md). For table details, see [data_dictionary.md](docs/features/ingestion/data_dictionary.md).
 
 ---
 
@@ -636,7 +636,7 @@ To handle this variation, the pipeline runs a string-standardization flow:
 
 ## Complete Catalog Lookup Dictionary
 
-The system loads mapping configurations from [metric_dictionary.json](../../backend/src/ingestion/metric_dictionary.json). Below is the complete catalog:
+The system loads mapping configurations from [metric_dictionary.json](backend/src/ingestion/metric_dictionary.json). Below is the complete catalog:
 
 | Metric ID | Normalized Canonical Name | Abbreviation Code | Target Worksheet Context / Description |
 | :--- | :--- | :--- | :--- |
@@ -691,9 +691,9 @@ The system loads mapping configurations from [metric_dictionary.json](../../back
 ---
 
 ## Related Documentation
-* [Primary Readme](../../README.md): Project overview, installation scripts, API reference.
-* [System Architecture Spec](../../docs/architecture/architecture.md): Systems layers overview.
-* [Database Schema (Data Dictionary)](../../docs/features/ingestion/data_dictionary.md): Detailed columns description, indices, and constraints.
+* [Primary Readme](README.md): Project overview, installation scripts, API reference.
+* [System Architecture Spec](docs/architecture/architecture.md): Systems layers overview.
+* [Database Schema (Data Dictionary)](docs/features/ingestion/data_dictionary.md): Detailed columns description, indices, and constraints.
 
 
 </details>
@@ -705,7 +705,7 @@ The system loads mapping configurations from [metric_dictionary.json](../../back
 
 This document details the common troubleshooting steps, pipeline warnings, and historical resolutions for developers working with **QuantumLens**.
 
-For system architecture layouts, see [architecture.md](../../docs/architecture/architecture.md). For table details, see [data_dictionary.md](../../docs/features/ingestion/data_dictionary.md).
+For system architecture layouts, see [architecture.md](docs/architecture/architecture.md). For table details, see [data_dictionary.md](docs/features/ingestion/data_dictionary.md).
 
 ---
 
@@ -713,9 +713,9 @@ For system architecture layouts, see [architecture.md](../../docs/architecture/a
 
 | Symptom | Probable Cause | Diagnostic Checklist | Resolution Action |
 | :--- | :--- | :--- | :--- |
-| **Excel Cell Parse Crash** | Empty, null, or annotated spreadsheet cells parse as `NaN` (Not a Number) in Pandas, which are invalid in PostgreSQL JSONB specifications. | [ ] Check execution logs for `pandas` numeric conversions.<br>[ ] Run the pipeline in dry-run mode and inspect `valued_metrics.json`. | Update sheet preprocessing to handle empty cells using `.replace({np.nan: None})` or similar DataFrame level cleanups in [value_extractor.py](../../backend/src/ingestion/value_extractor.py). |
-| **Missing Period Context** | Column timelines in workbook files use distinct naming conventions (e.g. "Q1 2026" vs "31 March 2026"), causing chronological sorting failures. | [ ] Open sheet row headers and confirm column naming formats.<br>[ ] Print output of `period_mapper.py` to confirm the chronological mapping. | Standardize report timelines to sequential indexes (`period_index: 1`, `period_index: 2`) using [period_mapper.py](../../backend/src/transformation/period_mapper.py) before loading. |
-| **Central KPI Catalog Skip** | The worksheet row labels do not match the exact key entries registered in [metric_dictionary.json](../../backend/src/ingestion/metric_dictionary.json). | [ ] Look up skipped labels in pipeline execution warnings.<br>[ ] Check if the row label contains leading/trailing whitespaces or numbers. | Add the unrecognized text label mapping to [metric_dictionary.json](../../backend/src/ingestion/metric_dictionary.json) under lowercase, trimmed constraints. |
+| **Excel Cell Parse Crash** | Empty, null, or annotated spreadsheet cells parse as `NaN` (Not a Number) in Pandas, which are invalid in PostgreSQL JSONB specifications. | [ ] Check execution logs for `pandas` numeric conversions.<br>[ ] Run the pipeline in dry-run mode and inspect `valued_metrics.json`. | Update sheet preprocessing to handle empty cells using `.replace({np.nan: None})` or similar DataFrame level cleanups in [value_extractor.py](backend/src/ingestion/value_extractor.py). |
+| **Missing Period Context** | Column timelines in workbook files use distinct naming conventions (e.g. "Q1 2026" vs "31 March 2026"), causing chronological sorting failures. | [ ] Open sheet row headers and confirm column naming formats.<br>[ ] Print output of `period_mapper.py` to confirm the chronological mapping. | Standardize report timelines to sequential indexes (`period_index: 1`, `period_index: 2`) using [period_mapper.py](backend/src/transformation/period_mapper.py) before loading. |
+| **Central KPI Catalog Skip** | The worksheet row labels do not match the exact key entries registered in [metric_dictionary.json](backend/src/ingestion/metric_dictionary.json). | [ ] Look up skipped labels in pipeline execution warnings.<br>[ ] Check if the row label contains leading/trailing whitespaces or numbers. | Add the unrecognized text label mapping to [metric_dictionary.json](backend/src/ingestion/metric_dictionary.json) under lowercase, trimmed constraints. |
 
 ---
 
@@ -733,14 +733,14 @@ For system architecture layouts, see [architecture.md](../../docs/architecture/a
 | Symptom | Probable Cause | Diagnostic Checklist | Resolution Action |
 | :--- | :--- | :--- | :--- |
 | **Vector DB Path File Errors** | ChromaDB persistent database paths are absolute or reference folders outside the workspace directory structure, causing access blockages. | [ ] Check environment variable `VECTOR_DB_PATH` in `.env`.<br>[ ] Check write access rights for local directories. | Configure `VECTOR_DB_PATH` as a relative path within the repository root (e.g. `src/rag/vector_db`) and clear the local vector DB folder to rebuild index. |
-| **High API Query Latency** | SentenceTransformer model (`all-MiniLM-L6-v2`) runs embedding generations on slow CPU hardware instances during boot queries. | [ ] Check API endpoint `/ask` request durations.<br>[ ] Monitor memory (RAM) usage on server boot to identify cold-start bottlenecks. | Cache database texts and vector lists in [embeddings.json](../../backend/data/generated/embeddings.json) during ETL ingestion, loading pre-computed arrays to ChromaDB on startup. |
+| **High API Query Latency** | SentenceTransformer model (`all-MiniLM-L6-v2`) runs embedding generations on slow CPU hardware instances during boot queries. | [ ] Check API endpoint `/ask` request durations.<br>[ ] Monitor memory (RAM) usage on server boot to identify cold-start bottlenecks. | Cache database texts and vector lists in [embeddings.json](backend/data/generated/embeddings.json) during ETL ingestion, loading pre-computed arrays to ChromaDB on startup. |
 
 ---
 
 ## Related Documentation
-* [Primary Readme](../../README.md): Project overview, installation scripts, API reference.
-* [System Architecture Spec](../../docs/architecture/architecture.md): Systems layers overview.
-* [Database Schema (Data Dictionary)](../../docs/features/ingestion/data_dictionary.md): Detailed columns description.
+* [Primary Readme](README.md): Project overview, installation scripts, API reference.
+* [System Architecture Spec](docs/architecture/architecture.md): Systems layers overview.
+* [Database Schema (Data Dictionary)](docs/features/ingestion/data_dictionary.md): Detailed columns description.
 
 
 </details>
@@ -1524,7 +1524,7 @@ Root folder (quantumlens-HSBC)
 
 This is the backend REST API engine for the **QuantumLens** platform. It handles Excel data ingestion pipelines, manages the dual-database warehouses, generates semantic vector embeddings, and hosts the multi-agent AI copilot.
 
-For general details on the project architecture or dashboards, see the root [README.md](../README.md).
+For general details on the project architecture or dashboards, see the root [README.md](README.md).
 
 ---
 
@@ -1699,9 +1699,9 @@ Flattens observations into individual rows (one row per quarter/period) for OLAP
 ---
 
 ## Related Documentation
-* [Primary Readme](../README.md): Project overview and complete monorepo details.
-* [Frontend Readme](../frontend/README.md): Next.js dashboard visual portal instructions.
-* [System Architecture Spec](../docs/architecture/architecture.md): Systems layers and sequence flows.
+* [Primary Readme](README.md): Project overview and complete monorepo details.
+* [Frontend Readme](frontend/README.md): Next.js dashboard visual portal instructions.
+* [System Architecture Spec](docs/architecture/architecture.md): Systems layers and sequence flows.
 
 
 </details>
@@ -1713,7 +1713,7 @@ Flattens observations into individual rows (one row per quarter/period) for OLAP
 
 This is the interactive client dashboard for the **QuantumLens** financial intelligence platform. It provides a visual interface for executive strategy, risk observation, and natural language reasoning (AI financial assistant).
 
-For general backend endpoints, models, or database queries, see the [backend/README.md](../backend/README.md).
+For general backend endpoints, models, or database queries, see the [backend/README.md](backend/README.md).
 
 ---
 
@@ -1799,9 +1799,9 @@ Vercel is the recommended hosting platform for Next.jsApp Router portals. Follow
 ---
 
 ## Related Documentation
-* [Primary Readme](../README.md): Complete repository layouts.
-* [Backend Readme](../backend/README.md): FastAPI REST routing specs.
-* [System Architecture Spec](../docs/architecture/architecture.md): Systems layers overview.
+* [Primary Readme](README.md): Complete repository layouts.
+* [Backend Readme](backend/README.md): FastAPI REST routing specs.
+* [System Architecture Spec](docs/architecture/architecture.md): Systems layers overview.
 
 
 </details>
