@@ -24,6 +24,11 @@
 │   │   │   │   ├── header.bin
 │   │   │   │   ├── length.bin
 │   │   │   │   ├── link_lists.bin
+│   │   │   ├── 8c9f72be-3dd8-4ff4-8228-85f2ea550c9d/
+│   │   │   │   ├── data_level0.bin
+│   │   │   │   ├── header.bin
+│   │   │   │   ├── length.bin
+│   │   │   │   ├── link_lists.bin
 │   ├── logs/
 │   │   ├── quantumlens.log
 │   ├── src/
@@ -36,30 +41,37 @@
 │   │   │   ├── sql_agent.py
 │   │   ├── analytics/
 │   │   ├── api/
-│   │   │   ├── dependencies.py
+│   │   │   ├── config.py
 │   │   │   ├── exceptions.py
 │   │   │   ├── main.py
 │   │   │   ├── middleware.py
 │   │   │   ├── responses.py
-│   │   │   ├── routes.py
-│   │   │   ├── schemas.py
-│   │   │   ├── services.py
 │   │   │   ├── __init__.py
 │   │   │   ├── routers/
 │   │   │   │   ├── health.py
 │   │   │   │   ├── metrics.py
 │   │   │   │   ├── rag.py
 │   │   │   │   ├── records.py
+│   │   │   │   ├── __init__.py
 │   │   │   ├── schemas/
 │   │   │   │   ├── common.py
 │   │   │   │   ├── metric.py
 │   │   │   │   ├── rag.py
+│   │   │   │   ├── __init__.py
 │   │   │   ├── services/
 │   │   │   │   ├── metric_service.py
 │   │   │   │   ├── rag_service.py
 │   │   │   │   ├── record_service.py
+│   │   │   │   ├── __init__.py
 │   │   ├── config/
 │   │   │   ├── settings.py
+│   │   │   ├── __init__.py
+│   │   ├── core/
+│   │   │   ├── dependencies.py
+│   │   │   ├── exceptions.py
+│   │   │   ├── logging.py
+│   │   │   ├── middleware.py
+│   │   │   ├── security.py
 │   │   │   ├── __init__.py
 │   │   ├── evaluation/
 │   │   │   ├── benchmark.py
@@ -82,6 +94,7 @@
 │   │   │   ├── build_vectordb.py
 │   │   │   ├── check_vectors.py
 │   │   │   ├── embedding_generator.py
+│   │   │   ├── engine.py
 │   │   │   ├── llm_service.py
 │   │   │   ├── prompt_builder.py
 │   │   │   ├── rag_pipeline.py
@@ -89,6 +102,8 @@
 │   │   │   ├── retrieval_engine.py
 │   │   │   ├── vector_loader.py
 │   │   │   ├── __init__.py
+│   │   │   ├── vector_db/
+│   │   │   │   ├── chroma.sqlite3
 │   │   ├── transformation/
 │   │   │   ├── kpi_builder.py
 │   │   │   ├── metric_mapper.py
@@ -104,6 +119,24 @@
 │   │   │   ├── query_service.py
 │   │   │   ├── supabase_client.py
 │   ├── tests/
+│   │   ├── api/
+│   │   ├── integration/
+│   │   ├── rag/
+│   │   ├── warehouse/
+│   ├── warehouse/
+│   │   ├── create_schema.py
+│   │   ├── crud.py
+│   │   ├── database.py
+│   │   ├── loader.py
+│   │   ├── load_to_oracle.py
+│   │   ├── models.py
+│   │   ├── oracle_client.py
+│   │   ├── query_service.py
+│   │   ├── repository.py
+│   │   ├── schema.sql
+│   │   ├── schemas.py
+│   │   ├── __init__.py
+│   │   ├── migrations/
 ├── docs/
 │   ├── architecture/
 │   │   ├── architecture.md
@@ -161,12 +194,12 @@
 ├── scripts/
 │   ├── project_tree.txt
 ├── services/
-│   ├── app.py
-│   ├── config.py
-│   ├── embedding_service.py
-│   ├── models.py
 │   ├── README copy.md
-│   ├── README.md
 │   ├── requirements.txt
 │   ├── runtime.txt
 │   ├── embedding-service/
+│   │   ├── app.py
+│   │   ├── config.py
+│   │   ├── embedding_service.py
+│   │   ├── models.py
+│   │   ├── README.md

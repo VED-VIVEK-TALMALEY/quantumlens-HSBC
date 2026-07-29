@@ -5,43 +5,23 @@ from pathlib import Path
 
 load_dotenv()
 
-# ==========================================================
-# Base Directories
-# ==========================================================
-
 BASE_DIR = Path(__file__).resolve().parents[2]
 
 DATA_DIR = BASE_DIR / "data"
-
 RAW_DATA_DIR = DATA_DIR / "raw"
-
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
-
 GENERATED_DATA_DIR = DATA_DIR / "generated"
-
 VECTOR_DB_DIR = DATA_DIR / "vectordb"
-
 LOG_DIR = BASE_DIR / "logs"
-
-# ==========================================================
-# Settings
-# ==========================================================
 
 
 class Settings:
 
-    # ------------------------------------------------------
-    # Data Paths
-    # ------------------------------------------------------
-
     BASE_DIR = BASE_DIR
 
     DATA_DIR = DATA_DIR
-
     RAW_DATA_DIR = RAW_DATA_DIR
-
     PROCESSED_DATA_DIR = PROCESSED_DATA_DIR
-
     GENERATED_DATA_DIR = GENERATED_DATA_DIR
 
     VECTOR_DB_PATH = Path(
@@ -51,52 +31,47 @@ class Settings:
         )
     )
 
-    EMBEDDINGS_PATH = (
-        GENERATED_DATA_DIR / "embeddings.json"
-    )
-
-    # ------------------------------------------------------
-    # Supabase
-    # ------------------------------------------------------
+    EMBEDDINGS_PATH = GENERATED_DATA_DIR / "embeddings.json"
 
     SUPABASE_URL = os.getenv("SUPABASE_URL")
-
     SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-    # ------------------------------------------------------
-    # Groq
-    # ------------------------------------------------------
 
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-    # ------------------------------------------------------
-    # Embedding Model
-    # ------------------------------------------------------
+    EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
-    EMBEDDING_MODEL = (
-        "sentence-transformers/all-MiniLM-L6-v2"
-    )
-
-    # ------------------------------------------------------
-    # LLM
-    # ------------------------------------------------------
-
-    LLM_MODEL = (
-        "llama-3.3-70b-versatile"
-    )
+    LLM_MODEL = "llama-3.3-70b-versatile"
 
     TEMPERATURE = 0.2
-
     MAX_TOKENS = 512
 
-    # ------------------------------------------------------
-    # Retrieval
-    # ------------------------------------------------------
-
     TOP_K = 5
-    # ==========================================================
-# Create Required Directories
-# ==========================================================
+
+    ORACLE_USER = os.getenv("ORACLE_USER")
+    ORACLE_PASSWORD = os.getenv("ORACLE_PASSWORD")
+
+    ORACLE_HOST = os.getenv(
+        "ORACLE_HOST",
+        "localhost"
+    )
+
+    ORACLE_PORT = int(
+        os.getenv(
+            "ORACLE_PORT",
+            "1521"
+        )
+    )
+
+    ORACLE_SERVICE = os.getenv(
+        "ORACLE_SERVICE",
+        "XEPDB1"
+    )
+
+    ORACLE_DSN = os.getenv(
+        "ORACLE_DSN",
+        f"{ORACLE_HOST}:{ORACLE_PORT}/{ORACLE_SERVICE}"
+    )
+
 
 for directory in [
     DATA_DIR,
@@ -110,11 +85,11 @@ for directory in [
 
 
 settings = Settings()
+
+
 if __name__ == "__main__":
 
-    print(f"BASE_DIR       : {BASE_DIR}")
-    print(f"DATA_DIR       : {DATA_DIR}")
-    print(f"RAW_DATA_DIR   : {RAW_DATA_DIR}")
-    print(f"GENERATED_DIR  : {GENERATED_DATA_DIR}")
-    print(f"VECTOR_DB      : {Settings.VECTOR_DB_PATH}")
-    print(f"EMBEDDINGS     : {Settings.EMBEDDINGS_PATH}")
+    print("BASE_DIR       :", settings.BASE_DIR)
+    print("DATA_DIR       :", settings.DATA_DIR)
+    print("VECTOR_DB_PATH :", settings.VECTOR_DB_PATH)
+    print("ORACLE_DSN     :", settings.ORACLE_DSN)
