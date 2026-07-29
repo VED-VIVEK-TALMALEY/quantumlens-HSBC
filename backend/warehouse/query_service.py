@@ -51,17 +51,20 @@ def get_metric_by_id(metric_id):
     return rows
 
 
-def get_metric_by_name(metric_name):
+def get_metric_by_name(metric):
+
     conn = get_connection()
     cur = conn.cursor()
 
-    cur.execute("""
-        SELECT *
-        FROM metrics
-        WHERE LOWER(metric_name)=LOWER(:1)
-        ORDER BY period
-    """, [metric_name])
+    metric = metric.lower()
 
+    cur.execute("""
+SELECT *
+FROM metrics
+WHERE LOWER(metric_name)=LOWER(:metric)
+   OR LOWER(abbreviation)=LOWER(:metric)
+ORDER BY period
+""", {"metric": metric})
     rows = cur.fetchall()
 
     cur.close()

@@ -13,103 +13,82 @@ from src.config.settings import settings
 
 class RetrievalEngine:
     def __init__(self):
-
-      DB_PATH = settings.VECTOR_DB_PATH
-      
-      self.client = chromadb.PersistentClient(
+        DB_PATH = settings.VECTOR_DB_PATH
+        
+        self.client = chromadb.PersistentClient(
             path=str(DB_PATH)
         )
-      self.collection = None
-      self.model = None
-def get_collection(self):
+        self.collection = None
+        self.model = None
 
-    if self.collection is None:
+    def get_collection(self):
+        if self.collection is None:
+            logger.info("Connecting to ChromaDB...")
+            self.collection = self.client.get_collection("hsbc_kpis")
+        
+  
+        return self.collection
 
-        logger.info("Connecting to ChromaDB...")
+    def get_model(self):
+        if self.model is None:
+            logger.info("Loading embedding model...")
+            from sentence_transformers import SentenceTransformer
+            self.model = SentenceTransformer(settings.EMBEDDING_MODEL)
 
-        self.collection = self.client.get_collection(
-            "hsbc_kpis"
-        )
+        return self.model
 
-    return self.collection
-def get_model(self):
+    def search(self, query, top_k=None):
+        if top_k is None:
+            top_k = settings.TOP_K
 
-    if self.model is None:
-
-        logger.info("Loading embedding model...")
-
-        from sentence_transformers import SentenceTransformer
-
-        self.model = SentenceTransformer(
-            settings.EMBEDDING_MODEL
-        )
-
-    return self.model
-
-def search(
-        self,
-        query,
-        top_k=settings.TOP_K
-    ):
-
-        query_embedding = (
-    self.get_model()
-    .encode(query)
-    .tolist()
-)
+        query_embedding = self.get_model().encode(query).tolist()
+        
         results = self.get_collection().query(
-
-            query_embeddings=[
-                query_embedding
-            ],
-
+            query_embeddings=[query_embedding],
             n_results=top_k
-
         )
 
         matches = []
-        for i in range(len(results["documents"][0])):
-
-         matches.append({
-
-        "text": results["documents"][0][i],
-
-        "metadata": results["metadatas"][0][i],
-
-        "distance": results["distances"][0][i]
-
-    })
+        
+        # FIX 2: Correctly iterate over ChromaDB's nested list structure
+        if results["documents"] and results["documents"][0]:
+            for i in range(len(results["documents"][0])):
+                matches.append({
+                    "text": results["documents"][0][i],
+                    "metadata": results["metadatas"][0][i],
+                    "distance": results["distances"][0][i]
+                })
 
         logger.info("%d documents retrieved", len(matches))
         return matches
 
 
-if __name__ == "__main__":
+# FIX 3: Changed __engine to _engine to match your retrieve() function
+_engine = RetrievalEngine()
 
+
+def retrieve(question: str, top_k=None):
+        if top_k is None:
+            top_k = settings.TOP_K
+        return _engine.search(question, top_k)
+
+
+if __name__ == "__main__":
     engine = RetrievalEngine()
 
     while True:
-
         question = input("\nAsk > ")
 
         if question.lower() == "exit":
             break
 
-        result = engine.search(question)
+        # FIX 4: Call search() and iterate over the cleaned list of dicts it returns
+        results = engine.search(question)
 
         print("\nRESULTS\n")
 
-        for i in range(
-            len(result["documents"][0])
-        ):
-
+        for item in results:
             print("-" * 60)
-
-            print(result["documents"][0][i])
-
-            print(result["metadatas"][0][i])
-
-            print(
-                "Distance:",
-                result["distances"][0][i]
-            )
+            print(item["text"])
+            print(item["metadata"])
+            print("Distance:", item["distance"])
