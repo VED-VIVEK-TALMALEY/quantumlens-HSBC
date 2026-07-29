@@ -1,6 +1,6 @@
-# QuantumLens
+# HSBC QuantumLens (also known as *HSBC Atlas* or *Project Basilisk*)
 
-### *Enterprise Financial Analytics Platform*
+### *AI-Powered Global Banking Intelligence & Risk Observatory*
 
 [![Python Version](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.138.1-teal?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -10,23 +10,40 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**QuantumLens** is a production-grade financial data ingestion, processing, and retrieval-augmented generation (RAG) analytics engine. Built specifically for high-integrity corporate financial reporting, the platform parses complex multi-sheet Excel financial files (such as HSBC quarterly report packs), normalizes name variants to a unified KPI schema, maintains historical trends in both PostgreSQL/Supabase and Oracle Database relational warehouses, and enables interactive, context-grounded AI query reasoning using high-throughput Groq LLM inference.
+**HSBC QuantumLens** is an institutional-grade financial data platform that resembles an internal strategic war room used by COO, CRO, or treasury teams. By analyzing Q1 results (including Net Interest Income volatility, Expected Credit Losses provisioning, capital CET1 compression, and HNWI wealth inflows into Asia), QuantumLens shifts traditional financial reporting from static data visualizers into an **AI-native banking intelligence operating system**.
+
+The platform is designed like a **Bloomberg Terminal × Palantir × McKinsey War Room**, integrating data ingestion pipelines, financial knowledge graphs, RAG call intelligence, scenario forecasters, executive war-room dashboards, and multi-agent AI copilots.
 
 ---
 
-## Systems Topology Diagram
+## 6-Layer Architecture Overview
+
 ```mermaid
 graph TD
     %% Define Nodes
-    subgraph ClientLayer ["Client Layer"]
-        UI["Next.js Web Portal (frontend/)"]
+    subgraph ClientLayer ["Layer 5: Apache Superset War Rooms (frontend/)"]
+        UI["Next.js Dashboards UI<br>(Pulse, Wealth, Stress, Contagion)"]
     end
 
-    subgraph APILayer ["API Routing Layer"]
-        FastAPI["FastAPI Web Router (backend/src/api/)"]
+    subgraph APILayer ["Layer 6: AI Copilot Router (backend/src/api/)"]
+        FastAPI["FastAPI Web Router"]
     end
 
-    subgraph ETLTransformation ["ETL Ingestion & Transformation Layer"]
+    subgraph ForecastingLayer ["Layer 4: Advanced Forecasting Engine (ml_models/)"]
+        Forecast["Forecaster<br>(Prophet / XGBoost / LSTMs)"]
+    end
+
+    subgraph AILayer ["Layer 3: AI Call Intelligence (backend/src/rag/)"]
+        Chroma[("ChromaDB Vector Store")]
+        FinBERT["FinBERT NLP Pipeline<br>(Anxiety / Sentiment index)"]
+        Groq["Groq Cloud API<br>(llama-3.3-70b-versatile)"]
+    end
+
+    subgraph KnowledgeGraph ["Layer 2: Financial Knowledge Graph (neo4j/)"]
+        Neo4j[("Neo4j Graph Database<br>(Risk Contagion Nodes)")]
+    end
+
+    subgraph DataEngineering ["Layer 1: Data Engineering Pipeline (backend/src/ingestion/)"]
         Reader["Workbook Reader"]
         Scanner["Sheet Scanner"]
         Extractor["Metric Extractor"]
@@ -34,15 +51,9 @@ graph TD
         Builder["KPI Builder"]
     end
 
-    subgraph DataStorage ["Data Warehouse Layer"]
-        Supabase[("Supabase (PostgreSQL 15)<br>[Production Cloud]")]
-        Oracle[("Oracle Database<br>[Relational Enterprise]")]
-    end
-
-    subgraph AIEngine ["AI & Semantic RAG Layer"]
-        Chroma[("ChromaDB Vector Store<br>[Persistent Local Client]")]
-        SentenceTransformer["SentenceTransformer<br>(all-MiniLM-L6-v2)"]
-        Groq["Groq Cloud API<br>(llama-3.3-70b-versatile)"]
+    subgraph StorageLayer ["Database Warehouse Layer (backend/warehouse/)"]
+        Supabase[("Supabase (PostgreSQL 15)<br>[JSONB arrays]")]
+        Oracle[("Oracle Database 19c<br>[Period observations]")]
     end
 
     %% Define Connections
@@ -56,18 +67,23 @@ graph TD
     Scanner --> Extractor
     Extractor --> Mapper
     Mapper --> Builder
-    Builder -->|Batch Loader / Upserts| Supabase
-    Builder -->|Oracle SQL Rows| Oracle
+    Builder -->|Batch Upserts| Supabase
+    Builder -->|Insert Rows| Oracle
+    Builder -->|Stress nodes| Neo4j
     
     %% Vector Ingestion Flow
-    Supabase -->|SQL Extract| SentenceTransformer
-    SentenceTransformer -->|Dense Embeddings| Chroma
+    Supabase -->|SQL Extract| FinBERT
+    FinBERT -->|Dense Embeddings| Chroma
     
     %% RAG Pipeline Flow
-    FastAPI -->|Question Embed Query| Chroma
+    FastAPI -->|Question Query| Chroma
     Chroma -->|Relevant Context Docs| FastAPI
     FastAPI -->|Context + Prompt| Groq
     Groq -->|Context-Grounded Answer| FastAPI
+    
+    %% Forecasting Connection
+    Oracle --> Forecast
+    Forecast --> UI
     
     %% Styles
     classDef client fill:#1f77b4,stroke:#333,stroke-width:2px,color:#fff;
@@ -75,277 +91,138 @@ graph TD
     classDef storage fill:#9467bd,stroke:#333,stroke-width:2px,color:#fff;
     classDef etl fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
     classDef ai fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
+    classDef forecast fill:#e377c2,stroke:#333,stroke-width:2px,color:#fff;
+    classDef graph fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
     
     class UI client;
     class FastAPI api;
     class Reader,Scanner,Extractor,Mapper,Builder etl;
     class Supabase,Oracle storage;
-    class Chroma,SentenceTransformer,Groq ai;
+    class Chroma,FinBERT,Groq ai;
+    class Forecast forecast;
+    class Neo4j graph;
 ```
 
----
+### Layer Matrix
 
-## Project Snapshot
-
-| Attribute | Details |
-| :--- | :--- |
-| **Project Name** | QuantumLens |
-| **Domain** | Financial Analytics / Banking Intelligence |
-| **Architecture Style** | ETL Pipeline + Relational Data Warehouse + Vector Retrieval (RAG) |
-| **Deployment Model** | Hybrid Cloud (FastAPI on Render, Frontend on Vercel, Warehouse on Supabase) |
-| **Database Engines** | Supabase (PostgreSQL 15+) with JSONB / Oracle Database |
-| **Current KPI Definitions**| 36 Normalized Metrics |
-| **Frontend UI Layer** | Next.js Dashboard UI (App Router) |
-| **Backend API Layer** | FastAPI Web Service |
-| **AI Orchestration** | Sentence Transformers (`all-MiniLM-L6-v2`) & Groq Cloud (`llama-3.3-70b-versatile`) |
-
----
-
-## Why QuantumLens?
-
-### Financial Report Complexity
-
-| Challenge | Technical Impact | QuantumLens Solution |
-| :--- | :--- | :--- |
-| **Format Heterogeneity** | Data packs are distributed in heavily nested, multi-tab Excel files, unstructured PDFs, or PowerPoint decks. | The modular [ingestion layer](backend/src/ingestion/) abstracts sheet structures into JSON coordinate lines. |
-| **Nominal Variance** | KPI names vary dynamically between cycles (e.g., "Net Interest Income", "Net Interest", or "NII"). | Centralized constant-time dictionary lookup engine maps text hashes to normalized IDs. |
-| **Sparse Time-Series** | Data lacks explicit date bounds, utilizing relative indicators like "At 31 March 2026". | Extractor maps relative columns into strict, ordered database reporting periods. |
-
-### The Power of Metric Normalization
-
-Normalization aligns sparse multi-sheet data point series into a single source-of-truth record:
-
-```text
-"Net Interest Income" (Sheet A, Row 5)  ──┐
-"NII"                 (Sheet B, Row 12) ──┼──► [Catalog Hash Map Lookup] ──► KPI_0001 (net_interest_income)
-"Net Interest"        (Sheet C, Row 4)  ──┘
-```
-
-By mapping every variation to a canonical index ID, QuantumLens ensures that downstream dashboards, statistics, and query tools query a unified time-series dataset.
-
-### Context-Aware Financial AI (RAG)
-
-Large Language Models (LLMs) struggle with raw mathematical accuracy and mathematical hallucination. QuantumLens utilizes **Retrieval-Augmented Generation (RAG)** to address this:
-
-| Analysis Method | Drawbacks | Why RAG is Chosen |
-| :--- | :--- | :--- |
-| **Vanilla LLM Prompting** | Hallucinates critical financial numbers, makes assumptions, lack source traceability. | Constrains LLM context window to exact numeric rows retrieved from the database. |
-| **SQL Query Generation** | Vulnerable to SQL injection, parsing failures, and table schema complexity. | Uses semantic search to locate records and hands them to the LLM to format and interpret. |
-
----
-
-## Deployment Demarcations
-
-| Component | Target URL | Deployment Platform | Status |
+| Layer | Responsibility | Primary Technologies | File Locations |
 | :--- | :--- | :--- | :--- |
-| **Frontend Web App** | [https://quantumlens-hsbc.vercel.app](https://quantumlens-hsbc.vercel.app) | Vercel | Under Integration |
-| **Backend REST API** | [https://quantumlens-api.render.com](https://quantumlens-api.render.com) | Render | Operational |
-| **Interactive API Docs**| [https://quantumlens-api.render.com/docs](https://quantumlens-api.render.com/docs) | Render (Swagger) | Operational |
-| **Data Warehouse** | PostgreSQL 15 Instance | Supabase Cloud | Operational |
-| **Enterprise Warehouse**| Oracle Database 19c | Corporate Hosting | Operational |
+| **Layer 1: Pipeline** | Ingestion of raw reports, grid scanning, name normalization, and data cleaning. | Python, Pandas, Openpyxl | `backend/src/ingestion/` |
+| **Layer 2: Graph** | Modeling counterparty links, exposures, and systemic contagion paths. | Neo4j, Cypher Queries | `neo4j/` |
+| **Layer 3: NLP** | Sentiment analysis, semantic drift mapping, and executive anxiety indexing. | FinBERT, spaCy, ChromaDB | `backend/src/rag/` |
+| **Layer 4: Forecasting**| Generating predictions for NII, CET1, and deposits under macro rate scenario stress tests. | Prophet, XGBoost, LSTMs | `ml_models/` |
+| **Layer 5: BI Portal** | Executive war-room dashboards (Pulse, Wealth, Stress, Strategy, Contagion). | Next.js, React, Tailwind, Recharts | `frontend/` |
+| **Layer 6: AI Copilot**| Multi-Agent orchestration matching SQL database metrics with transcript contexts. | FastAPI, LangChain, Groq API | `backend/src/api/` |
 
 ---
 
-## Features Status Matrix
+## Technical Stack Summary
 
-### Ingestion & Data Engineering
-- [x] Multi-sheet financial workbook scanning (Excel parsing).
-- [x] Canonical KPI normalization mapping.
-- [x] Automated delta trend detection (Up / Down / Flat trends).
-- [x] Historical time-series mapping across fiscal periods.
-- [x] Multi-stage ETL pipeline isolating data ingestion, transformation, and storage.
-- [x] Constant-time lookup mapping using centralized dictionaries.
-- [x] NaN-safe value cleaning and data validation.
-- [x] Primary key-based duplicate prevention (database upserts).
-
-### AI & Retrieval
-- [x] Semantic KPI search via vector embeddings.
-- [x] Secure RAG pipeline limiting queries to database facts.
-- [x] Direct workbook, sheet, and row source-attribution quoting.
-- [x] Local ChromaDB vector database index loader.
-- [ ] Natural Language to SQL query translation.
-- [ ] Automated trend insight summaries.
-
-### Future Roadmap
-- [ ] Next.js analytical portal interface (Dashboard integration).
-- [ ] Multi-quarter cohort performance comparison.
-- [ ] Multi-agent coordinator system (Planner, SQL, Chart, and Report agents).
-- [ ] PDF and PPT automated financial document generation.
-- [ ] Multi-tenant secure organizational access control.
-
----
-
-## Technology Stack
-
-| Layer | Technology | Version | Purpose |
-| :--- | :--- | :--- | :--- |
-| **Frontend** | React / Next.js | 15.x | Analytics User Interface & interactive dashboards |
-| | TailwindCSS | 3.4+ | CSS layout framework |
-| | Chart.js / Recharts | 2.x | Time-series charting & visualization |
-| **Backend** | Python | 3.13 | Primary application runtime |
-| | FastAPI | 0.138.1 | High-performance API routing |
-| | Uvicorn | 0.49.0 | ASGI web server hosting |
-| | Pandas | 3.0.3 | High-fidelity tabular processing |
-| | Pydantic | 2.13.4 | Schema validation & parsing |
-| **Database** | PostgreSQL | 15+ | Relational data warehouse storage (Supabase) |
-| | Oracle Database | 19c+ | Relational enterprise database |
-| | Supabase Python | 2.31.0 | Cloud database connection & operations |
-| | ChromaDB | 1.5.9 | High-performance vector database client |
-| **AI Layer** | Sentence Transformers | 5.6.0 | Local embedding generation (`all-MiniLM-L6-v2`) |
-| | Groq Cloud Client | 1.5.0 | High-speed LLM client (`llama-3.3-70b-versatile`) |
-
----
-
-## Local Installation Setup
-
-### Prerequisites Checklist
-- [ ] Python 3.13+ installed on your local machine.
-- [ ] Oracle client configuration (if connecting to the enterprise database).
-- [ ] Target API keys for Supabase and Groq.
-
-### Installation Steps
-
-| Phase | Windows Powershell Commands | Linux / macOS Terminal Commands |
+| Component | Selected Technologies | Description / Role |
 | :--- | :--- | :--- |
-| **1. Clone Repo** | `git clone https://github.com/your-username/quantumlens-HSBC.git`<br>`cd quantumlens-HSBC` | `git clone https://github.com/your-username/quantumlens-HSBC.git`<br>`cd quantumlens-HSBC` |
-| **2. Virtual Env** | `python -m venv .venv`<br>`.venv\Scripts\Activate.ps1` | `python3 -m venv .venv`<br>`source .venv/bin/activate` |
-| **3. Dependencies**| `pip install -r backend/requirements.txt` | `pip install -r backend/requirements.txt` |
-| **4. Run API** | `uvicorn backend.src.api.main:app --reload --port 8000` | `uvicorn backend.src.api.main:app --reload --port 8000` |
+| **Data Ingestion** | Kafka, Airflow, dbt, Pandas | Event streaming, workflow coordination, and transformation. |
+| **Storage Layer** | PostgreSQL (Supabase) & Oracle DB | PostgreSQL stores time-series JSONB arrays; Oracle flattens observations. |
+| **AI & Retrieval** | SentenceTransformers, ChromaDB, Groq Cloud | Local BAAI embeddings, local persistent vector collections, Llama-3.3. |
+| **Frontend UI** | Next.js 15, Recharts, TailwindCSS | App router portal, interactive visualizations, styling framework. |
+| **Infrastructure** | Docker, Kubernetes | Containerized microservices layouts and scaling. |
+
+---
+
+## Live Deployments
+
+| Component | Target URL | Platform Host | Status |
+| :--- | :--- | :--- | :--- |
+| **Analytics Portal** | [https://quantumlens-hsbc.vercel.app](https://quantumlens-hsbc.vercel.app) | Vercel | Under Integration |
+| **REST API Server** | [https://quantumlens-api.render.com](https://quantumlens-api.render.com) | Render | Operational |
+| **API Swagger Specs**| [https://quantumlens-api.render.com/docs](https://quantumlens-api.render.com/docs) | Render | Operational |
+
+---
+
+## Local Ingestion and API Setup
+
+### Setup Steps Tabular Guide
+
+| Step | Action | Powershell / Terminal Command | Notes |
+| :--- | :--- | :--- | :--- |
+| **1** | Clone Project | `git clone https://github.com/VED-VIVEK-TALMALEY/quantumlens-HSBC.git` | Downloads repository. |
+| **2** | Sandbox Env | `python -m venv .venv` | Creates virtual env. |
+| **3** | Activate Env | `source .venv/bin/activate` or `.venv\Scripts\Activate.ps1` | Activates virtual env. |
+| **4** | Install Modules | `pip install -r backend/requirements.txt` | Restores ETL, FastAPI, and AI dependencies. |
+| **5** | Local Configs | `copy backend/.env.example backend/.env` | Inject Supabase and Groq keys. |
+| **6** | Ingest Excel | `python backend/src/ingestion/sheet_scanner.py` | Extracts cell coordinates to JSON files. |
+| **7** | Load Database | `python backend/warehouse/data_loader.py` | Batches metrics payload to Supabase metrics table. |
+| **8** | Load Oracle | `python backend/warehouse/load_to_oracle.py` | Transforms and inserts observations to Oracle. |
+| **9** | Launch REST API| `uvicorn backend.src.api.main:app --reload --port 8000` | Boots FastAPI reloading server on port 8000. |
 
 ---
 
 ## Environment Variables Configuration
 
-To run the API and ETL loader, configure the environment variables by duplicating the `.env.example` file in the `backend/` folder:
+> [!WARNING]
+> Ensure all API keys are kept secure and never committed to public repositories.
 
-```bash
-cp backend/.env.example backend/.env
-```
-
-| Variable | Type | Description | Example Value |
+| Variable Name | Required | Description | Default Local |
 | :--- | :--- | :--- | :--- |
-| `SUPABASE_URL` | String | Endpoint for Supabase Database REST interface. | `https://your-proj-id.supabase.co` |
-| `SUPABASE_KEY` | String | Service Role api key for direct upsert access bypass. | `eyJhbGciOiJIUzI1NiIsInR...` |
-| `GROQ_API_KEY` | String | Cloud API token to interface Groq completions. | `gsk_m82P92h...` |
-| `VECTOR_DB_PATH` | Path | Relative directory path to store local vectors. | `backend/src/rag/vector_db` |
-| `EMBEDDINGS_PATH`| Path | Relative file path to store cached embeddings. | `backend/data/generated/embeddings.json` |
-| `EMBEDDING_MODEL`| String | Sentence Transformers vector generation tag. | `sentence-transformers/all-MiniLM-L6-v2` |
-| `TOP_K` | Integer| Number of context chunks returned during RAG. | `5` |
+| `SUPABASE_URL` | YES | Endpoint for Supabase Database REST interface. | `https://<YOUR_PROJECT_ID>.supabase.co` |
+| `SUPABASE_KEY` | YES | Service Role administrative key to bypass RLS policies. | `<YOUR_SUPABASE_SERVICE_ROLE_KEY>` |
+| `GROQ_API_KEY` | YES | API token for Groq Cloud LLM completions. | `<YOUR_GROQ_API_KEY>` |
+| `VECTOR_DB_PATH` | NO | Local directory to persist ChromaDB index assets. | `backend/src/rag/vector_db` |
+| `EMBEDDINGS_PATH`| NO | Local file path caching pre-computed embeddings. | `backend/data/generated/embeddings.json` |
+| `EMBEDDING_MODEL`| NO | HuggingFace embedding model ID. | `sentence-transformers/all-MiniLM-L6-v2` |
+| `TOP_K` | NO | Top document count returned during semantic search retrieval. | `5` |
 
 ---
 
-## Detailed System Modules Matrix
+## Executive War Rooms (Next.js Portal)
 
-| Layer | Code Module Location | Completion Status | Functional Responsibility |
-| :--- | :--- | :--- | :--- |
-| **Ingestion** | [workbook_reader.py](backend/src/ingestion/workbook_reader.py)<br>[sheet_scanner.py](backend/src/ingestion/sheet_scanner.py) | `100% (Complete)` | Parse workbooks, scan row layouts, output JSON cell maps. |
-| **Transformation**| [metric_extractor.py](backend/src/ingestion/metric_extractor.py)<br>[value_extractor.py](backend/src/ingestion/value_extractor.py)<br>[period_mapper.py](backend/src/transformation/period_mapper.py)<br>[kpi_builder.py](backend/src/transformation/kpi_builder.py) | `100% (Complete)` | Normalize naming variants, isolate numbers, map timeline periods, and structure final KPI objects. |
-| **Warehouse** | [data_loader.py](backend/warehouse/data_loader.py)<br>[load_to_oracle.py](backend/warehouse/load_to_oracle.py)<br>[query_service.py](backend/warehouse/query_service.py) | `100% (Complete)` | Safely persist records to Supabase, query databases, handle upsert rules, and enforce indexing. |
-| **AI Layer** | [embedding_generator.py](backend/src/rag/embedding_generator.py)<br>[vector_loader.py](backend/src/rag/vector_loader.py)<br>[retrieval_engine.py](backend/src/rag/retrieval_engine.py)<br>[rag_pipeline.py](backend/src/rag/rag_pipeline.py) | `100% (Complete)` | Encode warehouse texts to vectors, manage ChromaDB embeddings, perform semantic searches, and run LLM completions. |
+The dashboard frontend ([frontend/](frontend/)) structures metrics into five interactive screens:
 
----
-
-## Detailed Ingestion & ETL Stages
-
-```mermaid
-sequenceDiagram
-    autonumber
-    participant Excel as Raw Spreadsheet (.xlsx)
-    participant Reader as workbook_reader.py
-    participant Scanner as sheet_scanner.py
-    participant Extractor as metric_extractor.py
-    participant Builder as kpi_builder.py
-    participant DB as Supabase (Postgres)
-    participant Oracle as Oracle DB
-
-    Excel->>Reader: File Path
-    Reader->>Scanner: Pandas ExcelFile
-    Scanner->>Extractor: JSON Row Coordinates
-    Extractor->>Builder: Matched Raw Metrics
-    Builder->>DB: Upsert Ingested KPI Payload (JSONB)
-    Builder->>Oracle: Insert sequential row periods
-```
+| Dashboard View | Primary Metrics Tracked | Interactivity Features |
+| :--- | :--- | :--- |
+| **Global Banking Pulse** | NII, CET1 capital ratio, RoTE, loan growth rates. | Cross-filtering, regional heatmaps, animated charts. |
+| **Wealth Migration** | Asia wealth inflows ($34B), net new money ($39B), wealth fees growth (+15%). | Capital concentration, HNWI wealth migration maps. |
+| **Credit Stress Radar** | ECL guidance (~45bps), sector impairments, fraud exposures. | Macro shock stress test simulators (FX, oil spikes, rate cuts). |
+| **Strategic Transformation**| Disposals, simplification savings ($1.5B), synergy metrics ($0.5B). | Dynamic KPI metric cards, progress metrics charts. |
+| **Contagion Network** | Exposures, liquidity links, counterparty relations. | Interactive Neo4j node graph layouts representing stress flows. |
 
 ---
 
-## REST API Reference
+## Multi-Agent AI Financial Copilot
 
-### Endpoints Matrix
-
-| Method | Route | Description | Request Payload | Success Code |
-| :--- | :--- | :--- | :--- | :--- |
-| `GET` | `/` | API system metadata check | None | `200 OK` |
-| `GET` | `/health` | Server connection status check | None | `200 OK` |
-| `GET` | `/metrics` | Retrieve unique metric definitions list | None | `200 OK` |
-| `GET` | `/metric/{metric_id}`| Retrieve occurrences by metric ID | Path Variable | `200 OK` |
-| `GET` | `/record/{record_id}`| Retrieve unique row record by primary ID | Path Variable | `200 OK` |
-| `POST` | `/search` | Cosine vector search query | JSON: `{"query": "...", "top_k": 3}` | `200 OK` |
-| `POST` | `/ask` | Execute full RAG pipeline completion | JSON: `{"question": "..."}` | `200 OK` |
-
----
-
-## Future Multi-Agent System
-
-To scale beyond basic search-and-retrieval, the platform's roadmapped architecture will transition into a coordinated multi-agent system.
+Queries targeting the backend REST API `/ask` route are processed by a custom Multi-Agent Orchestrator:
 
 ```mermaid
 graph TD
-    User([User Request]) --> Orchestrator{Orchestrator Agent}
-    Orchestrator --> Planner[Planner Agent]
-    Planner --> Orchestrator
-    Orchestrator --> SQLAgent[SQL Agent]
-    Orchestrator --> ChartAgent[Chart Agent]
-    Orchestrator --> ReportAgent[Report Agent]
-    SQLAgent --> DB[(PostgreSQL / Oracle)]
-    ChartAgent --> ImageEngine[Chart Generator]
-    ReportAgent --> PDFEngine[PDF Compiler]
-    DB --> SQLAgent
-    ImageEngine --> ChartAgent
-    PDFEngine --> ReportAgent
-    SQLAgent --> Orchestrator
-    ChartAgent --> Orchestrator
-    ReportAgent --> Orchestrator
-    Orchestrator --> FinalResponse([Final Deliverable])
+    User([User Request]) --> Planner{Planner Agent}
+    Planner -->|Intent: SQL| SQLAgent[SQL Agent]
+    Planner -->|Intent: RAG| RAGAgent[RAG Agent]
+    SQLAgent --> Oracle[(Oracle Database)]
+    RAGAgent --> Chroma[(ChromaDB Vector Store)]
+    Oracle --> Synthesizer[Response Synthesizer]
+    Chroma --> Synthesizer
+    Synthesizer --> Groq[Groq Llama-3.3]
+    Groq --> FinalResponse([Context-Grounded Board Report])
 ```
 
-### Multi-Agent Capabilities Matrix
-
-| Agent Role | Functional Responsibility | Primary Tools | Output Deliverable |
-| :--- | :--- | :--- | :--- |
-| **Planner** | Deconstructs user tasks and plans execution steps. | Intent Classifier, Scheduler | Step-by-Step Task List |
-| **SQL Agent** | Connects to PostgreSQL/Oracle to run queries. | Schema Parser, Database client | Tabular Data Frames |
-| **Chart Agent**| Generates data visualizations from query outputs. | Pandas, Recharts | Interactive Chart Configs |
-| **Report Agent**| Synthesizes charts and summaries into documents. | Markdown compiler, ReportLab | Exportable PDF Reports |
-
----
-
-## Engineering Decisions
-
-| Tech Component | Selected Option | Considered Alternatives | Core Rationale for Selection |
-| :--- | :--- | :--- | :--- |
-| **Backend API** | **FastAPI** | Flask, Django | High-performance ASGI interface, automatic OpenAPI (Swagger) generation, native async loops, and strict Pydantic parsing. |
-| **Database Engines**| **PostgreSQL & Oracle** | MySQL, MongoDB | PostgreSQL provides transactional consistency and JSONB capabilities. Oracle allows corporate OLAP compliance. |
-| **Vector DB** | **ChromaDB (Local)** | pgvector, Pinecone | ChromaDB provides zero-config local storage, eliminating the need to manage external connection pools during development. |
-| **Embedding Model**| **all-MiniLM-L6-v2** | OpenAI ada-002 | Compact 384-dimensional model that runs locally, offering low latency and eliminating API call overhead. |
-| **LLM Provider** | **Groq Cloud (Llama 3)**| OpenAI GPT-4 | High throughput (tokens per second) and low latency, making it ideal for real-time analysis tools. |
-| **ETL Structure** | **Modular Pipelines** | Monolithic Loader Script | Decoupled layers make it easier to add new data formats (e.g. PDFs) without rewriting the database upload logic. |
+| Agent | Module Path | Purpose |
+| :--- | :--- | :--- |
+| **Planner** | [planner.py](backend/src/agents/planner.py) | Deconstructs query intent (`SQL` vs `RAG` vs `Chart`). |
+| **SQL Agent** | [sql_agent.py](backend/src/agents/sql_agent.py) | Executes query parameters against Oracle/Supabase schemas. |
+| **RAG Agent** | [rag_agent.py](backend/src/agents/rag_agent.py) | Queries ChromaDB vectors to find semantic transcript matches. |
+| **Chart Agent**| [chart_agent.py](backend/src/agents/chart_agent.py) | Formats query metric lists into structured Recharts coordinates. |
+| **Orchestrator**| [orchestrator.py](backend/src/agents/orchestrator.py) | Integrates agent states and prompts Groq LLM for final delivery. |
 
 ---
 
 ## Contributing
 
-We welcome contributions to help improve QuantumLens. To contribute:
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/amazing-feature`.
-3. Commit your changes with clear descriptions: `git commit -m "feat: add PDF parser"`.
-4. Push your branch: `git push origin feature/amazing-feature`.
-5. Open a Pull Request.
+We welcome contributions to improve HSBC QuantumLens. Open a pull request or file issues under the repository tracker.
 
 ---
 
 ## License
 
-QuantumLens is open-source software licensed under the MIT License.
+This project is open-source software licensed under the MIT License.
 
 ---
 
@@ -358,29 +235,42 @@ Expand the sections below to view the full contents of all other documentation f
 
 # System Architecture Specification
 
-This document details the architectural layout, modules, and component interactions of **QuantumLens**. 
+This document details the architectural layout, system layers, and component interactions of **QuantumLens** (also known as *HSBC Atlas* or *Project Basilisk*), an institutional-grade banking intelligence platform.
 
 For a high-level overview, deployment metrics, or setup instructions, see the primary [README.md](../../README.md).
 
 ---
 
-## Layered Architecture Overview
+## 6-Layer Architecture Overview
 
-QuantumLens uses a decoupled, layered design that separates data ingestion, metric transformation, warehouse persistence, semantic indexing, and API routing.
+QuantumLens is built on six decoupled engineering layers. This decoupling ensures that vector-indexed LLM reasoning and graph contagion modeling run independently of core transactional databases and ETL workflows.
 
-### Architecture Topology Diagram
 ```mermaid
 graph TD
     %% Define Nodes
-    subgraph ClientLayer ["Client Layer"]
-        UI["Next.js Web Portal (frontend/)"]
+    subgraph ClientLayer ["Layer 5: Apache Superset War Rooms (frontend/)"]
+        UI["Next.js Dashboards UI<br>(Pulse, Wealth, Stress, Contagion)"]
     end
 
-    subgraph APILayer ["API Routing Layer"]
-        FastAPI["FastAPI Web Router (backend/src/api/)"]
+    subgraph APILayer ["Layer 6: AI Copilot Router (backend/src/api/)"]
+        FastAPI["FastAPI Web Router"]
     end
 
-    subgraph ETLTransformation ["ETL & Transformation Layer"]
+    subgraph ForecastingLayer ["Layer 4: Advanced Forecasting Engine (ml_models/)"]
+        Forecast["Forecaster<br>(Prophet / XGBoost / LSTMs)"]
+    end
+
+    subgraph AILayer ["Layer 3: AI Call Intelligence (backend/src/rag/)"]
+        Chroma[("ChromaDB Vector Store")]
+        FinBERT["FinBERT NLP Pipeline<br>(Anxiety / Sentiment index)"]
+        Groq["Groq Cloud API<br>(llama-3.3-70b-versatile)"]
+    end
+
+    subgraph KnowledgeGraph ["Layer 2: Financial Knowledge Graph (neo4j/)"]
+        Neo4j[("Neo4j Graph Database<br>(Risk Contagion Nodes)")]
+    end
+
+    subgraph DataEngineering ["Layer 1: Data Engineering Pipeline (backend/src/ingestion/)"]
         Reader["Workbook Reader"]
         Scanner["Sheet Scanner"]
         Extractor["Metric Extractor"]
@@ -388,15 +278,9 @@ graph TD
         Builder["KPI Builder"]
     end
 
-    subgraph DataStorage ["Data Warehouse Layer"]
-        Supabase[("Supabase (PostgreSQL 15)<br>[Production Cloud]")]
-        Oracle[("Oracle Database<br>[Relational Enterprise]")]
-    end
-
-    subgraph AIEngine ["AI & Semantic RAG Layer"]
-        Chroma[("ChromaDB Vector Store<br>[Persistent Local Client]")]
-        SentenceTransformer["SentenceTransformer<br>(all-MiniLM-L6-v2)"]
-        Groq["Groq Cloud API<br>(llama-3.3-70b-versatile)"]
+    subgraph StorageLayer ["Database Warehouse Layer (backend/warehouse/)"]
+        Supabase[("Supabase (PostgreSQL 15)<br>[JSONB arrays]")]
+        Oracle[("Oracle Database 19c<br>[Period observations]")]
     end
 
     %% Define Connections
@@ -410,18 +294,23 @@ graph TD
     Scanner --> Extractor
     Extractor --> Mapper
     Mapper --> Builder
-    Builder -->|Batch Loader / Upserts| Supabase
-    Builder -->|Oracle SQL Rows| Oracle
+    Builder -->|Batch Upserts| Supabase
+    Builder -->|Insert Rows| Oracle
+    Builder -->|Stress nodes| Neo4j
     
     %% Vector Ingestion Flow
-    Supabase -->|SQL Extract| SentenceTransformer
-    SentenceTransformer -->|Dense Embeddings| Chroma
+    Supabase -->|SQL Extract| FinBERT
+    FinBERT -->|Dense Embeddings| Chroma
     
     %% RAG Pipeline Flow
-    FastAPI -->|Question Embed Query| Chroma
+    FastAPI -->|Question Query| Chroma
     Chroma -->|Relevant Context Docs| FastAPI
     FastAPI -->|Context + Prompt| Groq
     Groq -->|Context-Grounded Answer| FastAPI
+    
+    %% Forecasting Connection
+    Oracle --> Forecast
+    Forecast --> UI
     
     %% Styles
     classDef client fill:#1f77b4,stroke:#333,stroke-width:2px,color:#fff;
@@ -429,48 +318,52 @@ graph TD
     classDef storage fill:#9467bd,stroke:#333,stroke-width:2px,color:#fff;
     classDef etl fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
     classDef ai fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
+    classDef forecast fill:#e377c2,stroke:#333,stroke-width:2px,color:#fff;
+    classDef graph fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
     
     class UI client;
     class FastAPI api;
     class Reader,Scanner,Extractor,Mapper,Builder etl;
     class Supabase,Oracle storage;
-    class Chroma,SentenceTransformer,Groq ai;
+    class Chroma,FinBERT,Groq ai;
+    class Forecast forecast;
+    class Neo4j graph;
 ```
 
 ---
 
 ## Technical Layers Matrix
 
-| Layer | Responsibility | Input Shape | Output Shape | Storage Target | Code Locations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Client** | User interactions, analytics dashboards, and interactive chat interface. | Web events, filter selections | HTTP REST Payloads | Local Storage / Session State | `frontend/` |
-| **API** | High-performance request routing, CORS configuration, exception handling, and query orchestration. | JSON Requests, parameter queries | JSON Responses | None (Stateless) | `backend/src/api/` |
-| **ETL & Ingestion** | Extracting data cells from complex binary Excel files and cleaning structural noises. | Excel binary (`.xlsx`) | JSON cell coordinate arrays | File cache / JSON files | `backend/src/ingestion/` |
-| **Transformation** | Metric normalizations, numeric isolations, chronological sequence indexing, and trend compiles. | Raw JSON row data | Clean KPI objects / time-series data | `backend/data/processed/` | `backend/src/transformation/` |
-| **Warehouse** | Storing standardized relational observations and providing transactional consistency. | Structured KPI Records | Table rows | Supabase (Postgres) & Oracle | `backend/warehouse/` |
-| **AI (RAG)** | Dense vector generations, semantic index management, and context-bounded query completions. | Natural language questions | Structured text answers with citations | Local ChromaDB collections | `backend/src/rag/` |
+| Layer | Responsibility | Input Shape | Output Shape | Data Store Target |
+| :--- | :--- | :--- | :--- | :--- |
+| **Layer 1: Pipeline** | Parsing Excel cells, stripping merged headers, and outputting JSON coordinates. | Raw Excel files (`.xlsx`) | Cleaned JSON coordinate maps | File cache / local disks |
+| **Layer 2: Graph** | Modeling counterparty risk, wealth flows, and geopolitical contagion propagation paths. | Structured KPI metrics | Entity node networks and exposures | Neo4j Graph DB |
+| **Layer 3: NLP** | Executing FinBERT sentiment classification and measuring management anxiety indices. | Earnings transcripts, executive remarks | Confidence and risk indexes | ChromaDB Vector Store |
+| **Layer 4: Forecast** | Generating NII, RoTE, and credit provision forecasts under macroeconomic scenario stress tests. | Relational metrics history | Predictive timeline indicators | Warehouse databases |
+| **Layer 5: UI Portal** | Hosting executive dashboards and rendering Recharts visualizations. | User selections, REST query parameters | Interactive dashboards views | Browser local state / caches |
+| **Layer 6: AI Copilot**| Planning query intent and combining SQL metrics with semantic search documents. | Natural language questions | Factual, source-attributed text replies | Local host runtime |
 
 ---
 
 ## Modular System Breakdown
 
-The system is partitioned into the following functional scripts:
+The system modules are partitioned as follows:
 
-| Module / Script | Layer | Core Function | Primary Python Packages | File Path |
+| Script / Module | Architecture Layer | Core Function | Primary Python Packages | File Path |
 | :--- | :--- | :--- | :--- | :--- |
-| **workbook_reader.py** | Ingestion | Discovers spreadsheet sheet list and reads workbooks in read-only mode to prevent memory leak issues. | `pandas`, `openpyxl` | [workbook_reader.py](../../backend/src/ingestion/workbook_reader.py) |
-| **sheet_scanner.py** | Ingestion | Programmatically reads grid rows, stripping merged layout cells, and outputs standard coordinates. | `pandas`, `numpy` | [sheet_scanner.py](../../backend/src/ingestion/sheet_scanner.py) |
-| **metric_extractor.py**| Ingestion | Performs lowercase exact regex boundary checks to identify normalized KPIs. | `re`, `json` | [metric_extractor.py](../../backend/src/ingestion/metric_extractor.py) |
-| **value_extractor.py** | Ingestion | Isolates true numerical float values, discarding string notes or empty markers. | `pandas`, `numpy` | [value_extractor.py](../../backend/src/ingestion/value_extractor.py) |
-| **period_mapper.py** | Transformation | Maps raw columns into sequential chronological period indexes (`period_index: 1, 2...`). | `json` | [period_mapper.py](../../backend/src/transformation/period_mapper.py) |
-| **kpi_builder.py** | Transformation | Computes trend vectors (`up`, `down`, `flat`) based on latest values and appends timestamps. | `datetime` | [kpi_builder.py](../../backend/src/transformation/kpi_builder.py) |
-| **data_loader.py** | Warehouse | Batch uploads structured JSON records to Supabase metrics table using upsert configurations. | `supabase` | [data_loader.py](../../backend/warehouse/data_loader.py) |
-| **load_to_oracle.py** | Warehouse | Transforms JSON array series into single rows and loads them into Oracle SQL. | `oracledb` | [load_to_oracle.py](../../backend/warehouse/load_to_oracle.py) |
-| **query_service.py** | Warehouse | Connects to Oracle to retrieve metric listings, historical trend queries, and filters. | `oracledb` | [query_service.py](../../backend/warehouse/query_service.py) |
-| **embedding_generator.py**| AI Layer | Generates 384-dimensional vector embeddings from structured metrics in the warehouse. | `sentence-transformers` | [embedding_generator.py](../../backend/src/rag/embedding_generator.py) |
-| **vector_loader.py** | AI Layer | Creates local persistent collections in ChromaDB and indexes embeddings for semantic search. | `chromadb` | [vector_loader.py](../../backend/src/rag/vector_loader.py) |
-| **retrieval_engine.py**| AI Layer | Accepts queries, runs local cosine distance comparisons, and returns top-K records. | `chromadb` | [retrieval_engine.py](../../backend/src/rag/retrieval_engine.py) |
-| **rag_pipeline.py** | AI Layer | Assembles system prompts containing retrieved context documents and queries Groq API. | `groq` | [rag_pipeline.py](../../backend/src/rag/rag_pipeline.py) |
+| **workbook_reader.py** | Layer 1: Data Pipeline | Reads binary workbooks in read-only mode to prevent memory leak issues. | `pandas`, `openpyxl` | [workbook_reader.py](../../backend/src/ingestion/workbook_reader.py) |
+| **sheet_scanner.py** | Layer 1: Data Pipeline | Parses worksheets cell-by-cell and fills merged header regions programmatically. | `pandas`, `numpy` | [sheet_scanner.py](../../backend/src/ingestion/sheet_scanner.py) |
+| **metric_extractor.py**| Layer 1: Data Pipeline | Normalizes names to a centralized config map in constant O(1) time. | `re`, `json` | [metric_extractor.py](../../backend/src/ingestion/metric_extractor.py) |
+| **value_extractor.py** | Layer 1: Data Pipeline | Isolates floats, filtering out string footnotes or empty indicators. | `pandas`, `numpy` | [value_extractor.py](../../backend/src/ingestion/value_extractor.py) |
+| **period_mapper.py** | Layer 1: Data Pipeline | Maps spreadsheet columns to sequential chronological period indexes. | `json` | [period_mapper.py](../../backend/src/transformation/period_mapper.py) |
+| **kpi_builder.py** | Layer 1: Data Pipeline | Compiles metrics trend flags (`up`, `down`, `flat`) and timestamps records. | `datetime` | [kpi_builder.py](../../backend/src/transformation/kpi_builder.py) |
+| **data_loader.py** | Layer 1: Data Pipeline | Batches records to Supabase tables using natural key upsert operations. | `supabase` | [data_loader.py](../../backend/warehouse/data_loader.py) |
+| **load_to_oracle.py** | Layer 1: Data Pipeline | Flattens observations and uploads data rows to Oracle Database. | `oracledb` | [load_to_oracle.py](../../backend/warehouse/load_to_oracle.py) |
+| **query_service.py** | Layer 6: AI Copilot | Wraps database queries, providing metrics arrays to FastAPI routers. | `oracledb` | [query_service.py](../../backend/warehouse/query_service.py) |
+| **embedding_generator.py**| Layer 3: AI Intelligence | Creates vector embeddings from metrics metadata using local BAAI models. | `sentence-transformers` | [embedding_generator.py](../../backend/src/rag/embedding_generator.py) |
+| **vector_loader.py** | Layer 3: AI Intelligence | Registers vector collections in ChromaDB and handles index persistence. | `chromadb` | [vector_loader.py](../../backend/src/rag/vector_loader.py) |
+| **retrieval_engine.py**| Layer 3: AI Intelligence | Performs cosine searches on vectorized metrics with distance filters. | `chromadb` | [retrieval_engine.py](../../backend/src/rag/retrieval_engine.py) |
+| **rag_pipeline.py** | Layer 6: AI Copilot | Orchestrates system prompts, injecting contexts for LLM execution. | `groq` | [rag_pipeline.py](../../backend/src/rag/rag_pipeline.py) |
 
 ---
 
@@ -490,6 +383,7 @@ sequenceDiagram
     participant Builder as Transformation (kpi_builder.py)
     participant DB as Warehouse (Supabase/Postgres)
     participant Oracle as Warehouse (Oracle DB)
+    participant Neo4j as Graph Database (Neo4j)
 
     Excel->>Reader: File Path of workbook
     activate Reader
@@ -504,12 +398,13 @@ sequenceDiagram
     activate Builder
     Builder->>DB: Upsert Ingested KPI Payload (JSONB array structure)
     Builder->>Oracle: Insert sequential rows (single period observations)
+    Builder->>Neo4j: Create exposure nodes and dependencies
     deactivate Builder
 ```
 
 ---
 
-### 2. RAG Query Retrieval Sequence
+### 2. Multi-Agent RAG Query Sequence
 
 This sequence diagram illustrates the steps when a user queries the API for financial analytics:
 
@@ -518,25 +413,40 @@ sequenceDiagram
     autonumber
     actor User as Client App (API/Web)
     participant API as FastAPI REST Router (main.py)
-    participant RAG as AI Pipeline (rag_pipeline.py)
+    participant Planner as Planner Agent (planner.py)
+    participant SQLAgent as SQL Agent (sql_agent.py)
+    participant RAGAgent as RAG Agent (rag_agent.py)
+    participant Oracle as Oracle Database
     participant VectorDB as Vector Store (ChromaDB Local)
     participant LLM as Inference Engine (Groq Cloud)
 
     User->>API: POST /ask { "question": "..." }
     activate API
-    API->>RAG: ask_question(question)
-    activate RAG
-    RAG->>VectorDB: search_metrics(question, top_k)
-    activate VectorDB
-    VectorDB-->>RAG: Return Top-K context document strings
-    deactivate VectorDB
-    RAG->>LLM: Request completion (System Rules + Context Docs + Question)
+    API->>Planner: parse_query(question)
+    activate Planner
+    Planner-->>API: Intent Matrix: {use_sql: true, use_rag: true}
+    deactivate Planner
+    
+    API->>SQLAgent: get_metrics_sql(question)
+    activate SQLAgent
+    SQLAgent->>Oracle: Query historical values
+    Oracle-->>SQLAgent: SQL data rows
+    SQLAgent-->>API: Structured metrics values
+    deactivate SQLAgent
+
+    API->>RAGAgent: search_context(question)
+    activate RAGAgent
+    RAGAgent->>VectorDB: search_embeddings(question)
+    VectorDB-->>RAGAgent: Retrived text documents
+    RAGAgent-->>API: Context documents strings
+    deactivate RAGAgent
+
+    API->>LLM: Complete Response (System Prompt + SQL Data + Context Docs + Question)
     activate LLM
-    LLM-->>RAG: Grounded financial response string
+    LLM-->>API: Grounded financial response text
     deactivate LLM
-    RAG-->>API: Structured response JSON (answer, sources)
-    deactivate RAG
-    API-->>User: HTTP 200 OK Response
+
+    API-->>User: HTTP 200 OK Response (answer, sources)
     deactivate API
 ```
 
@@ -1608,57 +1518,240 @@ Root folder (quantumlens-HSBC)
 </details>
 
 <details>
+<summary><b>FastAPI Backend Server Documentation (backend/README.md)</b></summary>
+
+# FastAPI Backend Server (backend/)
+
+This is the backend REST API engine for the **QuantumLens** platform. It handles Excel data ingestion pipelines, manages the dual-database warehouses, generates semantic vector embeddings, and hosts the multi-agent AI copilot.
+
+For general details on the project architecture or dashboards, see the root [README.md](../README.md).
+
+---
+
+## Technical Stack & Configuration
+
+| Module | Technology | Role |
+| :--- | :--- | :--- |
+| **Routing & Core** | FastAPI + Uvicorn | High-performance ASGI REST endpoints. |
+| **Tabular Parser** | Pandas + openpyxl | Traverses sheets, extracts values, and cleans NaN anomalies. |
+| **AI Embeddings** | SentenceTransformers | Local 384-dimensional dense vector generations (`all-MiniLM-L6-v2`). |
+| **Vector Database**| ChromaDB | Zero-config, persistent local vector indexing. |
+| **LLM Inference** | Groq Cloud Client | Context-grounded response generation via Llama-3.3. |
+
+---
+
+## Systems Architecture Diagram
+
+```mermaid
+graph TD
+    %% Define Nodes
+    FastAPI["FastAPI Web Router (src/api/)"]
+    
+    subgraph ETLPipeline ["ETL Pipeline (src/ingestion/ & src/transformation/)"]
+        Reader["Workbook Reader"]
+        Scanner["Sheet Scanner"]
+        Extractor["Metric Extractor"]
+        Mapper["Period Mapper"]
+        Builder["KPI Builder"]
+    end
+    
+    subgraph DatabaseLayer ["Database Warehouse Layer (warehouse/)"]
+        Supabase[("Supabase (PostgreSQL)<br>[Production JSONB arrays]")]
+        Oracle[("Oracle Database 19c<br>[Relational Period rows]")]
+    end
+
+    subgraph AIEngine ["AI & Semantic RAG Layer (src/rag/ & src/agents/)"]
+        Chroma[("ChromaDB Vector Store<br>[Local Index Cache]")]
+        Planner["Planner Agent"]
+        SQLAgent["SQL Agent"]
+        RAGAgent["RAG Agent"]
+    end
+
+    %% Connections
+    FastAPI <-->|SQL Queries| Supabase
+    FastAPI <-->|Query Context| Chroma
+    
+    %% ETL Ingestion Flow
+    xlsx["Raw XLSX Files"] --> Reader
+    Reader --> Scanner
+    Scanner --> Extractor
+    Extractor --> Mapper
+    Mapper --> Builder
+    Builder -->|Batch Upserts| Supabase
+    Builder -->|Insert Rows| Oracle
+    
+    %% Vector Ingestion Flow
+    Supabase -->|SQL Extract| Chroma
+    
+    %% Multi-Agent Flow
+    FastAPI <-->|Natural Query| Planner
+    Planner <-->|Intent Matrix| SQLAgent
+    Planner <-->|Intent Matrix| RAGAgent
+    SQLAgent <--> Oracle
+    RAGAgent <--> Chroma
+```
+
+---
+
+## Dual-Database Warehouse Layouts
+
+The database layer processes data into two distinct target topologies:
+
+### 1. Supabase (PostgreSQL 15) Table: `metrics`
+Stores complete time-series observations inside a single row using a dynamic JSONB array column.
+* **Primary Key**: `id` (SERIAL)
+* **Unique Constraint**: `metric_id` (enforces 1 row per KPI)
+* **Time-Series Column**: `period_values` (JSONB)
+* **Index**: B-Tree indices on `id`, `metric_id`, and `metric_name`
+
+### 2. Oracle Database Table: `metrics`
+Flattens observations into individual rows (one row per quarter/period) for OLAP reports.
+* **Primary Key**: `id` (NUMBER GENERATED ALWAYS AS IDENTITY)
+* **Chronological Columns**: `period` (VARCHAR2) & `value` (NUMBER)
+* **Classification Columns**: `category` (VARCHAR2), `unit` (VARCHAR2)
+
+---
+
+## Local Ingestion and API Setup
+
+### Prerequisites Checklist
+- [ ] Python 3.13+ installed.
+- [ ] SQLite3 and local system path configurations enabled.
+- [ ] Oracle Client libraries (instant client) configured for python environment connections.
+
+### Setup and execution commands
+
+| Step | Action | Command | Notes |
+| :--- | :--- | :--- | :--- |
+| **1** | Create Virtual Env | `python -m venv .venv` | Creates sandbox environment. |
+| **2** | Activate Env (Win) | `.venv\Scripts\Activate.ps1` | Activates powershell environment. |
+| **3** | Activate Env (Unix)| `source .venv/bin/activate` | Activates bash environment. |
+| **4** | Install Requirements | `pip install -r requirements.txt` | Installs Pandas, FastAPI, ChromaDB, Uvicorn. |
+| **5** | Configure Environment | `copy .env.example .env` | Duplicate config file and inject credentials. |
+| **6** | Run Ingestion Pipeline| `python src/ingestion/sheet_scanner.py` | Traverses XLSX data and structures raw records. |
+| **7** | Load Database | `python warehouse/data_loader.py` | Batches metrics payload to Supabase metrics table. |
+| **8** | Load Oracle Warehouse | `python warehouse/load_to_oracle.py` | Flattens observations and inserts records to Oracle. |
+| **9** | Launch REST API | `uvicorn src.api.main:app --reload --port 8000` | Boots API server on port 8000 with hot-reload. |
+
+---
+
+## Environment Variables Configuration
+
+> [!WARNING]
+> - Never commit the `.env` file containing actual secrets to public repositories.
+> - Ensure all variables are configured in the cloud host panel during deployments.
+
+| Variable Name | Required | Description | Default Local |
+| :--- | :--- | :--- | :--- |
+| `SUPABASE_URL` | YES | Endpoint for Supabase Database REST interface. | `https://<YOUR_PROJECT_ID>.supabase.co` |
+| `SUPABASE_KEY` | YES | Service Role administrative key to bypass RLS policies. | `<YOUR_SUPABASE_SERVICE_ROLE_KEY>` |
+| `GROQ_API_KEY` | YES | API token for Groq Cloud LLM completions. | `<YOUR_GROQ_API_KEY>` |
+| `VECTOR_DB_PATH` | NO | Local directory to persist ChromaDB index assets. | `src/rag/vector_db` |
+| `EMBEDDINGS_PATH`| NO | Local file path caching pre-computed embeddings. | `data/generated/embeddings.json` |
+| `EMBEDDING_MODEL`| NO | HuggingFace embedding model ID. | `sentence-transformers/all-MiniLM-L6-v2` |
+| `TOP_K` | NO | Top document count returned during semantic search retrieval. | `5` |
+
+---
+
+## API Endpoints Reference
+
+### Endpoints Matrix
+| Method | Route | Description | Request Body (JSON) | Success Code |
+| :--- | :--- | :--- | :--- | :--- |
+| `GET` | `/` | Verify API server connectivity | None | `200 OK` |
+| `GET` | `/health` | Ingestion status check | None | `200 OK` |
+| `GET` | `/metrics` | Retrieve list of unique metrics | None | `200 OK` |
+| `GET` | `/metric/{metric_id}`| Retrieve occurrences of a specific metric ID | None (Path Parameter) | `200 OK` |
+| `GET` | `/record/{record_id}`| Retrieve metric row and timeline values by ID | None (Path Parameter) | `200 OK` |
+| `POST` | `/search` | Query vector space for semantic similarity | `{"query": "...", "top_k": 3}`| `200 OK` |
+| `POST` | `/ask` | Execute full multi-agent RAG reasoning | `{"question": "..."}` | `200 OK` |
+
+---
+
+### Request/Response JSON Formats
+
+#### POST `/ask`
+
+##### Request JSON Structure
+```json
+{
+  "question": "Why did Expected Credit Losses (ECL) rise?"
+}
+```
+
+##### Response JSON Structure
+```json
+{
+  "question": "Why did Expected Credit Losses (ECL) rise?",
+  "answer": "- According to sheet 'Group Income Statement' in '260505-1q-2026-data-pack-excel.xlsx':\n- Expected Credit Losses (ECL) rose due to fraud-related exposure on UK securitisation transactions and rising Middle East geopolitical volatility.",
+  "sources": [
+    {
+      "metric_id": 5,
+      "metric_name": "expected_credit_losses",
+      "sheet_name": "Group Income Statement",
+      "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+      "row_number": 12
+    }
+  ]
+}
+```
+
+---
+
+## Related Documentation
+* [Primary Readme](../README.md): Project overview and complete monorepo details.
+* [Frontend Readme](../frontend/README.md): Next.js dashboard visual portal instructions.
+* [System Architecture Spec](../docs/architecture/architecture.md): Systems layers and sequence flows.
+
+
+</details>
+
+<details>
 <summary><b>Frontend Analytics Portal Documentation (frontend/README.md)</b></summary>
 
 # Next.js Analytics Portal (frontend/)
 
-This is the frontend dashboard user interface for the **QuantumLens** platform. It provides interactive visualizations, historical KPI trend tracking, cohort comparisons, and an AI chat assistant interface for query reasoning.
+This is the interactive client dashboard for the **QuantumLens** financial intelligence platform. It provides a visual interface for executive strategy, risk observation, and natural language reasoning (AI financial assistant).
 
-For backend architecture, database tables, or API references, see the root [README.md](../README.md). For detailed modular diagrams, see [architecture.md](../docs/architecture/architecture.md).
-
----
-
-## Technical Stack Summary
-
-| Layer | Technology | Selected Package / Framework | Purpose |
-| :--- | :--- | :--- | :--- |
-| **Framework** | Next.js | Next.js 15+ (App Router) | Core application routing, server-side layouts |
-| **Library** | React | React 19+ | UI components rendering and state |
-| **Styling** | TailwindCSS | TailwindCSS 3.4+ | CSS layout styling framework |
-| **Visualizations**| Charting | Recharts / Chart.js | Visual metrics time-series tracking |
-| **API Client** | REST Client | Axios / Fetch API | Requests integration to FastAPI backend |
+For general backend endpoints, models, or database queries, see the [backend/README.md](../backend/README.md).
 
 ---
 
-## Project Structure Layout
+## Technical Stack & Visual Framework
 
-```text
-frontend/
-├── app/                           # Next.js App Router folders
-│   ├── page.tsx                   # Main login & system overview page
-│   ├── dashboard/                 # Financial metrics trend analytics workspace
-│   │   └── page.tsx
-│   ├── chat/                      # Copilot AI chat assistant chat pane
-│   │   └── page.tsx
-│   ├── layout.tsx                 # Core HTML wrappers, navigations & footers
-│   └── globals.css                # Global CSS variables & Tailwind imports
-├── components/                    # Reusable visual components
-│   ├── ui/                        # Low-level primitive inputs, buttons, tables
-│   ├── ai/                        # AI Chat interface components
-│   │   └── AIChat.tsx
-│   ├── charts/                    # Recharts rendering components
-│   │   └── LineChart.tsx
-│   ├── dashboard/                 # Dashboard widgets
-│   │   └── SummaryCard.tsx
-│   ├── layout/                    # Layout sections
-│   ├── metrics/                   # Metrics table wrappers
-│   └── records/                   # Record wrappers
-├── hooks/                         # Custom React Hooks
-├── services/                      # API integration endpoints wrappers
-│   ├── api.ts                     # Axios client linking to backend routes
-│   └── metricService.ts           # CRUD endpoints for metrics querying
-└── public/                        # Static brand logo images and icons
-```
+| Layer | Selected Package | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | Next.js 15+ (App Router) | Core layouts routing and server components. |
+| **UI Components** | React 19+ | Dynamic component rendering and hooks state. |
+| **Style System** | TailwindCSS 3.4+ | CSS layouts, utility spacing, and theme variables. |
+| **Data Graphs** | Recharts / Chart.js | Visual rendering of time-series trend lines. |
+| **HTTP Client** | Axios / Fetch | API requests routing to backend routers. |
+
+---
+
+## Interactive Dashboard Views
+
+The Next.js client organizes analytics into five strategic "War Rooms":
+
+### Dashboard 1: Global Banking Pulse
+* **Core Metrics**: Net Interest Income (NII), CET1 capital ratio, Return on Tangible Equity (RoTE), liquidity levels, and loan growth rates.
+* **Interactivity**: Dynamic regional heatmaps, timeline cross-filtering, and animated trend transitions.
+
+### Dashboard 2: Wealth Migration Observatory
+* **Core Metrics**: Asia wealth inflows ($34B in Q1 2026), net new wealth assets ($39B net new money), insurance growth, and HNW capital concentration.
+* **Interactivity**: Capital concentration charts and deposit migration flow trackers.
+
+### Dashboard 3: Credit Stress Radar
+* **Core Metrics**: Expected Credit Losses (ECL) trends (guidance raised to 45bps), sector-level write-off ratios, and UK securitisation fraud warnings.
+* **Interactivity**: Stress scenario models visualizing asset risk propagation under macroeconomic shocks.
+
+### Dashboard 4: Strategic Transformation Tracker
+* **Core Metrics**: Asset disposals, simplification cost savings targets ($1.5B), Hang Seng privatization synergies ($0.5B), and capital reallocation programs.
+* **Interactivity**: Milestone checklist meters and operational budget analytics charts.
+
+### Dashboard 5: Banking Contagion Network
+* **Core Metrics**: Relational risk propagation maps pulling from Neo4j (Middle East Conflict ──► Energy Price Volatility ──► Expected Credit Losses ──► Capital Deterioration).
+* **Interactivity**: Interactive node graph visualization showing asset exposure and liquidity dependencies.
 
 ---
 
@@ -1666,43 +1759,49 @@ frontend/
 
 ### Prerequisites Checklist
 - [ ] Node.js version 18.x or later installed.
-- [ ] Backend API service running (locally or production Render endpoint).
+- [ ] Running instance of the FastAPI backend server.
 
-### Setup and Start Tabular Guide
+### Local Development Setup
 
-| Step | Phase | Shell Command | Notes |
+| Step | Action | Shell Command | Notes |
 | :--- | :--- | :--- | :--- |
-| **1** | Install Dependencies | `npm install` | Restores NPM modules (React, Recharts, Tailwind). |
-| **2** | Configure Environment | `copy .env.example .env.local` | Binds public backend URL endpoint. |
-| **3** | Start Dev Server | `npm run dev` | Spins up hot-reloading dev host on [http://localhost:3000](http://localhost:3000). |
-| **4** | Build for Production | `npm run build` | Compiles Next.js dashboard into static pages. |
-| **5** | Launch Production | `npm run start` | Serves compiled project assets locally. |
+| **1** | Restore NPM Modules | `npm install` | Restores React, Tailwind, Recharts, and Axios. |
+| **2** | Configure Local Env | `copy .env.example .env.local` | Binds public API URL. |
+| **3** | Launch Local Host | `npm run dev` | Spins up dev server on [http://localhost:3000](http://localhost:3000). |
+| **4** | Compile Build | `npm run build` | Optimizes assets and compiles static paths. |
+| **5** | Run Production Mode | `npm run start` | Serves compiled output files. |
 
 ---
 
 ## Environment Variables Configuration
 
-| Variable Name | Environment | Description | Default Local | Production Deployed |
-| :--- | :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_API_URL` | Client Runtime | Endpoint path targeting the FastAPI backend. | `http://localhost:8000` | `https://quantumlens-api.render.com` |
+> [!WARNING]
+> Do not commit `.env.local` containing actual backend production URLs. Keep configurations restricted to local variables.
+
+| Variable Name | Environment | Description | Default Local |
+| :--- | :--- | :--- | :--- |
+| `NEXT_PUBLIC_API_URL` | Client Runtime | HTTP address pointing to the FastAPI backend API server. | `http://localhost:8000` |
 
 ---
 
 ## Production Deployment (Vercel)
 
-| Phase | Deployment Action | Configuration Parameters |
+Vercel is the recommended hosting platform for Next.jsApp Router portals. Follow these steps:
+
+| Step | Phase | Vercel Panel Configuration |
 | :--- | :--- | :--- |
-| **1** | **Repository Link** | Link the repository on the Vercel Dashboard. |
-| **2** | **Root Directory** | Configure the root directory input to target: `frontend` |
-| **3** | **Environment Bindings** | Add the Environment Variable `NEXT_PUBLIC_API_URL` pointing to your Render API. |
-| **4** | **Deploy** | Click **Deploy** to compile Next.js static pages. |
+| **1** | **Import Project** | Connect your GitHub repository to Vercel. |
+| **2** | **Root Directory** | Configure directory target override: `frontend` |
+| **3** | **Build Commands** | Framework preset: **Next.js**. Keep standard build parameters. |
+| **4** | **Environment Variables**| Add `NEXT_PUBLIC_API_URL` pointing to your deployed Render backend API. |
+| **5** | **Deploy** | Click **Deploy** to compile Next.js static pages. |
 
 ---
 
 ## Related Documentation
-* [Root Readme](../README.md): Backend API endpoints and installations.
+* [Primary Readme](../README.md): Complete repository layouts.
+* [Backend Readme](../backend/README.md): FastAPI REST routing specs.
 * [System Architecture Spec](../docs/architecture/architecture.md): Systems layers overview.
-* [Database Schema](../docs/features/ingestion/data_dictionary.md): Table mappings details.
 
 
 </details>

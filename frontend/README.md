@@ -1,52 +1,46 @@
 # Next.js Analytics Portal (frontend/)
 
-This is the frontend dashboard user interface for the **QuantumLens** platform. It provides interactive visualizations, historical KPI trend tracking, cohort comparisons, and an AI chat assistant interface for query reasoning.
+This is the interactive client dashboard for the **QuantumLens** financial intelligence platform. It provides a visual interface for executive strategy, risk observation, and natural language reasoning (AI financial assistant).
 
-For backend architecture, database tables, or API references, see the root [README.md](../README.md). For detailed modular diagrams, see [architecture.md](../docs/architecture/architecture.md).
-
----
-
-## Technical Stack Summary
-
-| Layer | Technology | Selected Package / Framework | Purpose |
-| :--- | :--- | :--- | :--- |
-| **Framework** | Next.js | Next.js 15+ (App Router) | Core application routing, server-side layouts |
-| **Library** | React | React 19+ | UI components rendering and state |
-| **Styling** | TailwindCSS | TailwindCSS 3.4+ | CSS layout styling framework |
-| **Visualizations**| Charting | Recharts / Chart.js | Visual metrics time-series tracking |
-| **API Client** | REST Client | Axios / Fetch API | Requests integration to FastAPI backend |
+For general backend endpoints, models, or database queries, see the [backend/README.md](../backend/README.md).
 
 ---
 
-## Project Structure Layout
+## Technical Stack & Visual Framework
 
-```text
-frontend/
-├── app/                           # Next.js App Router folders
-│   ├── page.tsx                   # Main login & system overview page
-│   ├── dashboard/                 # Financial metrics trend analytics workspace
-│   │   └── page.tsx
-│   ├── chat/                      # Copilot AI chat assistant chat pane
-│   │   └── page.tsx
-│   ├── layout.tsx                 # Core HTML wrappers, navigations & footers
-│   └── globals.css                # Global CSS variables & Tailwind imports
-├── components/                    # Reusable visual components
-│   ├── ui/                        # Low-level primitive inputs, buttons, tables
-│   ├── ai/                        # AI Chat interface components
-│   │   └── AIChat.tsx
-│   ├── charts/                    # Recharts rendering components
-│   │   └── LineChart.tsx
-│   ├── dashboard/                 # Dashboard widgets
-│   │   └── SummaryCard.tsx
-│   ├── layout/                    # Layout sections
-│   ├── metrics/                   # Metrics table wrappers
-│   └── records/                   # Record wrappers
-├── hooks/                         # Custom React Hooks
-├── services/                      # API integration endpoints wrappers
-│   ├── api.ts                     # Axios client linking to backend routes
-│   └── metricService.ts           # CRUD endpoints for metrics querying
-└── public/                        # Static brand logo images and icons
-```
+| Layer | Selected Package | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | Next.js 15+ (App Router) | Core layouts routing and server components. |
+| **UI Components** | React 19+ | Dynamic component rendering and hooks state. |
+| **Style System** | TailwindCSS 3.4+ | CSS layouts, utility spacing, and theme variables. |
+| **Data Graphs** | Recharts / Chart.js | Visual rendering of time-series trend lines. |
+| **HTTP Client** | Axios / Fetch | API requests routing to backend routers. |
+
+---
+
+## Interactive Dashboard Views
+
+The Next.js client organizes analytics into five strategic "War Rooms":
+
+### Dashboard 1: Global Banking Pulse
+* **Core Metrics**: Net Interest Income (NII), CET1 capital ratio, Return on Tangible Equity (RoTE), liquidity levels, and loan growth rates.
+* **Interactivity**: Dynamic regional heatmaps, timeline cross-filtering, and animated trend transitions.
+
+### Dashboard 2: Wealth Migration Observatory
+* **Core Metrics**: Asia wealth inflows ($34B in Q1 2026), net new wealth assets ($39B net new money), insurance growth, and HNW capital concentration.
+* **Interactivity**: Capital concentration charts and deposit migration flow trackers.
+
+### Dashboard 3: Credit Stress Radar
+* **Core Metrics**: Expected Credit Losses (ECL) trends (guidance raised to 45bps), sector-level write-off ratios, and UK securitisation fraud warnings.
+* **Interactivity**: Stress scenario models visualizing asset risk propagation under macroeconomic shocks.
+
+### Dashboard 4: Strategic Transformation Tracker
+* **Core Metrics**: Asset disposals, simplification cost savings targets ($1.5B), Hang Seng privatization synergies ($0.5B), and capital reallocation programs.
+* **Interactivity**: Milestone checklist meters and operational budget analytics charts.
+
+### Dashboard 5: Banking Contagion Network
+* **Core Metrics**: Relational risk propagation maps pulling from Neo4j (Middle East Conflict ──► Energy Price Volatility ──► Expected Credit Losses ──► Capital Deterioration).
+* **Interactivity**: Interactive node graph visualization showing asset exposure and liquidity dependencies.
 
 ---
 
@@ -54,40 +48,46 @@ frontend/
 
 ### Prerequisites Checklist
 - [ ] Node.js version 18.x or later installed.
-- [ ] Backend API service running (locally or production Render endpoint).
+- [ ] Running instance of the FastAPI backend server.
 
-### Setup and Start Tabular Guide
+### Local Development Setup
 
-| Step | Phase | Shell Command | Notes |
+| Step | Action | Shell Command | Notes |
 | :--- | :--- | :--- | :--- |
-| **1** | Install Dependencies | `npm install` | Restores NPM modules (React, Recharts, Tailwind). |
-| **2** | Configure Environment | `copy .env.example .env.local` | Binds public backend URL endpoint. |
-| **3** | Start Dev Server | `npm run dev` | Spins up hot-reloading dev host on [http://localhost:3000](http://localhost:3000). |
-| **4** | Build for Production | `npm run build` | Compiles Next.js dashboard into static pages. |
-| **5** | Launch Production | `npm run start` | Serves compiled project assets locally. |
+| **1** | Restore NPM Modules | `npm install` | Restores React, Tailwind, Recharts, and Axios. |
+| **2** | Configure Local Env | `copy .env.example .env.local` | Binds public API URL. |
+| **3** | Launch Local Host | `npm run dev` | Spins up dev server on [http://localhost:3000](http://localhost:3000). |
+| **4** | Compile Build | `npm run build` | Optimizes assets and compiles static paths. |
+| **5** | Run Production Mode | `npm run start` | Serves compiled output files. |
 
 ---
 
 ## Environment Variables Configuration
 
-| Variable Name | Environment | Description | Default Local | Production Deployed |
-| :--- | :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_API_URL` | Client Runtime | Endpoint path targeting the FastAPI backend. | `http://localhost:8000` | `https://quantumlens-api.render.com` |
+> [!WARNING]
+> Do not commit `.env.local` containing actual backend production URLs. Keep configurations restricted to local variables.
+
+| Variable Name | Environment | Description | Default Local |
+| :--- | :--- | :--- | :--- |
+| `NEXT_PUBLIC_API_URL` | Client Runtime | HTTP address pointing to the FastAPI backend API server. | `http://localhost:8000` |
 
 ---
 
 ## Production Deployment (Vercel)
 
-| Phase | Deployment Action | Configuration Parameters |
+Vercel is the recommended hosting platform for Next.jsApp Router portals. Follow these steps:
+
+| Step | Phase | Vercel Panel Configuration |
 | :--- | :--- | :--- |
-| **1** | **Repository Link** | Link the repository on the Vercel Dashboard. |
-| **2** | **Root Directory** | Configure the root directory input to target: `frontend` |
-| **3** | **Environment Bindings** | Add the Environment Variable `NEXT_PUBLIC_API_URL` pointing to your Render API. |
-| **4** | **Deploy** | Click **Deploy** to compile Next.js static pages. |
+| **1** | **Import Project** | Connect your GitHub repository to Vercel. |
+| **2** | **Root Directory** | Configure directory target override: `frontend` |
+| **3** | **Build Commands** | Framework preset: **Next.js**. Keep standard build parameters. |
+| **4** | **Environment Variables**| Add `NEXT_PUBLIC_API_URL` pointing to your deployed Render backend API. |
+| **5** | **Deploy** | Click **Deploy** to compile Next.js static pages. |
 
 ---
 
 ## Related Documentation
-* [Root Readme](../README.md): Backend API endpoints and installations.
+* [Primary Readme](../README.md): Complete repository layouts.
+* [Backend Readme](../backend/README.md): FastAPI REST routing specs.
 * [System Architecture Spec](../docs/architecture/architecture.md): Systems layers overview.
-* [Database Schema](../docs/features/ingestion/data_dictionary.md): Table mappings details.
