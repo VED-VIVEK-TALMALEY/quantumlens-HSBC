@@ -1,25 +1,27 @@
-# QuantumLens Next.js Analytics Portal
+# Next.js Analytics Portal (frontend/)
 
 This is the frontend dashboard user interface for the **QuantumLens** platform. It provides interactive visualizations, historical KPI trend tracking, cohort comparisons, and an AI chat assistant interface for query reasoning.
 
-For backend architecture, database tables, or API references, see the root [README.md](../README.md). For detailed modular diagrams, see [architecture.md](../docs/architecture.md).
+For backend architecture, database tables, or API references, see the root [README.md](../README.md). For detailed modular diagrams, see [architecture.md](../docs/architecture/architecture.md).
 
 ---
 
-## Technology Stack
+## Technical Stack Summary
 
-- **Framework**: Next.js 15+ (App Router)
-- **Library**: React 19+
-- **Styling**: TailwindCSS
-- **Visualizations**: Recharts / Chart.js
-- **API Request Client**: Axios / Fetch API
+| Layer | Technology | Selected Package / Framework | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Framework** | Next.js | Next.js 15+ (App Router) | Core application routing, server-side layouts |
+| **Library** | React | React 19+ | UI components rendering and state |
+| **Styling** | TailwindCSS | TailwindCSS 3.4+ | CSS layout styling framework |
+| **Visualizations**| Charting | Recharts / Chart.js | Visual metrics time-series tracking |
+| **API Client** | REST Client | Axios / Fetch API | Requests integration to FastAPI backend |
 
 ---
 
-## Project Structure
+## Project Structure Layout
 
 ```text
-quantumlens-dashboard/
+frontend/
 ├── app/                           # Next.js App Router folders
 │   ├── page.tsx                   # Main login & system overview page
 │   ├── dashboard/                 # Financial metrics trend analytics workspace
@@ -30,74 +32,62 @@ quantumlens-dashboard/
 │   └── globals.css                # Global CSS variables & Tailwind imports
 ├── components/                    # Reusable visual components
 │   ├── ui/                        # Low-level primitive inputs, buttons, tables
-│   ├── MetricCard.tsx             # Stat tiles showing trends & current indicators
-│   ├── TimeSeriesChart.tsx        # Line/Bar Recharts diagrams
-│   └── ChatWindow.tsx             # Interactive messaging conversation panel
+│   ├── ai/                        # AI Chat interface components
+│   │   └── AIChat.tsx
+│   ├── charts/                    # Recharts rendering components
+│   │   └── LineChart.tsx
+│   ├── dashboard/                 # Dashboard widgets
+│   │   └── SummaryCard.tsx
+│   ├── layout/                    # Layout sections
+│   ├── metrics/                   # Metrics table wrappers
+│   └── records/                   # Record wrappers
+├── hooks/                         # Custom React Hooks
 ├── services/                      # API integration endpoints wrappers
-│   └── api.ts                     # Axios hooks linking to backend routes
-├── public/                        # Static brand logo images and icons
-├── package.json                   # Client node scripts & dependency lock
-├── tailwind.config.ts             # Tailwind layouts & layout settings
-└── tsconfig.json                  # Strict TypeScript configuration
+│   ├── api.ts                     # Axios client linking to backend routes
+│   └── metricService.ts           # CRUD endpoints for metrics querying
+└── public/                        # Static brand logo images and icons
 ```
 
 ---
 
 ## Getting Started
 
-### Prerequisites
-Ensure Node.js 18.x or later is installed.
+### Prerequisites Checklist
+- [ ] Node.js version 18.x or later installed.
+- [ ] Backend API service running (locally or production Render endpoint).
 
-### Local Development Setup
+### Setup and Start Tabular Guide
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-2. **Configure environment variables**:
-   Create a `.env.local` file in the `quantumlens-dashboard/` root folder:
-   ```bash
-   NEXT_PUBLIC_API_URL=http://localhost:8000
-   ```
-
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
-
-4. **Verify the installation**:
-   Open [http://localhost:3000](http://localhost:3000) in your web browser.
+| Step | Phase | Shell Command | Notes |
+| :--- | :--- | :--- | :--- |
+| **1** | Install Dependencies | `npm install` | Restores NPM modules (React, Recharts, Tailwind). |
+| **2** | Configure Environment | `copy .env.example .env.local` | Binds public backend URL endpoint. |
+| **3** | Start Dev Server | `npm run dev` | Spins up hot-reloading dev host on [http://localhost:3000](http://localhost:3000). |
+| **4** | Build for Production | `npm run build` | Compiles Next.js dashboard into static pages. |
+| **5** | Launch Production | `npm run start` | Serves compiled project assets locally. |
 
 ---
 
 ## Environment Variables Configuration
 
-| Variable | Description | Default Local | Deployed Production |
-| :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_API_URL` | Complete URL endpoint pointing to the FastAPI backend service. | `http://localhost:8000` | `https://quantumlens-api.render.com` |
+| Variable Name | Environment | Description | Default Local | Production Deployed |
+| :--- | :--- | :--- | :--- | :--- |
+| `NEXT_PUBLIC_API_URL` | Client Runtime | Endpoint path targeting the FastAPI backend. | `http://localhost:8000` | `https://quantumlens-api.render.com` |
 
 ---
 
 ## Production Deployment (Vercel)
 
-The easiest way to deploy the Next.js app is to link the repository to **Vercel**:
-1. Connect Vercel to your GitHub repository.
-2. In the dashboard settings, set the **Root Directory** to `quantumlens-dashboard`.
-3. Add the environment variable `NEXT_PUBLIC_API_URL` pointing to your live backend Render URL.
-4. Click **Deploy**. Vercel will automatically build the static assets, optimize dependencies, and host the dashboard.
+| Phase | Deployment Action | Configuration Parameters |
+| :--- | :--- | :--- |
+| **1** | **Repository Link** | Link the repository on the Vercel Dashboard. |
+| **2** | **Root Directory** | Configure the root directory input to target: `frontend` |
+| **3** | **Environment Bindings** | Add the Environment Variable `NEXT_PUBLIC_API_URL` pointing to your Render API. |
+| **4** | **Deploy** | Click **Deploy** to compile Next.js static pages. |
 
 ---
 
 ## Related Documentation
-- [Root Readme](../README.md): Backend API endpoints and installation.
-- [System Architecture Spec](../docs/architecture.md): Systems layers overview.
-- [Database Schema](../docs/data_dictionary.md): Table mappings details.
+* [Root Readme](../README.md): Backend API endpoints and installations.
+* [System Architecture Spec](../docs/architecture/architecture.md): Systems layers overview.
+* [Database Schema](../docs/features/ingestion/data_dictionary.md): Table mappings details.
