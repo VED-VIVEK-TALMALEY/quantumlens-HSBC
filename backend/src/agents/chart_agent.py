@@ -4,6 +4,7 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
+
 class ChartAgent:
 
     def execute(self, metric_name, rows):
@@ -26,25 +27,21 @@ class ChartAgent:
             "y": y
         }
   
-    
-
 from .planner import Planner
 from .sql_agent import SQLAgent
-from .chart_agent import ChartAgent
+from .chart_agent import ChartAgent 
 
 
-planner = Planner()
-sql = SQLAgent()
-chart = ChartAgent()
+if __name__ == "__main__":
 
-plan = planner.plan("Show CET1 trend")
+    planner = Planner()
+    sql = SQLAgent()
+    chart = ChartAgent()
 
-print(plan)
+    plan = planner.plan("Show CET1 trend")
 
-rows = sql.execute(plan)
+    rows = sql.execute(plan)
 
-print(rows)
+    chart_data = chart.execute(plan.metric, rows)
 
-chart_data = chart.execute(plan.metric, rows)
-
-print(chart_data)
+    print(chart_data)
