@@ -10,6 +10,8 @@ from .rag_agent import RAGAgent
 from .chart_agent import ChartAgent
 from src.auditor.data_auditor import DataAuditor
 from .response_agent import ResponseAgent
+
+
 class Orchestrator:
     def __init__(self):
         self.planner = Planner()
@@ -21,88 +23,46 @@ class Orchestrator:
 
     def execute(self, question):
         plan = self.planner.plan(question)
-        
-        # Initialize default payload values
-        rows = None
-        chart = None
-        context = None
-        confidence = 1.0
-        warnings = []
-        sql_result = None
-        audit_result = None
-        rag_result = None
 
-        # 1. SQL & Audit Phase
+        sql_result = None
+        chart_result = None
+        rag_result = None
+        audit_result = None
+
+        # ---------------- SQL ----------------
         if "sql" in plan.agents:
             sql_result = self.sql.execute(plan)
-            audit = self.auditor.audit(sql_result)
-            sql_result = self.sql.execute(plan)
-            
-            # Stop execution if data is invalid
-            if not audit["valid"]:
+            audit_result = self.auditor.audit(sql_result)
+
+            if not audit_result["valid"]:
                 return {
                     "status": "error",
-                    "confidence": audit["confidence"],
-                    "warnings": audit["warnings"]
+                    "confidence": audit_result["confidence"],
+                    "warnings": audit_result["warnings"]
                 }
-            
-            # Extract clean data for downstream agents
-            rows = audit["clean_rows"]
-            confidence = audit["confidence"]
-            warnings = audit["warnings"]
 
-        # 2. Downstream Agents (Only run if we have clean rows or don't need SQL)
-        if "chart" in plan.agents and rows:
-            chart = self.chart.execute(plan.metric, rows)
+            sql_result = audit_result["clean_rows"]
 
-        if "rag" in plan.agents:
-            context = self.rag.execute(question)
-
-        if sql_result:
-
-             audit_result = self.auditor.audit(sql_result)
-
-        if not audit_result["valid"]:
-
-            return {
-
-            "status": "error",
-
-            "confidence": audit_result["confidence"],
-
-            "warnings": audit_result["warnings"]
-
-        }
-
-        sql_result = audit_result["clean_rows"]    
-        chart_result = None
-
-        if "chart" in plan.agents:
+        # ---------------- Chart ----------------
+        if "chart" in plan.agents and sql_result:
             chart_result = self.chart.execute(
-            plan.metric,
+        plan.metric,
         sql_result
     )
-           
 
+        # ---------------- RAG ----------------
         if "rag" in plan.agents:
-
             rag_result = self.rag.execute(question)
-            return self.response.execute(
-
-    plan,
-
-    sql_result=sql_result,
-
-    chart_result=chart_result,
-
-    rag_result=rag_result,
-
-    audit_result=audit_result
-
-)
 
         # 3. Final Response Assembly
-           
+        return self.response.execute(
+            plan,
+            sql_result=sql_result,
+            chart_result=chart_result,
+            rag_result=rag_result,
+            audit_result=audit_result
+        )
+
 
 if __name__ == "__main__":
     orchestrator = Orchestrator()
