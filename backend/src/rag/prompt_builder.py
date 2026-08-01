@@ -6,35 +6,30 @@
 
 def build_prompt(
     question,
-    retrieved_docs
+    sql_result,
+    rag_result
 ):
 
-    context = ""
-
-    for doc in retrieved_docs:
-
-        context += doc
-        context += "\n\n"
-
     prompt = f"""
-You are an HSBC Financial Copilot.
+You are an HSBC Financial Analyst.
+
+Question:
+{question}
+
+SQL Data:
+{sql_result}
+
+Retrieved Context:
+{rag_result}
 
 Rules:
 
-1. Use ONLY the retrieved KPI records.
-2. Never invent numbers.
-3. Quote values exactly.
-4. Mention workbook and sheet.
-5. If unavailable, say so.
-6. Explain trends if multiple values exist.
-7. Format using bullet points.
-{context}
+- Use SQL data as the primary source.
+- Use retrieved context only for explanation.
+- Never invent financial values.
+- If data is missing, explicitly say so.
 
-Question
-
-{question}
-
-Answer
+Provide a concise financial explanation.
 """
 
-    return prompt 
+    return prompt

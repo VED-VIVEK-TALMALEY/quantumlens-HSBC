@@ -40,57 +40,157 @@ class Planner:
                 metric = m
                 break
 
+        # -------------------------------------------------------
+        # Definition
+        # -------------------------------------------------------
+
         if "what is" in q or "define" in q or "meaning" in q:
+
             return ExecutionPlan(
+
                 intent="definition",
+
                 metric=metric,
-                agents=["rag"],
+
+                agents=[
+                    "rag"
+                ],
+
                 needs_llm=False
+
             )
+
+        # -------------------------------------------------------
+        # Trend
+        # -------------------------------------------------------
 
         if "trend" in q or "over time" in q:
+
             return ExecutionPlan(
+
                 intent="trend",
+
                 metric=metric,
-                agents=["sql", "chart"],
+
+                agents=[
+                    "sql",
+                    "chart"
+                ],
+
                 needs_llm=False
+
             )
+
+        # -------------------------------------------------------
+        # Comparison
+        # -------------------------------------------------------
 
         if "compare" in q:
+
             return ExecutionPlan(
+
                 intent="comparison",
+
                 metric=metric,
-                agents=["sql", "chart"],
+
+                agents=[
+                    "sql",
+                    "chart"
+                ],
+
                 needs_llm=False
+
             )
+
+        # -------------------------------------------------------
+        # Analysis
+        # -------------------------------------------------------
 
         if "why" in q or "reason" in q or "explain" in q:
+
             return ExecutionPlan(
+
                 intent="analysis",
+
                 metric=metric,
-                agents=["sql", "rag"],
+
+                agents=[
+                    "sql",
+                    "rag",
+                    "llm"
+                ],
+
                 needs_llm=True
+
             )
 
+        # -------------------------------------------------------
+        # Metric Lookup
+        # -------------------------------------------------------
+
+        if metric is not None:
+
+            return ExecutionPlan(
+
+                intent="metric_lookup",
+
+                metric=metric,
+
+                agents=[
+                    "sql"
+                ],
+
+                needs_llm=False
+
+            )
+
+        # -------------------------------------------------------
+        # Default
+        # -------------------------------------------------------
+
         return ExecutionPlan(
-            intent="metric_lookup",
+
+            intent="analysis",
+
             metric=metric,
-            agents=["sql"],
-            needs_llm=False
+
+            agents=[
+                "sql",
+                "rag",
+                "llm"
+            ],
+
+            needs_llm=True
+
         )
+
+
+# -------------------------------------------------------------------
+# Testing
+# -------------------------------------------------------------------
+
 if __name__ == "__main__":
 
     planner = Planner()
 
     tests = [
+
         "What is CET1 Ratio?",
+
         "Show CET1 trend",
+
         "Compare CET1 and Tier1",
+
         "Why did CET1 ratio fall?",
+
         "Show NII"
+
     ]
 
     for q in tests:
+
+        print("=" * 60)
+
         print(q)
+
         print(planner.plan(q))
-        print("-" * 50)

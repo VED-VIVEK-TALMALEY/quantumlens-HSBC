@@ -10,10 +10,11 @@ class ResponseAgent:
     def execute(
         self,
         plan,
-        sql_result=None,
-        chart_result=None,
-        rag_result=None,
-        audit_result=None
+        sql_result,
+        chart_result,
+        rag_result,
+        audit_result,
+        llm_result=None
     ):
 
         confidence = (
@@ -25,6 +26,34 @@ class ResponseAgent:
             audit_result["warnings"]
             if audit_result else []
         )
+
+        # -------------------------------------------------------
+        # LLM Response (Only when planner explicitly requests it)
+        # -------------------------------------------------------
+
+        if plan.needs_llm and llm_result is not None:
+
+            return {
+
+                "status": "success",
+
+                "intent": plan.intent,
+
+                "metric": plan.metric,
+
+                "answer": llm_result["answer"],
+
+                "chart": chart_result,
+
+                "confidence": confidence,
+
+                "warnings": warnings,
+
+                "provider": llm_result["provider"],
+
+                "model": llm_result["model"]
+
+            }
 
         # -------------------------------------------------------
         # Metric Lookup
@@ -59,6 +88,7 @@ class ResponseAgent:
                 "confidence": confidence,
 
                 "warnings": warnings
+
             }
 
         # -------------------------------------------------------
@@ -99,7 +129,6 @@ class ResponseAgent:
                 "metric": plan.metric,
 
                 "answer":
-
                     f"{plan.metric.upper()} {direction} "
                     f"from {first:,} to {last:,}.",
 
@@ -108,6 +137,7 @@ class ResponseAgent:
                 "confidence": confidence,
 
                 "warnings": warnings
+
             }
 
         # -------------------------------------------------------
@@ -129,6 +159,7 @@ class ResponseAgent:
                 "confidence": confidence,
 
                 "warnings": warnings
+
             }
 
         # -------------------------------------------------------
@@ -150,12 +181,12 @@ class ResponseAgent:
                 "rag_context": rag_result,
 
                 "message":
-
                     "Analysis requires LLM reasoning.",
 
                 "confidence": confidence,
 
                 "warnings": warnings
+
             }
 
         # -------------------------------------------------------
@@ -179,6 +210,7 @@ class ResponseAgent:
                 "confidence": confidence,
 
                 "warnings": warnings
+
             }
 
         # -------------------------------------------------------
@@ -191,9 +223,10 @@ class ResponseAgent:
 
             "answer": "Unsupported query.",
 
-            "confidence": 0,
+            "confidence": 0.0,
 
             "warnings": ["Planner returned an unknown intent."]
+
         }
 
 
@@ -253,7 +286,11 @@ if __name__ == "__main__":
 
         chart_result=fake_chart,
 
-        audit_result=fake_audit
+        rag_result=None,
+
+        audit_result=fake_audit,
+
+        llm_result=None
 
     )
 

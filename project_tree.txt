@@ -7,6 +7,7 @@
 ├── backend/
 │   ├── docker-compose.yml
 │   ├── Dockerfile
+│   ├── README.md
 │   ├── requirements.txt
 │   ├── data/
 │   │   ├── generated/
@@ -24,6 +25,16 @@
 │   │   │   │   ├── header.bin
 │   │   │   │   ├── length.bin
 │   │   │   │   ├── link_lists.bin
+│   │   │   ├── 38c8cb93-3a3d-4c55-bd4a-fb4022c6b605/
+│   │   │   │   ├── data_level0.bin
+│   │   │   │   ├── header.bin
+│   │   │   │   ├── length.bin
+│   │   │   │   ├── link_lists.bin
+│   │   │   ├── 441a7a83-2477-4d7d-b74a-76c7d1eb4224/
+│   │   │   │   ├── data_level0.bin
+│   │   │   │   ├── header.bin
+│   │   │   │   ├── length.bin
+│   │   │   │   ├── link_lists.bin
 │   │   │   ├── 8c9f72be-3dd8-4ff4-8228-85f2ea550c9d/
 │   │   │   │   ├── data_level0.bin
 │   │   │   │   ├── header.bin
@@ -31,6 +42,9 @@
 │   │   │   │   ├── link_lists.bin
 │   ├── logs/
 │   │   ├── quantumlens.log
+│   ├── scripts/
+│   │   ├── project_health_check.py
+│   │   ├── project_tree.txt
 │   ├── src/
 │   │   ├── __init__.py
 │   │   ├── agents/
@@ -38,6 +52,7 @@
 │   │   │   ├── orchestrator.py
 │   │   │   ├── planner.py
 │   │   │   ├── rag_agent.py
+│   │   │   ├── response_agent.py
 │   │   │   ├── sql_agent.py
 │   │   ├── analytics/
 │   │   ├── api/
@@ -63,6 +78,11 @@
 │   │   │   │   ├── rag_service.py
 │   │   │   │   ├── record_service.py
 │   │   │   │   ├── __init__.py
+│   │   ├── auditor/
+│   │   │   ├── anomaly_checker.py
+│   │   │   ├── confidence.py
+│   │   │   ├── data_auditor.py
+│   │   │   ├── schema_validator.py
 │   │   ├── config/
 │   │   │   ├── settings.py
 │   │   │   ├── __init__.py
@@ -189,9 +209,9 @@
 │   │   │   ├── metricService.ts
 │   │   ├── types/
 │   │   │   ├── metric.ts
+├── logs/
+│   ├── quantumlens.log
 ├── notebooks/
-├── scripts/
-│   ├── project_tree.txt
 ├── services/
 │   ├── README copy.md
 │   ├── requirements.txt

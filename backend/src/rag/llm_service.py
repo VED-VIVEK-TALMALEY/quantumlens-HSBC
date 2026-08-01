@@ -29,5 +29,8 @@ def generate_answer(prompt):
         max_tokens=settings.MAX_TOKENS
 
     )
-
-    return response.choices[0].message.content
+    return {
+    "answer": response.choices[0].message.content,
+    "model": settings.LLM_MODEL,
+    "provider": "Groq"
+}

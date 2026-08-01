@@ -10,7 +10,7 @@ from .rag_agent import RAGAgent
 from .chart_agent import ChartAgent
 from src.auditor.data_auditor import DataAuditor
 from .response_agent import ResponseAgent
-
+from .llm_agent import LLMAgent
 
 class Orchestrator:
     def __init__(self):
@@ -20,14 +20,16 @@ class Orchestrator:
         self.chart = ChartAgent()
         self.auditor = DataAuditor()
         self.response = ResponseAgent()
+        self.llm = LLMAgent()
 
     def execute(self, question):
         plan = self.planner.plan(question)
-
+        
         sql_result = None
         chart_result = None
         rag_result = None
         audit_result = None
+        llm_result = None
 
         # ---------------- SQL ----------------
         if "sql" in plan.agents:
@@ -53,15 +55,31 @@ class Orchestrator:
         # ---------------- RAG ----------------
         if "rag" in plan.agents:
             rag_result = self.rag.execute(question)
+        if "llm" in plan.agents:
+            llm_result = self.llm.execute(
+                            question,
+                            sql_result,
+                            rag_result
+                        )
 
         # 3. Final Response Assembly
         return self.response.execute(
-            plan,
-            sql_result=sql_result,
-            chart_result=chart_result,
-            rag_result=rag_result,
-            audit_result=audit_result
-        )
+
+    plan,
+
+    sql_result=sql_result,
+
+    chart_result=chart_result,
+
+    rag_result=rag_result,
+
+    audit_result=audit_result,
+
+    llm_result=llm_result
+
+)
+    
+        
 
 
 if __name__ == "__main__":
