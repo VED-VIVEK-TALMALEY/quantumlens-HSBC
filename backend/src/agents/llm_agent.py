@@ -4,12 +4,14 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
-
-from src.rag.prompt_builder import build_prompt
+from src.rag.prompt_builder import PromptBuilder
 from src.rag.llm_service import generate_answer
 
 
 class LLMAgent:
+
+    def __init__(self):
+        self.builder = PromptBuilder()
 
     def execute(
         self,
@@ -18,15 +20,13 @@ class LLMAgent:
         rag_result
     ):
 
-        prompt = build_prompt(
-            question,
-            sql_result,
-            rag_result
+        prompt = self.builder.build(
+            question=question,
+            sql_context=sql_result,
+            rag_context=rag_result
         )
 
-        llm_response = generate_answer(prompt)
-
-        return llm_response
+        return generate_answer(prompt)
 
 
 if __name__ == "__main__":
@@ -44,8 +44,7 @@ if __name__ == "__main__":
 
         rag_result=[
             {
-                "text":
-                "CET1 is a regulatory capital ratio."
+                "text": "CET1 is a regulatory capital ratio."
             }
         ]
 

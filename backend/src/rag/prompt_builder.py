@@ -3,33 +3,56 @@
 # This project and its source code are strictly proprietary.
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Prompt Builder
+# -------------------------------------------------------------------
 
-def build_prompt(
-    question,
-    sql_result,
-    rag_result
-):
+class PromptBuilder:
 
-    prompt = f"""
-You are an HSBC Financial Analyst.
+    def build(
+        self,
+        question,
+        sql_context,
+        rag_context
+    ):
 
-Question:
+        return f"""
+You are QuantumLens.
+
+You are a financial analyst.
+
+Use ONLY the supplied context.
+
+If the answer cannot be derived from the context,
+say so.
+
+Question
+--------
 {question}
 
-SQL Data:
-{sql_result}
+SQL Context
+-----------
+{sql_context}
 
-Retrieved Context:
-{rag_result}
+Retrieved Context
+-----------------
+{rag_context}
 
-Rules:
+Instructions
 
-- Use SQL data as the primary source.
-- Use retrieved context only for explanation.
-- Never invent financial values.
-- If data is missing, explicitly say so.
-
-Provide a concise financial explanation.
+- Never hallucinate.
+- Use SQL values as primary evidence.
+- Use RAG only for explanations.
+- Mention numbers whenever possible.
+- Keep the answer concise.
 """
 
-    return prompt
+_builder = PromptBuilder()
+
+
+def build_prompt(question, sql_context, rag_context):
+    return _builder.build(
+        question,
+        sql_context,
+        rag_context
+    )

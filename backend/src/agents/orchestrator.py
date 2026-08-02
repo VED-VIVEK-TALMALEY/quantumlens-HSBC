@@ -11,7 +11,7 @@ from .chart_agent import ChartAgent
 from src.auditor.data_auditor import DataAuditor
 from .response_agent import ResponseAgent
 from .llm_agent import LLMAgent
-
+from .conversation_memory import ConversationMemory
 class Orchestrator:
     def __init__(self):
         self.planner = Planner()
@@ -21,10 +21,15 @@ class Orchestrator:
         self.auditor = DataAuditor()
         self.response = ResponseAgent()
         self.llm = LLMAgent()
+        self.conversation_memory = ConversationMemory()
 
     def execute(self, question):
-        plan = self.planner.plan(question)
-        
+        resolved_question = self.conversation_memory.resolve(question)
+
+        plan = self.planner.plan(resolved_question)
+
+        print(plan)   # <-- keep for debugging
+
         sql_result = None
         chart_result = None
         rag_result = None
@@ -32,8 +37,10 @@ class Orchestrator:
         llm_result = None
 
         # ---------------- SQL ----------------
+
         if "sql" in plan.agents:
             sql_result = self.sql.execute(plan)
+
             audit_result = self.auditor.audit(sql_result)
 
             if not audit_result["valid"]:
@@ -46,54 +53,62 @@ class Orchestrator:
             sql_result = audit_result["clean_rows"]
 
         # ---------------- Chart ----------------
+
         if "chart" in plan.agents and sql_result:
             chart_result = self.chart.execute(
-        plan.metric,
-        sql_result
-    )
+                plan.metric,
+                sql_result
+            )
 
         # ---------------- RAG ----------------
+
         if "rag" in plan.agents:
-            rag_result = self.rag.execute(question)
-        if "llm" in plan.agents:
-            llm_result = self.llm.execute(
-                            question,
-                            sql_result,
-                            rag_result
-                        )
+            self.rag.execute(resolved_question)
 
-        # 3. Final Response Assembly
-        return self.response.execute(
+        # ---------------- LLM ----------------
 
-    plan,
-
-    sql_result=sql_result,
-
-    chart_result=chart_result,
-
-    rag_result=rag_result,
-
-    audit_result=audit_result,
-
-    llm_result=llm_result
-
+        if plan.needs_llm:
+            self.llm.execute(
+    resolved_question,
+    sql_result,
+    rag_result
 )
-    
-        
+            self.conversation_memory.update(plan)
+
+        # ---------------- Response ----------------
+
+        return self.response.execute(
+            plan=plan,
+            sql_result=sql_result,
+            chart_result=chart_result,
+            rag_result=rag_result,
+            audit_result=audit_result,
+            llm_result=llm_result
+        )
 
 
 if __name__ == "__main__":
     orchestrator = Orchestrator()
     
     tests = [
-        "Show CET1",
-        "Show CET1 trend",
-        "Explain CET1 ratio",
-        "Why did CET1 fall?"
-    ]
+
+    "Show CET1",
+
+    "Why did it fall?",
+
+    "Show its trend",
+
+    "Explain it",
+
+    "Compare it with Tier1"
+
+]
     
     for q in tests:
         print("=" * 70)
         print(q)
         result = orchestrator.execute(q)
         print(result)
+        plan = orchestrator.planner.plan(q)
+
+    print(plan)

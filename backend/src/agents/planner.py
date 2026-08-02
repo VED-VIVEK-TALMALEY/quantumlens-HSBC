@@ -44,21 +44,26 @@ class Planner:
         # Definition
         # -------------------------------------------------------
 
-        if "what is" in q or "define" in q or "meaning" in q:
-
+        if (
+    "what is" in q
+    or "define" in q
+    or "meaning" in q
+    or (
+        "explain" in q
+        and (
+            "fall" not in q
+            and "increase" not in q
+            and "drop" not in q
+            and "rise" not in q
+        )
+    )
+):
             return ExecutionPlan(
-
-                intent="definition",
-
-                metric=metric,
-
-                agents=[
-                    "rag"
-                ],
-
-                needs_llm=False
-
-            )
+        intent="definition",
+        metric=metric,
+        agents=["rag"],
+        needs_llm=False
+    )
 
         # -------------------------------------------------------
         # Trend
