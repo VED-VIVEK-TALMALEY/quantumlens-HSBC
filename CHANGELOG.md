@@ -44,3 +44,26 @@ All notable changes to the **QuantumLens** platform are documented in this file.
 | **2026-01-10** | API | Converted `Timestamp` data formats to ISO-8601 strings to prevent serialization errors. | High | [Issue #1](docs/refactoring/issues.md#1-json-serialization-failure) |
 
 ---
+## v5.0.0 - Multi-Agent Intelligence
+
+### Added
+- LLM Agent integrated into the orchestration pipeline
+- Conversation Memory for contextual follow-up queries
+- Agent Registry for centralized agent management
+- Planner support for LLM execution (`needs_llm`)
+- Response Agent support for LLM-generated answers
+
+### Improved
+- Orchestrator now supports memory-aware query resolution
+- Analysis queries now combine SQL + RAG + LLM
+- Cleaner separation between reasoning and response generation
+
+### Current Architecture
+Planner
+→ Agent Registry
+→ SQL Agent
+→ Data Auditor
+→ Chart Agent
+→ RAG Agent
+→ LLM Agent
+→ Response Agent
