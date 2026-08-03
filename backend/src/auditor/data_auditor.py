@@ -80,6 +80,18 @@ class DataAuditor:
             "clean_rows": rows
         }
 
+    def execute(self, context):
+        audit = self.audit(
+            context.sql_result
+        )
+
+        context.audit_result = audit
+
+        if audit["valid"]:
+            context.sql_result = audit["clean_rows"]
+
+        return context
+
 if __name__ == "__main__":
     auditor = DataAuditor()
     

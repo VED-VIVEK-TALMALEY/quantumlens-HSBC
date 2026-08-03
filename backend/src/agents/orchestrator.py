@@ -1,117 +1,152 @@
-    # -------------------------------------------------------------------
-    # Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-    # This project and its source code are strictly proprietary.
-    # Unauthorized copying, distribution, or use is strictly prohibited.
-    # -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+# This project and its source code are strictly proprietary.
+# Unauthorized copying, distribution, or use is strictly prohibited.
+# -------------------------------------------------------------------
 
 from .planner import Planner
 from .sql_agent import SQLAgent
 from .rag_agent import RAGAgent
 from .chart_agent import ChartAgent
-from src.auditor.data_auditor import DataAuditor
-from .response_agent import ResponseAgent
 from .llm_agent import LLMAgent
+from .response_agent import ResponseAgent
 from .conversation_memory import ConversationMemory
-from .agent_registry import AgentRegistry
-    
+from .execution_context import ExecutionContext
+
+from src.auditor.data_auditor import DataAuditor
+
+
 class Orchestrator:
-        def __init__(self):
-            self.registry = AgentRegistry()
-            self.planner = Planner()
-            self.auditor = DataAuditor()
-            self.response = ResponseAgent()
-            self.conversation_memory = ConversationMemory()
 
-        def execute(self, question):
-            resolved_question = self.conversation_memory.resolve(question)
+    def __init__(self):
 
-            plan = self.planner.plan(resolved_question)
+        self.memory = ConversationMemory()
 
-            print(plan)   # <-- keep for debugging
+        self.planner = Planner()
 
-            sql_result = None
-            chart_result = None
-            rag_result = None
-            audit_result = None
-            llm_result = None
+        self.sql = SQLAgent()
 
-            # ---------------- SQL ----------------
+        self.auditor = DataAuditor()
 
-            if "sql" in plan.agents:
-                sql_result = self.registry.get("sql").execute(plan)
+        self.chart = ChartAgent()
 
-                audit_result = self.auditor.audit(sql_result)
+        self.rag = RAGAgent()
 
-                if not audit_result["valid"]:
-                    return {
-                        "status": "error",
-                        "confidence": audit_result["confidence"],
-                        "warnings": audit_result["warnings"]
-                    }
+        self.llm = LLMAgent()
 
-                sql_result = audit_result["clean_rows"]
+        self.response = ResponseAgent()
 
-            # ---------------- Chart ----------------
+    def execute(self, question):
 
-            if "chart" in plan.agents and sql_result:
-                chart_result = self.registry.get("chart").execute(
-    plan.metric,
-    sql_result
-)
+        # -----------------------------------------
+        # Resolve conversation memory
+        # -----------------------------------------
 
-            # ---------------- RAG ----------------
+        resolved_question = self.memory.resolve(question)
 
-            if "rag" in plan.agents:
-                rag_result = self.registry.get("rag").execute(question)
+        # -----------------------------------------
+        # Planning
+        # -----------------------------------------
 
-            # ---------------- LLM ----------------
+        plan = self.planner.plan(resolved_question)
 
-            if plan.needs_llm:
-                llm_result = self.registry.get("llm").execute(
-    question,
-    sql_result,
-    rag_result
-)
-                self.conversation_memory.update(plan)
+        self.memory.update(plan)
 
-            # ---------------- Response ----------------
+        # -----------------------------------------
+        # Shared Execution Context
+        # -----------------------------------------
 
-            return self.response.execute(
-                plan=plan,
-                sql_result=sql_result,
-                chart_result=chart_result,
-                rag_result=rag_result,
-                audit_result=audit_result,
-                llm_result=llm_result
-            )
+        context = ExecutionContext(
 
+            question=resolved_question,
+
+            plan=plan
+
+        )
+
+        # -----------------------------------------
+        # SQL
+        # -----------------------------------------
+
+        if "sql" in plan.agents:
+
+            context = self.sql.execute(context)
+
+            context = self.auditor.execute(context)
+
+            if not context.audit_result["valid"]:
+
+                return {
+
+                    "status": "error",
+
+                    "confidence": context.audit_result["confidence"],
+
+                    "warnings": context.audit_result["warnings"]
+
+                }
+
+        # -----------------------------------------
+        # Chart
+        # -----------------------------------------
+
+        if "chart" in plan.agents:
+
+            context = self.chart.execute(context)
+
+        # -----------------------------------------
+        # RAG
+        # -----------------------------------------
+
+        if "rag" in plan.agents:
+
+            context = self.rag.execute(context)
+
+        # -----------------------------------------
+        # LLM
+        # -----------------------------------------
+
+        if "llm" in plan.agents:
+
+            context = self.llm.execute(context)
+
+        # -----------------------------------------
+        # Final Response
+        # -----------------------------------------
+
+        return self.response.execute(context)
+
+
+# -------------------------------------------------------------------
+# Testing
+# -------------------------------------------------------------------
 
 if __name__ == "__main__":
-        orchestrator = Orchestrator()
-        
-        tests = [
+
+    orchestrator = Orchestrator()
+
+    tests = [
 
         "Show CET1",
 
-        "Why did it fall?",
+        "Show CET1 trend",
 
-        "Show its trend",
+        "Explain CET1 ratio",
 
-        "Explain it",
+        "Why did CET1 fall?",
 
-        "Compare it with Tier1"
+        "Compare it with Tier1",
+
+        "Why did it fall?"
 
     ]
-        
-        for q in tests:
-            print("=" * 70)
-            print(q)
-            result = orchestrator.execute(q)
-            print(result)
-            plan = orchestrator.planner.plan(q)
 
-        print(plan)
-        print(orchestrator.registry.get("sql"))
-        print(orchestrator.registry.get("rag"))
-        print(orchestrator.registry.get("chart"))
-        print(orchestrator.registry.get("llm"))
+    for q in tests:
+
+        print("=" * 70)
+
+        print(q)
+
+        result = orchestrator.execute(q)
+
+        print(result)

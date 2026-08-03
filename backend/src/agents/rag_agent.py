@@ -5,23 +5,42 @@
 # -------------------------------------------------------------------
 
 from src.rag.retrieval_engine import retrieve
+from .execution_context import ExecutionContext
 
 
 class RAGAgent:
 
-    def execute(self, question: str):
+    def execute(self, context: ExecutionContext):
 
-        context = retrieve(question)
+        context.rag_result = retrieve(
+            context.question
+        )
 
         return context
 
 
+# -------------------------------------------------------------------
+# Testing
+# -------------------------------------------------------------------
+
 if __name__ == "__main__":
+
+    from .planner import Planner
+
+    planner = Planner()
+
+    plan = planner.plan("Explain CET1 ratio")
+
+    context = ExecutionContext(
+
+        question="Explain CET1 ratio",
+
+        plan=plan
+
+    )
 
     rag = RAGAgent()
 
-    result = rag.execute(
-        "Explain CET1 ratio"
-    )
+    context = rag.execute(context)
 
-    print(result)
+    print(context.rag_result)

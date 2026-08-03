@@ -4,38 +4,47 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
-from src.rag.prompt_builder import PromptBuilder
+from .execution_context import ExecutionContext
+from src.rag.prompt_builder import build_prompt
 from src.rag.llm_service import generate_answer
 
 
 class LLMAgent:
 
-    def __init__(self):
-        self.builder = PromptBuilder()
+    def execute(self, context: ExecutionContext):
 
-    def execute(
-        self,
-        question,
-        sql_result,
-        rag_result
-    ):
+        prompt = build_prompt(
 
-        prompt = self.builder.build(
-            question=question,
-            sql_context=sql_result,
-            rag_context=rag_result
+            context.question,
+
+            context.sql_result,
+
+            context.rag_result
+
         )
 
-        return generate_answer(prompt)
+        context.llm_result = generate_answer(prompt)
 
+        return context
+
+
+# -------------------------------------------------------------------
+# Testing
+# -------------------------------------------------------------------
 
 if __name__ == "__main__":
 
-    agent = LLMAgent()
+    from .planner import Planner
 
-    result = agent.execute(
+    planner = Planner()
 
-        question="Explain CET1 ratio",
+    plan = planner.plan("Why did CET1 fall?")
+
+    context = ExecutionContext(
+
+        question="Why did CET1 fall?",
+
+        plan=plan,
 
         sql_result=[
             ("Period 1", 123996),
@@ -50,4 +59,8 @@ if __name__ == "__main__":
 
     )
 
-    print(result)
+    agent = LLMAgent()
+
+    context = agent.execute(context)
+
+    print(context.llm_result)

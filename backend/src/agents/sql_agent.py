@@ -1,66 +1,74 @@
-    # -------------------------------------------------------------------
-    # Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-    # This project and its source code are strictly proprietary.
-    # Unauthorized copying, distribution, or use is strictly prohibited.
-    # -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+# This project and its source code are strictly proprietary.
+# Unauthorized copying, distribution, or use is strictly prohibited.
+# -------------------------------------------------------------------
 
 from warehouse.query_service import (
-        get_metric_by_name,
-        get_metric_by_id,
-        get_all_metrics,
-        search_metrics,
-    )
+    get_metric_by_name,
+    get_metric_by_id,
+    get_all_metrics,
+    search_metrics,
+)
 
 
 class SQLAgent:
-        def execute(self, plan):
 
-         if plan.metric is None:
-            return None
-         result = get_metric_by_name(plan.metric)
-         print(f"DEBUG - SQLAgent searching for: {plan.metric}")
-         print(f"DEBUG - SQLAgent found: {result}")
+    def execute(self, context):
 
-         if plan.intent == "metric_lookup":
-             return result
+        plan = context.plan
 
-         if plan.intent == "trend":
-             return result
+        if plan.metric is None:
+            context.sql_result = None
+            return context
 
-         if plan.intent == "analysis":
-            return result
+        result = get_metric_by_name(plan.metric)
 
-         if plan.intent == "comparison":
-            return result
+        print(f"DEBUG - SQLAgent searching for: {plan.metric}")
+        print(f"DEBUG - SQLAgent found: {result}")
 
-         return None
+        context.sql_result = result
+
+        return context
+
 
 if __name__ == "__main__":
 
-        from src.agents.planner import Planner
+    from src.agents.planner import Planner
+    from src.agents.execution_context import ExecutionContext
 
-        planner = Planner()
-        sql = SQLAgent()
+    planner = Planner()
 
-        tests = [
-            "Show CET1",
-            "Show CET1 trend",
-            "Why did CET1 fall?",
-            "Show NII"
-        ]
+    sql = SQLAgent()
 
-        for q in tests:
+    tests = [
 
-            print("=" * 60)
-            print(q)
+        "Show CET1",
 
-            plan = planner.plan(q)
+        "Show CET1 trend",
 
-            print(plan)
+        "Why did CET1 fall?",
 
-            result = sql.execute(plan)
+        "Show NII"
 
-            if result:
-                print(result[:5])
-            else:
-                print(result)
+    ]
+
+    for q in tests:
+
+        print("=" * 60)
+
+        print(q)
+
+        plan = planner.plan(q)
+
+        context = ExecutionContext(
+
+            question=q,
+
+            plan=plan
+
+        )
+
+        context = sql.execute(context)
+
+        print(context.sql_result)
