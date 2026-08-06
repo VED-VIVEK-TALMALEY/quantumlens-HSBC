@@ -4,6 +4,8 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
+from opentelemetry import context
+
 from warehouse.query_service import (
     get_metric_by_name,
     get_metric_by_id,
@@ -26,7 +28,6 @@ class SQLAgent:
 
         print(f"DEBUG - SQLAgent searching for: {plan.metric}")
         print(f"DEBUG - SQLAgent found: {result}")
-
         context.sql_result = result
 
         return context

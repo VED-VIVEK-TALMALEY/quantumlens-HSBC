@@ -1,20 +1,35 @@
 # -------------------------------------------------------------------
 # Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
 from src.rag.retrieval_engine import retrieve
+from src.rag.document_retriever import DocumentRetriever
 from .execution_context import ExecutionContext
 
 
 class RAGAgent:
 
+    def __init__(self):
+
+        self.document_retriever = DocumentRetriever()
+
     def execute(self, context: ExecutionContext):
 
-        context.rag_result = retrieve(
+        metric_context = retrieve(
             context.question
         )
+
+        document_context = self.document_retriever.retrieve(
+            context.question
+        )
+
+        context.rag_result = {
+
+            "metrics": metric_context,
+
+            "documents": document_context
+
+        }
 
         return context
 
@@ -29,11 +44,11 @@ if __name__ == "__main__":
 
     planner = Planner()
 
-    plan = planner.plan("Explain CET1 ratio")
+    plan = planner.plan("Why did CET1 fall?")
 
     context = ExecutionContext(
 
-        question="Explain CET1 ratio",
+        question="Why did CET1 fall?",
 
         plan=plan
 
@@ -43,4 +58,10 @@ if __name__ == "__main__":
 
     context = rag.execute(context)
 
-    print(context.rag_result)
+    print("Metric Results")
+    print("=" * 60)
+    print(context.rag_result["metrics"])
+
+    print("\nNarrative Results")
+    print("=" * 60)
+    print(context.rag_result["documents"])

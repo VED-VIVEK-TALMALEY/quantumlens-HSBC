@@ -6,13 +6,14 @@
 
 from dataclasses import dataclass
 from typing import List
+from .execution_step import ExecutionStep
 
 
 @dataclass
 class ExecutionPlan:
     intent: str
     metric: str | None
-    agents: List[str]
+    steps: List[ExecutionStep]
     needs_llm: bool
 
 
@@ -45,25 +46,27 @@ class Planner:
         # -------------------------------------------------------
 
         if (
-    "what is" in q
-    or "define" in q
-    or "meaning" in q
-    or (
-        "explain" in q
-        and (
-            "fall" not in q
-            and "increase" not in q
-            and "drop" not in q
-            and "rise" not in q
-        )
-    )
-):
+            "what is" in q
+            or "define" in q
+            or "meaning" in q
+            or (
+                "explain" in q
+                and (
+                    "fall" not in q
+                    and "increase" not in q
+                    and "drop" not in q
+                    and "rise" not in q
+                )
+            )
+        ):
             return ExecutionPlan(
-        intent="definition",
-        metric=metric,
-        agents=["rag"],
-        needs_llm=False
-    )
+                intent="definition",
+                metric=metric,
+                steps=[
+                    ExecutionStep("rag")
+                ],
+                needs_llm=False
+            )
 
         # -------------------------------------------------------
         # Trend
@@ -72,18 +75,14 @@ class Planner:
         if "trend" in q or "over time" in q:
 
             return ExecutionPlan(
-
                 intent="trend",
-
                 metric=metric,
-
-                agents=[
-                    "sql",
-                    "chart"
+                steps=[
+                    ExecutionStep("sql"),
+                    ExecutionStep("audit"),
+                    ExecutionStep("chart")
                 ],
-
                 needs_llm=False
-
             )
 
         # -------------------------------------------------------
@@ -93,18 +92,14 @@ class Planner:
         if "compare" in q:
 
             return ExecutionPlan(
-
                 intent="comparison",
-
                 metric=metric,
-
-                agents=[
-                    "sql",
-                    "chart"
+                steps=[
+                    ExecutionStep("sql"),
+                    ExecutionStep("audit"),
+                    ExecutionStep("chart")
                 ],
-
                 needs_llm=False
-
             )
 
         # -------------------------------------------------------
@@ -114,19 +109,15 @@ class Planner:
         if "why" in q or "reason" in q or "explain" in q:
 
             return ExecutionPlan(
-
                 intent="analysis",
-
                 metric=metric,
-
-                agents=[
-                    "sql",
-                    "rag",
-                    "llm"
+                steps=[
+                    ExecutionStep("sql"),
+                    ExecutionStep("audit"),
+                    ExecutionStep("rag"),
+                    ExecutionStep("llm")
                 ],
-
                 needs_llm=True
-
             )
 
         # -------------------------------------------------------
@@ -136,17 +127,13 @@ class Planner:
         if metric is not None:
 
             return ExecutionPlan(
-
                 intent="metric_lookup",
-
                 metric=metric,
-
-                agents=[
-                    "sql"
+                steps=[
+                    ExecutionStep("sql"),
+                    ExecutionStep("audit")
                 ],
-
                 needs_llm=False
-
             )
 
         # -------------------------------------------------------
@@ -154,19 +141,15 @@ class Planner:
         # -------------------------------------------------------
 
         return ExecutionPlan(
-
             intent="analysis",
-
             metric=metric,
-
-            agents=[
-                "sql",
-                "rag",
-                "llm"
+            steps=[
+                ExecutionStep("sql"),
+                ExecutionStep("audit"),
+                ExecutionStep("rag"),
+                ExecutionStep("llm")
             ],
-
             needs_llm=True
-
         )
 
 
@@ -179,23 +162,14 @@ if __name__ == "__main__":
     planner = Planner()
 
     tests = [
-
         "What is CET1 Ratio?",
-
         "Show CET1 trend",
-
         "Compare CET1 and Tier1",
-
         "Why did CET1 ratio fall?",
-
         "Show NII"
-
     ]
 
     for q in tests:
-
         print("=" * 60)
-
         print(q)
-
         print(planner.plan(q))

@@ -4,26 +4,26 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
-from .execution_context import ExecutionContext
-from src.rag.prompt_builder import build_prompt
+
+from src.rag.prompt_builder import PromptBuilder
 from src.rag.llm_service import generate_answer
+
+builder = PromptBuilder()
 
 
 class LLMAgent:
 
-    def execute(self, context: ExecutionContext):
+    def execute(self, context):
 
-        prompt = build_prompt(
-
+        prompt = builder.build(
             context.question,
-
             context.sql_result,
-
             context.rag_result
-
         )
 
-        context.llm_result = generate_answer(prompt)
+        response = generate_answer(prompt)
+
+        context.llm_result = response
 
         return context
 
@@ -34,6 +34,7 @@ class LLMAgent:
 
 if __name__ == "__main__":
 
+    from .execution_context import ExecutionContext
     from .planner import Planner
 
     planner = Planner()
@@ -41,22 +42,17 @@ if __name__ == "__main__":
     plan = planner.plan("Why did CET1 fall?")
 
     context = ExecutionContext(
-
         question="Why did CET1 fall?",
-
         plan=plan,
-
         sql_result=[
-            ("Period 1", 123996),
-            ("Period 2", 132593)
+            (91, 20, "common_equity_tier_1_capital", "cet1", "", "", "", "1", 123996),
+            (92, 20, "common_equity_tier_1_capital", "cet1", "", "", "", "2", 132593),
         ],
-
         rag_result=[
             {
-                "text": "CET1 is a regulatory capital ratio."
+                "text": "CET1 decreased mainly due to strategic transactions."
             }
         ]
-
     )
 
     agent = LLMAgent()

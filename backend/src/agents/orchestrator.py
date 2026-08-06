@@ -38,83 +38,63 @@ class Orchestrator:
 
     def execute(self, question):
 
-        # -----------------------------------------
-        # Resolve conversation memory
-        # -----------------------------------------
+    # -----------------------------------------
+    # Resolve conversation memory
+    # -----------------------------------------
+     resolved_question = self.memory.resolve(question)
 
-        resolved_question = self.memory.resolve(question)
+    # -----------------------------------------
+    # Planning
+    # -----------------------------------------
+     plan = self.planner.plan(resolved_question)
 
-        # -----------------------------------------
-        # Planning
-        # -----------------------------------------
+     self.memory.update(plan)
 
-        plan = self.planner.plan(resolved_question)
+    # -----------------------------------------
+    # Create ONE shared execution context
+    # -----------------------------------------
+     context = ExecutionContext(
+         question=resolved_question,
+         plan=plan
+    )
 
-        self.memory.update(plan)
+    # -----------------------------------------
+    # Execute pipeline
+    # -----------------------------------------
+     for step in plan.steps:
 
-        # -----------------------------------------
-        # Shared Execution Context
-        # -----------------------------------------
-
-        context = ExecutionContext(
-
-            question=resolved_question,
-
-            plan=plan
-
-        )
-
-        # -----------------------------------------
-        # SQL
-        # -----------------------------------------
-
-        if "sql" in plan.agents:
+        if step.agent == "sql":
 
             context = self.sql.execute(context)
+
+        elif step.agent == "audit":
 
             context = self.auditor.execute(context)
 
             if not context.audit_result["valid"]:
 
                 return {
-
                     "status": "error",
-
-                    "confidence": context.audit_result["confidence"],
-
-                    "warnings": context.audit_result["warnings"]
-
+        "confidence": context.audit_result["confidence"],
+        "warnings": context.audit_result["warnings"]
                 }
 
-        # -----------------------------------------
-        # Chart
-        # -----------------------------------------
-
-        if "chart" in plan.agents:
-
-            context = self.chart.execute(context)
-
-        # -----------------------------------------
-        # RAG
-        # -----------------------------------------
-
-        if "rag" in plan.agents:
+        elif step.agent == "rag":
 
             context = self.rag.execute(context)
 
-        # -----------------------------------------
-        # LLM
-        # -----------------------------------------
+        elif step.agent == "chart":
 
-        if "llm" in plan.agents:
+            context = self.chart.execute(context)
+
+        elif step.agent == "llm":
 
             context = self.llm.execute(context)
 
-        # -----------------------------------------
-        # Final Response
-        # -----------------------------------------
-
-        return self.response.execute(context)
+    # -----------------------------------------
+    # Final Response
+    # -----------------------------------------
+     return self.response.execute(context)
 
 
 # -------------------------------------------------------------------
