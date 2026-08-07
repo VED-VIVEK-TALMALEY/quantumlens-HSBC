@@ -12,29 +12,33 @@ from .llm_agent import LLMAgent
 from .response_agent import ResponseAgent
 from .conversation_memory import ConversationMemory
 from .execution_context import ExecutionContext
+from .financial_reasoning_agent import FinancialReasoningAgent
+from .agent_registry import AgentRegistry
 
 from src.auditor.data_auditor import DataAuditor
 
 
 class Orchestrator:
+    
 
     def __init__(self):
+        self.reasoning = FinancialReasoningAgent()
 
         self.memory = ConversationMemory()
 
         self.planner = Planner()
 
-        self.sql = SQLAgent()
+        self.registry = AgentRegistry()
+        self._agents = {
+    "sql": SQLAgent(),
+    "audit": DataAuditor(),
+    "financial_reasoning": FinancialReasoningAgent(),
+    "rag": RAGAgent(),
+    "chart": ChartAgent(),
+    "llm": LLMAgent(),
+    "response": ResponseAgent(),
+}
 
-        self.auditor = DataAuditor()
-
-        self.chart = ChartAgent()
-
-        self.rag = RAGAgent()
-
-        self.llm = LLMAgent()
-
-        self.response = ResponseAgent()
 
     def execute(self, question):
 
@@ -49,6 +53,7 @@ class Orchestrator:
      plan = self.planner.plan(resolved_question)
 
      self.memory.update(plan)
+     
 
     # -----------------------------------------
     # Create ONE shared execution context
@@ -62,39 +67,22 @@ class Orchestrator:
     # Execute pipeline
     # -----------------------------------------
      for step in plan.steps:
-
-        if step.agent == "sql":
-
-            context = self.sql.execute(context)
-
-        elif step.agent == "audit":
-
-            context = self.auditor.execute(context)
-
-            if not context.audit_result["valid"]:
-
-                return {
-                    "status": "error",
-        "confidence": context.audit_result["confidence"],
-        "warnings": context.audit_result["warnings"]
-                }
-
-        elif step.agent == "rag":
-
-            context = self.rag.execute(context)
-
-        elif step.agent == "chart":
-
-            context = self.chart.execute(context)
-
-        elif step.agent == "llm":
-
-            context = self.llm.execute(context)
+        agent = self.registry.get(step.agent)
+        context = agent.execute(context)
+        if (
+        step.agent == "audit"
+        and not context.audit_result["valid"]
+    ):
+         return {
+            "status": "error",
+            "confidence": context.audit_result["confidence"],
+            "warnings": context.audit_result["warnings"]
+        }
 
     # -----------------------------------------
     # Final Response
     # -----------------------------------------
-     return self.response.execute(context)
+     return self.registry.get("response").execute(context)
 
 
 # -------------------------------------------------------------------
@@ -104,22 +92,19 @@ class Orchestrator:
 if __name__ == "__main__":
 
     orchestrator = Orchestrator()
+    
 
     tests = [
 
-        "Show CET1",
+    "Show CET1 trend",
 
-        "Show CET1 trend",
+    "Why did it fall?",
 
-        "Explain CET1 ratio",
+    "Compare it with Tier1",
 
-        "Why did CET1 fall?",
+    "Explain it",
 
-        "Compare it with Tier1",
-
-        "Why did it fall?"
-
-    ]
+]
 
     for q in tests:
 

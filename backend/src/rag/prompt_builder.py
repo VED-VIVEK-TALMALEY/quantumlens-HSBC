@@ -8,82 +8,98 @@ class PromptBuilder:
     def build(
         self,
         question,
-        sql_rows,
-        rag_result
+        sql_context,
+        rag_context,
+        financial_reasoning
     ):
 
-        # -----------------------------------------
+        # -------------------------------------------------
         # SQL Context
-        # -----------------------------------------
+        # -------------------------------------------------
 
         sql_text = ""
 
-        if sql_rows:
+        if sql_context:
 
-            for row in sql_rows:
+            for row in sql_context:
 
                 sql_text += (
-
                     f"Metric={row[3]}, "
-
                     f"Period={row[7]}, "
-
                     f"Value={row[8]}\n"
-
                 )
 
         else:
 
             sql_text = "No SQL data available."
 
-        # -----------------------------------------
+        # -------------------------------------------------
         # Metric Knowledge
-        # -----------------------------------------
+        # -------------------------------------------------
 
         metric_text = ""
 
-        metric_docs = rag_result.get("metrics", [])
+        metric_docs = rag_context.get("metrics", [])
 
         for doc in metric_docs[:3]:
 
             metric_text += doc["text"] + "\n\n"
 
-        if metric_text == "":
+        if not metric_text:
 
             metric_text = "No metric documentation found."
 
-        # -----------------------------------------
+        # -------------------------------------------------
         # Narrative Evidence
-        # -----------------------------------------
+        # -------------------------------------------------
 
         narrative_text = ""
 
-        narrative_docs = rag_result.get("documents", [])
+        narrative_docs = rag_context.get("documents", [])
 
         for doc in narrative_docs[:5]:
 
             page = doc["metadata"].get("page", "?")
 
             narrative_text += (
-
                 f"[Page {page}]\n"
-
                 f"{doc['text']}\n\n"
-
             )
 
-        if narrative_text == "":
+        if not narrative_text:
 
             narrative_text = "No narrative evidence found."
 
-        # -----------------------------------------
+        # -------------------------------------------------
+        # Financial Reasoning
+        # -------------------------------------------------
+
+        reasoning_text = ""
+
+        if financial_reasoning:
+
+            for key, value in financial_reasoning.items():
+
+                reasoning_text += f"{key}: {value}\n"
+
+        else:
+
+            reasoning_text = "No financial reasoning available."
+
+        # -------------------------------------------------
         # Final Prompt
-        # -----------------------------------------
+        # -------------------------------------------------
 
         prompt = f"""
 You are QuantumLens, an expert financial analyst.
 
 Use ONLY the evidence provided.
+
+================================================
+FINANCIAL REASONING
+================================================
+
+{reasoning_text}
 
 ================================================
 SQL EVIDENCE
@@ -114,19 +130,13 @@ RULES
 ================================================
 
 1. SQL values are the source of truth.
-
-2. Narrative explains WHY something happened.
-
-3. Never invent explanations.
-
-4. If no explanation exists,
-say:
-"The available disclosures do not explain the reason."
-
-5. Quote page numbers whenever possible.
-
-6. Keep answers concise.
-
+2. Financial reasoning summarizes the numerical evidence.
+3. Narrative explains WHY something happened.
+4. Never invent explanations.
+5. If the disclosures do not explain something, explicitly say:
+   "The available disclosures do not explain the reason."
+6. Quote page numbers whenever possible.
+7. Keep answers concise.
 """
 
         return prompt
@@ -164,13 +174,9 @@ if __name__ == "__main__":
 
             {
 
-                "text":
+                "text": "CET1 decreased due to strategic transactions.",
 
-                "CET1 decreased due to strategic transactions.",
-
-                "metadata":
-
-                {
+                "metadata": {
 
                     "page": 46
 
@@ -182,6 +188,26 @@ if __name__ == "__main__":
 
     }
 
+    financial_reasoning = {
+
+        "first_value": 123996,
+
+        "last_value": 132593,
+
+        "absolute_change": 8597,
+
+        "percent_change": 6.93,
+
+        "direction": "increase",
+
+        "highest_period": "2",
+
+        "lowest_period": "1",
+
+        "trend": "upward"
+
+    }
+
     print(
 
         builder.build(
@@ -190,7 +216,9 @@ if __name__ == "__main__":
 
             sql_rows,
 
-            rag
+            rag,
+
+            financial_reasoning
 
         )
 

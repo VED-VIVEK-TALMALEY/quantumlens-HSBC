@@ -16,10 +16,11 @@ class LLMAgent:
     def execute(self, context):
 
         prompt = builder.build(
-            context.question,
-            context.sql_result,
-            context.rag_result
-        )
+    context.question,
+    context.sql_result,
+    context.rag_result,
+    context.financial_reasoning
+)
 
         response = generate_answer(prompt)
 

@@ -6,6 +6,7 @@
 
 from dataclasses import dataclass
 from typing import List
+
 from .execution_step import ExecutionStep
 
 
@@ -20,25 +21,78 @@ class ExecutionPlan:
 class Planner:
 
     def plan(self, query: str) -> ExecutionPlan:
-
         q = query.lower()
-
         metric = None
 
-        metrics = [
-            "cet1",
-            "tier1",
-            "nii",
-            "nfi",
-            "roe",
-            "assets",
-            "liabilities",
-            "customer accounts"
-        ]
+        METRIC_ALIASES = {
+            "cet1": [
+                "cet1",
+                "cet1 ratio",
+                "common equity tier 1",
+                "common equity tier 1 ratio",
+                "common equity capital"
+            ],
+            "tier1": [
+                "tier1",
+                "tier 1",
+                "tier1 ratio",
+                "tier 1 ratio",
+                "tier one"
+            ],
+            "nii": [
+                "nii",
+                "net interest income"
+            ],
+            "nfi": [
+                "nfi",
+                "net fee income",
+                "net fee revenue"
+            ],
+            "revenue": [
+                "revenue",
+                "income",
+                "total revenue"
+            ],
+            "profit_before_tax": [
+                "profit before tax",
+                "pbt",
+                "pre tax profit"
+            ],
+            "assets": [
+                "assets",
+                "total assets"
+            ],
+            "liabilities": [
+                "liabilities",
+                "total liabilities"
+            ],
+            "customer_accounts": [
+                "customer accounts",
+                "deposits",
+                "customer deposits"
+            ],
+            "loans": [
+                "loans",
+                "gross loans",
+                "advances"
+            ],
+            "rote": [
+                "rote",
+                "return on tangible equity"
+            ],
+            "ecl": [
+                "ecl",
+                "expected credit loss",
+                "expected credit losses"
+            ]
+        }
 
-        for m in metrics:
-            if m in q:
-                metric = m
+        for canonical_metric, aliases in METRIC_ALIASES.items():
+            for alias in aliases:
+                if alias in q:
+                    metric = canonical_metric
+                    break
+            if metric:
                 break
 
         # -------------------------------------------------------
@@ -73,13 +127,13 @@ class Planner:
         # -------------------------------------------------------
 
         if "trend" in q or "over time" in q:
-
             return ExecutionPlan(
                 intent="trend",
                 metric=metric,
                 steps=[
                     ExecutionStep("sql"),
                     ExecutionStep("audit"),
+                    ExecutionStep("financial_reasoning"),
                     ExecutionStep("chart")
                 ],
                 needs_llm=False
@@ -90,13 +144,13 @@ class Planner:
         # -------------------------------------------------------
 
         if "compare" in q:
-
             return ExecutionPlan(
                 intent="comparison",
                 metric=metric,
                 steps=[
                     ExecutionStep("sql"),
                     ExecutionStep("audit"),
+                    ExecutionStep("financial_reasoning"),
                     ExecutionStep("chart")
                 ],
                 needs_llm=False
@@ -106,14 +160,18 @@ class Planner:
         # Analysis
         # -------------------------------------------------------
 
-        if "why" in q or "reason" in q or "explain" in q:
-
+        if (
+            "why" in q
+            or "reason" in q
+            or "explain" in q
+        ):
             return ExecutionPlan(
                 intent="analysis",
                 metric=metric,
                 steps=[
                     ExecutionStep("sql"),
                     ExecutionStep("audit"),
+                    ExecutionStep("financial_reasoning"),
                     ExecutionStep("rag"),
                     ExecutionStep("llm")
                 ],
@@ -125,13 +183,13 @@ class Planner:
         # -------------------------------------------------------
 
         if metric is not None:
-
             return ExecutionPlan(
                 intent="metric_lookup",
                 metric=metric,
                 steps=[
                     ExecutionStep("sql"),
-                    ExecutionStep("audit")
+                    ExecutionStep("audit"),
+                    ExecutionStep("financial_reasoning")
                 ],
                 needs_llm=False
             )
@@ -146,6 +204,7 @@ class Planner:
             steps=[
                 ExecutionStep("sql"),
                 ExecutionStep("audit"),
+                ExecutionStep("financial_reasoning"),
                 ExecutionStep("rag"),
                 ExecutionStep("llm")
             ],
@@ -158,16 +217,33 @@ class Planner:
 # -------------------------------------------------------------------
 
 if __name__ == "__main__":
-
     planner = Planner()
 
     tests = [
-        "What is CET1 Ratio?",
-        "Show CET1 trend",
-        "Compare CET1 and Tier1",
-        "Why did CET1 ratio fall?",
-        "Show NII"
-    ]
+
+    "Show CET1",
+
+    "Show CET1 Ratio",
+
+    "Show Common Equity Tier 1",
+
+    "Show Common Equity Tier 1 Ratio",
+
+    "Show Tier 1",
+
+    "Show Tier 1 Ratio",
+
+    "Show Net Interest Income",
+
+    "Show NII",
+
+    "Show Revenue",
+
+    "Show Profit Before Tax",
+
+    "Show Expected Credit Loss",
+
+]
 
     for q in tests:
         print("=" * 60)

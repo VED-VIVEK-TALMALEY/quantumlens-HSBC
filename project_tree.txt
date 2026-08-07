@@ -5,10 +5,18 @@
 ├── project_tree.txt
 ├── README.md
 ├── backend/
+│   ├── build_document_db.py
 │   ├── docker-compose.yml
 │   ├── Dockerfile
 │   ├── README.md
 │   ├── requirements.txt
+│   ├── chroma_db/
+│   │   ├── chroma.sqlite3
+│   │   ├── d9bd4457-0536-4464-9ca2-10c2e20971d7/
+│   │   │   ├── data_level0.bin
+│   │   │   ├── header.bin
+│   │   │   ├── length.bin
+│   │   │   ├── link_lists.bin
 │   ├── data/
 │   │   ├── generated/
 │   │   │   ├── embeddings.json
@@ -48,7 +56,13 @@
 │   ├── src/
 │   │   ├── __init__.py
 │   │   ├── agents/
+│   │   │   ├── agent_registry.py
 │   │   │   ├── chart_agent.py
+│   │   │   ├── conversation_memory.py
+│   │   │   ├── execution_context.py
+│   │   │   ├── execution_step.py
+│   │   │   ├── financial_reasoning_agent.py
+│   │   │   ├── llm_agent.py
 │   │   │   ├── orchestrator.py
 │   │   │   ├── planner.py
 │   │   │   ├── rag_agent.py
@@ -98,6 +112,11 @@
 │   │   │   ├── rag_metrics.py
 │   │   │   ├── retrieval_metrics.py
 │   │   │   ├── __init__.py
+│   │   ├── finance/
+│   │   │   ├── growth.py
+│   │   │   ├── ratios.py
+│   │   │   ├── statistics.py
+│   │   │   ├── variance.py
 │   │   ├── ingestion/
 │   │   │   ├── extracted_metrics.json
 │   │   │   ├── mapped_metrics.json
@@ -113,6 +132,10 @@
 │   │   ├── rag/
 │   │   │   ├── build_vectordb.py
 │   │   │   ├── check_vectors.py
+│   │   │   ├── document_chunker.py
+│   │   │   ├── document_indexer.py
+│   │   │   ├── document_ingestion.py
+│   │   │   ├── document_retriever.py
 │   │   │   ├── embedding_generator.py
 │   │   │   ├── engine.py
 │   │   │   ├── llm_service.py

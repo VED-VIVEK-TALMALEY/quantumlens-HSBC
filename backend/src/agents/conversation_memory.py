@@ -1,58 +1,45 @@
 # -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
+# Copyright (c) 2026 Ved Talmaley.
 # -------------------------------------------------------------------
-
 
 class ConversationMemory:
 
     def __init__(self):
+
         self.last_metric = None
         self.last_intent = None
+        self.last_plan = None
 
-    def update(self, plan):
+    # ---------------------------------------------------------
 
-        if plan.metric:
-            self.last_metric = plan.metric
+    def resolve(self, question):
 
-        self.last_intent = plan.intent
+        q = question.lower()
 
-    def resolve(self, query):
+        followup_words = [
 
-        q = query.lower()
-
-        pronouns = [
             "it",
-            "that",
             "this",
-            "same"
+            "that",
+            "they",
+            "them"
+
         ]
 
-        if self.last_metric is None:
-            return query
+        if self.last_metric:
 
-        for p in pronouns:
-            q = q.replace(p, self.last_metric)
+            for word in followup_words:
+
+                if f" {word} " in f" {q} ":
+
+                    q = q.replace(word, self.last_metric)
 
         return q
 
-    def clear(self):
-        self.last_metric = None
-        self.last_intent = None
+    # ---------------------------------------------------------
 
+    def update(self, plan):
 
-if __name__ == "__main__":
-
-    memory = ConversationMemory()
-
-    print(memory.resolve("Why did it fall?"))
-
-    class DummyPlan:
-        metric = "cet1"
-        intent = "metric_lookup"
-
-    memory.update(DummyPlan())
-
-    print(memory.resolve("Why did it fall?"))
-    print(memory.resolve("Compare it with Tier1"))
+        self.last_metric = plan.metric
+        self.last_intent = plan.intent
+        self.last_plan = plan

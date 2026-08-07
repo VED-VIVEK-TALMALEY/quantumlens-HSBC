@@ -21,3 +21,5 @@ class ExecutionContext:
     llm_result: object = None
 
     audit_result: object = None
+    reasoning_result = None
+    financial_reasoning = None
