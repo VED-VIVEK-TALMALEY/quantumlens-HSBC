@@ -1,75 +1,111 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
+## -------------------------------------------------------------------
+## Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+##
+## This project and its source code are strictly proprietary.
+## Unauthorized copying, distribution, or use is strictly prohibited.
+## -------------------------------------------------------------------
 
-from opentelemetry import context
 
-from warehouse.query_service import (
-    get_metric_by_name,
-    get_metric_by_id,
-    get_all_metrics,
-    search_metrics,
-)
+from warehouse.query_service import get_metric_by_name
+
+from .execution_context import ExecutionContext
 
 
 class SQLAgent:
-
     def execute(self, context):
-
         plan = context.plan
 
-        if plan.metric is None:
+    # Primary metric
+        if plan.metric is not None:
+
+            context.sql_result = get_metric_by_name(
+            plan.metric
+        )
+
+        else:
+
             context.sql_result = None
-            return context
 
-        result = get_metric_by_name(plan.metric)
+    # Comparison metric
+        if plan.comparison_metric is not None:
 
-        print(f"DEBUG - SQLAgent searching for: {plan.metric}")
-        print(f"DEBUG - SQLAgent found: {result}")
-        context.sql_result = result
+            context.comparison_sql_result = (
+            get_metric_by_name(
+                plan.comparison_metric
+            )
+        )
+
+        else:
+
+            context.comparison_sql_result = None
+
+        print(
+        f"DEBUG - SQLAgent primary metric: "
+        f"{plan.metric}"
+    )
+
+        print(
+        f"DEBUG - SQLAgent comparison metric: "
+        f"{plan.comparison_metric}"
+    )
+
+        print(
+        f"DEBUG - SQL primary rows: "
+        f"{len(context.sql_result or [])}"
+    )
+
+        print(
+        f"DEBUG - SQL comparison rows: "
+        f"{len(context.comparison_sql_result or [])}"
+    )
 
         return context
 
 
-if __name__ == "__main__":
+## -------------------------------------------------------------------
+## Testing
+## -------------------------------------------------------------------
 
+if __name__ == "__main__":
     from src.agents.planner import Planner
-    from src.agents.execution_context import ExecutionContext
 
     planner = Planner()
-
     sql = SQLAgent()
 
     tests = [
-
         "Show CET1",
-
-        "Show CET1 trend",
-
-        "Why did CET1 fall?",
-
-        "Show NII"
-
+        "Show CET1 capital",
+        "Show CET1 ratio",
+        "Show CET1 capital ratio",
+        "Why did CET1 ratio fall?",
+        "Show CET1 ratio trend",
+        "Show NII",
     ]
 
     for q in tests:
-
-        print("=" * 60)
-
+        print("=" * 70)
         print(q)
 
         plan = planner.plan(q)
 
-        context = ExecutionContext(
-
-            question=q,
-
-            plan=plan
-
+        print(
+            f"DEBUG - Plan metric: "
+            f"{plan.metric}"
         )
 
-        context = sql.execute(context)
+        context = ExecutionContext(
+            question=q,
+            plan=plan
+        )
 
-        print(context.sql_result)
+        context = sql.execute(
+            context
+        )
+
+        print(
+            "SQL RESULT:"
+        )
+
+        print(
+            context.sql_result
+        )

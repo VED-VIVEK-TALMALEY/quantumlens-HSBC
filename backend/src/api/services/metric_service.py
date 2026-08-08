@@ -7,10 +7,7 @@
 from src.utils.logger import logger
 from warehouse.supabase_client import get_supabase
 
-from warehouse.query_service import (
-    get_all_metrics,
-    get_metric_by_id,
-)
+
 
 supabase = get_supabase()
 
