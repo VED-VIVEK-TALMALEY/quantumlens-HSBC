@@ -94,7 +94,7 @@
         "row_values": [
             null,
             null,
-            "Effective 1 January 2026, we transferred certain clients, primarily in Hong Kong and the UK, to the CIB segment to better meet their needs. This transfer does not change the Group\u2019s reportable segments. Comparative periods have been re-presented accordingly. The re-presentation has no impact on the Group\u2019s consolidated financial results or financial position."
+            "Effective 1 January 2026, we transferred certain clients, primarily in Hong Kong and the UK, to the CIB segment to better meet their needs. This transfer does not change the Group’s reportable segments. Comparative periods have been re-presented accordingly. The re-presentation has no impact on the Group’s consolidated financial results or financial position."
         ],
         "non_null_count": 1
     },
@@ -1400,7 +1400,7 @@
         "sheet_name": "Group income statement",
         "row_number": 67,
         "row_values": [
-            "\u2013 Disposals, wind-downs, acquisitions and related costs",
+            "– Disposals, wind-downs, acquisitions and related costs",
             -501,
             -1359,
             -144,
@@ -1417,7 +1417,7 @@
         "sheet_name": "Group income statement",
         "row_number": 68,
         "row_values": [
-            "\u2013 Fair value movements on financial instruments",
+            "– Fair value movements on financial instruments",
             0,
             0,
             0,
@@ -1434,7 +1434,7 @@
         "sheet_name": "Group income statement",
         "row_number": 69,
         "row_values": [
-            "\u2013 Restructuring and other related costs",
+            "– Restructuring and other related costs",
             0,
             0,
             0,
@@ -1451,7 +1451,7 @@
         "sheet_name": "Group income statement",
         "row_number": 70,
         "row_values": [
-            "\u2013 Disposal losses on Markets Treasury repositioning",
+            "– Disposal losses on Markets Treasury repositioning",
             0,
             0,
             0,
@@ -1468,7 +1468,7 @@
         "sheet_name": "Group income statement",
         "row_number": 71,
         "row_values": [
-            "\u2013 Early redemption of legacy securities",
+            "– Early redemption of legacy securities",
             0,
             0,
             0,
@@ -1485,7 +1485,7 @@
         "sheet_name": "Group income statement",
         "row_number": 72,
         "row_values": [
-            "\u2013 Dilution loss of interest in BoCom associate",
+            "– Dilution loss of interest in BoCom associate",
             0,
             0,
             32,
@@ -1536,7 +1536,7 @@
         "sheet_name": "Group income statement",
         "row_number": 75,
         "row_values": [
-            "\u2013 Disposals, wind-downs, acquisitions and related costs",
+            "– Disposals, wind-downs, acquisitions and related costs",
             -50,
             -157,
             -118,
@@ -1553,7 +1553,7 @@
         "sheet_name": "Group income statement",
         "row_number": 76,
         "row_values": [
-            "\u2013 Impairment of non-financial items",
+            "– Impairment of non-financial items",
             0,
             0,
             0,
@@ -1570,7 +1570,7 @@
         "sheet_name": "Group income statement",
         "row_number": 77,
         "row_values": [
-            "\u2013 Restructuring and other related costs",
+            "– Restructuring and other related costs",
             -128,
             -257,
             -157,
@@ -1587,7 +1587,7 @@
         "sheet_name": "Group income statement",
         "row_number": 78,
         "row_values": [
-            "\u2013 Legal provision",
+            "– Legal provision",
             0,
             -11,
             -1421,
@@ -1621,7 +1621,7 @@
         "sheet_name": "Group income statement",
         "row_number": 89,
         "row_values": [
-            "1 We have revised the adjustments made to average tangible equity for the purposes of computing our return on average tangible equity (\u2018RoTE\u2019) excluding notable items measure. Prior to this, we adjusted average tangible equity for the average impact of notable items whereas from 2025 we no longer make adjustments to average tangible equity. Comparatives have been re-presented on the revised basis.",
+            "1 We have revised the adjustments made to average tangible equity for the purposes of computing our return on average tangible equity (‘RoTE’) excluding notable items measure. Prior to this, we adjusted average tangible equity for the average impact of notable items whereas from 2025 we no longer make adjustments to average tangible equity. Comparatives have been re-presented on the revised basis.",
             null,
             null,
             null,
@@ -1778,7 +1778,7 @@
         "sheet_name": "Group balance sheet",
         "row_number": 13,
         "row_values": [
-            "Reverse repurchase agreements \u2013 non-trading",
+            "Reverse repurchase agreements – non-trading",
             314864,
             298392,
             278615,
@@ -1946,7 +1946,7 @@
         "sheet_name": "Group balance sheet",
         "row_number": 26,
         "row_values": [
-            "Repurchase agreements \u2013 non-trading",
+            "Repurchase agreements – non-trading",
             216162,
             204974,
             215308,
@@ -2828,7 +2828,7 @@
         "sheet_name": "Group balance sheet",
         "row_number": 101,
         "row_values": [
-            "Risk-weighted assets \u2013 disposals",
+            "Risk-weighted assets – disposals",
             0,
             0,
             0,
@@ -2842,7 +2842,7 @@
         "sheet_name": "Group balance sheet",
         "row_number": 103,
         "row_values": [
-            "Balance sheet data \u2013 currency translation on reported items \u2013 Totals ($m)",
+            "Balance sheet data – currency translation on reported items – Totals ($m)",
             null,
             null,
             null,
@@ -3039,7 +3039,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 8,
         "row_values": [
-            "\u2013 Wholesale Transaction Banking ",
+            "– Wholesale Transaction Banking ",
             3081,
             2647,
             2576,
@@ -3124,7 +3124,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 13,
         "row_values": [
-            "\u2013 Wealth",
+            "– Wealth",
             2697,
             2147,
             2680,
@@ -3209,7 +3209,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 18,
         "row_values": [
-            "\u2013 Investment Banking, Debt and Equity Markets",
+            "– Investment Banking, Debt and Equity Markets",
             1011,
             588,
             657,
@@ -3226,7 +3226,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 19,
         "row_values": [
-            "\u2013 Retail Banking ",
+            "– Retail Banking ",
             396,
             299,
             323,
@@ -3243,7 +3243,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 20,
         "row_values": [
-            "\u2013 Wholesale Credit and Lending",
+            "– Wholesale Credit and Lending",
             257,
             251,
             231,
@@ -3260,7 +3260,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 21,
         "row_values": [
-            "\u2013 Other2",
+            "– Other2",
             430,
             69,
             384,
@@ -3345,7 +3345,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 27,
         "row_values": [
-            "\u2013 of which: Wholesale Transaction Banking ",
+            "– of which: Wholesale Transaction Banking ",
             7155,
             6755,
             6438,
@@ -3396,7 +3396,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 30,
         "row_values": [
-            "\u2013 of which: Wealth",
+            "– of which: Wealth",
             3026,
             2481,
             3008,
@@ -3498,7 +3498,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 37,
         "row_values": [
-            "\u2013 Wholesale Transaction Banking ",
+            "– Wholesale Transaction Banking ",
             3081,
             2661,
             2579,
@@ -3583,7 +3583,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 42,
         "row_values": [
-            "\u2013 Wealth",
+            "– Wealth",
             2697,
             2155,
             2690,
@@ -3668,7 +3668,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 47,
         "row_values": [
-            "\u2013 Investment Banking, Debt and Equity Markets",
+            "– Investment Banking, Debt and Equity Markets",
             1011,
             591,
             657,
@@ -3685,7 +3685,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 48,
         "row_values": [
-            "\u2013 Retail Banking ",
+            "– Retail Banking ",
             396,
             304,
             329,
@@ -3702,7 +3702,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 49,
         "row_values": [
-            "\u2013 Wholesale Credit and Lending",
+            "– Wholesale Credit and Lending",
             257,
             256,
             232,
@@ -3719,7 +3719,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 50,
         "row_values": [
-            "\u2013 Other2",
+            "– Other2",
             430,
             58,
             370,
@@ -3804,7 +3804,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 56,
         "row_values": [
-            "\u2013 of which: Wholesale Transaction Banking ",
+            "– of which: Wholesale Transaction Banking ",
             7155,
             6793,
             6447,
@@ -3855,7 +3855,7 @@
         "sheet_name": "Group MVOI",
         "row_number": 59,
         "row_values": [
-            "\u2013 of which: Wealth",
+            "– of which: Wealth",
             3026,
             2492,
             3019,
@@ -4433,7 +4433,7 @@
         "sheet_name": "Group NIM",
         "row_number": 6,
         "row_values": [
-            "Short-term funds and loans and advances to\u00a0banks",
+            "Short-term funds and loans and advances to banks",
             317191,
             317912,
             316852,
@@ -4467,7 +4467,7 @@
         "sheet_name": "Group NIM",
         "row_number": 8,
         "row_values": [
-            "Reverse repurchase agreements \u2013 non-trading",
+            "Reverse repurchase agreements – non-trading",
             297692,
             287302,
             280681,
@@ -4552,7 +4552,7 @@
         "sheet_name": "Group NIM",
         "row_number": 14,
         "row_values": [
-            "Short-term funds and loans and advances to\u00a0banks",
+            "Short-term funds and loans and advances to banks",
             2494,
             2685,
             2733,
@@ -4586,7 +4586,7 @@
         "sheet_name": "Group NIM",
         "row_number": 16,
         "row_values": [
-            "Reverse repurchase agreements \u2013 non-trading",
+            "Reverse repurchase agreements – non-trading",
             4263,
             4353,
             4229,
@@ -4705,7 +4705,7 @@
         "sheet_name": "Group NIM",
         "row_number": 24,
         "row_values": [
-            "Repurchase agreements \u2013 non-trading",
+            "Repurchase agreements – non-trading",
             217636,
             199654,
             187304,
@@ -4722,7 +4722,7 @@
         "sheet_name": "Group NIM",
         "row_number": 25,
         "row_values": [
-            "Debt securities in issue \u2013 non-trading",
+            "Debt securities in issue – non-trading",
             201092,
             197015,
             202337,
@@ -4841,7 +4841,7 @@
         "sheet_name": "Group NIM",
         "row_number": 33,
         "row_values": [
-            "Repurchase agreements \u2013 non-trading",
+            "Repurchase agreements – non-trading",
             3587,
             3619,
             3405,
@@ -4858,7 +4858,7 @@
         "sheet_name": "Group NIM",
         "row_number": 34,
         "row_values": [
-            "Debt securities in issue \u2013 non-trading",
+            "Debt securities in issue – non-trading",
             2513,
             2558,
             2733,
@@ -5623,7 +5623,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 50,
         "row_values": [
-            "\u2013  Retail Banking and Wealth",
+            "–  Retail Banking and Wealth",
             798,
             548,
             748,
@@ -5640,7 +5640,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 51,
         "row_values": [
-            "\u2013  Retail Banking",
+            "–  Retail Banking",
             95,
             66,
             84,
@@ -5657,7 +5657,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 52,
         "row_values": [
-            "\u2013  Wealth",
+            "–  Wealth",
             673,
             459,
             646,
@@ -5674,7 +5674,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 53,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             30,
             23,
             18,
@@ -5691,7 +5691,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 54,
         "row_values": [
-            "\u2013  Commercial Banking",
+            "–  Commercial Banking",
             321,
             228,
             265,
@@ -5708,7 +5708,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 55,
         "row_values": [
-            "\u2013  Wholesale Transaction Banking",
+            "–  Wholesale Transaction Banking",
             193,
             173,
             183,
@@ -5725,7 +5725,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 56,
         "row_values": [
-            "\u2013  Credit and Lending",
+            "–  Credit and Lending",
             26,
             15,
             16,
@@ -5742,7 +5742,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 57,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             102,
             40,
             66,
@@ -5759,7 +5759,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 58,
         "row_values": [
-            "\u2013  Other",
+            "–  Other",
             null,
             null,
             null,
@@ -5895,7 +5895,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 67,
         "row_values": [
-            "\u2013  Retail Banking and Wealth",
+            "–  Retail Banking and Wealth",
             798,
             545,
             750,
@@ -5912,7 +5912,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 68,
         "row_values": [
-            "\u2013  Retail Banking",
+            "–  Retail Banking",
             95,
             65,
             85,
@@ -5929,7 +5929,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 69,
         "row_values": [
-            "\u2013  Wealth",
+            "–  Wealth",
             673,
             457,
             647,
@@ -5946,7 +5946,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 70,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             30,
             23,
             18,
@@ -5963,7 +5963,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 71,
         "row_values": [
-            "\u2013  Commercial Banking",
+            "–  Commercial Banking",
             321,
             229,
             264,
@@ -5980,7 +5980,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 72,
         "row_values": [
-            "\u2013  Wholesale Transaction Banking",
+            "–  Wholesale Transaction Banking",
             193,
             171,
             184,
@@ -5997,7 +5997,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 73,
         "row_values": [
-            "\u2013  Credit and Lending",
+            "–  Credit and Lending",
             26,
             16,
             16,
@@ -6014,7 +6014,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 74,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             102,
             42,
             64,
@@ -6031,7 +6031,7 @@
         "sheet_name": "Hong Kong business",
         "row_number": 75,
         "row_values": [
-            "\u2013  Other",
+            "–  Other",
             null,
             null,
             null,
@@ -6813,7 +6813,7 @@
         "sheet_name": "UK business",
         "row_number": 50,
         "row_values": [
-            "\u2013  Retail Banking and Wealth",
+            "–  Retail Banking and Wealth",
             182,
             127,
             173,
@@ -6830,7 +6830,7 @@
         "sheet_name": "UK business",
         "row_number": 51,
         "row_values": [
-            "\u2013  Retail Banking",
+            "–  Retail Banking",
             72,
             51,
             70,
@@ -6847,7 +6847,7 @@
         "sheet_name": "UK business",
         "row_number": 52,
         "row_values": [
-            "\u2013  Wealth",
+            "–  Wealth",
             88,
             70,
             94,
@@ -6864,7 +6864,7 @@
         "sheet_name": "UK business",
         "row_number": 53,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             22,
             6,
             9,
@@ -6881,7 +6881,7 @@
         "sheet_name": "UK business",
         "row_number": 54,
         "row_values": [
-            "\u2013  Commercial Banking",
+            "–  Commercial Banking",
             261,
             268,
             280,
@@ -6898,7 +6898,7 @@
         "sheet_name": "UK business",
         "row_number": 55,
         "row_values": [
-            "\u2013  Wholesale Transaction Banking",
+            "–  Wholesale Transaction Banking",
             202,
             204,
             208,
@@ -6915,7 +6915,7 @@
         "sheet_name": "UK business",
         "row_number": 56,
         "row_values": [
-            "\u2013  Credit and Lending",
+            "–  Credit and Lending",
             61,
             65,
             64,
@@ -6932,7 +6932,7 @@
         "sheet_name": "UK business",
         "row_number": 57,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             -2,
             -1,
             8,
@@ -6949,7 +6949,7 @@
         "sheet_name": "UK business",
         "row_number": 58,
         "row_values": [
-            "\u2013  Other",
+            "–  Other",
             0,
             0,
             0,
@@ -7085,7 +7085,7 @@
         "sheet_name": "UK business",
         "row_number": 67,
         "row_values": [
-            "\u2013  Retail Banking and Wealth",
+            "–  Retail Banking and Wealth",
             182,
             132,
             173,
@@ -7102,7 +7102,7 @@
         "sheet_name": "UK business",
         "row_number": 68,
         "row_values": [
-            "\u2013  Retail Banking",
+            "–  Retail Banking",
             72,
             52,
             70,
@@ -7119,7 +7119,7 @@
         "sheet_name": "UK business",
         "row_number": 69,
         "row_values": [
-            "\u2013  Wealth",
+            "–  Wealth",
             88,
             72,
             94,
@@ -7136,7 +7136,7 @@
         "sheet_name": "UK business",
         "row_number": 70,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             22,
             8,
             9,
@@ -7153,7 +7153,7 @@
         "sheet_name": "UK business",
         "row_number": 71,
         "row_values": [
-            "\u2013  Commercial Banking",
+            "–  Commercial Banking",
             261,
             269,
             279,
@@ -7170,7 +7170,7 @@
         "sheet_name": "UK business",
         "row_number": 72,
         "row_values": [
-            "\u2013  Wholesale Transaction Banking",
+            "–  Wholesale Transaction Banking",
             202,
             206,
             208,
@@ -7187,7 +7187,7 @@
         "sheet_name": "UK business",
         "row_number": 73,
         "row_values": [
-            "\u2013  Credit and Lending",
+            "–  Credit and Lending",
             61,
             65,
             64,
@@ -7204,7 +7204,7 @@
         "sheet_name": "UK business",
         "row_number": 74,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             -2,
             -2,
             7,
@@ -7221,7 +7221,7 @@
         "sheet_name": "UK business",
         "row_number": 75,
         "row_values": [
-            "\u2013  Other",
+            "–  Other",
             0,
             0,
             0,
@@ -8003,7 +8003,7 @@
         "sheet_name": "CIB business",
         "row_number": 50,
         "row_values": [
-            "\u2013  Wholesale Transaction Banking",
+            "–  Wholesale Transaction Banking",
             2686,
             2271,
             2184,
@@ -8020,7 +8020,7 @@
         "sheet_name": "CIB business",
         "row_number": 51,
         "row_values": [
-            "\u2013  Investment Banking",
+            "–  Investment Banking",
             260,
             208,
             227,
@@ -8037,7 +8037,7 @@
         "sheet_name": "CIB business",
         "row_number": 52,
         "row_values": [
-            "\u2013  Debt and Equity Markets",
+            "–  Debt and Equity Markets",
             751,
             380,
             430,
@@ -8054,7 +8054,7 @@
         "sheet_name": "CIB business",
         "row_number": 53,
         "row_values": [
-            "\u2013  Wholesale Credit and Lending",
+            "–  Wholesale Credit and Lending",
             170,
             171,
             151,
@@ -8071,7 +8071,7 @@
         "sheet_name": "CIB business",
         "row_number": 54,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             -45,
             13,
             82,
@@ -8224,7 +8224,7 @@
         "sheet_name": "CIB business",
         "row_number": 67,
         "row_values": [
-            "\u2013  Wholesale Transaction Banking",
+            "–  Wholesale Transaction Banking",
             2686,
             2284,
             2187,
@@ -8241,7 +8241,7 @@
         "sheet_name": "CIB business",
         "row_number": 68,
         "row_values": [
-            "\u2013  Investment Banking",
+            "–  Investment Banking",
             260,
             210,
             227,
@@ -8258,7 +8258,7 @@
         "sheet_name": "CIB business",
         "row_number": 69,
         "row_values": [
-            "\u2013  Debt and Equity Markets",
+            "–  Debt and Equity Markets",
             751,
             381,
             430,
@@ -8275,7 +8275,7 @@
         "sheet_name": "CIB business",
         "row_number": 70,
         "row_values": [
-            "\u2013  Wholesale Credit and Lending",
+            "–  Wholesale Credit and Lending",
             170,
             175,
             152,
@@ -8292,7 +8292,7 @@
         "sheet_name": "CIB business",
         "row_number": 71,
         "row_values": [
-            "\u2013  Other1",
+            "–  Other1",
             -45,
             11,
             86,
@@ -9091,7 +9091,7 @@
         "sheet_name": "IWPB business",
         "row_number": 50,
         "row_values": [
-            "\u2013  Retail Banking",
+            "–  Retail Banking",
             229,
             182,
             169,
@@ -9108,7 +9108,7 @@
         "sheet_name": "IWPB business",
         "row_number": 51,
         "row_values": [
-            "\u2013  Wealth1",
+            "–  Wealth1",
             1936,
             1617,
             1940,
@@ -9125,7 +9125,7 @@
         "sheet_name": "IWPB business",
         "row_number": 52,
         "row_values": [
-            "\u2013  Other2",
+            "–  Other2",
             1,
             18,
             39,
@@ -9278,7 +9278,7 @@
         "sheet_name": "IWPB business",
         "row_number": 67,
         "row_values": [
-            "\u2013  Retail Banking",
+            "–  Retail Banking",
             229,
             187,
             174,
@@ -9295,7 +9295,7 @@
         "sheet_name": "IWPB business",
         "row_number": 68,
         "row_values": [
-            "\u2013  Wealth1",
+            "–  Wealth1",
             1936,
             1626,
             1949,
@@ -9312,7 +9312,7 @@
         "sheet_name": "IWPB business",
         "row_number": 69,
         "row_values": [
-            "\u2013  Other2",
+            "–  Other2",
             1,
             17,
             40,
@@ -31522,7 +31522,7 @@
         "sheet_name": "Credit risk",
         "row_number": 10,
         "row_values": [
-            "\u2013 personal",
+            "– personal",
             445433,
             25420,
             3947,
@@ -31546,7 +31546,7 @@
         "sheet_name": "Credit risk",
         "row_number": 11,
         "row_values": [
-            "\u2013 corporate and commercial",
+            "– corporate and commercial",
             354763,
             59023,
             19378,
@@ -31570,7 +31570,7 @@
         "sheet_name": "Credit risk",
         "row_number": 12,
         "row_values": [
-            "\u2013 non-bank financial institutions",
+            "– non-bank financial institutions",
             100762,
             3208,
             1018,
@@ -31666,7 +31666,7 @@
         "sheet_name": "Credit risk",
         "row_number": 16,
         "row_values": [
-            "\u2013 personal",
+            "– personal",
             273876,
             1952,
             105,
@@ -31690,7 +31690,7 @@
         "sheet_name": "Credit risk",
         "row_number": 17,
         "row_values": [
-            "\u2013 corporate and commercial",
+            "– corporate and commercial",
             243242,
             15634,
             668,
@@ -31714,7 +31714,7 @@
         "sheet_name": "Credit risk",
         "row_number": 18,
         "row_values": [
-            "\u2013 financial",
+            "– financial",
             205234,
             1612,
             0,
@@ -31762,7 +31762,7 @@
         "sheet_name": "Credit risk",
         "row_number": 20,
         "row_values": [
-            "\u2013 personal",
+            "– personal",
             1421,
             13,
             0,
@@ -31786,7 +31786,7 @@
         "sheet_name": "Credit risk",
         "row_number": 21,
         "row_values": [
-            "\u2013 corporate and commercial",
+            "– corporate and commercial",
             10629,
             1277,
             206,
@@ -31810,7 +31810,7 @@
         "sheet_name": "Credit risk",
         "row_number": 22,
         "row_values": [
-            "\u2013 financial",
+            "– financial",
             4538,
             243,
             2,
@@ -32026,7 +32026,7 @@
         "sheet_name": "Credit risk",
         "row_number": 36,
         "row_values": [
-            "\u2013 personal",
+            "– personal",
             25420,
             23061,
             1466,
@@ -32050,7 +32050,7 @@
         "sheet_name": "Credit risk",
         "row_number": 37,
         "row_values": [
-            "\u2013 corporate and commercial",
+            "– corporate and commercial",
             59025,
             58218,
             514,
@@ -32074,7 +32074,7 @@
         "sheet_name": "Credit risk",
         "row_number": 38,
         "row_values": [
-            "\u2013 non-bank financial institutions",
+            "– non-bank financial institutions",
             3208,
             3005,
             1,
@@ -32338,7 +32338,7 @@
         "sheet_name": "Credit risk",
         "row_number": 54,
         "row_values": [
-            "\u2013  other personal lending which is secured1",
+            "–  other personal lending which is secured1",
             43860,
             597,
             313,
@@ -32362,7 +32362,7 @@
         "sheet_name": "Credit risk",
         "row_number": 55,
         "row_values": [
-            "\u2013  other personal lending which is unsecured",
+            "–  other personal lending which is unsecured",
             17990,
             2140,
             600,
@@ -32794,7 +32794,7 @@
         "sheet_name": "Credit risk",
         "row_number": 77,
         "row_values": [
-            "\u2013 agriculture, forestry and fishing",
+            "– agriculture, forestry and fishing",
             5782,
             1536,
             352,
@@ -32818,7 +32818,7 @@
         "sheet_name": "Credit risk",
         "row_number": 78,
         "row_values": [
-            "\u2013 mining and quarrying",
+            "– mining and quarrying",
             7727,
             626,
             229,
@@ -32842,7 +32842,7 @@
         "sheet_name": "Credit risk",
         "row_number": 79,
         "row_values": [
-            "\u2013 manufacturing",
+            "– manufacturing",
             76857,
             10079,
             2384,
@@ -32866,7 +32866,7 @@
         "sheet_name": "Credit risk",
         "row_number": 80,
         "row_values": [
-            "\u2013 electricity, gas, steam and air-conditioning supply",
+            "– electricity, gas, steam and air-conditioning supply",
             18264,
             943,
             227,
@@ -32890,7 +32890,7 @@
         "sheet_name": "Credit risk",
         "row_number": 81,
         "row_values": [
-            "\u2013 water supply, sewerage, waste management and remediation",
+            "– water supply, sewerage, waste management and remediation",
             2411,
             247,
             103,
@@ -32914,7 +32914,7 @@
         "sheet_name": "Credit risk",
         "row_number": 82,
         "row_values": [
-            "\u2013 real estate and construction",
+            "– real estate and construction",
             56534,
             20698,
             9674,
@@ -32938,7 +32938,7 @@
         "sheet_name": "Credit risk",
         "row_number": 83,
         "row_values": [
-            "\u2013 of which: commercial real estate",
+            "– of which: commercial real estate",
             0,
             0,
             0,
@@ -32962,7 +32962,7 @@
         "sheet_name": "Credit risk",
         "row_number": 85,
         "row_values": [
-            "\u2013 wholesale and retail trade, repair of motor vehicles and motorcycles",
+            "– wholesale and retail trade, repair of motor vehicles and motorcycles",
             75595,
             9415,
             2666,
@@ -32986,7 +32986,7 @@
         "sheet_name": "Credit risk",
         "row_number": 86,
         "row_values": [
-            "\u2013 transportation and storage",
+            "– transportation and storage",
             16262,
             3889,
             305,
@@ -33010,7 +33010,7 @@
         "sheet_name": "Credit risk",
         "row_number": 87,
         "row_values": [
-            "\u2013 accommodation and food",
+            "– accommodation and food",
             10468,
             2607,
             1323,
@@ -33034,7 +33034,7 @@
         "sheet_name": "Credit risk",
         "row_number": 88,
         "row_values": [
-            "\u2013 publishing, audiovisual and broadcasting",
+            "– publishing, audiovisual and broadcasting",
             25183,
             2640,
             429,
@@ -33058,7 +33058,7 @@
         "sheet_name": "Credit risk",
         "row_number": 90,
         "row_values": [
-            "\u2013 professional, scientific and technical activities",
+            "– professional, scientific and technical activities",
             22879,
             2071,
             568,
@@ -33082,7 +33082,7 @@
         "sheet_name": "Credit risk",
         "row_number": 91,
         "row_values": [
-            "\u2013 administrative and support services",
+            "– administrative and support services",
             14873,
             2444,
             549,
@@ -33106,7 +33106,7 @@
         "sheet_name": "Credit risk",
         "row_number": 92,
         "row_values": [
-            "\u2013 public administration and defence, compulsory social security",
+            "– public administration and defence, compulsory social security",
             15,
             1,
             0,
@@ -33130,7 +33130,7 @@
         "sheet_name": "Credit risk",
         "row_number": 93,
         "row_values": [
-            "\u2013 education",
+            "– education",
             1947,
             206,
             39,
@@ -33154,7 +33154,7 @@
         "sheet_name": "Credit risk",
         "row_number": 94,
         "row_values": [
-            "\u2013 health and care",
+            "– health and care",
             3789,
             499,
             92,
@@ -33178,7 +33178,7 @@
         "sheet_name": "Credit risk",
         "row_number": 95,
         "row_values": [
-            "\u2013 arts, entertainment and recreation",
+            "– arts, entertainment and recreation",
             2058,
             295,
             123,
@@ -33202,7 +33202,7 @@
         "sheet_name": "Credit risk",
         "row_number": 96,
         "row_values": [
-            "\u2013 other services",
+            "– other services",
             5792,
             749,
             200,
@@ -33226,7 +33226,7 @@
         "sheet_name": "Credit risk",
         "row_number": 97,
         "row_values": [
-            "\u2013 activities of households",
+            "– activities of households",
             862,
             6,
             0,
@@ -33250,7 +33250,7 @@
         "sheet_name": "Credit risk",
         "row_number": 98,
         "row_values": [
-            "\u2013 extra-territorial organisations and bodies activities",
+            "– extra-territorial organisations and bodies activities",
             164,
             0,
             0,
@@ -33274,7 +33274,7 @@
         "sheet_name": "Credit risk",
         "row_number": 99,
         "row_values": [
-            "\u2013 government",
+            "– government",
             7302,
             74,
             115,
@@ -33298,7 +33298,7 @@
         "sheet_name": "Credit risk",
         "row_number": 100,
         "row_values": [
-            "\u2013 asset-backed securities",
+            "– asset-backed securities",
             0,
             0,
             0,

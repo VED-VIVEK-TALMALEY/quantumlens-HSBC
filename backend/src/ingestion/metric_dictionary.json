@@ -38,6 +38,25 @@
   "wealth net new money": {"metric_id": 33, "normalized_metric_name": "wealth_net_new_money", "abbreviation": "wnnm"},
   "cost efficiency ratio": {"metric_id": 34, "normalized_metric_name": "cost_efficiency_ratio", "abbreviation": "cer"},
   "operating expenses": {"metric_id": 35, "normalized_metric_name": "operating_expenses", "abbreviation": "opex"},
-  "credit loss ratio": {"metric_id": 36, "normalized_metric_name": "credit_loss_ratio", "abbreviation": "clr"}
-
+  "credit loss ratio": {"metric_id": 36, "normalized_metric_name": "credit_loss_ratio", "abbreviation": "clr"},
+"profit/(loss) before tax": {
+    "metric_id": 7,
+    "normalized_metric_name": "profit_before_tax",
+    "abbreviation": "pbt"
+},
+"profit/(loss) before tax ": {
+    "metric_id": 7,
+    "normalized_metric_name": "profit_before_tax",
+    "abbreviation": "pbt"
+},
+"profit before tax": {
+    "metric_id": 7,
+    "normalized_metric_name": "profit_before_tax",
+    "abbreviation": "pbt"
+},
+"pbt": {
+    "metric_id": 7,
+    "normalized_metric_name": "profit_before_tax",
+    "abbreviation": "pbt"
+}
 }

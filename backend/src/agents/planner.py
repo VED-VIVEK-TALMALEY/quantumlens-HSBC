@@ -1,24 +1,18 @@
 # -------------------------------------------------------------------
-
 # Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-
-#
-
 # This project and its source code are strictly proprietary.
-
 # Unauthorized copying, distribution, or use is strictly prohibited.
-
 # -------------------------------------------------------------------
 
+import re
 from dataclasses import dataclass
 from typing import List
 
 from .execution_step import ExecutionStep
 
+
 # -------------------------------------------------------------------
-
 # Execution Plan
-
 # -------------------------------------------------------------------
 
 @dataclass
@@ -29,10 +23,12 @@ class ExecutionPlan:
     needs_llm: bool
     comparison_metric: str | None = None
 
+
+# -------------------------------------------------------------------
+# Planner
 # -------------------------------------------------------------------
 
 class Planner:
-
 
     # ----------------------------------------------------------------
     # Metric aliases
@@ -40,20 +36,14 @@ class Planner:
 
     METRIC_ALIASES = {
 
-        # ============================================================
-        # CET1 CAPITAL
-        # ============================================================
-
+        # CET1 capital
         "cet1": [
             "common equity tier one capital",
             "common equity tier 1 capital",
             "cet1 capital",
         ],
 
-        # ============================================================
-        # CET1 RATIO
-        # ============================================================
-
+        # CET1 ratio
         "cet1_ratio": [
             "common equity tier one ratio",
             "common equity tier 1 ratio",
@@ -61,10 +51,7 @@ class Planner:
             "cet1r",
         ],
 
-        # ============================================================
-        # TIER 1 CAPITAL
-        # ============================================================
-
+        # Tier 1 capital
         "tier1": [
             "tier one capital",
             "tier 1 capital",
@@ -76,10 +63,7 @@ class Planner:
             "t1",
         ],
 
-        # ============================================================
-        # TIER 1 RATIO
-        # ============================================================
-
+        # Tier 1 ratio
         "tier1_ratio": [
             "tier one ratio",
             "tier 1 ratio",
@@ -88,95 +72,65 @@ class Planner:
             "t1r",
         ],
 
-        # ============================================================
-        # NET INTEREST INCOME
-        # ============================================================
-
+        # Net interest income
         "nii": [
             "net interest income",
             "nii",
         ],
 
-        # ============================================================
-        # NET FEE INCOME
-        # ============================================================
-
+        # Net fee income
         "nfi": [
             "net fee income",
             "net fee revenue",
             "nfi",
         ],
 
-        # ============================================================
-        # REVENUE
-        # ============================================================
-
+        # Revenue
         "revenue": [
             "total revenue",
             "revenue",
         ],
 
-        # ============================================================
-        # PROFIT BEFORE TAX
-        # ============================================================
-
+        # Profit before tax
         "profit_before_tax": [
             "profit before tax",
             "pre tax profit",
             "pbt",
         ],
 
-        # ============================================================
-        # ASSETS
-        # ============================================================
-
+        # Assets
         "assets": [
             "total assets",
             "assets",
         ],
 
-        # ============================================================
-        # LIABILITIES
-        # ============================================================
-
+        # Liabilities
         "liabilities": [
             "total liabilities",
             "liabilities",
         ],
 
-        # ============================================================
-        # CUSTOMER ACCOUNTS
-        # ============================================================
-
+        # Customer accounts / deposits
         "customer_accounts": [
             "customer accounts",
             "customer deposits",
             "deposits",
         ],
 
-        # ============================================================
-        # LOANS
-        # ============================================================
-
+        # Loans
         "loans": [
             "gross loans",
             "loans",
             "advances",
         ],
 
-        # ============================================================
-        # ROTE
-        # ============================================================
-
+        # RoTE
         "rote": [
             "return on tangible equity",
             "rote",
         ],
 
-        # ============================================================
         # ECL
-        # ============================================================
-
         "ecl": [
             "expected credit losses",
             "expected credit loss",
@@ -185,89 +139,65 @@ class Planner:
     }
 
     # ----------------------------------------------------------------
-    # Explicit metric resolver
+    # Bare metric conventions
     # ----------------------------------------------------------------
 
-    def _resolve_metric(self, query: str) -> List[str]:
+    BARE_METRIC_ALIASES = {
 
-        q = query.lower().strip()
+        # Bare CET1 means CET1 ratio.
+        "cet1": "cet1_ratio",
 
-        # ============================================================
-        # Special handling for CET1
-        #
-        # Important:
-        #
-        # "CET1"                  -> CET1 ratio
-        # "CET1 ratio"            -> CET1 ratio
-        # "CET1 capital"          -> CET1 capital
-        # ============================================================
+        # Bare Tier 1 means Tier 1 capital.
+        "tier one": "tier1",
+        "tier 1": "tier1",
+        "tier1": "tier1",
+        "t1": "tier1",
+    }
 
-        # ------------------------------------------------------------
-        # Explicit CET1 CAPITAL
-        # ------------------------------------------------------------
+    # ----------------------------------------------------------------
+    # Text normalization
+    # ----------------------------------------------------------------
 
-        if (
-            "common equity tier one capital" in q
-            or "common equity tier 1 capital" in q
-            or "cet1 capital" in q
-        ):
+    @staticmethod
+    def _normalize(text: str) -> str:
+        """
+        Normalize user input.
 
-            matches = ["cet1"]
+        Example:
+            "Show   CET1!!!"
+        becomes:
+            "show cet1"
+        """
 
-            # Check if comparison contains Tier 1.
-            tier_metric = self._resolve_tier1_metric(q)
+        text = text.lower().strip()
 
-            if tier_metric is not None:
-                matches.append(tier_metric)
+        text = re.sub(r"[^a-z0-9]+", " ", text)
 
-            return matches
+        text = re.sub(r"\s+", " ", text)
 
-        # ------------------------------------------------------------
-        # Explicit CET1 RATIO
-        # ------------------------------------------------------------
+        return text.strip()
 
-        if (
-            "common equity tier one ratio" in q
-            or "common equity tier 1 ratio" in q
-            or "cet1 ratio" in q
-            or "cet1r" in q
-        ):
+    # ----------------------------------------------------------------
+    # Alias matching
+    # ----------------------------------------------------------------
 
-            matches = ["cet1_ratio"]
+    @staticmethod
+    def _alias_match(query: str, alias: str):
+        alias = Planner._normalize(alias)
 
-            tier_metric = self._resolve_tier1_metric(q)
+        pattern = (
+            rf"(?<![a-z0-9])"
+            rf"{re.escape(alias)}"
+            rf"(?![a-z0-9])"
+        )
 
-            if tier_metric is not None:
-                matches.append(tier_metric)
+        return re.search(pattern, query)
 
-            return matches
+    # ----------------------------------------------------------------
+    # Find metric candidates
+    # ----------------------------------------------------------------
 
-        # ------------------------------------------------------------
-        # Bare CET1
-        #
-        # QuantumLens convention:
-        #
-        # "CET1" = CET1 ratio
-        #
-        # This prevents the system from accidentally querying
-        # CET1 capital when the user is asking about the commonly
-        # reported CET1 percentage.
-        # ------------------------------------------------------------
-
-        if "cet1" in q:
-
-            matches = ["cet1_ratio"]
-
-            tier_metric = self._resolve_tier1_metric(q)
-
-            if tier_metric is not None:
-                matches.append(tier_metric)
-
-            return matches
-
-        # ============================================================
-        # Generic metric resolution
-        # ============================================================
+    def _find_metric_candidates(self, query: str):
 
         candidates = []
 
@@ -275,31 +205,32 @@ class Planner:
 
             for alias in aliases:
 
-                position = q.find(alias)
+                match = self._alias_match(query, alias)
 
-                if position != -1:
+                if match:
 
                     candidates.append(
                         (
-                            position,
+                            match.start(),
                             -len(alias),
                             canonical_metric,
+                            alias,
+                            match.start(),
+                            match.end(),
                         )
                     )
 
-        # ------------------------------------------------------------
-        # Sort by:
-        #
-        # 1. Position in query
-        # 2. Longest alias at same position
-        #
-        # Example:
-        #
-        # "Compare NII with Revenue"
-        #
-        # NII appears first.
-        # Revenue appears second.
-        # ------------------------------------------------------------
+        return candidates
+
+    # ----------------------------------------------------------------
+    # Resolve metric
+    # ----------------------------------------------------------------
+
+    def _resolve_metric(self, query: str) -> List[str]:
+
+        q = self._normalize(query)
+
+        candidates = self._find_metric_candidates(q)
 
         candidates.sort(
             key=lambda item: (
@@ -308,147 +239,392 @@ class Planner:
             )
         )
 
+        selected = []
+        occupied_ranges = []
+
+        # ------------------------------------------------------------
+        # Select longest non-overlapping explicit aliases.
+        # ------------------------------------------------------------
+
+        for candidate in candidates:
+
+            position = candidate[0]
+            canonical_metric = candidate[2]
+            alias = candidate[3]
+            start = candidate[4]
+            end = candidate[5]
+
+            overlaps = False
+
+            for occupied_start, occupied_end in occupied_ranges:
+
+                if (
+                    start < occupied_end
+                    and end > occupied_start
+                ):
+                    overlaps = True
+                    break
+
+            if overlaps:
+                continue
+
+            selected.append(
+                (
+                    position,
+                    canonical_metric,
+                    alias,
+                    start,
+                    end,
+                )
+            )
+
+            occupied_ranges.append(
+                (start, end)
+            )
+
+        # ------------------------------------------------------------
+        # Mask selected explicit aliases.
+        #
+        # This prevents:
+        #
+        # "common equity tier 1 capital"
+        #
+        # from becoming:
+        #
+        # cet1 + tier1
+        # ------------------------------------------------------------
+
+        masked_query = list(q)
+
+        for _, _, _, start, end in selected:
+
+            for i in range(start, end):
+                masked_query[i] = " "
+
+        masked_query = "".join(masked_query)
+
+        # ------------------------------------------------------------
+        # Bare CET1 -> CET1 ratio
+        # ------------------------------------------------------------
+
+        bare_cet1_match = self._alias_match(
+            masked_query,
+            "cet1",
+        )
+
+        if bare_cet1_match:
+
+            start = bare_cet1_match.start()
+            end = bare_cet1_match.end()
+
+            selected.append(
+                (
+                    start,
+                    "cet1_ratio",
+                    "cet1",
+                    start,
+                    end,
+                )
+            )
+
+            masked_query = (
+                masked_query[:start]
+                + (" " * (end - start))
+                + masked_query[end:]
+            )
+
+        # ------------------------------------------------------------
+        # Bare Tier 1
+        # ------------------------------------------------------------
+
+        bare_tier_candidates = []
+
+        for alias, canonical_metric in self.BARE_METRIC_ALIASES.items():
+
+            if alias == "cet1":
+                continue
+
+            match = self._alias_match(
+                masked_query,
+                alias,
+            )
+
+            if match:
+
+                bare_tier_candidates.append(
+                    (
+                        match.start(),
+                        -len(alias),
+                        canonical_metric,
+                        alias,
+                        match.start(),
+                        match.end(),
+                    )
+                )
+
+        bare_tier_candidates.sort(
+            key=lambda item: (
+                item[0],
+                item[1],
+            )
+        )
+
+        for candidate in bare_tier_candidates:
+
+            position = candidate[0]
+            canonical_metric = candidate[2]
+            alias = candidate[3]
+            start = candidate[4]
+            end = candidate[5]
+
+            overlaps = False
+
+            for selected_item in selected:
+
+                selected_start = selected_item[3]
+                selected_end = selected_item[4]
+
+                if (
+                    start < selected_end
+                    and end > selected_start
+                ):
+                    overlaps = True
+                    break
+
+            if overlaps:
+                continue
+
+            selected.append(
+                (
+                    position,
+                    canonical_metric,
+                    alias,
+                    start,
+                    end,
+                )
+            )
+
+            break
+
+        # ------------------------------------------------------------
+        # Sort by query position.
+        # ------------------------------------------------------------
+
+        selected.sort(
+            key=lambda item: item[0]
+        )
+
+        # ------------------------------------------------------------
+        # Remove duplicate canonical metrics.
+        # ------------------------------------------------------------
+
         matches = []
 
-        for _, _, canonical_metric in candidates:
+        for (
+            _,
+            canonical_metric,
+            _,
+            _,
+            _,
+        ) in selected:
 
             if canonical_metric not in matches:
-
                 matches.append(canonical_metric)
 
         return matches
 
     # ----------------------------------------------------------------
-    # Tier 1 resolver
+    # Comparison detection
     # ----------------------------------------------------------------
 
-    def _resolve_tier1_metric(self, query: str) -> str | None:
-
-        q = query.lower().strip()
-
-        # ------------------------------------------------------------
-        # Explicit Tier 1 ratio
-        # ------------------------------------------------------------
-
-        if (
-            "tier one ratio" in q
-            or "tier 1 ratio" in q
-            or "tier1 ratio" in q
-            or "t1 ratio" in q
-            or "t1r" in q
-        ):
-
-            return "tier1_ratio"
-
-        # ------------------------------------------------------------
-        # Explicit Tier 1 capital
-        # ------------------------------------------------------------
-
-        if (
-            "tier one capital" in q
-            or "tier 1 capital" in q
-            or "tier1 capital" in q
-            or "t1 capital" in q
-        ):
-
-            return "tier1"
-
-        # ------------------------------------------------------------
-        # Bare Tier 1
-        #
-        # "Tier 1" is interpreted as Tier 1 capital.
-        # ------------------------------------------------------------
-
-        if (
-            "tier one" in q
-            or "tier 1" in q
-            or "tier1" in q
-            or "t1" in q
-        ):
-
-            return "tier1"
-
-        return None
-
-    # ----------------------------------------------------------------
-    # Intent helpers
-    # ----------------------------------------------------------------
-
-    def _is_comparison(self, query: str, metrics: List[str]) -> bool:
-
-        q = query.lower()
+    def _is_comparison(
+        self,
+        query: str,
+        metrics: List[str],
+    ) -> bool:
 
         if len(metrics) < 2:
             return False
 
+        q = self._normalize(query)
+
+        padded = f" {q} "
+
         return (
-            "compare" in q
-            or "comparison" in q
-            or "versus" in q
-            or " vs " in q
-            or " vs." in q
-            or "with" in q
+            " compare " in padded
+            or " comparison " in padded
+            or " versus " in padded
+            or " vs " in padded
+            or " with " in padded
         )
 
+    # ----------------------------------------------------------------
+    # Definition detection
+    # ----------------------------------------------------------------
+
+    def _is_definition(self, query: str) -> bool:
+        """
+        Detect genuine terminology/definition questions.
+
+        Examples:
+
+            Explain CET1
+                -> definition
+
+            Explain CET1 capital
+                -> definition
+
+            What is CET1?
+                -> definition
+
+            Explain why CET1 fell
+                -> NOT definition
+                -> analysis
+        """
+
+        q = self._normalize(query)
+
+        padded = f" {q} "
+
+        # ------------------------------------------------------------
+        # Explicit definition language
+        # ------------------------------------------------------------
+
+        explicit_definition = (
+            " what is " in padded
+            or " what are " in padded
+            or " what does " in padded
+            or " define " in padded
+            or " definition " in padded
+            or " meaning " in padded
+        )
+
+        if explicit_definition:
+            return True
+
+        # ------------------------------------------------------------
+        # "Explain <metric>"
+        #
+        # Only treat it as definition when "explain" is not
+        # accompanied by causal/analytical language.
+        # ------------------------------------------------------------
+
+        if " explain " in padded:
+
+            metrics = self._resolve_metric(q)
+
+            if not metrics:
+                return False
+
+            analytical_terms = (
+                " why ",
+                " reason ",
+                " cause ",
+                " caused ",
+                " driver ",
+                " drivers ",
+                " impact ",
+                " fall ",
+                " fell ",
+                " drop ",
+                " dropped ",
+                " decline ",
+                " declined ",
+                " decrease ",
+                " decreased ",
+                " increase ",
+                " increased ",
+                " rise ",
+                " rose ",
+                " grow ",
+                " grew ",
+                " growth ",
+                " performing ",
+                " performance ",
+                " analyze ",
+                " analysis ",
+                " assess ",
+                " evaluate ",
+            )
+
+            if any(
+                term in padded
+                for term in analytical_terms
+            ):
+                return False
+
+            return True
+
+        return False
+
+    # ----------------------------------------------------------------
+    # Analysis detection
     # ----------------------------------------------------------------
 
     def _is_analysis(self, query: str) -> bool:
 
-        q = query.lower()
+        q = self._normalize(query)
+
+        padded = f" {q} "
 
         return (
-            "why" in q
-            or "reason" in q
-            or "cause" in q
-            or "caused" in q
-            or "driver" in q
-            or "drivers" in q
-            or "impact" in q
-            or "fall" in q
-            or "fell" in q
-            or "drop" in q
-            or "dropped" in q
-            or "decline" in q
-            or "decrease" in q
-            or "decreased" in q
-            or "increase" in q
-            or "increased" in q
-            or "rise" in q
-            or "rose" in q
-            or "grew" in q
-            or "growth" in q
+            # Causal language
+            " why " in padded
+            or " reason " in padded
+            or " cause " in padded
+            or " caused " in padded
+            or " driver " in padded
+            or " drivers " in padded
+            or " impact " in padded
+
+            # Directional language
+            or " fall " in padded
+            or " fell " in padded
+            or " falling " in padded
+            or " drop " in padded
+            or " dropped " in padded
+            or " decline " in padded
+            or " declined " in padded
+            or " declining " in padded
+            or " decrease " in padded
+            or " decreased " in padded
+            or " increasing " in padded
+            or " increase " in padded
+            or " increased " in padded
+            or " rise " in padded
+            or " rose " in padded
+            or " growing " in padded
+            or " grew " in padded
+            or " growth " in padded
+
+            # Performance
+            or " performing " in padded
+            or " performance " in padded
+
+            # Analytical verbs
+            or " analyze " in padded
+            or " analysis " in padded
+            or " assess " in padded
+            or " evaluate " in padded
+            or " explain " in padded
         )
 
     # ----------------------------------------------------------------
-
-    def _is_definition(self, query: str) -> bool:
-
-        q = query.lower()
-
-        return (
-            "what is" in q
-            or "what are" in q
-            or "define" in q
-            or "definition" in q
-            or "meaning" in q
-            or (
-                "explain" in q
-                and not self._is_analysis(query)
-            )
-        )
-
+    # Trend detection
     # ----------------------------------------------------------------
 
     def _is_trend(self, query: str) -> bool:
 
-        q = query.lower()
+        q = self._normalize(query)
+
+        padded = f" {q} "
 
         return (
-            "trend" in q
-            or "over time" in q
-            or "historical" in q
-            or "history" in q
-            or "historically" in q
+            " trend " in padded
+            or " over time " in padded
+            or " historical " in padded
+            or " history " in padded
+            or " historically " in padded
         )
 
     # ----------------------------------------------------------------
@@ -457,9 +633,9 @@ class Planner:
 
     def plan(self, query: str) -> ExecutionPlan:
 
-        q = query.lower().strip()
+        q = self._normalize(query)
 
-        metrics = self._resolve_metric(query)
+        metrics = self._resolve_metric(q)
 
         metric = (
             metrics[0]
@@ -477,7 +653,7 @@ class Planner:
         # 1. COMPARISON
         # ============================================================
 
-        if self._is_comparison(query, metrics):
+        if self._is_comparison(q, metrics):
 
             return ExecutionPlan(
                 intent="comparison",
@@ -493,10 +669,39 @@ class Planner:
             )
 
         # ============================================================
-        # 2. ANALYSIS
+        # 2. DEFINITION
+        #
+        # IMPORTANT:
+        # Definition MUST come before general analysis.
+        #
+        # Therefore:
+        #
+        # Explain CET1
+        # -> definition
+        #
+        # while:
+        #
+        # Explain why CET1 fell
+        # -> analysis
         # ============================================================
 
-        if self._is_analysis(query):
+        if self._is_definition(q):
+
+            return ExecutionPlan(
+                intent="definition",
+                metric=metric,
+                comparison_metric=None,
+                steps=[
+                    ExecutionStep("rag"),
+                ],
+                needs_llm=False,
+            )
+
+        # ============================================================
+        # 3. ANALYSIS
+        # ============================================================
+
+        if self._is_analysis(q):
 
             return ExecutionPlan(
                 intent="analysis",
@@ -513,26 +718,10 @@ class Planner:
             )
 
         # ============================================================
-        # 3. DEFINITION
-        # ============================================================
-
-        if self._is_definition(query):
-
-            return ExecutionPlan(
-                intent="definition",
-                metric=metric,
-                comparison_metric=None,
-                steps=[
-                    ExecutionStep("rag"),
-                ],
-                needs_llm=False,
-            )
-
-        # ============================================================
         # 4. TREND
         # ============================================================
 
-        if self._is_trend(query):
+        if self._is_trend(q):
 
             return ExecutionPlan(
                 intent="trend",
@@ -566,12 +755,8 @@ class Planner:
             )
 
         # ============================================================
-        # 6. DEFAULT ANALYSIS
+        # 6. GENERAL ANALYSIS
         # ============================================================
-
-        # -------------------------------------------------------
-# General / Company-level analysis
-# -------------------------------------------------------
 
         return ExecutionPlan(
             intent="general_analysis",
@@ -584,154 +769,81 @@ class Planner:
             needs_llm=True,
         )
 
+
 # -------------------------------------------------------------------
-
 # Testing
-
 # -------------------------------------------------------------------
 
 if __name__ == "__main__":
-
 
     planner = Planner()
 
     tests = [
 
-    # ============================================================
-    # 1. BASIC METRIC LOOKUPS
-    # ============================================================
+        # Definitions
+        "Explain CET1",
+        "Explain CET1 capital",
+        "Explain CET1 ratio",
+        "Explain Tier 1",
+        "Explain Tier 1 capital",
+        "Explain Tier 1 ratio",
+        "Explain NII",
+        "What is CET1?",
+        "What does CET1 mean?",
+        "Define NII",
 
-    "Show CET1",
-    "Show CET1 capital",
-    "Show CET1 ratio",
-    "Show Tier 1",
-    "Show Tier 1 capital",
-    "Show Tier 1 ratio",
-    "Show NII",
-    "Show NFI",
-    "Show revenue",
-    "Show PBT",
-    "Show assets",
-    "Show liabilities",
-    "Show deposits",
-    "Show loans",
-    "Show RoTE",
-    "Show ECL",
+        # Analysis
+        "Explain why CET1 fell",
+        "Explain why CET1 ratio fell",
+        "Explain why NII increased",
+        "Explain why revenue declined",
+        "Why did CET1 fall?",
+        "Why did NII increase?",
+        "How is CET1 performing?",
+        "How is HSBC performing?",
+        "Explain the financial performance",
 
-    # ============================================================
-    # 2. DEFINITIONS
-    # ============================================================
+        # Trends
+        "Show CET1 trend",
+        "Show CET1 ratio trend",
+        "Show revenue trend",
+        "Show historical revenue",
+        "Show CET1 over time",
 
-    "What is CET1?",
-    "What is CET1 ratio?",
-    "What is Tier 1?",
-    "What is Tier 1 ratio?",
-    "What is NII?",
-    "What is NFI?",
-    "What is RoTE?",
-    "What is ECL?",
-    "Define CET1",
-    "Define NII",
-    "Explain CET1",
-    "Explain Tier 1 ratio",
+        # Comparisons
+        "Compare CET1 with Tier 1",
+        "Compare Tier 1 with CET1",
+        "Compare CET1 capital with CET1 ratio",
+        "Compare CET1 ratio with CET1 capital",
+        "Compare Tier 1 capital with CET1 capital",
+        "Compare CET1 capital with Tier 1 capital",
+        "Compare Tier 1 ratio with CET1 ratio",
+        "Compare CET1 ratio with Tier 1 ratio",
+        "Compare NII with Revenue",
+        "Compare Revenue with NII",
 
-    # ============================================================
-    # 3. TRENDS
-    # ============================================================
+        # Metric lookup
+        "Show CET1",
+        "Show CET1 capital",
+        "Show CET1 ratio",
+        "Show NII",
+        "Show revenue",
+        "Show PBT",
+        "Show ECL",
 
-    "Show CET1 trend",
-    "Show CET1 capital trend",
-    "Show CET1 ratio trend",
-    "Show Tier 1 trend",
-    "Show Tier 1 ratio trend",
-    "Show NII trend",
-    "Show revenue trend",
-    "Show PBT trend",
-    "Show ECL trend",
+        # General
+        "What happened?",
+        "What changed?",
+        "Give me an overview",
+        "What happened to HSBC?",
+    ]
 
-    "Show CET1 over time",
-    "Show NII over time",
-    "Show historical revenue",
-    "Show historical PBT",
+    for query in tests:
 
-    # ============================================================
-    # 4. ANALYSIS / WHY
-    # ============================================================
-
-    "Why did CET1 fall?",
-    "Why did CET1 ratio fall?",
-    "Why did CET1 increase?",
-    "Why did NII fall?",
-    "Why did NII increase?",
-    "Why did revenue fall?",
-    "Why did revenue increase?",
-    "Why did PBT decline?",
-
-    "What caused the CET1 decline?",
-    "What caused the NII increase?",
-    "What drove the revenue increase?",
-    "What was the impact on CET1?",
-    "Explain the fall in CET1",
-    "Explain the increase in NII",
-
-    # ============================================================
-    # 5. COMPARISONS
-    # ============================================================
-
-    "Compare CET1 with Tier 1",
-    "Compare CET1 ratio with Tier 1 ratio",
-    "Compare CET1 versus Tier 1",
-    "Compare Tier 1 with CET1",
-
-    "Compare NII with Revenue",
-    "Compare Revenue with NII",
-    "Compare NII versus Revenue",
-    "Compare Revenue versus NII",
-
-    "Compare CET1 capital with CET1 ratio",
-
-    # ============================================================
-    # 6. NATURAL LANGUAGE
-    # ============================================================
-
-    "How is CET1 performing?",
-    "How is NII performing?",
-    "How is HSBC performing?",
-    "What happened to HSBC?",
-    "What happened to HSBC in Q1 2026?",
-    "Give me an overview of HSBC",
-    "Give me a financial overview",
-    "Summarize HSBC's financial performance",
-
-    # ============================================================
-    # 7. CASE / FORMATTING ROBUSTNESS
-    # ============================================================
-
-    "show cet1",
-    "SHOW CET1",
-    "Show Cet1",
-    "show nii",
-    "SHOW REVENUE",
-
-    # ============================================================
-    # 8. NO METRIC
-    # ============================================================
-
-    "What happened?",
-    "Give me an analysis",
-    "Analyze the financial results",
-    "Explain the financial performance",
-    "Give me an overview",
-
-]
-   
-
-    for q in tests:
-
-        plan = planner.plan(q)
+        plan = planner.plan(query)
 
         print("=" * 80)
-        print(f"QUERY:       {q}")
+        print(f"QUERY:       {query}")
         print(f"INTENT:      {plan.intent}")
         print(f"METRIC:      {plan.metric}")
         print(f"COMPARISON:  {plan.comparison_metric}")

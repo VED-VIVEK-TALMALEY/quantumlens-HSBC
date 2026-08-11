@@ -46,13 +46,11 @@ class Orchestrator:
     # Resolve conversation memory
     # -----------------------------------------
      resolved_question = self.memory.resolve(question)
-
-    # -----------------------------------------
-    # Planning
-    # -----------------------------------------
      plan = self.planner.plan(resolved_question)
-
-     self.memory.update(plan)
+     self.memory.update(
+            plan,
+            resolved_question,
+            )
      
 
     # -----------------------------------------
@@ -92,26 +90,38 @@ class Orchestrator:
 if __name__ == "__main__":
 
     orchestrator = Orchestrator()
-    
 
     tests = [
-
-    "Show CET1 trend",
-
-    "Why did it fall?",
-
-    "Compare it with Tier1",
-
-    "Explain it",
-
-]
+        # Edge Cases: Definitions
+        "What is CET1 capital?",
+        "What is CET1 ratio?",
+        "What is Tier 1?",
+        "What is Tier 1 ratio?",
+        "What is NII?",
+        # Edge Cases: Analysis / Why
+        "Why did CET1 ratio fall?",
+        "Why did CET1 capital fall?",
+        "Why did NII increase?",
+        "Why did revenue decline?",
+        # Edge Cases: Trends
+        "Show CET1 trend",
+        "Show CET1 ratio trend",
+        "Show Tier 1 trend",
+        "Show NII trend",
+        "Show revenue trend",
+        # Edge Cases: Comparisons
+        "Compare CET1 capital with CET1 ratio",
+        "Compare CET1 ratio with Tier 1 ratio",
+        "Compare NII with revenue",
+        # Edge Cases: Non-Existent Metrics (EBITDA / Hallucination Checks)
+        "Show something that does not exist",
+        "What is EBITDA?",
+        "Show EBITDA trend",
+        "Why did EBITDA fall?",
+    ]
 
     for q in tests:
-
         print("=" * 70)
-
-        print(q)
-
+        print(f"QUERY: {q}")
         result = orchestrator.execute(q)
-
         print(result)

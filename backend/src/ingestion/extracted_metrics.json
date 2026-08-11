@@ -80,6 +80,26 @@
         "row_number": 11
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            9376,
+            6802,
+            7295,
+            6326,
+            9484,
+            null,
+            9376,
+            9484
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 13
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -118,6 +138,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Group income statement",
         "row_number": 27
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            9376,
+            6846,
+            7327,
+            6275,
+            9788,
+            null,
+            9376,
+            9788
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Group income statement",
+        "row_number": 29
     },
     {
         "metric_id": 31,
@@ -590,6 +630,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            2589,
+            2359,
+            2375,
+            2056,
+            2473,
+            null,
+            2589,
+            2473
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -628,6 +688,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Hong Kong business",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            2589,
+            2348,
+            2379,
+            2054,
+            2464,
+            null,
+            2589,
+            2464
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hong Kong business",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -790,6 +870,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1645,
+            1690,
+            1551,
+            1641,
+            1469,
+            null,
+            1645,
+            1469
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -828,6 +928,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "UK business",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1645,
+            1714,
+            1550,
+            1658,
+            1578,
+            null,
+            1645,
+            1578
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "UK business",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -990,6 +1110,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            3337,
+            2661,
+            2714,
+            3006,
+            3672,
+            null,
+            3337,
+            3672
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -1028,6 +1168,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "CIB business",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            3337,
+            2676,
+            2721,
+            3031,
+            3796,
+            null,
+            3337,
+            3796
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "CIB business",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -1190,6 +1350,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1231,
+            983,
+            1292,
+            904,
+            1188,
+            null,
+            1231,
+            1188
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -1228,6 +1408,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "IWPB business",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1231,
+            987,
+            1304,
+            911,
+            1228,
+            null,
+            1231,
+            1228
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "IWPB business",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -1390,6 +1590,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            574,
+            -891,
+            -637,
+            -1281,
+            682,
+            null,
+            574,
+            682
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -1428,6 +1648,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Corporate Centre",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            574,
+            -879,
+            -627,
+            -1379,
+            722,
+            null,
+            574,
+            722
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Corporate Centre",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -1590,6 +1830,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1962,
+            1962,
+            1829,
+            1907,
+            1711,
+            null,
+            1962,
+            1711
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -1628,6 +1888,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1962,
+            1989,
+            1830,
+            1924,
+            1831,
+            null,
+            1962,
+            1831
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -1750,6 +2030,26 @@
         "row_number": 50
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1748,
+            1774,
+            1629,
+            1736,
+            1552,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 52
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -1788,6 +2088,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 57
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 59
     },
     {
         "metric_id": 31,
@@ -1910,6 +2230,26 @@
         "row_number": 88
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            679,
+            686,
+            622,
+            656,
+            568,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 90
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -1948,6 +2288,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 98
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 100
     },
     {
         "metric_id": 31,
@@ -1990,6 +2350,26 @@
         "row_number": 109
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1069,
+            1088,
+            1007,
+            1080,
+            984,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 111
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2028,6 +2408,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 120
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 122
     },
     {
         "metric_id": 31,
@@ -2070,6 +2470,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            147,
+            146,
+            125,
+            124,
+            120,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2108,6 +2528,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -2230,6 +2670,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            35,
+            52,
+            36,
+            33,
+            14,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2268,6 +2728,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -2390,6 +2870,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            32,
+            -10,
+            39,
+            14,
+            25,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2428,6 +2928,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBUK",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBUK",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -2530,6 +3050,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            289,
+            -927,
+            -790,
+            480,
+            1013,
+            null,
+            289,
+            1013
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2568,6 +3108,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HCIB",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            289,
+            -925,
+            -788,
+            456,
+            1101,
+            null,
+            289,
+            1101
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -2690,6 +3250,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            519,
+            243,
+            246,
+            494,
+            822,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2728,6 +3308,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HCIB",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -2850,6 +3450,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            136,
+            195,
+            137,
+            88,
+            169,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -2888,6 +3508,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HCIB",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -3010,6 +3650,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            -366,
+            -1365,
+            -1173,
+            -102,
+            22,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3048,6 +3708,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HCIB",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HCIB",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -3170,6 +3850,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            6585,
+            4753,
+            5451,
+            3258,
+            6126,
+            null,
+            6585,
+            6126
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3208,6 +3908,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            6585,
+            4767,
+            5473,
+            3201,
+            6189,
+            null,
+            6585,
+            6189
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -3330,6 +4050,26 @@
         "row_number": 50
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            2688,
+            2442,
+            2458,
+            2135,
+            2558,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 52
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3368,6 +4108,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 57
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 59
     },
     {
         "metric_id": 31,
@@ -3490,6 +4250,26 @@
         "row_number": 88
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1850,
+            1599,
+            1712,
+            1578,
+            1706,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 90
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3528,6 +4308,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 98
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 100
     },
     {
         "metric_id": 31,
@@ -3570,6 +4370,26 @@
         "row_number": 109
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            852,
+            860,
+            746,
+            557,
+            852,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 111
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3608,6 +4428,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 120
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 122
     },
     {
         "metric_id": 31,
@@ -3650,6 +4490,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            2132,
+            1638,
+            1903,
+            2006,
+            2214,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3688,6 +4548,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -3810,6 +4690,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1044,
+            608,
+            967,
+            728,
+            865,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -3848,6 +4748,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -3970,6 +4890,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            721,
+            65,
+            123,
+            -1611,
+            489,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4008,6 +4948,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (consol)",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (consol)",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -4130,6 +5090,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            3885,
+            2797,
+            3120,
+            3186,
+            3651,
+            null,
+            3885,
+            3651
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4168,6 +5148,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            3885,
+            2786,
+            3122,
+            3183,
+            3635,
+            null,
+            3885,
+            3635
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -4290,6 +5290,26 @@
         "row_number": 50
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            2645,
+            2436,
+            2416,
+            2151,
+            2529,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 52
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4328,6 +5348,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 57
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 59
     },
     {
         "metric_id": 31,
@@ -4450,6 +5490,26 @@
         "row_number": 88
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            1849,
+            1604,
+            1712,
+            1581,
+            1710,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 90
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4488,6 +5548,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 98
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 100
     },
     {
         "metric_id": 31,
@@ -4530,6 +5610,26 @@
         "row_number": 109
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            810,
+            849,
+            704,
+            570,
+            819,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 111
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4568,6 +5668,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 120
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 122
     },
     {
         "metric_id": 31,
@@ -4610,6 +5730,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            631,
+            287,
+            438,
+            685,
+            713,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4648,6 +5788,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -4770,6 +5930,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            601,
+            433,
+            527,
+            454,
+            540,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4808,6 +5988,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -4930,6 +6130,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            8,
+            -359,
+            -261,
+            -104,
+            -131,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -4968,6 +6188,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBAP (HK)",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBAP (HK)",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -5090,6 +6330,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            734,
+            660,
+            643,
+            410,
+            676,
+            null,
+            734,
+            676
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -5128,6 +6388,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Hang Seng (consol)",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            734,
+            656,
+            644,
+            408,
+            674,
+            null,
+            734,
+            674
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Hang Seng (consol)",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -5250,6 +6530,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            395,
+            342,
+            366,
+            224,
+            266,
+            null,
+            395,
+            266
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -5288,6 +6588,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HNAH",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            395,
+            342,
+            367,
+            224,
+            265,
+            null,
+            395,
+            265
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -5410,6 +6730,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            370,
+            347,
+            341,
+            223,
+            253,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -5448,6 +6788,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HNAH",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -5570,6 +6930,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            58,
+            33,
+            39,
+            36,
+            44,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -5608,6 +6988,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HNAH",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -5730,6 +7130,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            -33,
+            -38,
+            -14,
+            -35,
+            -31,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -5768,6 +7188,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HNAH",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HNAH",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -5890,6 +7330,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            287,
+            126,
+            193,
+            142,
+            188,
+            null,
+            287,
+            188
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -5928,6 +7388,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Grupo Financiero (Mexico)",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            287,
+            132,
+            204,
+            159,
+            218,
+            null,
+            287,
+            218
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -6050,6 +7530,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            148,
+            123,
+            136,
+            113,
+            125,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -6088,6 +7588,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Grupo Financiero (Mexico)",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -6210,6 +7730,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            131,
+            -2,
+            74,
+            41,
+            81,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -6248,6 +7788,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Grupo Financiero (Mexico)",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -6370,6 +7930,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            8,
+            5,
+            -17,
+            -12,
+            -18,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -6408,6 +7988,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Grupo Financiero (Mexico)",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Grupo Financiero (Mexico)",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -6530,6 +8130,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            219,
+            319,
+            203,
+            285,
+            283,
+            null,
+            219,
+            283
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -6568,6 +8188,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBME",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            219,
+            319,
+            203,
+            285,
+            283,
+            null,
+            219,
+            283
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 17
     },
     {
         "metric_id": 31,
@@ -6690,6 +8330,26 @@
         "row_number": 132
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            182,
+            190,
+            142,
+            202,
+            221,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 134
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -6728,6 +8388,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBME",
         "row_number": 139
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 141
     },
     {
         "metric_id": 31,
@@ -6850,6 +8530,26 @@
         "row_number": 171
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            51,
+            141,
+            88,
+            94,
+            81,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 173
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -6888,6 +8588,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBME",
         "row_number": 178
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 180
     },
     {
         "metric_id": 31,
@@ -7010,6 +8730,26 @@
         "row_number": 210
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            -14,
+            -12,
+            -27,
+            -11,
+            -19,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 212
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -7048,6 +8788,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "HBME",
         "row_number": 217
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            0,
+            0,
+            0,
+            0,
+            0,
+            null,
+            null,
+            null
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "HBME",
+        "row_number": 219
     },
     {
         "metric_id": 31,
@@ -7170,6 +8930,26 @@
         "row_number": 8
     },
     {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            430,
+            518,
+            463,
+            369,
+            448,
+            null,
+            430,
+            448
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 10
+    },
+    {
         "metric_id": 31,
         "matched_text": "revenue",
         "normalized_metric_name": "revenue",
@@ -7208,6 +8988,26 @@
         "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
         "sheet_name": "Other trading entities",
         "row_number": 15
+    },
+    {
+        "metric_id": 7,
+        "matched_text": "profit/(loss) before tax",
+        "normalized_metric_name": "profit_before_tax",
+        "abbreviation": "pbt",
+        "row_values": [
+            "Profit/(loss) before tax",
+            430,
+            513,
+            460,
+            368,
+            447,
+            null,
+            430,
+            447
+        ],
+        "source_workbook": "260505-1q-2026-data-pack-excel.xlsx",
+        "sheet_name": "Other trading entities",
+        "row_number": 17
     },
     {
         "metric_id": 31,

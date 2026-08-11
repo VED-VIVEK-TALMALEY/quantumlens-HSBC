@@ -1,143 +1,366 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
+## -------------------------------------------------------------------
+## Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+## This project and its source code are strictly proprietary.
+## Unauthorized copying, distribution, or use is strictly prohibited.
+## -------------------------------------------------------------------
 
 from .execution_context import ExecutionContext
 import statistics
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley
-# -------------------------------------------------------------------
+
+
 class FinancialReasoningAgent:
 
-    def execute(self, context):
+    def execute(self, context: ExecutionContext):
 
         rows = context.sql_result
 
+        # ------------------------------------------------------------
+        # No SQL data
+        # ------------------------------------------------------------
+
         if not rows:
+
             context.financial_reasoning = None
+
             return context
 
         periods = []
         values = []
 
+        # ------------------------------------------------------------
+        # Extract period and value.
+        #
+        # Current Oracle row structure:
+        #
+        # row[7] = period
+        # row[8] = value
+        # ------------------------------------------------------------
+
         for row in rows:
-            periods.append(str(row[7]))
-            values.append(float(row[8]))
 
-        first_value = values[0]
-        last_value = values[-1]
+            try:
 
-        absolute_change = round(last_value - first_value, 2)
+                period = str(row[7])
+                value = float(row[8])
 
-        if first_value != 0:
-            percent_change = round(
-                absolute_change / first_value * 100,
-                2
+            except (
+                IndexError,
+                TypeError,
+                ValueError
+            ):
+
+                continue
+
+            periods.append(period)
+            values.append(value)
+
+        # ------------------------------------------------------------
+        # No valid numeric values
+        # ------------------------------------------------------------
+
+        if not values:
+
+            context.financial_reasoning = None
+
+            return context
+
+        # ------------------------------------------------------------
+        # IMPORTANT HSBC PERIOD ORDER
+        #
+        # Current ingestion stores:
+        #
+        # Period 1 = latest
+        # Period 2 = previous
+        # Period 3 = older
+        # ...
+        #
+        # Therefore:
+        #
+        # latest_value   = values[0]
+        # previous_value = values[1]
+        #
+        # Do NOT use values[-1] as latest.
+        # ------------------------------------------------------------
+
+        latest_value = values[0]
+        latest_period = periods[0]
+
+        if len(values) >= 2:
+
+            previous_value = values[1]
+            previous_period = periods[1]
+
+        else:
+
+            previous_value = None
+            previous_period = None
+
+        # ------------------------------------------------------------
+        # Latest-period change
+        # ------------------------------------------------------------
+
+        if previous_value is not None:
+
+            latest_change = (
+                latest_value
+                - previous_value
             )
-        else:
-            percent_change = 0
 
-        if absolute_change > 0:
-            direction = "increase"
-        elif absolute_change < 0:
-            direction = "decrease"
+            if previous_value != 0:
+
+                latest_percent_change = (
+                    latest_change
+                    / previous_value
+                    * 100
+                )
+
+            else:
+
+                latest_percent_change = 0.0
+
         else:
+
+            latest_change = 0.0
+            latest_percent_change = 0.0
+
+        # ------------------------------------------------------------
+        # Direction
+        # ------------------------------------------------------------
+
+        if latest_change > 0:
+
+            direction = "increase"
+
+        elif latest_change < 0:
+
+            direction = "decrease"
+
+        else:
+
             direction = "no change"
 
+        # ------------------------------------------------------------
+        # Historical high / low
+        # ------------------------------------------------------------
+
         highest_value = max(values)
-        highest_index = values.index(highest_value)
-        highest_period = periods[highest_index]
+
+        highest_index = values.index(
+            highest_value
+        )
+
+        highest_period = periods[
+            highest_index
+        ]
 
         lowest_value = min(values)
-        lowest_index = values.index(lowest_value)
-        lowest_period = periods[lowest_index]
 
-        average = round(sum(values) / len(values), 2)
-        median = statistics.median(values)
-        volatility = round(statistics.pstdev(values), 2)
+        lowest_index = values.index(
+            lowest_value
+        )
 
-        if len(values) > 1:
+        lowest_period = periods[
+            lowest_index
+        ]
 
-            latest_change = round(
-                values[-1] - values[-2],
-                2
+        # ------------------------------------------------------------
+        # Historical statistics
+        # ------------------------------------------------------------
+
+        average = (
+            sum(values)
+            / len(values)
+        )
+
+        median = statistics.median(
+            values
+        )
+
+        volatility = statistics.pstdev(
+            values
+        )
+
+        # ------------------------------------------------------------
+        # Historical sequential changes
+        #
+        # These follow the source order.
+        # ------------------------------------------------------------
+
+        
+
+        chronological_values = list(reversed(values))
+
+        changes = []
+        for index in range(1, len(chronological_values)):
+            changes.append(
+        chronological_values[index]
+        - chronological_values[index - 1]
+    )
+
+        if changes:
+
+            max_increase = max(
+                changes
             )
 
-            if values[-2] != 0:
-                latest_percent_change = round(
-                    latest_change / values[-2] * 100,
-                    2
-                )
-            else:
-                latest_percent_change = 0
-
-            changes = []
-
-            for i in range(1, len(values)):
-                changes.append(values[i] - values[i - 1])
-
-            max_increase = round(max(changes), 2)
-            max_decrease = round(min(changes), 2)
+            max_decrease = min(
+                changes
+            )
 
         else:
 
-            latest_change = 0
-            latest_percent_change = 0
-            max_increase = 0
-            max_decrease = 0
+            max_increase = 0.0
+            max_decrease = 0.0
 
-        if values == sorted(values):
+        # ------------------------------------------------------------
+        # Trend classification
+        #
+        # Because the newest value is at index 0, the chronological
+        # direction is evaluated from the current value backwards.
+        # ------------------------------------------------------------
 
-            trend = "consistently increasing"
+        chronological_values = list(reversed(values))
+        if len(chronological_values) < 2:
 
-        elif values == sorted(values, reverse=True):
+                trend = "insufficient data"
 
-            trend = "consistently decreasing"
+        elif all(
+            chronological_values[index]
+            >= chronological_values[index - 1]
+                for index in range(1, len(chronological_values))):
+
+                    trend = "consistently increasing"
+
+        elif all(
+            chronological_values[index]
+                <= chronological_values[index - 1]
+                for index in range(1, len(chronological_values))):
+             trend = "consistently decreasing"
 
         else:
 
             trend = "volatile"
+        # ------------------------------------------------------------
+        # Store financial reasoning
+        # ------------------------------------------------------------
 
         context.financial_reasoning = {
 
-            "first_value": first_value,
+            # Latest reporting period
+            "latest_value":
+                round(
+                    latest_value,
+                    6
+                ),
 
-            "last_value": last_value,
+            "latest_period":
+                latest_period,
 
-            "absolute_change": absolute_change,
+            # Previous reporting period
+            "previous_value":
+                (
+                    round(
+                        previous_value,
+                        6
+                    )
+                    if previous_value is not None
+                    else None
+                ),
 
-            "percent_change": percent_change,
+            "previous_period":
+                previous_period,
 
-            "direction": direction,
+            # Latest movement
+            "absolute_change":
+                round(
+                    latest_change,
+                    6
+                ),
 
-            "highest_value": highest_value,
-            "highest_period": highest_period,
+            "percent_change":
+                round(
+                    latest_percent_change,
+                    4
+                ),
 
-            "lowest_value": lowest_value,
-            "lowest_period": lowest_period,
+            "direction":
+                direction,
 
-            "average": average,
-            "median": median,
+            # Historical extrema
+            "highest_value":
+                round(
+                    highest_value,
+                    6
+                ),
 
-            "volatility": volatility,
+            "highest_period":
+                highest_period,
 
-            "latest_change": latest_change,
-            "latest_percent_change": latest_percent_change,
+            "lowest_value":
+                round(
+                    lowest_value,
+                    6
+                ),
 
-            "max_increase": max_increase,
-            "max_decrease": max_decrease,
+            "lowest_period":
+                lowest_period,
 
-            "trend": trend
+            # Statistics
+            "average":
+                round(
+                    average,
+                    6
+                ),
 
+            "median":
+                round(
+                    median,
+                    6
+                ),
+
+            "volatility":
+                round(
+                    volatility,
+                    6
+                ),
+
+            # Latest movement repeated explicitly
+            "latest_change":
+                round(
+                    latest_change,
+                    6
+                ),
+
+            "latest_percent_change":
+                round(
+                    latest_percent_change,
+                    4
+                ),
+
+            # Historical movement range
+            "max_increase":
+                round(
+                    max_increase,
+                    6
+                ),
+
+            "max_decrease":
+                round(
+                    max_decrease,
+                    6
+                ),
+
+            "trend":
+                trend
         }
 
         return context
 
+
 # -------------------------------------------------------------------
 # Testing
 # -------------------------------------------------------------------
+
 if __name__ == "__main__":
 
     from .planner import Planner
@@ -145,23 +368,96 @@ if __name__ == "__main__":
 
     planner = Planner()
 
-    plan = planner.plan("Show CET1 trend")
+    question = "Why did CET1 fall?"
+
+    plan = planner.plan(
+        question
+    )
 
     context = ExecutionContext(
-        question="Show CET1 trend",
+        question=question,
         plan=plan
     )
 
+    # ------------------------------------------------------------
+    # HSBC 1Q26 CET1 test data
+    #
+    # Period 1 = 1Q26 = 14.0%
+    # Period 2 = 4Q25 = 14.9%
+    # Period 3 = 1Q25 = 14.5%
+    # Period 4 = 4Q24 = 14.6%
+    # Period 5 = 1Q24 = 14.7%
+    # ------------------------------------------------------------
+
     context.sql_result = [
-        (0,0,0,"cet1",0,0,0,"1",123996),
-        (0,0,0,"cet1",0,0,0,"2",132593),
-        (0,0,0,"cet1",0,0,0,"3",127765),
-        (0,0,0,"cet1",0,0,0,"4",129819),
-        (0,0,0,"cet1",0,0,0,"5",125477),
+
+        (
+            0,
+            0,
+            0,
+            "cet1_ratio",
+            0,
+            0,
+            0,
+            "1",
+            0.140
+        ),
+
+        (
+            0,
+            0,
+            0,
+            "cet1_ratio",
+            0,
+            0,
+            0,
+            "2",
+            0.149
+        ),
+
+        (
+            0,
+            0,
+            0,
+            "cet1_ratio",
+            0,
+            0,
+            0,
+            "3",
+            0.145
+        ),
+
+        (
+            0,
+            0,
+            0,
+            "cet1_ratio",
+            0,
+            0,
+            0,
+            "4",
+            0.146
+        ),
+
+        (
+            0,
+            0,
+            0,
+            "cet1_ratio",
+            0,
+            0,
+            0,
+            "5",
+            0.147
+        )
     ]
 
     agent = FinancialReasoningAgent()
 
-    context = agent.execute(context)
+    context = agent.execute(
+        context
+    )
 
-    print(context.financial_reasoning)
+    print(
+        context.financial_reasoning
+    )

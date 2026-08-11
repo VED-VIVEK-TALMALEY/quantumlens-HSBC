@@ -80,6 +80,8 @@ if __name__ == "__main__":
         "Why did CET1 ratio fall?",
         "Show CET1 ratio trend",
         "Show NII",
+        "Show NII trend",
+        "Show PBT trend",
     ]
 
     for q in tests:
