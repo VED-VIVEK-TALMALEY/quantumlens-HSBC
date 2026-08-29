@@ -4,7 +4,7 @@ This project and its source code are strictly proprietary.
 Unauthorized copying, distribution, or use is strictly prohibited.
 ------------------------------------------------------------------- -->
 
-# HSBC QuantumLens (also known as *HSBC Atlas* or *Project Basilisk*)
+# QuantumLens
 
 ### *AI-Powered Global Banking Intelligence & Risk Observatory*
 
