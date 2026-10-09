@@ -64,6 +64,7 @@
 │   │   │   ├── financial_reasoning_agent.py
 │   │   │   ├── llm_agent.py
 │   │   │   ├── orchestrator.py
+│   │   │   ├── output_formatter.py
 │   │   │   ├── planner.py
 │   │   │   ├── rag_agent.py
 │   │   │   ├── response_agent.py
@@ -77,8 +78,10 @@
 │   │   │   ├── responses.py
 │   │   │   ├── __init__.py
 │   │   │   ├── routers/
+│   │   │   │   ├── agent.py
 │   │   │   │   ├── health.py
 │   │   │   │   ├── metrics.py
+│   │   │   │   ├── query.py
 │   │   │   │   ├── rag.py
 │   │   │   │   ├── records.py
 │   │   │   │   ├── __init__.py
@@ -88,6 +91,7 @@
 │   │   │   │   ├── rag.py
 │   │   │   │   ├── __init__.py
 │   │   │   ├── services/
+│   │   │   │   ├── agent_service.py
 │   │   │   │   ├── metric_service.py
 │   │   │   │   ├── rag_service.py
 │   │   │   │   ├── record_service.py
@@ -119,6 +123,7 @@
 │   │   │   ├── variance.py
 │   │   ├── ingestion/
 │   │   │   ├── extracted_metrics.json
+│   │   │   ├── kpi_records.json
 │   │   │   ├── mapped_metrics.json
 │   │   │   ├── metric_dictionary.json
 │   │   │   ├── metric_extractor.py
@@ -150,6 +155,7 @@
 │   │   │   │   ├── chroma.sqlite3
 │   │   ├── transformation/
 │   │   │   ├── kpi_builder.py
+│   │   │   ├── kpi_records.json
 │   │   │   ├── metric_mapper.py
 │   │   │   ├── period_mapper.py
 │   │   │   ├── unit_normalizer.py

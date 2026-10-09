@@ -6,7 +6,8 @@
 
 import json
 
-from supabase_client import supabase
+from warehouse.supabase_client import get_supabase
+supabase = get_supabase()
 
 
 def load_metrics(input_file):
