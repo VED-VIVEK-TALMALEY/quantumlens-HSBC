@@ -1,45 +1,8 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
-
-from warehouse.oracle_client import get_connection
+"""SQL-style metric retrieval backed by Supabase."""
+from warehouse.query_service import get_metric_by_name
 
 
 class SQLRetriever:
-
     def get_metric(self, metric_name: str):
-
-        conn = get_connection()
-
-        try:
-            cur = conn.cursor()
-
-            cur.execute(
-                """
-                SELECT
-                    metric_name,
-                    abbreviation,
-                    period,
-                    value
-                FROM metrics
-                WHERE LOWER(metric_name)=LOWER(:1)
-                ORDER BY period
-                """,
-                [metric_name],
-            )
-
-            columns = [col[0].lower() for col in cur.description]
-
-            rows = [
-                dict(zip(columns, row))
-                for row in cur.fetchall()
-            ]
-
-            cur.close()
-
-            return rows
-
-        finally:
-            conn.close()
+        # Return source records with period_values JSON, not legacy Oracle tuples.
+        return get_metric_by_name(metric_name)

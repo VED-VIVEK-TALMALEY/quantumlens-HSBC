@@ -1,54 +1,52 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
-
 services:
-
-  oracle-db:
-
-    image: gvenzl/oracle-xe:21-slim
-
-    container_name: quantumlens-oracle
-
-    ports:
-      - "1521:1521"
-
+  embedding-service:
+    build:
+      context: ../services/embedding-service
+      dockerfile: Dockerfile
     environment:
-      ORACLE_PASSWORD: Quantum123
-      APP_USER: quantumlens
-      APP_USER_PASSWORD: Quantum123
-
+      EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      EMBEDDING_DEVICE: cpu
+      HF_HOME: /models
     volumes:
-      - oracle-data:/opt/oracle/oradata
-
+      - embedding-model-cache:/models
+    expose:
+      - "8001"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
     restart: unless-stopped
-
-
+    networks:
+      - quantumlens-internal
 
   quantumlens-api:
-
-    build: .
-
-    container_name: quantumlens-api
-
-    depends_on:
-      - oracle-db
-
-    ports:
-      - "8000:8000"
-
+    build:
+      context: .
+      dockerfile: Dockerfile
     env_file:
       - .env
-
+    environment:
+      EMBEDDING_SERVICE_URL: http://embedding-service:8001
+      VECTOR_DB_PATH: /app/data/vectordb
+    ports:
+      - "8000:8000"
     volumes:
       - ./data/vectordb:/app/data/vectordb
-
+      - ./data/generated:/app/data/generated
+      - ./data/backups:/app/data/backups
+      - ./logs:/app/logs
+    depends_on:
+      embedding-service:
+        condition: service_healthy
     restart: unless-stopped
-
-
+    networks:
+      - quantumlens-internal
 
 volumes:
+  embedding-model-cache:
 
-  oracle-data:
+networks:
+  quantumlens-internal:
+    driver: bridge

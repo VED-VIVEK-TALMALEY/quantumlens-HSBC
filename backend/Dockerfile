@@ -1,71 +1,10 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
-
-
-# ==========================================================
-# QuantumLens Backend
-# ==========================================================
-
 FROM python:3.12-slim
-
-# ----------------------------------------------------------
-# Environment
-# ----------------------------------------------------------
-
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-# ----------------------------------------------------------
-# Working Directory
-# ----------------------------------------------------------
-
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 WORKDIR /app
-
-# ----------------------------------------------------------
-# System Dependencies
-# ----------------------------------------------------------
-
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
-
-# ----------------------------------------------------------
-# Python Dependencies
-# ----------------------------------------------------------
-
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential gcc && rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
-
-RUN pip install --upgrade pip
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-# ----------------------------------------------------------
-# Copy Backend
-# ----------------------------------------------------------
-
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
 COPY . .
-
-# ----------------------------------------------------------
-# Create Runtime Directories
-# ----------------------------------------------------------
-
-RUN mkdir -p /app/data/generated
-RUN mkdir -p /app/data/vectordb
-RUN mkdir -p /app/logs
-
-# ----------------------------------------------------------
-# Expose API
-# ----------------------------------------------------------
-
+RUN mkdir -p /app/data/generated /app/data/vectordb /app/data/backups /app/logs
 EXPOSE 8000
-
-# ----------------------------------------------------------
-# Start FastAPI
-# ----------------------------------------------------------
-
-    CMD ["uvicorn","src.api.main:app","--host","0.0.0.0","--port","8000"]
-
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

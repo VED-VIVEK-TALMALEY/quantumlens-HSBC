@@ -1,62 +1,29 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
-
+"""Build chart-ready data from Supabase metric records."""
 from .execution_context import ExecutionContext
+from .metric_row_utils import select_primary_record, ordered_periods, as_number
 
 
 class ChartAgent:
-
     def execute(self, context: ExecutionContext):
-
-        rows = context.sql_result
-        metric_name = context.plan.metric
-
-        if not rows:
+        record = select_primary_record(context.sql_result)
+        periods = ordered_periods(record)
+        points = [(p.get("period_label") or f"Period {p.get('period_index', '?')}", as_number(p.get("value"))) for p in periods]
+        points = [(label, value) for label, value in points if value is not None]
+        if not record or not points:
             context.chart_result = None
             return context
-
-        x = []
-        y = []
-
-        for row in rows:
-            x.append(row[7])   # period
-            y.append(row[8])   # value
-
         context.chart_result = {
             "chart_type": "line",
-            "title": metric_name,
-            "x": x,
-            "y": y
+            "title": context.plan.metric or record.get("metric_name") or "Metric trend",
+            "x": [label for label, _ in points],
+            "y": [value for _, value in points],
+            "source": {
+                "metric_id": record.get("metric_id"),
+                "metric_name": record.get("metric_name"),
+                "sheet_name": record.get("sheet_name"),
+                "row_number": record.get("row_number"),
+                "source_workbook": record.get("source_workbook"),
+            },
+            "period_order": "Period 1 is latest; Period 2 is previous",
         }
-
         return context
-
-
-# -------------------------------------------------------------------
-# Testing
-# -------------------------------------------------------------------
-
-if __name__ == "__main__":
-
-    from .planner import Planner
-    from .sql_agent import SQLAgent
-    from .execution_context import ExecutionContext
-
-    planner = Planner()
-    sql = SQLAgent()
-    chart = ChartAgent()
-
-    plan = planner.plan("Show CET1 trend")
-
-    context = ExecutionContext(
-        question="Show CET1 trend",
-        plan=plan
-    )
-
-    context = sql.execute(context)
-    context = chart.execute(context)
-
-    print(context.chart_result)
