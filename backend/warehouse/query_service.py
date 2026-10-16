@@ -1,418 +1,96 @@
-# -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
-#
-# This project and its source code are strictly proprietary.
-# Unauthorized copying, distribution, or use is strictly prohibited.
-# -------------------------------------------------------------------
-
+"""Supabase-backed metric query helpers."""
+from __future__ import annotations
+from typing import Any
 from warehouse.supabase_client import get_supabase
 
-# -------------------------------------------------------------------
-# Canonical Metric Mapping
-# -------------------------------------------------------------------
+# Canonical metric names and known abbreviations. Resolution works in either direction.
+_ALIAS_GROUPS = (
+    ("common_equity_tier_1_capital", "cet1"),
+    ("common_equity_tier_1_ratio", "cet1_ratio", "cet1r"),
+    ("tier_1_ratio", "tier1", "t1r"),
+    ("net_interest_income", "nii"),
+    ("net_fee_income", "nfi"),
+    ("revenue", "rev"),
+    ("profit_before_tax", "pbt"),
+    ("total_assets", "assets", "ta"),
+    ("total_liabilities", "liabilities", "tl"),
+    ("customer_accounts", "ca"),
+    ("loans_and_advances_to_customers_net", "loans", "advances", "lacn"),
+    ("return_on_average_tangible_equity", "rote"),
+    ("expected_credit_losses", "ecl", "expected_credit_loss"),
+    ("net_interest_margin", "nim"),
+    ("total_operating_expenses", "toe"),
+    ("operating_expenses", "opex"),
+)
+_ALIAS_LOOKUP = {alias: list(group) for group in _ALIAS_GROUPS for alias in group}
 
-METRIC_ALIASES = {
-    "cet1": [
-        "common_equity_tier_1_capital",
-        "cet1",
-    ],
-    "cet1_ratio": [
-        "common_equity_tier_1_ratio",
-        "cet1r",
-    ],
-    "tier1": [
-        "tier_1_ratio",
-        "t1r",
-    ],
-    "nii": [
-        "net_interest_income",
-        "nii",
-    ],
-    "nfi": [
-        "net_fee_income",
-        "nfi",
-    ],
-    "revenue": [
-        "revenue",
-        "rev",
-    ],
-    "profit_before_tax": [
-        "profit_before_tax",
-        "pbt",
-    ],
-    "assets": [
-        "assets",
-        "total_assets",
-    ],
-    "liabilities": [
-        "liabilities",
-        "total_liabilities",
-    ],
-    "customer_accounts": [
-        "customer_accounts",
-        "ca",
-    ],
-    "loans": [
-        "loans",
-        "gross_loans",
-        "advances",
-    ],
-    "rote": [
-        "rote",
-        "return_on_average_tangible_equity",
-    ],
-    "ecl": [
-        "ecl",
-        "expected_credit_loss",
-        "expected_credit_losses",
-    ],
-}
 
-# -------------------------------------------------------------------
-# Resolve canonical metric name
-# -------------------------------------------------------------------
+def resolve_metric_name(metric: str) -> list[str]:
+    key = str(metric or "").strip().lower()
+    return _ALIAS_LOOKUP.get(key, [key] if key else [])
 
-def resolve_metric_name(metric):
-    """
-    Resolve a user-provided metric name or abbreviation
-    into the canonical metric candidates used in Supabase.
-    """
-    metric = metric.lower().strip()
 
-    aliases = METRIC_ALIASES.get(metric)
+def _source_key(row: dict[str, Any]) -> tuple[Any, ...]:
+    return (row.get("metric_id"), row.get("source_workbook"), row.get("sheet_name"), row.get("row_number"))
 
-    if aliases:
-        return aliases
 
-    return [metric]
+def _row_number(value: Any) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
 
-# -------------------------------------------------------------------
-# Get all metrics
-# -------------------------------------------------------------------
 
 def get_all_metrics():
-    """
-    Return distinct metrics available in the Supabase
-    metrics table.
-    """
-    supabase = get_supabase()
+    client = get_supabase()
+    response = client.table("metrics").select("metric_id,metric_name,abbreviation").execute()
+    unique = {}
+    for row in response.data or []:
+        key = (row.get("metric_id"), row.get("metric_name"), row.get("abbreviation"))
+        unique[key] = row
+    rows = sorted(unique.values(), key=lambda r: (r.get("metric_id") is None, r.get("metric_id") or 0, r.get("metric_name") or ""))
+    return [(r.get("metric_id"), r.get("metric_name"), r.get("abbreviation")) for r in rows]
 
-    response = (
-        supabase
-        .table("metrics")
-        .select("metric_id,metric_name,abbreviation")
-        .execute()
-    )
 
+def get_metric_by_id(metric_id: int):
+    response = get_supabase().table("metrics").select("*").eq("metric_id", metric_id).execute()
     rows = response.data or []
+    return sorted(rows, key=lambda r: ((r.get("sheet_name") or "").lower(), _row_number(r.get("row_number"))))
 
-    # Supabase does not provide the same GROUP BY behaviour
-    # as the previous Oracle query, so deduplicate in Python.
-    unique_metrics = {}
 
-    for row in rows:
-
-        key = (
-            row.get("metric_id"),
-            row.get("metric_name"),
-            row.get("abbreviation"),
-        )
-
-        unique_metrics[key] = row
-
-    result = list(unique_metrics.values())
-
-    result.sort(
-        key=lambda row: (
-            row.get("metric_id")
-            if row.get("metric_id") is not None
-            else float("inf")
-        )
-    )
-
-    return [
-        (
-            row.get("metric_id"),
-            row.get("metric_name"),
-            row.get("abbreviation"),
-        )
-        for row in result
-    ]
-
-# -------------------------------------------------------------------
-# Get metric by ID
-# -------------------------------------------------------------------
-
-def get_metric_by_id(metric_id):
-    """
-    Return all source records belonging to a metric ID.
-    """
-    supabase = get_supabase()
-
-    response = (
-        supabase
-        .table("metrics")
-        .select("*")
-        .eq("metric_id", metric_id)
-        .execute()
-    )
-
-    rows = response.data or []
-
-    return rows
-
-# -------------------------------------------------------------------
-# Get metric by canonical name / abbreviation
-#
-# IMPORTANT:
-#
-# Period 1 is the latest period in the current HSBC
-# ingestion model.
-#
-# period_values is stored as JSON/JSONB inside each
-# metric record.
-#
-# Therefore the query service retrieves the source
-# records first. Period ordering is handled from
-# period_values below.
-#
-# -------------------------------------------------------------------
-
-def get_metric_by_name(metric):
-    """
-    Retrieve metric records from Supabase using the
-    canonical metric aliases.
-    """
-    metric = metric.lower().strip()
-
+def get_metric_by_name(metric: str):
     candidates = resolve_metric_name(metric)
-
-    supabase = get_supabase()
-
-    rows = []
-
-    # ---------------------------------------------------------------
-    # Supabase/PostgREST does not use Oracle-style named bind
-    # parameters. Query each candidate independently.
-    # ---------------------------------------------------------------
-
+    if not candidates:
+        return []
+    client = get_supabase()
+    rows: dict[tuple[Any, ...], dict[str, Any]] = {}
     for candidate in candidates:
+        for column in ("metric_name", "abbreviation"):
+            response = client.table("metrics").select("*").eq(column, candidate).execute()
+            for row in response.data or []:
+                rows[_source_key(row)] = row
+    result = list(rows.values())
+    # Keep group-level records first for charts/reasoning, then stable sheet/row order.
+    def sort_key(row):
+        sheet = (row.get("sheet_name") or "").lower()
+        if sheet == "group income statement": priority = 0
+        elif sheet == "group balance sheet": priority = 1
+        elif "group" in sheet: priority = 2
+        else: priority = 3
+        return (priority, sheet, _row_number(row.get("row_number")))
+    result.sort(key=sort_key)
+    return result
 
-        # Search metric_name
-        name_response = (
-            supabase
-            .table("metrics")
-            .select("*")
-            .eq("metric_name", candidate)
-            .execute()
-        )
 
-        rows.extend(name_response.data or [])
-
-        # Search abbreviation
-        abbreviation_response = (
-            supabase
-            .table("metrics")
-            .select("*")
-            .eq("abbreviation", candidate)
-            .execute()
-        )
-
-        rows.extend(abbreviation_response.data or [])
-
-    # ---------------------------------------------------------------
-    # Remove duplicate records.
-    # ---------------------------------------------------------------
-
-    unique_rows = {}
-
-    for row in rows:
-
-        # Prefer the source identity when available.
-        key = (
-            row.get("metric_id"),
-            row.get("source_workbook"),
-            row.get("sheet_name"),
-            row.get("row_number"),
-        )
-
-        unique_rows[key] = row
-
-    rows = list(unique_rows.values())
-
-    # ---------------------------------------------------------------
-    # Sort by source order.
-    # ---------------------------------------------------------------
-
-    rows.sort(
-        key=lambda row: (
-            row.get("sheet_name") or "",
-            row.get("row_number") or 0,
-        )
-    )
-
-    print(
-        f"DEBUG - query_service metric={metric}"
-    )
-
-    print(
-        f"DEBUG - resolved candidates={candidates}"
-    )
-
-    print(
-        f"DEBUG - rows found={len(rows)}"
-    )
-
-    return rows
-
-# -------------------------------------------------------------------
-# Search metrics
-# -------------------------------------------------------------------
-
-def search_metrics(keyword):
-    """
-    Search metric names and abbreviations.
-    Uses Supabase text matching instead of Oracle SQL.
-    """
-    keyword = keyword.lower().strip()
-
-    supabase = get_supabase()
-
-    # ---------------------------------------------------------------
-    # Search metric_name
-    # ---------------------------------------------------------------
-
-    name_response = (
-        supabase
-        .table("metrics")
-        .select("metric_id,metric_name,abbreviation")
-        .ilike("metric_name", f"%{keyword}%")
-        .execute()
-    )
-
-    # ---------------------------------------------------------------
-    # Search abbreviation
-    # ---------------------------------------------------------------
-
-    abbreviation_response = (
-        supabase
-        .table("metrics")
-        .select("metric_id,metric_name,abbreviation")
-        .ilike("abbreviation", f"%{keyword}%")
-        .execute()
-    )
-
-    rows = (
-        (name_response.data or [])
-        + (abbreviation_response.data or [])
-    )
-
-    # ---------------------------------------------------------------
-    # Deduplicate
-    # ---------------------------------------------------------------
-
-    unique_metrics = {}
-
-    for row in rows:
-
-        key = (
-            row.get("metric_id"),
-            row.get("metric_name"),
-            row.get("abbreviation"),
-        )
-
-        unique_metrics[key] = row
-
-    result = list(unique_metrics.values())
-
-    result.sort(
-        key=lambda row: row.get("metric_name") or ""
-    )
-
-    return [
-        (
-            row.get("metric_id"),
-            row.get("metric_name"),
-            row.get("abbreviation"),
-        )
-        for row in result
-    ]
-
-# -------------------------------------------------------------------
-# Testing
-# -------------------------------------------------------------------
-
-if __name__ == "__main__":
-
-    print("=" * 70)
-    print("SEARCH EBITDA")
-    print("=" * 70)
-
-    print(
-        search_metrics("EBITDA")
-    )
-
-    print("\n" + "=" * 70)
-    print("FIRST 10 METRICS")
-    print("=" * 70)
-
-    metrics = get_all_metrics()
-
-    for row in metrics[:10]:
-        print(row)
-
-    print("\n" + "=" * 70)
-    print("CET1")
-    print("=" * 70)
-
-    cet1_rows = get_metric_by_name("cet1")
-
-    print(
-        f"Rows returned: {len(cet1_rows)}"
-    )
-
-    for row in cet1_rows[:5]:
-        print(row)
-
-    print("\n" + "=" * 70)
-    print("CET1 RATIO")
-    print("=" * 70)
-
-    cet1_ratio_rows = get_metric_by_name(
-        "cet1_ratio"
-    )
-
-    print(
-        f"Rows returned: {len(cet1_ratio_rows)}"
-    )
-
-    for row in cet1_ratio_rows[:5]:
-        print(row)
-
-    print("\n" + "=" * 70)
-    print("TIER 1")
-    print("=" * 70)
-
-    tier1_rows = get_metric_by_name("tier1")
-
-    print(
-        f"Rows returned: {len(tier1_rows)}"
-    )
-
-    for row in tier1_rows[:5]:
-        print(row)
-
-    print("\n" + "=" * 70)
-    print("PBT")
-    print("=" * 70)
-
-    pbt_rows = get_metric_by_name(
-        "profit_before_tax"
-    )
-
-    print(
-        f"Rows returned: {len(pbt_rows)}"
-    )
-
-    for row in pbt_rows[:5]:
-        print(row)
+def search_metrics(keyword: str):
+    term = str(keyword or "").strip()
+    if not term:
+        return []
+    client = get_supabase()
+    rows = []
+    for column in ("metric_name", "abbreviation"):
+        response = client.table("metrics").select("metric_id,metric_name,abbreviation").ilike(column, f"%{term}%").execute()
+        rows.extend(response.data or [])
+    unique = {(r.get("metric_id"), r.get("metric_name"), r.get("abbreviation")): r for r in rows}
+    result = sorted(unique.values(), key=lambda r: (r.get("metric_name") or "", r.get("metric_id") or 0))
+    return [(r.get("metric_id"), r.get("metric_name"), r.get("abbreviation")) for r in result]

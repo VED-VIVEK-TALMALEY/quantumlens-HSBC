@@ -5,17 +5,17 @@
 # -------------------------------------------------------------------
 
 import os
+import zipfile
 
-def generate_tree(startpath, output_file):
-    # Added 'node_modules', 'dist', 'build', and 'package-lock.json' to exclusions
+def generate_tree_and_zip(startpath, output_file, zip_file):
     exclude = {
         '.git', '.vscode', '__pycache__', 'env', 'venv', '.env', 
-        '.pytest_cache', 'node_modules', 'dist', 'build'
+        '.pytest_cache', 'node_modules', 'dist', 'build', 'package-lock.json',
+        output_file, zip_file
     }
     
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8') as f, zipfile.ZipFile(zip_file, 'w', zipfile.ZIP_DEFLATED) as zf:
         for root, dirs, files in os.walk(startpath):
-            # Exclude folders
             dirs[:] = [d for d in dirs if d not in exclude and not d.startswith('.')]
             
             level = root.replace(startpath, '').count(os.sep)
@@ -25,10 +25,13 @@ def generate_tree(startpath, output_file):
             
             subindent = '│   ' * level + '├── '
             for f_name in files:
-                # Exclude hidden files and specific file patterns
                 if not f_name.startswith('.') and f_name not in exclude:
                     f.write(f'{subindent}{f_name}\n')
+                    
+                    file_path = os.path.join(root, f_name)
+                    arcname = os.path.relpath(file_path, startpath)
+                    zf.write(file_path, arcname)
 
 if __name__ == "__main__":
-    generate_tree('.', 'project_tree.txt')
-    print("Clean tree structure (including node_modules exclusion) saved to project_tree.txt")
+    generate_tree_and_zip('.', 'project_tree.txt', 'project_archive.zip')
+    print("Clean tree structure saved to project_tree.txt and allowed files zipped to project_archive.zip")
