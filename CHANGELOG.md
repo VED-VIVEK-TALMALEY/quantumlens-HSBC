@@ -1,5 +1,5 @@
 <!-- -------------------------------------------------------------------
-Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+Copyright (c) 2026 Ved Vivek Talmaley. All Rights Reserved.
 This project and its source code are strictly proprietary.
 Unauthorized copying, distribution, or use is strictly prohibited.
 ------------------------------------------------------------------- -->
@@ -7,6 +7,62 @@ Unauthorized copying, distribution, or use is strictly prohibited.
 # Changelog
 
 All notable changes to the **QuantumLens** platform are documented in this file.
+
+---
+
+## [10.0.0] - 2026-10-18 - Version 10 Release
+
+### Release Status
+| Attribute | Details |
+| :--- | :--- |
+| **Milestone** | Production Ready / Milestone 10 Enterprise Release |
+| **Primary Target** | Backend Stabilization + Canonical PBT Truth + Institutional Dashboard & Statements Table |
+| **Stability** | Fully Stabilized & Containerized (Docker Compose + Next.js Vercel Production Build) |
+
+### Detailed Change History
+
+| Date | Category | Description | Severity/Impact | Issues Addressed |
+| :--- | :--- | :--- | :--- | :--- |
+| **2026-10-18** | Frontend UI | Resolved AI loop bug in `AIChat.tsx` by fixing try/catch syntax and enforcing a guaranteed `finally { setLoading(false); }` block. | Critical | Infinite AI loading spinner on inquiry |
+| **2026-10-18** | Frontend UI | Built `FinancialStatementTable` with real-time search, statement sheet filtering (Income Statement, Balance Sheet, etc.), and pagination for all 456 records. | High | Inability to browse full financial statements tabularly |
+| **2026-10-18** | Frontend UI | Created `PeriodVarianceTable` providing period-over-period variance ($M and %) breakdown across all 7 reporting periods. | High | Detailed financial audit inspection missing |
+| **2026-10-18** | Frontend UI | Implemented `BarChart` for multi-metric quarterly comparison (PBT vs NII vs Operating Expenses) across P1 to P5. | High | Multi-metric comparative visualizer missing |
+| **2026-10-18** | Frontend UI | Redesigned `LineChart` with smooth financial area curves, gradient fills, dark mode grids, and hover currency tooltips. | Medium | Basic chart styling without gradient fills |
+| **2026-10-18** | Architecture | Decoupled heavy transformer model into standalone `embedding-service` (CPU all-MiniLM-L6-v2) microservice with Docker health checks. | Critical | API image bloat & PyTorch dependency timeout |
+| **2026-10-18** | Data Layer | Re-aligned Supabase warehouse with canonical `mapped_metrics.json` restoring 90 missing Profit Before Tax (PBT) rows (total 456 rows). | Critical | PBT query returning 0 records |
+| **2026-10-18** | Backend API | Refactored `metric_service.py`, `record_service.py`, and `llm_service.py` to use lazy client initialization, eliminating import-time crashes. | High | FastAPI startup crash before env load |
+| **2026-10-18** | Testing | Added `test_document_retriever_validation.py` and verified full pytest suite in Docker (6 passed). | High | Quality assurance regression testing |
+| **2026-10-18** | Compliance | Embedded proprietary copyright and license notice for Ved Vivek Talmaley in application footer and root license files. | High | Proprietary licensing compliance |
+
+### Version 10 Topology
+```
+FastAPI Router (quantumlens-api) ──► HTTP ──► Embedding Microservice (8001)
+     │                                            │
+     ├──► Supabase PostgreSQL (456 Records)       └──► ChromaDB Vector Store
+     │                                                      │
+     └──► Multi-Agent Orchestrator ─────────────────────────┘
+              │
+              └──► Next.js 16 Dashboard UI (Vercel)
+```
+
+---
+
+## v5.0.0 - Multi-Agent Intelligence
+
+### Added
+- LLM Agent integrated into the orchestration pipeline
+- Conversation Memory for contextual follow-up queries
+- Agent Registry for centralized agent management
+- Planner support for LLM execution (`needs_llm`)
+- Response Agent support for LLM-generated answers
+
+### Improved
+- Orchestrator now supports memory-aware query resolution
+- Analysis queries now combine SQL + RAG + LLM
+- Cleaner separation between reasoning and response generation
+
+### Architecture
+Planner → Agent Registry → SQL Agent → Data Auditor → Chart Agent → RAG Agent → LLM Agent → Response Agent
 
 ---
 
@@ -42,28 +98,3 @@ All notable changes to the **QuantumLens** platform are documented in this file.
 | **2026-01-15** | Transformation| Created centralized mapping `metric_dictionary.json` hash map lookup catalog. | Medium | [Issue #3](docs/refactoring/issues.md#3-metric-normalization-problems) |
 | **2026-01-12** | Ingestion | Replaced NumPy floating-point `NaN` parameters with Python `None` values. | High | [Issue #2](docs/refactoring/issues.md#2-nan-values-breaking-json) |
 | **2026-01-10** | API | Converted `Timestamp` data formats to ISO-8601 strings to prevent serialization errors. | High | [Issue #1](docs/refactoring/issues.md#1-json-serialization-failure) |
-
----
-## v5.0.0 - Multi-Agent Intelligence
-
-### Added
-- LLM Agent integrated into the orchestration pipeline
-- Conversation Memory for contextual follow-up queries
-- Agent Registry for centralized agent management
-- Planner support for LLM execution (`needs_llm`)
-- Response Agent support for LLM-generated answers
-
-### Improved
-- Orchestrator now supports memory-aware query resolution
-- Analysis queries now combine SQL + RAG + LLM
-- Cleaner separation between reasoning and response generation
-
-### Current Architecture
-Planner
-→ Agent Registry
-→ SQL Agent
-→ Data Auditor
-→ Chart Agent
-→ RAG Agent
-→ LLM Agent
-→ Response Agent

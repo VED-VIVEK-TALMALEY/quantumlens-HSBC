@@ -1,234 +1,200 @@
 <!-- -------------------------------------------------------------------
-Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+Copyright (c) 2026 Ved Vivek Talmaley. All Rights Reserved.
 This project and its source code are strictly proprietary.
 Unauthorized copying, distribution, or use is strictly prohibited.
 ------------------------------------------------------------------- -->
 
-# QuantumLens
+# QuantumLens — Version 10.0.0
 
-### *AI-Powered Global Banking Intelligence & Risk Observatory*
+### *AI-Powered Global Banking Intelligence & Financial Analytics Platform*
 
-[![Python Version](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Release](https://img.shields.io/badge/Release-v10.0.0-crimson?style=for-the-badge&logo=git&logoColor=white)](https://github.com/VED-VIVEK-TALMALEY/quantumlens-HSBC/releases/tag/v10.0.0)
+[![Python Version](https://img.shields.io/badge/Python-3.12%20%7C%203.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.138.1-teal?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.10-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19.2.4-blue?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
 [![Supabase](https://img.shields.io/badge/Supabase-2.31.0-emerald?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-blue?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
-[![Oracle DB](https://img.shields.io/badge/Oracle_DB-19c%2B-red?style=for-the-badge&logo=oracle&logoColor=white)](https://www.oracle.com)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Compose%20v2-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](LICENSE)
 
-**HSBC QuantumLens** is an institutional-grade financial data platform that resembles an internal strategic war room used by COO, CRO, or treasury teams. By analyzing Q1 results (including Net Interest Income volatility, Expected Credit Losses provisioning, capital CET1 compression, and HNWI wealth inflows into Asia), QuantumLens shifts traditional financial reporting from static data visualizers into an **AI-native banking intelligence operating system**.
-
-The platform is designed like a **Bloomberg Terminal × Palantir × McKinsey War Room**, integrating data ingestion pipelines, financial knowledge graphs, RAG call intelligence, scenario forecasters, executive war-room dashboards, and multi-agent AI copilots.
+**HSBC QuantumLens** is an institutional-grade financial data intelligence platform built to operate like an executive war room for CFO, CRO, COO, and Treasury teams. By digesting HSBC Q1 2026 results—including Net Interest Income (NII) trajectories, Expected Credit Losses (ECL), Common Equity Tier 1 (CET1) solvency, and Profit Before Tax (PBT)—QuantumLens elevates raw banking data into an **AI-native financial analytics operating system**.
 
 ---
 
-## 6-Layer Architecture Overview
+## Shipped Runtime Stack vs. System Roadmap
+
+| Dimension | Shipped Production Runtime (Version 10) | Enterprise Architecture Roadmap |
+| :--- | :--- | :--- |
+| **Backend Core** | FastAPI (`0.138.1`) + Uvicorn (`0.49.0`) on Python 3.12 container. | Distributed FastAPI gateway clusters with gRPC internal communication. |
+| **Vector Embeddings** | Standalone `embedding-service` (:8001) microservice via PyTorch CPU. | GPU-accelerated Triton inference server cluster. |
+| **Data Warehouse** | Supabase PostgreSQL 15 storing all **456 canonical financial records**. | High-availability PostgreSQL read replicas with Oracle 19c enterprise mirroring. |
+| **Vector Database** | ChromaDB (`1.5.9`) persistent store for Q1 2026 earnings release notes. | Distributed Milvus or pgvector cloud deployment. |
+| **Frontend Portal** | Next.js 16 (`16.2.10`) App Router + React 19 (`19.2.4`) + TailwindCSS 4. | Multi-room Apache Superset embedded dashboards. |
+| **Data Ingestion** | Automated Python loader with pre-load backups and upsert validation. | Apache Kafka event streaming, Apache Airflow DAG orchestration, and dbt. |
+| **AI Orchestration** | Multi-Agent loop (Planner, SQL, RAG, Auditor, Response) + Groq Cloud. | Multi-tier LangGraph autonomous regulatory compliance agents. |
+
+---
+
+## 6-Layer Architecture Overview (Version 10)
 
 ```mermaid
 graph TD
-    %% Define Nodes
-    subgraph ClientLayer ["Layer 5: Apache Superset War Rooms (frontend/)"]
-        UI["Next.js Dashboards UI<br>(Pulse, Wealth, Stress, Contagion)"]
+    %% Client Layer
+    subgraph ClientLayer ["Layer 5: Executive Analytics Dashboard (frontend/)"]
+        UI["Next.js 16 + React 19 Dashboard<br>(Vercel: quantumlens-hsbc.vercel.app)"]
+        KPIs["Executive KPI Cards<br>(PBT, CET1, NII, Opex)"]
+        StmtTable["Financial Statements Table<br>(456 Records + Real-time Search)"]
+        VarTable["Period Variance Table<br>(P1 - P7 Delta Analysis)"]
+        Charts["Multi-Chart War Room<br>(Area Trends & Comparative Bars)"]
+        AICopilot["AI Financial Analyst<br>(Zero-Loop Guaranteed Lifecycle)"]
     end
 
-    subgraph APILayer ["Layer 6: AI Copilot Router (backend/src/api/)"]
-        FastAPI["FastAPI Web Router"]
+    %% API Layer
+    subgraph APILayer ["Layer 6: API Gateway & Orchestration (backend/)"]
+        FastAPI["FastAPI Web Router (:8000)<br>(Render / Docker Compose)"]
+        Orchestrator["Multi-Agent Orchestrator<br>(Planner, SQL, RAG, Auditor, Response)"]
     end
 
-    subgraph ForecastingLayer ["Layer 4: Advanced Forecasting Engine (ml_models/)"]
-        Forecast["Forecaster<br>(Prophet / XGBoost / LSTMs)"]
+    %% Microservice Layer
+    subgraph MicroserviceLayer ["Microservice Layer (services/embedding-service/)"]
+        EmbedSvc["Embedding Microservice (:8001)<br>(all-MiniLM-L6-v2 on PyTorch CPU)"]
     end
 
-    subgraph AILayer ["Layer 3: AI Call Intelligence (backend/src/rag/)"]
-        Chroma[("ChromaDB Vector Store")]
-        FinBERT["FinBERT NLP Pipeline<br>(Anxiety / Sentiment index)"]
-        Groq["Groq Cloud API<br>(llama-3.3-70b-versatile)"]
+    %% Storage Layer
+    subgraph StorageLayer ["Persistence & Intelligence Layer"]
+        Supabase[("Supabase PostgreSQL<br>[456 Canonical Metrics / 90 PBT Rows]")]
+        Chroma[("ChromaDB Vector Store<br>[financial_documents]")]
+        Backups[("Automated Backups<br>[backend/data/backups/]")]
+        Groq["Groq Cloud API<br>[Llama-3.3 Synthesis]")]
     end
 
-    subgraph KnowledgeGraph ["Layer 2: Financial Knowledge Graph (neo4j/)"]
-        Neo4j[("Neo4j Graph Database<br>(Risk Contagion Nodes)")]
+    %% Ingestion Layer
+    subgraph IngestionLayer ["Layer 1: Canonical Data Pipeline"]
+        CanonicalJSON["Canonical mapped_metrics.json<br>(456 records, 90 PBT rows)"]
+        DataLoader["Supabase Data Loader<br>(data_loader.py --apply)"]
     end
 
-    subgraph DataEngineering ["Layer 1: Data Engineering Pipeline (backend/src/ingestion/)"]
-        Reader["Workbook Reader"]
-        Scanner["Sheet Scanner"]
-        Extractor["Metric Extractor"]
-        Mapper["Period Mapper"]
-        Builder["KPI Builder"]
-    end
+    %% Connections
+    UI --> KPIs
+    UI --> StmtTable
+    UI --> VarTable
+    UI --> Charts
+    UI --> AICopilot
 
-    subgraph StorageLayer ["Database Warehouse Layer (backend/warehouse/)"]
-        Supabase[("Supabase (PostgreSQL 15)<br>[JSONB arrays]")]
-        Oracle[("Oracle Database 19c<br>[Period observations]")]
-    end
-
-    %% Define Connections
-    UI <-->|HTTP REST JSON| FastAPI
+    UI <-->|HTTP REST :8000| FastAPI
+    FastAPI --> Orchestrator
+    
     FastAPI <-->|SQL Queries| Supabase
-    FastAPI <-->|Retrieve Context| Chroma
-    
-    %% Ingestion Flow
-    xlsx["Raw Excel Files (.xlsx)"] --> Reader
-    Reader --> Scanner
-    Scanner --> Extractor
-    Extractor --> Mapper
-    Mapper --> Builder
-    Builder -->|Batch Upserts| Supabase
-    Builder -->|Insert Rows| Oracle
-    Builder -->|Stress nodes| Neo4j
-    
-    %% Vector Ingestion Flow
-    Supabase -->|SQL Extract| FinBERT
-    FinBERT -->|Dense Embeddings| Chroma
-    
-    %% RAG Pipeline Flow
-    FastAPI -->|Question Query| Chroma
-    Chroma -->|Relevant Context Docs| FastAPI
-    FastAPI -->|Context + Prompt| Groq
-    Groq -->|Context-Grounded Answer| FastAPI
-    
-    %% Forecasting Connection
-    Oracle --> Forecast
-    Forecast --> UI
-    
+    Orchestrator <-->|Metrics Context| Supabase
+    Orchestrator <-->|POST /embed :8001| EmbedSvc
+    Orchestrator <-->|Vector Distance Query| Chroma
+    Orchestrator <-->|Prompt + Context| Groq
+
+    DataLoader --> Backups
+    DataLoader -->|Batch Upsert| Supabase
+    CanonicalJSON --> DataLoader
+
     %% Styles
-    classDef client fill:#1f77b4,stroke:#333,stroke-width:2px,color:#fff;
-    classDef api fill:#2ca02c,stroke:#333,stroke-width:2px,color:#fff;
-    classDef storage fill:#9467bd,stroke:#333,stroke-width:2px,color:#fff;
-    classDef etl fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
-    classDef ai fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
-    classDef forecast fill:#e377c2,stroke:#333,stroke-width:2px,color:#fff;
-    classDef kg fill:#bcbd22,stroke:#333,stroke-width:2px,color:#fff;
-    
-    class UI client;
-    class FastAPI api;
-    class Reader,Scanner,Extractor,Mapper,Builder etl;
-    class Supabase,Oracle storage;
-    class Chroma,FinBERT,Groq ai;
-    class Forecast forecast;
-    class Neo4j kg;
+    classDef client fill:#0f172a,stroke:#334155,stroke-width:2px,color:#fff;
+    classDef api fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff;
+    classDef embed fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;
+    classDef storage fill:#334155,stroke:#64748b,stroke-width:2px,color:#fff;
+    classDef etl fill:#d97706,stroke:#b45309,stroke-width:2px,color:#fff;
+
+    class UI,KPIs,StmtTable,VarTable,Charts,AICopilot client;
+    class FastAPI,Orchestrator api;
+    class EmbedSvc embed;
+    class Supabase,Chroma,Backups,Groq storage;
+    class CanonicalJSON,DataLoader etl;
 ```
 
-### Layer Matrix
+---
+
+## Technical Layers Matrix
 
 | Layer | Responsibility | Primary Technologies | File Locations |
 | :--- | :--- | :--- | :--- |
 | **Layer 1: Pipeline** | Ingestion of raw reports, grid scanning, name normalization, and data cleaning. | Python, Pandas, Openpyxl | `backend/src/ingestion/` |
-| **Layer 2: Graph** | Modeling counterparty links, exposures, and systemic contagion paths. | Neo4j, Cypher Queries | `neo4j/` |
-| **Layer 3: NLP** | Sentiment analysis, semantic drift mapping, and executive anxiety indexing. | FinBERT, spaCy, ChromaDB | `backend/src/rag/` |
-| **Layer 4: Forecasting**| Generating predictions for NII, CET1, and deposits under macro rate scenario stress tests. | Prophet, XGBoost, LSTMs | `ml_models/` |
-| **Layer 5: BI Portal** | Executive war-room dashboards (Pulse, Wealth, Stress, Strategy, Contagion). | Next.js, React, Tailwind, Recharts | `frontend/` |
-| **Layer 6: AI Copilot**| Multi-Agent orchestration matching SQL database metrics with transcript contexts. | FastAPI, LangChain, Groq API | `backend/src/api/` |
+| **Layer 2: Graph** | Modeling counterparty links, exposures, and systemic contagion paths (Roadmap). | Neo4j, Cypher Queries | `neo4j/` |
+| **Layer 3: NLP & Vectors** | Dedicated embedding microservice and ChromaDB semantic document retrieval. | PyTorch CPU, SentenceTransformers, ChromaDB | `services/embedding-service/`, `backend/src/rag/` |
+| **Layer 4: Forecasting** | Generating predictions for NII, CET1, and deposits under macro rate scenarios (Roadmap). | Prophet, XGBoost, LSTMs | `ml_models/` |
+| **Layer 5: BI Portal** | Executive war-room dashboard with statement tables, variance analysis, and multi-charts. | Next.js 16, React 19, TailwindCSS 4, Chart.js | `frontend/` |
+| **Layer 6: AI Copilot** | Multi-Agent orchestration matching SQL database metrics with transcript contexts. | FastAPI, Agent Framework, Groq Cloud | `backend/src/api/`, `backend/src/agents/` |
 
 ---
 
-## Technical Stack Summary
+## Canonical Data Truth & PBT Status
 
-| Component | Selected Technologies | Description / Role |
-| :--- | :--- | :--- |
-| **Data Ingestion** | Kafka, Airflow, dbt, Pandas | Event streaming, workflow coordination, and transformation. |
-| **Storage Layer** | PostgreSQL (Supabase) & Oracle DB | PostgreSQL stores time-series JSONB arrays; Oracle flattens observations. |
-| **AI & Retrieval** | SentenceTransformers, ChromaDB, Groq Cloud | Local BAAI embeddings, local persistent vector collections, Llama-3.3. |
-| **Frontend UI** | Next.js 15, Recharts, TailwindCSS | App router portal, interactive visualizations, styling framework. |
-| **Infrastructure** | Docker, Kubernetes | Containerized microservices layouts and scaling. |
+The verified source of truth for all financial KPIs is [backend/src/ingestion/mapped_metrics.json](backend/src/ingestion/mapped_metrics.json).
+
+| Metric Name | Metric ID | Abbreviation | Sheet Location | Row | Latest Value (P1) | Supabase Count |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Profit Before Tax (PBT)** | `7` | `pbt` | Group income statement | `13` | `$9,376M` | **90 rows** |
+| **Common Equity Tier 1 (CET1)**| `20` | `cet1` | Group balance sheet | `28` | `$129,400M` | **1 row** |
+| **CET1 Capital Ratio** | `21` | `cet1r` | Capital schedules | `6` | `15.2%` | **1 row** |
+| **Net Interest Income (NII)** | `1` | `nii` | Group income statement | `6` | `$8,945M` | **3 rows** |
+| **Total Operating Expenses** | `6` | `toe` | Group income statement | `11` | `$8,302M` | **2 rows** |
+| **Revenue** | `31` | `rev` | Group income statement | `5` | `$17,042M` | **1 row** |
+| **Customer Accounts** | `18` | `ca` | Group balance sheet | `19` | `$1,612,400M` | **1 row** |
+| **Total Canonical Records** | — | — | All Financial Statements | — | — | **456 rows** |
 
 ---
 
-## Live Deployments
+## REST Endpoints Reference
+
+| Method | Endpoint | Description | Sample Request | Sample Response |
+| :--- | :--- | :--- | :--- | :--- |
+| `GET` | `/health` | API operational health status. | None | `{"status": "healthy"}` |
+| `GET` | `/metrics` | Lists distinct normalized financial metrics. | None | `[{"metric_id": 7, "metric_name": "profit_before_tax", "abbreviation": "pbt"}]` |
+| `GET` | `/metric/{metric_id}` | Returns all sheet rows for a metric. | None | `[{"id": 371, "metric_id": 7, "sheet_name": "Group income statement", "row_number": 13}]` |
+| `GET` | `/record/{record_id}` | Retrieves full record with 7 reporting periods. | None | `[{"id": 371, "period_values": [{"period_index": 1, "value": 9376}]}]` |
+| `POST`| `/ask` | Semantic RAG pipeline inquiry. | `{"question": "What is PBT?"}` | `{"answer": "Profit Before Tax was $9,376M...", "sources": [...]}` |
+| `POST`| `/search` | Direct vector search in ChromaDB. | `{"query": "CET1 ratio", "top_k": 3}` | `[{"text": "At 31 March 2026, CET1 ratio...", "metadata": {...}}]` |
+| `POST`| `/agent/query` | Multi-agent orchestrated reasoning. | `{"question": "Show PBT trend"}`| `{"status": "success", "data": {...}}` |
+
+---
+
+## Microservices & Docker Compose Topology
+
+```bash
+cd backend
+docker compose up -d --build
+```
+
+| Service Container | Image | Port Mapping | Healthcheck Command | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| `backend-embedding-service-1` | `backend-embedding-service` | `8001:8001` (internal) | `python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health')"` | **Healthy** |
+| `backend-quantumlens-api-1` | `backend-quantumlens-api` | `8000:8000` (host) | Bound to `0.0.0.0:8000` | **Up** |
+
+---
+
+## Live Production Deployments
 
 | Component | Target URL | Platform Host | Status |
 | :--- | :--- | :--- | :--- |
-| **Analytics Portal** | [https://quantumlens-hsbc.vercel.app](https://quantumlens-hsbc.vercel.app) | Vercel | Under Integration |
-| **REST API Server** | [https://quantumlens-api.render.com](https://quantumlens-api.render.com) | Render | Operational |
-| **API Swagger Specs**| [https://quantumlens-api.render.com/docs](https://quantumlens-api.render.com/docs) | Render | Operational |
-
----
-
-## Local Ingestion and API Setup
-
-### Setup Steps Tabular Guide
-
-| Step | Action | Powershell / Terminal Command | Notes |
-| :--- | :--- | :--- | :--- |
-| **1** | Clone Project | `git clone https://github.com/VED-VIVEK-TALMALEY/quantumlens-HSBC.git` | Downloads repository. |
-| **2** | Sandbox Env | `python -m venv .venv` | Creates virtual env. |
-| **3** | Activate Env | `source .venv/bin/activate` or `.venv\Scripts\Activate.ps1` | Activates virtual env. |
-| **4** | Install Modules | `pip install -r backend/requirements.txt` | Restores ETL, FastAPI, and AI dependencies. |
-| **5** | Local Configs | `copy backend/.env.example backend/.env` | Inject Supabase and Groq keys. |
-| **6** | Ingest Excel | `python backend/src/ingestion/sheet_scanner.py` | Extracts cell coordinates to JSON files. |
-| **7** | Load Database | `python backend/warehouse/data_loader.py` | Batches metrics payload to Supabase metrics table. |
-| **8** | Load Oracle | `python backend/warehouse/load_to_oracle.py` | Transforms and inserts observations to Oracle. |
-| **9** | Launch REST API| `uvicorn backend.src.api.main:app --reload --port 8000` | Boots FastAPI reloading server on port 8000. |
+| **Analytics Portal** | [https://quantumlens-hsbc.vercel.app](https://quantumlens-hsbc.vercel.app) | Vercel | **Live / Production** |
+| **REST API Server** | [https://quantumlens-api.onrender.com](https://quantumlens-api.onrender.com) | Render | **Live / Operational** |
+| **API Swagger Specs**| [https://quantumlens-api.onrender.com/docs](https://quantumlens-api.onrender.com/docs) | Render | **Live / Operational** |
 
 ---
 
 ## Environment Variables Configuration
 
-> [!WARNING]
-> Ensure all API keys are kept secure and never committed to public repositories.
-
-| Variable Name | Required | Description | Default Local |
-| :--- | :--- | :--- | :--- |
-| `SUPABASE_URL` | YES | Endpoint for Supabase Database REST interface. | `https://<YOUR_PROJECT_ID>.supabase.co` |
-| `SUPABASE_KEY` | YES | Service Role administrative key to bypass RLS policies. | `<YOUR_SUPABASE_SERVICE_ROLE_KEY>` |
-| `GROQ_API_KEY` | YES | API token for Groq Cloud LLM completions. | `<YOUR_GROQ_API_KEY>` |
-| `VECTOR_DB_PATH` | NO | Local directory to persist ChromaDB index assets. | `backend/src/rag/vector_db` |
-| `EMBEDDINGS_PATH`| NO | Local file path caching pre-computed embeddings. | `backend/data/generated/embeddings.json` |
-| `EMBEDDING_MODEL`| NO | HuggingFace embedding model ID. | `sentence-transformers/all-MiniLM-L6-v2` |
-| `TOP_K` | NO | Top document count returned during semantic search retrieval. | `5` |
+| Variable Name | Required | Target | Description | Default Local |
+| :--- | :--- | :--- | :--- | :--- |
+| `SUPABASE_URL` | YES | Backend | Supabase Project REST endpoint. | Loaded from `backend/.env` |
+| `SUPABASE_KEY` | YES | Backend | Supabase Service Role Key. | Loaded from `backend/.env` |
+| `GROQ_API_KEY` | OPTIONAL | Backend | Groq API key for Llama-3.3 synthesis. | Loaded from `backend/.env` |
+| `EMBEDDING_SERVICE_URL` | YES | Backend | Microservice endpoint for vector embeddings. | `http://embedding-service:8001` |
+| `VECTOR_DB_PATH` | YES | Backend | Persistent ChromaDB storage path. | `/app/data/vectordb` |
+| `NEXT_PUBLIC_API_URL` | YES | Frontend | FastAPI backend address for dashboard client. | `https://quantumlens-api.onrender.com` |
 
 ---
 
-## Executive War Rooms (Next.js Portal)
+## Proprietary License Notice
 
-The dashboard frontend ([frontend/](frontend/)) structures metrics into five interactive screens:
-
-| Dashboard View | Primary Metrics Tracked | Interactivity Features |
-| :--- | :--- | :--- |
-| **Global Banking Pulse** | NII, CET1 capital ratio, RoTE, loan growth rates. | Cross-filtering, regional heatmaps, animated charts. |
-| **Wealth Migration** | Asia wealth inflows ($34B), net new money ($39B), wealth fees growth (+15%). | Capital concentration, HNWI wealth migration maps. |
-| **Credit Stress Radar** | ECL guidance (~45bps), sector impairments, fraud exposures. | Macro shock stress test simulators (FX, oil spikes, rate cuts). |
-| **Strategic Transformation**| Disposals, simplification savings ($1.5B), synergy metrics ($0.5B). | Dynamic KPI metric cards, progress metrics charts. |
-| **Contagion Network** | Exposures, liquidity links, counterparty relations. | Interactive Neo4j node graph layouts representing stress flows. |
-
----
-
-## Multi-Agent AI Financial Copilot
-
-Queries targeting the backend REST API `/ask` route are processed by a custom Multi-Agent Orchestrator:
-
-```mermaid
-graph TD
-    User([User Request]) --> Planner{Planner Agent}
-    Planner -->|Intent: SQL| SQLAgent[SQL Agent]
-    Planner -->|Intent: RAG| RAGAgent[RAG Agent]
-    SQLAgent --> Oracle[(Oracle Database)]
-    RAGAgent --> Chroma[(ChromaDB Vector Store)]
-    Oracle --> Synthesizer[Response Synthesizer]
-    Chroma --> Synthesizer
-    Synthesizer --> Groq[Groq Llama-3.3]
-    Groq --> FinalResponse([Context-Grounded Board Report])
-```
-
-| Agent | Module Path | Purpose |
-| :--- | :--- | :--- |
-| **Planner** | [planner.py](backend/src/agents/planner.py) | Deconstructs query intent (`SQL` vs `RAG` vs `Chart`). |
-| **SQL Agent** | [sql_agent.py](backend/src/agents/sql_agent.py) | Executes query parameters against Oracle/Supabase schemas. |
-| **RAG Agent** | [rag_agent.py](backend/src/agents/rag_agent.py) | Queries ChromaDB vectors to find semantic transcript matches. |
-| **Chart Agent**| [chart_agent.py](backend/src/agents/chart_agent.py) | Formats query metric lists into structured Recharts coordinates. |
-| **Orchestrator**| [orchestrator.py](backend/src/agents/orchestrator.py) | Integrates agent states and prompts Groq LLM for final delivery. |
-
----
-
-## Contributing
-
-We welcome contributions to improve HSBC QuantumLens. Open a pull request or file issues under the repository tracker.
-
----
-
-## License
-
-This project is open-source software licensed under the MIT License.
+> **Copyright © 2026 Ved Vivek Talmaley. All Rights Reserved.**  
+> *This project and its original source code are strictly proprietary. Unauthorized copying, modification, distribution, or reproduction of this repository, via any medium, is strictly prohibited.*
 
 ---
 
