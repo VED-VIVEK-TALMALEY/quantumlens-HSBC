@@ -7,30 +7,23 @@
 from groq import Groq
 from src.config.settings import settings
 
-client = Groq(
-    api_key=settings.GROQ_API_KEY
-)
+
+def _get_client() -> Groq:
+    if not settings.GROQ_API_KEY:
+        raise RuntimeError("GROQ_API_KEY is not set. LLM synthesis is unavailable.")
+    return Groq(api_key=settings.GROQ_API_KEY)
 
 
 def generate_answer(prompt):
-
+    client = _get_client()
     response = client.chat.completions.create(
-
         model=settings.LLM_MODEL,
-
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-
+        messages=[{"role": "user", "content": prompt}],
         temperature=settings.TEMPERATURE,
-        max_tokens=settings.MAX_TOKENS
-
+        max_tokens=settings.MAX_TOKENS,
     )
     return {
-    "answer": response.choices[0].message.content,
-    "model": settings.LLM_MODEL,
-    "provider": "Groq"
-}
+        "answer": response.choices[0].message.content,
+        "model": settings.LLM_MODEL,
+        "provider": "Groq",
+    }
