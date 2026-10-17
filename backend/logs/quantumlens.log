@@ -6454,3 +6454,26 @@
 2026-10-17 11:04:36,271 | INFO | /metrics requested
 2026-10-17 11:04:36,938 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
 2026-10-17 11:04:36,970 | INFO | GET /metrics 200 0.706s
+2026-10-17 21:43:55,319 | INFO | GET / 200 0.036s
+2026-10-17 21:43:55,330 | INFO | GET /health 200 0.001s
+2026-10-17 21:44:04,997 | INFO | /metrics requested
+2026-10-17 21:44:05,892 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=metric_id%2Cmetric_name%2Cabbreviation&order=metric_id.asc "HTTP/2 200 OK"
+2026-10-17 21:44:05,897 | INFO | GET /metrics 200 0.901s
+2026-10-17 21:47:02,621 | INFO | /ask : Why did CET1 fall?
+2026-10-17 21:47:02,622 | INFO | Question : Why did CET1 fall?
+2026-10-17 21:47:02,672 | INFO | Connecting to ChromaDB collection hsbc_kpis
+2026-10-17 21:47:02,997 | INFO | 5 documents retrieved
+2026-10-17 21:47:02,997 | INFO | Retrieval took 0.375s
+2026-10-17 21:47:03,181 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-10-17 21:50:16,436 | INFO | /metric/7
+2026-10-17 21:50:17,107 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.7 "HTTP/2 200 OK"
+2026-10-17 21:50:17,110 | INFO | GET /metric/7 200 0.676s
+2026-10-17 21:52:17,170 | INFO | /record/1
+2026-10-17 21:52:17,693 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.1 "HTTP/2 200 OK"
+2026-10-17 21:52:17,695 | INFO | GET /record/1 200 0.527s
+2026-10-17 21:53:21,537 | INFO | /metric/7
+2026-10-17 21:53:21,759 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=id%2Cmetric_id%2Cmetric_name%2Cabbreviation%2Csheet_name%2Crow_number&metric_id=eq.7 "HTTP/2 200 OK"
+2026-10-17 21:53:21,762 | INFO | GET /metric/7 200 0.225s
+2026-10-17 21:53:21,781 | INFO | /record/371
+2026-10-17 21:53:21,941 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.371 "HTTP/2 200 OK"
+2026-10-17 21:53:21,943 | INFO | GET /record/371 200 0.162s

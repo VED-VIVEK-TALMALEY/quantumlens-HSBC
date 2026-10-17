@@ -1,36 +1,79 @@
+// -------------------------------------------------------------------
+// Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+// This project and its source code are strictly proprietary.
+// Unauthorized copying, distribution, or use is strictly prohibited.
+// -------------------------------------------------------------------
+
 "use client";
+
 import Link from "next/link";
-import { useState } from "react";
 
 export default function NavBar() {
-  const [dark, setDark] = useState(false);
-
-  const toggleTheme = () => {
-    setDark(!dark);
-    if (typeof document !== "undefined") {
-      const html = document.documentElement;
-      if (dark) {
-        html.classList.remove("dark");
-      } else {
-        html.classList.add("dark");
-      }
-    }
-  };
-
   return (
-    <nav className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 shadow-lg sticky top-0 z-10 flex items-center justify-between">
-      <h1 className="text-2xl font-bold text-white">QuantumLens</h1>
-      <div className="space-x-4 flex items-center">
-        <Link href="/" className="text-white hover:underline mr-4">
-          Home
-        </Link>
-        <a href="https://github.com/quantumlens" target="_blank" rel="noopener noreferrer" className="text-white hover:underline mr-4">
-          GitHub
-        </a>
-        <button onClick={toggleTheme} className="px-3 py-1 bg-white bg-opacity-20 rounded hover:bg-opacity-30 transition text-white">
-          {dark ? "Light" : "Dark"}
-        </button>
+    <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Brand / Logo */}
+        <div className="flex items-center gap-3">
+          {/* HSBC Geometric Hexagon Crest */}
+          <div className="relative w-7 h-7 flex items-center justify-center">
+            <div className="w-6 h-6 bg-red-600 rotate-45 transform flex items-center justify-center shadow-sm shadow-red-900/50">
+              <div className="w-2.5 h-2.5 bg-white transform -rotate-45" />
+            </div>
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-extrabold text-base tracking-tight text-white">
+                QuantumLens
+              </span>
+              <span className="px-1.5 py-0.2 rounded text-[10px] font-semibold bg-red-600/20 text-red-400 border border-red-500/30">
+                HSBC Q1 2026
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-400 font-medium">
+              Global Banking & Markets Intelligence
+            </p>
+          </div>
+        </div>
+
+        {/* Navigation Items */}
+        <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
+          <a
+            href="#kpis"
+            className="hover:text-white transition-colors"
+          >
+            Executive KPIs
+          </a>
+          <a
+            href="#charts"
+            className="hover:text-white transition-colors"
+          >
+            Financial Analytics
+          </a>
+          <a
+            href="#statements"
+            className="hover:text-white transition-colors"
+          >
+            Statements Table
+          </a>
+          <a
+            href="#ai-copilot"
+            className="hover:text-white transition-colors"
+          >
+            AI Analyst
+          </a>
+        </nav>
+
+        {/* Live System Indicator */}
+        <div className="flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px]">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-slate-300 font-mono">Live Data: 456 Records (PBT Active)</span>
+          </div>
+          <span className="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+            v10.0.0
+          </span>
+        </div>
       </div>
-    </nav>
+    </header>
   );
 }

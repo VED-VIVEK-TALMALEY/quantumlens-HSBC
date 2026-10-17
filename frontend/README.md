@@ -1,99 +1,133 @@
 <!-- -------------------------------------------------------------------
-Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+Copyright (c) 2026 Ved Vivek Talmaley. All Rights Reserved.
 This project and its source code are strictly proprietary.
 Unauthorized copying, distribution, or use is strictly prohibited.
 ------------------------------------------------------------------- -->
 
-# Next.js Analytics Portal (frontend/)
+# Next.js Analytics Portal (frontend/) — Version 10.0.0
 
-This is the interactive client dashboard for the **QuantumLens** financial intelligence platform. It provides a visual interface for executive strategy, risk observation, and natural language reasoning (AI financial assistant).
+This is the executive client dashboard for the **QuantumLens** financial intelligence platform. It provides an institutional interface for strategy, risk observation, financial statement audit, and natural language reasoning for HSBC Q1 2026.
 
-For general backend endpoints, models, or database queries, see the [backend/README.md](../backend/README.md).
+For general backend endpoints, models, or database queries, see [backend/README.md](../backend/README.md). For system-wide design and layer specifications, see the root [README.md](../README.md).
 
 ---
 
 ## Technical Stack & Visual Framework
 
-| Layer | Selected Package | Purpose |
-| :--- | :--- | :--- |
-| **Framework** | Next.js 15+ (App Router) | Core layouts routing and server components. |
-| **UI Components** | React 19+ | Dynamic component rendering and hooks state. |
-| **Style System** | TailwindCSS 3.4+ | CSS layouts, utility spacing, and theme variables. |
-| **Data Graphs** | Recharts / Chart.js | Visual rendering of time-series trend lines. |
-| **HTTP Client** | Axios / Fetch | API requests routing to backend routers. |
+| Layer | Selected Package | Version | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Framework** | Next.js (App Router) | `16.2.10` | Core server components, Turbopack builds, and optimized layouts. |
+| **UI Library** | React | `19.2.4` | Modern component lifecycle, hooks state, and dynamic rendering. |
+| **Styling Engine**| TailwindCSS + CSS Variables | `^4.3.3` | Institutional slate dark theme, glassmorphism, and custom scrollbars. |
+| **Data Graphs** | Chart.js + react-chartjs-2 | `^4.5.1` / `^5.3.1` | Time-series area trends and comparative quarterly bar charts. |
+| **HTTP Client** | Axios | `^1.18.1` | REST calls to FastAPI backend with timeout guards. |
+| **Deployment** | Vercel | Production | Automatic CI/CD build deployment. |
 
 ---
 
-## Interactive Dashboard Views
+## Frontend Architecture Diagram
 
-The Next.js client organizes analytics into five strategic "War Rooms":
+```mermaid
+graph TD
+    subgraph ClientShell ["Next.js 16 Client Shell (frontend/src/app)"]
+        Layout["RootLayout (Dark Theme)"]
+        Nav["NavBar (Hexagon Crest + Live Indicator)"]
+        Page["Home (page.tsx)"]
+        Foot["Footer (Proprietary License)"]
+    end
 
-### Dashboard 1: Global Banking Pulse
-* **Core Metrics**: Net Interest Income (NII), CET1 capital ratio, Return on Tangible Equity (RoTE), liquidity levels, and loan growth rates.
-* **Interactivity**: Dynamic regional heatmaps, timeline cross-filtering, and animated trend transitions.
+    subgraph ComponentLayer ["Financial Components (frontend/src/components)"]
+        KPIs["SummaryCard (PBT, CET1, NII, Opex)"]
+        LineC["LineChart (Area Trend + Gradient Fill)"]
+        BarC["BarChart (Comparative Quarterly Trajectory)"]
+        StmtTable["FinancialStatementTable (456 Records + Filters)"]
+        VarTable["PeriodVarianceTable (P1-P7 Deltas)"]
+        AI["AIChat (Fixed Lifecycle + Prompt Pills)"]
+    end
 
-### Dashboard 2: Wealth Migration Observatory
-* **Core Metrics**: Asia wealth inflows ($34B in Q1 2026), net new wealth assets ($39B net new money), insurance growth, and HNW capital concentration.
-* **Interactivity**: Capital concentration charts and deposit migration flow trackers.
+    subgraph ServiceLayer ["API Integration (frontend/src/services)"]
+        Axios["api.ts (Axios Client)"]
+    end
 
-### Dashboard 3: Credit Stress Radar
-* **Core Metrics**: Expected Credit Losses (ECL) trends (guidance raised to 45bps), sector-level write-off ratios, and UK securitisation fraud warnings.
-* **Interactivity**: Stress scenario models visualizing asset risk propagation under macroeconomic shocks.
+    subgraph BackendTargets ["Backend Services"]
+        API["FastAPI Backend (quantumlens-api / Render)"]
+    end
 
-### Dashboard 4: Strategic Transformation Tracker
-* **Core Metrics**: Asset disposals, simplification cost savings targets ($1.5B), Hang Seng privatization synergies ($0.5B), and capital reallocation programs.
-* **Interactivity**: Milestone checklist meters and operational budget analytics charts.
+    Layout --> Nav
+    Layout --> Page
+    Layout --> Foot
 
-### Dashboard 5: Banking Contagion Network
-* **Core Metrics**: Relational risk propagation maps pulling from Neo4j (Middle East Conflict ──► Energy Price Volatility ──► Expected Credit Losses ──► Capital Deterioration).
-* **Interactivity**: Interactive node graph visualization showing asset exposure and liquidity dependencies.
+    Page --> KPIs
+    Page --> LineC
+    Page --> BarC
+    Page --> StmtTable
+    Page --> VarTable
+    Page --> AI
+
+    StmtTable -->|Row Selection| VarTable
+    StmtTable -->|Inspect Metric| LineC
+
+    KPIs --> Axios
+    StmtTable --> Axios
+    AI --> Axios
+    Axios <-->|REST HTTP| API
+
+    classDef shell fill:#0f172a,stroke:#334155,color:#fff;
+    classDef comp fill:#1e293b,stroke:#475569,color:#fff;
+    classDef svc fill:#3b82f6,stroke:#1d4ed8,color:#fff;
+    classDef target fill:#e11d48,stroke:#9f1239,color:#fff;
+
+    class Layout,Nav,Page,Foot shell;
+    class KPIs,LineC,BarC,StmtTable,VarTable,AI comp;
+    class Axios svc;
+    class API target;
+```
+
+---
+
+## Component Inventory & Responsibilities
+
+| Component | File Location | Responsibility | Interactivity |
+| :--- | :--- | :--- | :--- |
+| **NavBar** | `src/components/layout/NavBar.tsx` | Brand header, navigation links, and live backend data indicator. | Sticky backdrop blur, smooth anchor scroll. |
+| **Hero** | `src/components/layout/Hero.tsx` | Executive banner summarizing Q1 2026 data pack sources. | Glassmorphism card, ambient gradient accents. |
+| **SummaryCard** | `src/components/dashboard/SummaryCard.tsx` | Displays high-level KPIs (PBT, CET1, NII, Opex) with variance badges. | Hover glow and status pill highlights. |
+| **LineChart** | `src/components/charts/LineChart.tsx` | Renders multi-period trend curves with area fills and hover tooltips. | Metric selector buttons, responsive canvas. |
+| **BarChart** | `src/components/charts/BarChart.tsx` | Visualizes quarterly performance across revenue, expenses, and profit. | Multi-dataset bar grouping with legend toggles. |
+| **FinancialStatementTable**| `src/components/tables/FinancialStatementTable.tsx` | Displays canonical statement records with pagination and search. | Sheet filter pills, real-time search, one-click row inspect. |
+| **PeriodVarianceTable** | `src/components/tables/PeriodVarianceTable.tsx` | Calculates period-over-period variance ($M and %) across all 7 periods. | Delta calculations, growth/decline status tags. |
+| **AIChat** | `src/components/ai/AIChat.tsx` | Executive financial intelligence copilot (bug-free, no infinite loop). | Prompt pills, latency timer, resilient fallback synthesis. |
+| **Footer** | `src/components/layout/Footer.tsx` | Displays official proprietary license notice and runtime stack attribution. | Responsive legal compliance banner. |
 
 ---
 
 ## Getting Started
 
-### Prerequisites Checklist
-- [ ] Node.js version 18.x or later installed.
-- [ ] Running instance of the FastAPI backend server.
+### Prerequisites
+- Node.js 18.x or later installed
+- Running instance of QuantumLens FastAPI backend (`http://localhost:8000` or production Render API)
 
-### Local Development Setup
+### Local Development Commands
 
-| Step | Action | Shell Command | Notes |
-| :--- | :--- | :--- | :--- |
-| **1** | Restore NPM Modules | `npm install` | Restores React, Tailwind, Recharts, and Axios. |
-| **2** | Configure Local Env | `copy .env.example .env.local` | Binds public API URL. |
-| **3** | Launch Local Host | `npm run dev` | Spins up dev server on [http://localhost:3000](http://localhost:3000). |
-| **4** | Compile Build | `npm run build` | Optimizes assets and compiles static paths. |
-| **5** | Run Production Mode | `npm run start` | Serves compiled output files. |
-
----
-
-## Environment Variables Configuration
-
-> [!WARNING]
-> Do not commit `.env.local` containing actual backend production URLs. Keep configurations restricted to local variables.
-
-| Variable Name | Environment | Description | Default Local |
-| :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_API_URL` | Client Runtime | HTTP address pointing to the FastAPI backend API server. | `http://localhost:8000` |
-
----
-
-## Production Deployment (Vercel)
-
-Vercel is the recommended hosting platform for Next.jsApp Router portals. Follow these steps:
-
-| Step | Phase | Vercel Panel Configuration |
+| Action | Command | Purpose |
 | :--- | :--- | :--- |
-| **1** | **Import Project** | Connect your GitHub repository to Vercel. |
-| **2** | **Root Directory** | Configure directory target override: `frontend` |
-| **3** | **Build Commands** | Framework preset: **Next.js**. Keep standard build parameters. |
-| **4** | **Environment Variables**| Add `NEXT_PUBLIC_API_URL` pointing to your deployed Render backend API. |
-| **5** | **Deploy** | Click **Deploy** to compile Next.js static pages. |
+| **Install Dependencies** | `npm install` | Restores Next.js, React, Tailwind, Chart.js, and Axios. |
+| **Start Development Server** | `npm run dev` | Launches Turbopack dev server on [http://localhost:3000](http://localhost:3000). |
+| **Compile Production Build** | `npm run build` | Compiles optimized static output with full TypeScript validation. |
+| **Start Production Server** | `npm run start` | Serves the optimized production build locally. |
+| **Run Linter** | `npm run lint` | Runs ESLint check across all TSX components. |
 
 ---
 
-## Related Documentation
-* [Primary Readme](../README.md): Complete repository layouts.
-* [Backend Readme](../backend/README.md): FastAPI REST routing specs.
-* [System Architecture Spec](../docs/architecture/architecture.md): Systems layers overview.
+## Environment Variables
+
+| Variable Name | Required | Target Runtime | Description | Default |
+| :--- | :--- | :--- | :--- | :--- |
+| `NEXT_PUBLIC_API_URL` | Yes | Client / SSR | Base URL for FastAPI backend endpoints. | `https://quantumlens-api.onrender.com` |
+
+---
+
+## Proprietary License Notice
+
+> **Copyright © 2026 Ved Vivek Talmaley. All Rights Reserved.**  
+> *This project and its original source code are strictly proprietary. Unauthorized copying, modification, distribution, or reproduction of this repository, via any medium, is strictly prohibited.*

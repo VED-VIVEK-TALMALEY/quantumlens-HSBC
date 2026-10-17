@@ -17,8 +17,9 @@ class DocumentRetriever:
             "http://embedding-service:8001",
         ).rstrip("/")
 
+        vector_db_path = os.getenv("VECTOR_DB_PATH", "chroma_db")
         self.client = chromadb.PersistentClient(
-            path="chroma_db"
+            path=vector_db_path
         )
 
         self.collection = self.client.get_or_create_collection(

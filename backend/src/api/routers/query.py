@@ -4,15 +4,12 @@
 ## Unauthorized copying, distribution, or use is strictly prohibited.
 ## -------------------------------------------------------------------
 
-
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from src.agents.orchestrator import Orchestrator
 
 router = APIRouter()
-
-orchestrator = Orchestrator()
 
 
 class QueryRequest(BaseModel):
@@ -24,17 +21,11 @@ def query(request: QueryRequest):
     if not request.question.strip():
         raise HTTPException(
             status_code=400,
-            detail="Question cannot be empty."
+            detail="Question cannot be empty.",
         )
-
     try:
-        result = orchestrator.execute(
-            request.question
-        )
+        orchestrator = Orchestrator()
+        result = orchestrator.execute(request.question)
         return result
-
     except Exception as exc:
-        raise HTTPException(
-            status_code=500,
-            detail=str(exc)
-        )
+        raise HTTPException(status_code=500, detail=str(exc))
