@@ -23,8 +23,8 @@ services:
 
   quantumlens-api:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: backend/Dockerfile
     env_file:
       - .env
     environment:

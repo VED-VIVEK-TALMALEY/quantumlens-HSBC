@@ -12,7 +12,9 @@ import oracledb
 backend_dir = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(backend_dir))
 
+# pyrefly: ignore[missing-import]
 from src.utils.logger import logger
+# pyrefly: ignore[missing-import]
 from warehouse.oracle_client import get_connection
 
 BASE_DIR = Path(__file__).resolve().parent
