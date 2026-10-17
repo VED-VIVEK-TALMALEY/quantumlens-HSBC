@@ -11,7 +11,10 @@ import api from "@/services/api";
 import { Metric } from "@/types/metric";
 import LineChart from "@/components/charts/LineChart";
 import SummaryCard from "@/components/dashboard/SummaryCard";
+import NavBar from "@/components/layout/NavBar";
+import Hero from "@/components/layout/Hero";
  import AIChat from "@/components/ai/AIChat";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
     const [metrics, setMetrics] = useState<Metric[]>([]);
@@ -81,6 +84,8 @@ export default function Home() {
     return (
 
         <main className="min-h-screen bg-blue-900 p-6">
+  <NavBar />
+    <Hero />
 
             {/* Header */}
 
@@ -264,6 +269,7 @@ export default function Home() {
             <div className="mt-8">
 
     <AIChat />
+<Footer />
 
 </div>
 

@@ -1,30 +1,32 @@
 # -------------------------------------------------------------------
-# Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+# Copyright (c) 2026 Ved Talma... All Rights Reserved.
 # This project and its source code are strictly proprietary.
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
+# Version control
+.git
 
+# IDE folders
+.vscode/
+.idea/
+
+# Python caches and compiled files
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
+# Virtual environments
 .venv/
 env/
 
-.git/
-.gitignore
+# Environment files
+.env
 
-logs/
-
+# Test, notebook, and data artifacts
 tests/
-
 notebooks/
-
+logs/
 data/vectordb/
-
 data/generated/
-
-.vscode/
-
-.idea/

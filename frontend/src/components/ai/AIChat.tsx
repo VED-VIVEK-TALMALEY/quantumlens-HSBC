@@ -33,7 +33,7 @@ export default function AIChat() {
 
         } catch (err) {
 
-            console.error(err);
+            console.error("AI /ask error:", err?.response?.status, err?.response?.data);
 
             setAnswer("Unable to generate response.");
 
