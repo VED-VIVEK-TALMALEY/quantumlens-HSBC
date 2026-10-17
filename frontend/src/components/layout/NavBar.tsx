@@ -70,7 +70,7 @@ export default function NavBar() {
             <span className="text-slate-300 font-mono">Live Data: 456 Records (PBT Active)</span>
           </div>
           <span className="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono">
-            v1.0.0-Q1
+            v10.0.0
           </span>
         </div>
       </div>
