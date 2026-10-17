@@ -31,13 +31,10 @@ export default function AIChat() {
 
             setAnswer(res.data.answer ?? JSON.stringify(res.data));
 
-        } catch (err) {
-
-            console.error("AI /ask error:", err?.response?.status, err?.response?.data);
-
+        } catch (err: any) {
+            const axiosErr = err as import('axios').AxiosError;
+            console.error("AI /ask error:", axiosErr?.response?.status, axiosErr?.response?.data);
             setAnswer("Unable to generate response.");
-
-        }
 
         setLoading(false);
 
