@@ -5,7 +5,9 @@
 // -------------------------------------------------------------------
 
 import type { NextConfig } from "next";
-
+module.exports = {
+  allowedDevOrigins: ['192.168.7.9'],
+}
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,

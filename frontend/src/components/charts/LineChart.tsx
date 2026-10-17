@@ -69,10 +69,7 @@ export default function LineChart({
 
     return (
         <div className="h-80 w-full">
-            <Line
-                data={data}
-                options={options}
-            />
+            <Line data={data} options={options} />
         </div>
     );
 }
