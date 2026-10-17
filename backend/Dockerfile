@@ -9,13 +9,9 @@ ENV PIP_RETRIES=20
 
 WORKDIR /app
 
-# Install Poetry and export requirements
-COPY pyproject.toml poetry.lock ./
-RUN apt-get update && apt-get install -y curl && \
-    curl -sSL https://install.python-poetry.org | python3 - && \
-    export PATH="/root/.local/bin:$PATH" && \
-    /root/.local/bin/poetry self add poetry-plugin-export && /root/.local/bin/poetry export -f requirements.txt --output requirements.txt --without-hashes && \
-    pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies from the frozen requirements file
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application source code
 COPY . .
