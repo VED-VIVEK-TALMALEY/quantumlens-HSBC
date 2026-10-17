@@ -30,6 +30,8 @@ services:
     environment:
       EMBEDDING_SERVICE_URL: http://embedding-service:8001
       VECTOR_DB_PATH: /app/data/vectordb
+      HOST: https://quantumlens-api.onrender.com/
+      
     ports:
       - "8000:8000"
     volumes:

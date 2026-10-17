@@ -9,15 +9,14 @@ ENV PIP_RETRIES=20
 
 WORKDIR /app
 
-COPY requirements.txt .
+# Install Poetry and export requirements
+COPY pyproject.toml poetry.lock ./
+RUN curl -sSL https://install.python-poetry.org | python3 - && \
+    export PATH="/root/.local/bin:$PATH" && \
+    poetry export -f requirements.txt --output requirements.txt --without-hashes && \
+    pip install --no-cache-dir -r requirements.txt
 
-RUN python -m pip install \
-    --no-cache-dir \
-    --retries 20 \
-    --timeout 600 \
-    --index-url https://pypi.org/simple \
-    -r requirements.txt
-
+# Copy application source code
 COPY . .
 
 EXPOSE 8000
