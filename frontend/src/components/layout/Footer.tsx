@@ -1,28 +1,23 @@
-// src/components/layout/Footer.tsx
-import Link from "next/link";
+// -------------------------------------------------------------------
+// Copyright (c) 2026 Ved Talmaley. All Rights Reserved.
+// This project and its source code are strictly proprietary.
+// Unauthorized copying, distribution, or use is strictly prohibited.
+// -------------------------------------------------------------------
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-gray-200 py-6 mt-12">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm">
-          © {new Date().getFullYear()} QuantumLens. All rights reserved.
-        </p>
-        <div className="space-x-4 mt-4 md:mt-0">
-          <Link href="/privacy" className="hover:underline">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="hover:underline">
-            Terms of Service
-          </Link>
-          <a
-            href="https://github.com/quantumlens"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            GitHub
-          </a>
+    <footer className="mt-12 py-6 border-t border-slate-800 text-slate-500 text-xs">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span className="font-semibold text-slate-400">QuantumLens</span> •
+          HSBC Financial Intelligence System © 2026 Ved Talmaley. Proprietary & Confidential.
+        </div>
+        <div className="flex items-center gap-4 text-slate-400">
+          <span>FastAPI Backend (Render)</span>
+          <span>•</span>
+          <span>ChromaDB Vector Store</span>
+          <span>•</span>
+          <span>Supabase PostgreSQL</span>
         </div>
       </div>
     </footer>
