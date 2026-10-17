@@ -8,10 +8,12 @@ ENV PIP_RETRIES=10
 
 WORKDIR /app
 
-COPY requirements.txt .
+# Install Python dependencies from the frozen requirements file
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy backend source code
+COPY backend/ .
 
 EXPOSE 8000
 
