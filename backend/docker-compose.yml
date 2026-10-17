@@ -3,6 +3,8 @@ services:
     build:
       context: ../services/embedding-service
       dockerfile: Dockerfile
+    env_file:
+      - .env
     environment:
       EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
       EMBEDDING_DEVICE: cpu

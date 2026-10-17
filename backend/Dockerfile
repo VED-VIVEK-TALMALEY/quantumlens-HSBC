@@ -1,4 +1,3 @@
-
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -10,11 +9,11 @@ ENV PIP_RETRIES=20
 WORKDIR /app
 
 # Install Python dependencies from the frozen requirements file
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application source code
-COPY . .
+# Copy backend source code
+COPY backend/ .
 
 EXPOSE 8000
 
