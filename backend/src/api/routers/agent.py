@@ -5,6 +5,7 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
+from typing import Optional
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
@@ -16,6 +17,7 @@ router = APIRouter()
 
 class AgentQuery(BaseModel):
     question: str
+    conversation_id: Optional[str] = None
 
 
 @router.post("/agent/query")
@@ -29,4 +31,4 @@ def agent_query(request: AgentQuery):
             detail="Question cannot be empty."
         )
 
-    return process_question(question)
+    return process_question(question, conversation_id=request.conversation_id)

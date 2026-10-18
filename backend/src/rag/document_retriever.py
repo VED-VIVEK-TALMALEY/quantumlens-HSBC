@@ -8,18 +8,19 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import chromadb
+from src.config.settings import settings
 
 
 class DocumentRetriever:
-    def __init__(self):
+    def __init__(self, vector_db_path=None):
         self.embedding_service_url = os.getenv(
             "EMBEDDING_SERVICE_URL",
             "http://embedding-service:8001",
         ).rstrip("/")
 
-        vector_db_path = os.getenv("VECTOR_DB_PATH", "chroma_db")
+        db_path = vector_db_path or os.getenv("VECTOR_DB_PATH", str(settings.VECTOR_DB_PATH))
         self.client = chromadb.PersistentClient(
-            path=vector_db_path
+            path=str(db_path)
         )
 
         self.collection = self.client.get_or_create_collection(
@@ -27,51 +28,9 @@ class DocumentRetriever:
         )
 
     def _embed_query(self, question):
-        """Generate a query embedding through the embedding microservice."""
-
-        payload = json.dumps({
-            "texts": [question]
-        }).encode("utf-8")
-
-        request = Request(
-            url=f"{self.embedding_service_url}/embed",
-            data=payload,
-            headers={
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            method="POST",
-        )
-
-        try:
-            with urlopen(request, timeout=30) as response:
-                result = json.loads(
-                    response.read().decode("utf-8")
-                )
-
-        except HTTPError as exc:
-            error_body = exc.read().decode(
-                "utf-8", errors="replace"
-            )
-            raise RuntimeError(
-                f"Embedding service returned HTTP "
-                f"{exc.code}: {error_body}"
-            ) from exc
-
-        except URLError as exc:
-            raise RuntimeError(
-                "Cannot connect to embedding service at "
-                f"{self.embedding_service_url}: {exc.reason}"
-            ) from exc
-
-        embeddings = result.get("embeddings")
-
-        if not embeddings or not embeddings[0]:
-            raise RuntimeError(
-                "Embedding service returned no query embedding."
-            )
-
-        return embeddings[0]
+        """Generate a query embedding through the canonical embedding client."""
+        from src.rag.embedding_client import embed_texts
+        return embed_texts([question])[0]
 
     def retrieve(self, question, top_k=5):
         if not isinstance(question, str) or not question.strip():

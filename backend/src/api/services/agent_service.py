@@ -4,10 +4,11 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
-from src.agents.orchestrator import Orchestrator
+from typing import Optional
+from src.agents.orchestrator import get_orchestrator
 
 
-def process_question(question: str):
+def process_question(question: str, conversation_id: Optional[str] = None):
     """Send a financial question to the QuantumLens agent orchestrator."""
-    orchestrator = Orchestrator()
-    return orchestrator.execute(question)
+    orchestrator = get_orchestrator()
+    return orchestrator.execute(question, conversation_id=conversation_id)

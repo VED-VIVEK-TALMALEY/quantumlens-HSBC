@@ -23,7 +23,8 @@ router = APIRouter()
 def ask_ai(request: QuestionRequest):
 
     return ask_question(
-        request.question
+        question=request.question,
+        conversation_id=request.conversation_id,
     )
 
 

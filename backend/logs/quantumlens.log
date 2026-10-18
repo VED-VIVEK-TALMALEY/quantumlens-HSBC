@@ -6477,3 +6477,100 @@
 2026-10-17 21:53:21,781 | INFO | /record/371
 2026-10-17 21:53:21,941 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&id=eq.371 "HTTP/2 200 OK"
 2026-10-17 21:53:21,943 | INFO | GET /record/371 200 0.162s
+2026-10-18 20:02:24,173 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x240db57d2b0>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:02:31,660 | INFO | No device provided, using cpu
+2026-10-18 20:02:32,125 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:32,136 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:32,369 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:32,370 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-18 20:02:32,381 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:32,383 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-10-18 20:02:32,613 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:32,625 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:32,862 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:32,874 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-10-18 20:02:33,112 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:33,127 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:33,365 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:33,377 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:33,610 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:02:33,839 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:33,851 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:34,188 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:02:34,428 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:02:34,659 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:02:34,892 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:02:35,124 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:35,137 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:35,379 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:35,391 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:35,631 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:35,644 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:35,885 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:35,902 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:36,135 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-18 20:02:36,370 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-18 20:02:36,641 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:02:36,657 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-10-18 20:02:36,889 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-18 20:02:36,919 | INFO | Connecting to ChromaDB collection hsbc_kpis
+2026-10-18 20:02:36,967 | INFO | 5 documents retrieved
+2026-10-18 20:02:38,973 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x2408de1a350>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:02:39,065 | INFO | POST /query 200 16.925s
+2026-10-18 20:02:39,067 | INFO | HTTP Request: POST http://testserver/query "HTTP/1.1 200 OK"
+2026-10-18 20:02:40,190 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&metric_name=eq.profit_before_tax "HTTP/2 200 OK"
+2026-10-18 20:02:40,345 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&abbreviation=eq.profit_before_tax "HTTP/2 200 OK"
+2026-10-18 20:02:40,530 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&metric_name=eq.pbt "HTTP/2 200 OK"
+2026-10-18 20:02:40,686 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&abbreviation=eq.pbt "HTTP/2 200 OK"
+2026-10-18 20:02:42,709 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x2408de1a350>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:02:42,732 | INFO | 5 documents retrieved
+2026-10-18 20:02:44,736 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x2408ddf95b0>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:02:44,752 | INFO | POST /query 500 5.683s
+2026-10-18 20:02:44,754 | INFO | HTTP Request: POST http://testserver/query "HTTP/1.1 500 Internal Server Error"
+2026-10-18 20:06:28,287 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x1e9fd701a90>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:06:35,735 | INFO | No device provided, using cpu
+2026-10-18 20:06:36,198 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:36,199 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-18 20:06:36,210 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:36,440 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:36,456 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:36,459 | INFO | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-10-18 20:06:36,689 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:36,701 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:36,931 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:36,945 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-10-18 20:06:37,177 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:37,198 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:37,442 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:37,454 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:37,692 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:06:37,920 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:37,933 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:38,256 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:06:38,487 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:06:38,719 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:06:38,948 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-18 20:06:39,177 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:39,189 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:39,419 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:39,431 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:39,667 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:39,678 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:39,910 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:39,920 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:40,152 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-18 20:06:40,384 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-18 20:06:40,656 | INFO | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-18 20:06:40,668 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-10-18 20:06:40,904 | INFO | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-18 20:06:40,933 | INFO | Connecting to ChromaDB collection hsbc_kpis
+2026-10-18 20:06:40,990 | INFO | 5 documents retrieved
+2026-10-18 20:06:42,998 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x1e9aed979d0>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:06:43,847 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&metric_name=eq.profit_before_tax "HTTP/2 200 OK"
+2026-10-18 20:06:44,023 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&abbreviation=eq.profit_before_tax "HTTP/2 200 OK"
+2026-10-18 20:06:44,221 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&metric_name=eq.pbt "HTTP/2 200 OK"
+2026-10-18 20:06:44,399 | INFO | HTTP Request: GET https://frajuytwdhbeawvaplya.supabase.co/rest/v1/metrics?select=%2A&abbreviation=eq.pbt "HTTP/2 200 OK"
+2026-10-18 20:06:46,410 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x1e9aed979d0>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:06:46,430 | INFO | 5 documents retrieved
+2026-10-18 20:06:48,440 | WARNING | Embedding service at http://127.0.0.1:8001 unreachable (HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /embed (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8001) at 0x1e9af10e8b0>, 'Connection to 127.0.0.1 timed out. (connect timeout=2)'))), falling back to local SentenceTransformer
+2026-10-18 20:06:48,828 | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 404 Not Found"

@@ -4,6 +4,7 @@
 # Unauthorized copying, distribution, or use is strictly prohibited.
 # -------------------------------------------------------------------
 
+from typing import Optional
 from src.utils.logger import logger
 from src.rag.rag_pipeline import ask
 from src.rag.retrieval_engine import RetrievalEngine
@@ -21,13 +22,23 @@ def get_engine():
     return _engine
 
 
-def ask_question(question: str):
+def ask_question(question: str, conversation_id: Optional[str] = None):
 
     logger.info(
-        f"/ask : {question}"
+        f"/ask (consolidated via orchestrator) : {question} [session: {conversation_id or 'default'}]"
     )
 
-    return ask(question)
+    try:
+        from src.api.services.agent_service import process_question
+        result = process_question(question, conversation_id=conversation_id)
+        if isinstance(result, dict) and "question" not in result:
+            result["question"] = question
+        return result
+    except Exception as exc:
+        logger.warning(
+            f"Multi-agent orchestrator error, falling back to direct RAG pipeline: {exc}"
+        )
+        return ask(question)
 
 
 def search_metrics(
