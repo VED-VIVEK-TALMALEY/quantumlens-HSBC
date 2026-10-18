@@ -56,7 +56,7 @@ graph TD
     %% External Systems
     subgraph ExternalServices ["External Cloud Services"]
         Supabase[("Supabase PostgreSQL<br>[456 Canonical Metrics]")]
-        Groq["Groq Cloud API<br>[Llama-3.3 Synthesis]")]
+        Groq["Groq Cloud API<br>Llama-3.3 Synthesis"]
     end
 
     %% Network Connections

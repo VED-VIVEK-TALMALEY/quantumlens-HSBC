@@ -65,7 +65,7 @@ graph TD
         Supabase[("Supabase PostgreSQL<br>[456 Canonical Metrics / 90 PBT Rows]")]
         Chroma[("ChromaDB Vector Store<br>[financial_documents]")]
         Backups[("Automated Backups<br>[backend/data/backups/]")]
-        Groq["Groq Cloud API<br>[Llama-3.3 Synthesis]")]
+        Groq["Groq Cloud API<br>Llama-3.3 Synthesis"]
     end
 
     %% Ingestion Layer
