@@ -92,6 +92,7 @@ export default function Home() {
     CORE_CANONICAL_METRICS.pbt
   );
   const [isLoading, setIsLoading] = useState(true);
+  const [isDemoMode, setIsDemoMode] = useState(false);
   const [chartMode, setChartMode] = useState<"trend" | "comparison">("trend");
   const [selectedQuickMetric, setSelectedQuickMetric] = useState<string>("pbt");
 
@@ -147,11 +148,13 @@ export default function Home() {
           );
         } else {
           setStatementRecords(Object.values(CORE_CANONICAL_METRICS));
+          if (isMounted) setIsDemoMode(true);
         }
       } catch (err) {
         console.warn("Using canonical dataset fallback for dashboard resilience:", err);
         if (isMounted) {
           setStatementRecords(Object.values(CORE_CANONICAL_METRICS));
+          setIsDemoMode(true);
         }
       } finally {
         if (isMounted) {
@@ -224,6 +227,26 @@ export default function Home() {
         {/* Executive Banner */}
         <Hero />
 
+        {/* Explicit Demo Data Warning Banner when API is unreachable */}
+        {isDemoMode && (
+          <div className="rounded-xl p-4 bg-amber-950/30 border border-amber-500/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-amber-200">
+            <div className="flex items-center gap-2.5">
+              <span className="font-bold uppercase tracking-wider text-[10px] px-2.5 py-1 rounded-md bg-amber-500/20 border border-amber-500/40 text-amber-300">
+                Demo Reference Mode
+              </span>
+              <span className="text-slate-300">
+                Live financial database connection unavailable. Displaying verified canonical reference metrics for presentation continuity.
+              </span>
+            </div>
+            <button
+              onClick={() => window.location.reload()}
+              className="text-[11px] font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-2 self-start sm:self-auto"
+            >
+              Retry Live Connection
+            </button>
+          </div>
+        )}
+
         {/* ---------------------------------------------------------------- */}
         {/* SECTION 1: EXECUTIVE KPIS */}
         {/* ---------------------------------------------------------------- */}
@@ -258,7 +281,7 @@ export default function Home() {
             <SummaryCard
               title="CET1 Capital Ratio"
               value="15.2%"
-              subtitle="Prudential Regulatory Range 14.0% - 14.5%"
+              subtitle="Ratio: 15.2% | Row 28 Capital: $129.4B"
               badge="Well Capitalized"
               badgeType="positive"
             />

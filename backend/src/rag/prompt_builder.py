@@ -22,12 +22,25 @@ class PromptBuilder:
         if sql_context:
 
             for row in sql_context:
-
-                sql_text += (
-                    f"Metric={row[3]}, "
-                    f"Period={row[7]}, "
-                    f"Value={row[8]}\n"
-                )
+                if isinstance(row, dict):
+                    m_name = row.get("metric_name") or row.get("abbreviation") or "Metric"
+                    periods = row.get("period_values") or []
+                    if periods:
+                        for p in periods:
+                            p_lbl = p.get("period_label") or f"P{p.get('period_index', '?')}"
+                            p_val = p.get("value")
+                            sql_text += f"Metric={m_name}, Period={p_lbl}, Value={p_val}\n"
+                    else:
+                        sql_text += f"Metric={m_name}\n"
+                elif isinstance(row, (list, tuple)):
+                    m_name = row[3] if len(row) > 3 else "Metric"
+                    p_lbl = row[7] if len(row) > 7 else "Period"
+                    p_val = row[8] if len(row) > 8 else "N/A"
+                    sql_text += (
+                        f"Metric={m_name}, "
+                        f"Period={p_lbl}, "
+                        f"Value={p_val}\n"
+                    )
 
         else:
 

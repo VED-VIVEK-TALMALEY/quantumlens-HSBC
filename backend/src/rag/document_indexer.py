@@ -7,18 +7,20 @@ import uuid
 
 import chromadb
 from sentence_transformers import SentenceTransformer
+from src.config.settings import settings
 
 
 class DocumentIndexer:
 
-    def __init__(self):
+    def __init__(self, vector_db_path=None):
 
         self.model = SentenceTransformer(
             "sentence-transformers/all-MiniLM-L6-v2"
         )
 
+        db_path = str(vector_db_path or settings.VECTOR_DB_PATH)
         self.client = chromadb.PersistentClient(
-            path="chroma_db"
+            path=db_path
         )
 
         self.collection = self.client.get_or_create_collection(

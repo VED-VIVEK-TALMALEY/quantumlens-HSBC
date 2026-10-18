@@ -56,6 +56,10 @@ class ResponseAgent:
 
         if plan.intent == "comparison":
 
+            reasoning = context.financial_reasoning or ""
+            comp_metric = getattr(plan, "comparison_metric", None)
+            answer = reasoning if reasoning else f"Comparison between {plan.metric} and {comp_metric or 'benchmark'}."
+
             return {
 
                 "status": "success",
@@ -63,6 +67,10 @@ class ResponseAgent:
                 "intent": plan.intent,
 
                 "metric": plan.metric,
+
+                "comparison_metric": comp_metric,
+
+                "answer": answer,
 
                 "reasoning": context.financial_reasoning,
 

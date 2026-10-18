@@ -13,11 +13,31 @@ type Props = {
   activeMetricName?: string;
 };
 
+interface OrchestratorResponse {
+  status?: string;
+  intent?: string;
+  metric?: string;
+  answer?: string;
+  confidence?: number;
+  warnings?: string[];
+  evidence?: string;
+  page?: number | string | null;
+  financial_reasoning?: string;
+  conversation_id?: string;
+}
+
 export default function AIChat({ activeMetricName }: Props) {
   const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState<string | null>(null);
+  const [conversationId, setConversationId] = useState<string>(() => {
+    if (typeof crypto !== "undefined" && crypto.randomUUID) {
+      return crypto.randomUUID();
+    }
+    return `session-${Date.now()}`;
+  });
+  const [history, setHistory] = useState<Array<{ q: string; response: OrchestratorResponse }>>([]);
   const [loading, setLoading] = useState(false);
   const [queryTime, setQueryTime] = useState<string | null>(null);
+  const [errorDetails, setErrorDetails] = useState<string | null>(null);
 
   const samplePrompts = [
     "Analyze HSBC Q1 2026 Profit Before Tax (PBT)",
@@ -35,70 +55,50 @@ export default function AIChat({ activeMetricName }: Props) {
     }
 
     setLoading(true);
-    setAnswer(null);
+    setErrorDetails(null);
     const startTime = Date.now();
 
     try {
-      // Attempt backend /ask with 12s timeout
+      // Connect to the multi-agent orchestrator route (/query)
       const res = await api.post(
-        "/ask",
-        { question: q },
-        { timeout: 12000 }
+        "/query",
+        {
+          question: q,
+          conversation_id: conversationId,
+        },
+        { timeout: 30000 }
       );
 
       const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
       setQueryTime(`${elapsed}s`);
 
-      if (res.data?.answer) {
-        setAnswer(res.data.answer);
-      } else if (res.data?.summary) {
-        setAnswer(res.data.summary);
-      } else {
-        setAnswer(typeof res.data === "string" ? res.data : JSON.stringify(res.data, null, 2));
+      const data: OrchestratorResponse = res.data || {};
+      if (data.conversation_id) {
+        setConversationId(data.conversation_id);
       }
+
+      setHistory((prev) => [...prev, { q, response: data }]);
+      setQuestion("");
     } catch (err: any) {
       const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
       setQueryTime(`${elapsed}s`);
-      console.warn("AI /ask response or timeout:", err?.message);
+      console.warn("AI /query error:", err?.message);
 
-      // Graceful financial intelligence fallback using canonical dataset knowledge:
-      const lower = q.toLowerCase();
-      if (lower.includes("pbt") || lower.includes("profit")) {
-        setAnswer(
-          `**Executive Summary: Profit Before Tax (PBT)**\n\n` +
-          `• **Reported Q1 2026 PBT**: **$9,376M** in Group Income Statement (Row 13).\n` +
-          `• **Quarter-over-Quarter Trend**: Increased from $6,802M in P2 (+37.8%) and $7,295M in P3 (+28.5%).\n` +
-          `• **Key Drivers**: Strong performance in banking net interest income and disciplined operating expense containment across global banking and wealth divisions.\n` +
-          `• **Data Source**: Canonical HSBC Q1 2026 Data Pack (90 PBT line items mapped across global operating segments).`
-        );
-      } else if (lower.includes("cet1") || lower.includes("capital")) {
-        setAnswer(
-          `**Executive Summary: Common Equity Tier 1 (CET1) & Capital Adequacy**\n\n` +
-          `• **Reported Ratio**: **14.0% - 15.2%** across Prudential and Group reporting schedules.\n` +
-          `• **Regulatory Buffer**: Remains comfortably above the regulatory requirement and internal target operating range of 14.0% - 14.5%.\n` +
-          `• **Variance Factors**: Capital generation through strong earnings offset by higher risk-weighted assets (RWA) and capital distributions to shareholders.\n` +
-          `• **Data Source**: HSBC Q1 2026 Earnings Release (Capital Schedule & Notes).`
-        );
-      } else if (lower.includes("nii") || lower.includes("interest")) {
-        setAnswer(
-          `**Executive Summary: Net Interest Income (NII)**\n\n` +
-          `• **Reported Period 1 NII**: **$8,945M** (Annualized ~$35.8B).\n` +
-          `• **Historical Range**: Fluctuated between $8,302M (P5) and $9,196M (P2).\n` +
-          `• **Net Interest Margin (NIM)**: Supported by constructive global policy rates despite selective deposit migration and competitive lending margins.\n` +
-          `• **Data Source**: Group Income Statement Row 6.`
-        );
-      } else {
-        setAnswer(
-          `**Financial Analysis for "${q}"**\n\n` +
-          `• **Dataset Context**: Query matched against HSBC Q1 2026 Financial Data Pack (456 verified financial records).\n` +
-          `• **Core Indicators**: Profit Before Tax ($9,376M), Net Interest Income ($8,945M), and CET1 Capital Solvency ratio reflect robust underlying balance sheet fundamentals.\n` +
-          `• **Recommendation**: Use the Statement Tables and Variance Breakdown below to inspect exact line-item values for Row ${activeMetricName || "records"}.`
-        );
-      }
+      // P0 FIX: Never invent fake analysis on backend failure.
+      // Display explicit "Live Analysis Unavailable" error state.
+      const reason = err?.response?.data?.detail || err?.message || "Service connection timed out";
+      setErrorDetails(reason);
     } finally {
-      // GUARANTEED: never gets stuck in loading loop!
       setLoading(false);
     }
+  };
+
+  const handleResetConversation = () => {
+    const newId = typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : `session-${Date.now()}`;
+    setConversationId(newId);
+    setHistory([]);
+    setErrorDetails(null);
+    setQueryTime(null);
   };
 
   return (
@@ -110,21 +110,32 @@ export default function AIChat({ activeMetricName }: Props) {
           </div>
           <div>
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <span>QuantumLens AI Financial Analyst</span>
+              <span>QuantumLens Multi-Agent Orchestrator</span>
               <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                Ready
+                SQL • Audit • Reasoning • RAG
               </span>
             </h3>
             <p className="text-[11px] text-slate-400">
-              Query financial statements, ratios, and variance drivers in natural language
+              Full multi-agent financial intelligence with conversational context tracking
             </p>
           </div>
         </div>
-        {queryTime && (
-          <span className="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
-            Latency: {queryTime}
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {history.length > 0 && (
+            <button
+              onClick={handleResetConversation}
+              className="text-[10px] px-2 py-0.5 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700 transition"
+              title="Reset conversational context memory"
+            >
+              New Thread
+            </button>
+          )}
+          {queryTime && (
+            <span className="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+              Latency: {queryTime}
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Quick Prompt Pills */}
@@ -153,7 +164,7 @@ export default function AIChat({ activeMetricName }: Props) {
               handleAsk();
             }
           }}
-          placeholder="Ask a question about HSBC Q1 2026 financial metrics..."
+          placeholder="Ask a question about HSBC Q1 2026 financial metrics (or follow up)..."
           className="flex-1 bg-slate-950/90 border border-slate-700 rounded-lg px-3.5 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-red-500 transition-colors disabled:opacity-50"
         />
         <button
@@ -164,7 +175,7 @@ export default function AIChat({ activeMetricName }: Props) {
           {loading ? (
             <>
               <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              <span>Analyzing...</span>
+              <span>Orchestrating...</span>
             </>
           ) : (
             <span>Ask Analyst</span>
@@ -172,10 +183,69 @@ export default function AIChat({ activeMetricName }: Props) {
         </button>
       </div>
 
-      {/* Response Panel */}
-      {answer && (
-        <div className="mt-4 p-4 rounded-lg bg-slate-950/80 border border-slate-800 text-xs text-slate-200 leading-relaxed whitespace-pre-wrap">
-          {answer}
+      {/* Error / Live Analysis Unavailable State */}
+      {errorDetails && (
+        <div className="mt-4 p-4 rounded-lg bg-red-950/30 border border-red-500/40 text-xs text-red-200">
+          <div className="flex items-center gap-2 font-semibold text-red-400 mb-1">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+            </svg>
+            <span>Live Analysis Unavailable</span>
+          </div>
+          <p className="text-[11px] text-slate-300 mb-2">
+            The multi-agent orchestrator (/query) did not return a live response. Fallback financial analysis is deliberately disabled to protect data integrity.
+          </p>
+          <div className="p-2 bg-slate-950/80 rounded border border-red-900/40 font-mono text-[10px] text-red-300">
+            Error: {errorDetails}
+          </div>
+        </div>
+      )}
+
+      {/* Conversation Thread History */}
+      {history.length > 0 && (
+        <div className="mt-4 space-y-3 max-h-[460px] overflow-y-auto pr-1">
+          {history.map((item, idx) => {
+            const resp = item.response;
+            const answerText =
+              resp.answer ||
+              (resp as any).definition ||
+              (resp as any).summary ||
+              (typeof resp === "string" ? resp : JSON.stringify(resp, null, 2));
+
+            return (
+              <div key={idx} className="p-3.5 rounded-lg bg-slate-950/80 border border-slate-800 text-xs text-slate-200 space-y-2">
+                <div className="flex items-center justify-between text-[11px] text-slate-400 pb-2 border-b border-slate-800/80">
+                  <span className="font-semibold text-slate-300 flex items-center gap-1.5">
+                    <span className="text-red-400 font-bold">Q:</span> {item.q}
+                  </span>
+                  {resp.confidence !== undefined && (
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                      Audit Confidence: {(resp.confidence * 100).toFixed(0)}%
+                    </span>
+                  )}
+                </div>
+
+                {/* Main Answer */}
+                <div className="leading-relaxed whitespace-pre-wrap text-slate-100">
+                  {answerText}
+                </div>
+
+                {/* Audit Warnings if any */}
+                {resp.warnings && resp.warnings.length > 0 && (
+                  <div className="p-2 rounded bg-amber-500/10 border border-amber-500/30 text-[11px] text-amber-300">
+                    <span className="font-semibold">Auditor Warning:</span> {resp.warnings.join(", ")}
+                  </div>
+                )}
+
+                {/* Documentary Citations */}
+                {resp.page && (
+                  <div className="text-[10px] text-slate-400 flex items-center gap-1 pt-1 border-t border-slate-900">
+                    <span className="font-semibold text-slate-300">Verified Source:</span> HSBC Q1 2026 Earnings Release (Page {resp.page})
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
